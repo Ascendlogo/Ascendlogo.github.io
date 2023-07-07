@@ -454,96 +454,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2022/04/21/C++%E5%AD%A6%E4%B9%A0/%E5%BD%93define%E6%88%96%E8%80%85typedef%E9%81%87%E5%88%B0%E6%A8%A1%E6%9D%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/21/C++%E5%AD%A6%E4%B9%A0/%E5%BD%93define%E6%88%96%E8%80%85typedef%E9%81%87%E5%88%B0%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">define或typedef遇到模板</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-21T00:00:00+08:00">2022-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-15 10:22:33" itemprop="dateModified" datetime="2023-06-15T10:22:33+08:00">2023-06-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">NODE</span></span><br><span class="line">&#123;</span><br><span class="line">	T data;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">NODE</span> *next;</span><br><span class="line">&#125; LinkList;</span><br></pre></td></tr></table></figure>
-
-<p>这里的代码会报错，因为define和typedef不允许定义模糊的类型，如果要使用，一定要显式指明数据类型。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">NODE</span></span><br><span class="line">&#123;</span><br><span class="line">	T data;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">NODE</span> *next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> NODE&lt;<span class="type">int</span>&gt; LinkList;</span><br></pre></td></tr></table></figure>
-
-<p>上面为正确的用法，并且对于typedef必须定义在模板结构的下面。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2022/04/21/C++%E5%AD%A6%E4%B9%A0/%E8%BF%9E%E7%BB%AD%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%BB%93%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -634,6 +544,96 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2022/04/21/C++%E5%AD%A6%E4%B9%A0/%E5%BD%93define%E6%88%96%E8%80%85typedef%E9%81%87%E5%88%B0%E6%A8%A1%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/21/C++%E5%AD%A6%E4%B9%A0/%E5%BD%93define%E6%88%96%E8%80%85typedef%E9%81%87%E5%88%B0%E6%A8%A1%E6%9D%BF/" class="post-title-link" itemprop="url">define或typedef遇到模板</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-21T00:00:00+08:00">2022-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-15 10:22:33" itemprop="dateModified" datetime="2023-06-15T10:22:33+08:00">2023-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">NODE</span></span><br><span class="line">&#123;</span><br><span class="line">	T data;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">NODE</span> *next;</span><br><span class="line">&#125; LinkList;</span><br></pre></td></tr></table></figure>
+
+<p>这里的代码会报错，因为define和typedef不允许定义模糊的类型，如果要使用，一定要显式指明数据类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">NODE</span></span><br><span class="line">&#123;</span><br><span class="line">	T data;</span><br><span class="line">	<span class="keyword">struct</span> <span class="title class_">NODE</span> *next;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> NODE&lt;<span class="type">int</span>&gt; LinkList;</span><br></pre></td></tr></table></figure>
+
+<p>上面为正确的用法，并且对于typedef必须定义在模板结构的下面。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2021/06/15/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -670,7 +670,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-07-05 11:07:01" itemprop="dateModified" datetime="2023-07-05T11:07:01+08:00">2023-07-05</time>
+      <time title="Modified: 2023-07-07 16:01:19" itemprop="dateModified" datetime="2023-07-07T16:01:19+08:00">2023-07-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -985,58 +985,203 @@ default:
 <li><p>在看到<code>sum(1, 10)</code>，它需要知道<code>sum()</code>的样子以检查对<code>sum()</code>的使用是否正确（C的编译器自上而下分析代码）</p>
 </li>
 <li><p><code>函数头()</code>；（函数声明（函数原型）可用来判断函数的调用是否正确）</p>
-<pre><code class="c">int main() &#123;
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">  <span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">​	`函数头()`（编译器会再次检查调用是否正确）（**实际函数头**）</span><br><span class="line"></span><br><span class="line">- 调用函数必须传递给它数量、类型正确的值</span><br><span class="line"></span><br><span class="line">  字面量，变量，函数的返回值，计算结果</span><br><span class="line"></span><br><span class="line">- 调用函数时给的值与参数的类型不匹配是C语言系统上最大的漏洞,编译器总是自己转换，但可能会产生错误 C++/java却避免了</span><br><span class="line"></span><br><span class="line">- C语言在调用函数，永远只传值给函数</span><br><span class="line"></span><br><span class="line">- 传值：每个函数有自己的变量空间，参数也位于这个独立的空间中，和其他函数没有关系（`<span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>`后a和b与调用函数中a和b无关系）</span><br><span class="line"></span><br><span class="line">- 过去称函数参数表中的参数为形式参数，调用函数时给的值叫实际参数。但现代不再适用。现代称前者为参数，后者为值。</span><br><span class="line"></span><br><span class="line">- 定义在函数内部的变量就是本地变量。参数也是本地变量。</span><br><span class="line"></span><br><span class="line">- 生存期：变量出现的时间与消亡的时间。</span><br><span class="line"></span><br><span class="line">- 作用域：在代码的什么范围内可以访问这个变量（变量起作用）对于本地变量这两个问题的答案是`&#123;&#125;`（块）</span><br><span class="line"></span><br><span class="line">- 本地变量定义在块内，可以是函数块内，也可以是语句块内。程序进入块之前，变量不存在，离开这个块，其中的变量就消失了。</span><br><span class="line"></span><br><span class="line">- 块外面定义变量在块里面依然有效，反之无效</span><br><span class="line"></span><br><span class="line">- 若块里面定义了和外面同名的变量则掩盖了外面的，但不能在一个块内定义同名变量</span><br><span class="line"></span><br><span class="line">- 本地变量不会被默认初始化，参数在进入函数时被初始化了</span><br><span class="line"></span><br><span class="line">- 传统C中，`<span class="type">void</span> <span class="title function_">f</span><span class="params">()</span>` -&gt; 不代表无参数，表示f函数参数未知，当无参数时，最好写`<span class="type">void</span> <span class="title function_">f</span><span class="params">(<span class="type">void</span>)</span>`</span><br><span class="line"></span><br><span class="line">- C语言不允许函数嵌套定义</span><br><span class="line"></span><br><span class="line">## 二维数组</span><br><span class="line"></span><br><span class="line">- `<span class="type">int</span> a[3][5]`3行5列矩阵</span><br><span class="line"></span><br><span class="line">- `a[i][j]`表示一个`<span class="type">int</span>`，是i行j列上的单元</span><br><span class="line"></span><br><span class="line">- 二维数组的初始化</span><br><span class="line">  - 列必须给出，行数可由编译器数</span><br><span class="line">  - 每行一个`&#123;&#125;`，逗号分隔</span><br><span class="line">  -  如果省略表示补零</span><br><span class="line">  - 也可以用定位（C99only）</span><br><span class="line"></span><br><span class="line"># 数组运算</span><br><span class="line"></span><br><span class="line">## 数组运算</span><br><span class="line"></span><br><span class="line">- 数组的集成初始化</span><br><span class="line"></span><br><span class="line">  ```c</span><br><span class="line">  <span class="type">int</span> a[] = &#123; <span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不需要给出数组大小，编译器替我们数</p>
+</li>
+<li><p>集成初始化的定位（C99only）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">10</span>] = &#123; [<span class="number">0</span>] = <span class="number">2</span>, [<span class="number">2</span>] = <span class="number">3</span>, <span class="number">6</span> &#125;;</span><br></pre></td></tr></table></figure>
 
-&#125;
-</code></pre>
-</li>
-</ul>
-<p>​	<code>函数头()</code>（编译器会再次检查调用是否正确）（<strong>实际函数头</strong>）</p>
 <ul>
-<li><p>调用函数必须传递给它数量、类型正确的值</p>
-<p>字面量，变量，函数的返回值，计算结果</p>
+<li>用<code>[n]</code>在初始化数据中给出定位</li>
+<li>没有定位的数据接在前面的位置后面</li>
+<li>其他位置补0</li>
+<li>特别适合初始数据稀疏的数组</li>
+</ul>
 </li>
-<li><p>调用函数时给的值与参数的类型不匹配是C语言系统上最大的漏洞,编译器总是自己转换，但可能会产生错误 C++&#x2F;java却避免了</p>
+<li><p><code>sizeof</code>：给出整个数组所占据的内容的大小，单位是字节</p>
 </li>
-<li><p>C语言在调用函数，永远只传值给函数</p>
+<li><p><code>sizeof(a) / sizeof(a[0])</code>为数组元素个数</p>
 </li>
-<li><p>传值：每个函数有自己的变量空间，参数也位于这个独立的空间中，和其他函数没有关系（<code>int main()</code>后a和b与调用函数中a和b无关系）</p>
+<li><p><strong>要把一个数组所有元素交给另一个数组，必须采用遍历</strong></p>
 </li>
-<li><p>过去称函数参数表中的参数为形式参数，调用函数时给的值叫实际参数。但现代不再适用。现代称前者为参数，后者为值。</p>
-</li>
-<li><p>定义在函数内部的变量就是本地变量。参数也是本地变量。</p>
-</li>
-<li><p>生存期：变量出现的时间与消亡的时间。</p>
-</li>
-<li><p>作用域：在代码的什么范围内可以访问这个变量（变量起作用）对于本地变量这两个问题的答案是<code>&#123;&#125;</code>（块）</p>
-</li>
-<li><p>本地变量定义在块内，可以是函数块内，也可以是语句块内。程序进入块之前，变量不存在，离开这个块，其中的变量就消失了。</p>
-</li>
-<li><p>块外面定义变量在块里面依然有效，反之无效</p>
-</li>
-<li><p>若块里面定义了和外面同名的变量则掩盖了外面的，但不能在一个块内定义同名变量</p>
-</li>
-<li><p>本地变量不会被默认初始化，参数在进入函数时被初始化了</p>
-</li>
-<li><p>传统C中，<code>void f()</code> -&gt; 不代表无参数，表示f函数参数未知，当无参数时，最好写<code>void f(void)</code></p>
-</li>
-<li><p>C语言不允许函数嵌套定义</p>
+<li><p>遍历数组作为函数参数时：</p>
+<ul>
+<li>不能在<code>[]</code>中给出数组大小</li>
+<li>不能利用<code>sizeof</code>来计算数组元素个数</li>
+</ul>
 </li>
 </ul>
-<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><ul>
-<li><p><code>int a[3][5]</code>3行5列矩阵</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><ul>
+<li><p>在一个数组中找到某个数的位置（确认是否存在）</p>
 </li>
-<li><p><code>a[i][j]</code>表示一个<code>int</code>，是i行j列上的单元</p>
+<li><p>基本方法：遍历</p>
 </li>
-<li><p>二维数组的初始化</p>
+<li><p>二分搜索</p>
 </li>
-<li><p>列必须给出，行数可由编译器数</p>
+</ul>
+<h1 id="指针与字符串"><a href="#指针与字符串" class="headerlink" title="指针与字符串"></a>指针与字符串</h1><h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><ul>
+<li><p><code>sizeof</code>：运算符，给出某个类型或变量在内存中所占据的字节数<code>sizeof(int)</code>；<code>sizeof(i)</code></p>
 </li>
-<li><p>每行一个<code>&#123;&#125;</code>，逗号分隔</p>
+<li><p>&amp;：运算符，获得变量的地址，它的操作必须是<strong>变量</strong></p>
 </li>
-<li><p>如果省略表示补零</p>
+<li><p>地址的大小是否与int相同取决于编译器</p>
 </li>
-<li><p>也可以用定位（C99only）</p>
+<li><p>指针：就是保存地址的变量 <code>int *p=&amp;i</code></p>
+<p><code>int* p, q</code>和<code>int *p, q</code>都代表<code>p</code>为指针，<code>q</code>为<code>int</code></p>
+</li>
+<li><p>普通变量的值是实际的值；指针变量的值是具有实际值的变量的地址</p>
+</li>
+<li><p><code>void f(int *p)</code>；在被调用时得到了某个变量的地址，在函数里面可以通过这个指针访问外面这个<code>i</code></p>
+</li>
+<li><p><code>*</code>是单目运算符，用来访问指针的值所表示的地址上的变量，可以做左值也可以做右值</p>
+</li>
+<li><p>函数参数表中的数组实际上是指针，<code>sizeof(a) == sizeof(int*)</code>，但是可以用数组的运算符<code>[]</code>进行计算</p>
+</li>
+<li><p>参数表中以下四种函数原型是等价的：</p>
+<ul>
+<li><code>int sum(int *arr, int n)</code></li>
+<li><code>int sum(int *, int)</code></li>
+<li><code>int sum(int arr[], int n)</code></li>
+<li><code>int sum(int[ ], int)</code></li>
+</ul>
+</li>
+<li><p>数组变量是特殊的指针，数组变量本身表达地址，（<code>int a[10]</code>; <code>int *p = a</code>;无需用&amp;取地址）</p>
+</li>
+<li><p>但是数组的单元表达的是变量，需要用&amp;取地址，<code>a == &amp;a[0]</code></p>
+</li>
+<li><p><code>[]</code>运算符可以对数组做，也可以对指针做：<code>p[0]</code>等价于<code>a[0]</code></p>
+</li>
+<li><p><code>*</code>可以对指针做，也可以对数组做</p>
+</li>
+<li><p>数组变量是<code>const</code>的指针，所以不能被赋值（<code>int a[ ] =</code> 等价于<code>int *const a =</code>）</p>
+</li>
+</ul>
+<h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><ul>
+<li><p><code>char</code>是一种整数，也是一种特殊的类型字符。</p>
+</li>
+<li><p>用单引号表示的字符字面量：<code>&#39;a&#39;</code>，<code>&#39;1&#39;</code>，<code>&#39;&#39;</code>也是一个字符，<code>printf</code>和<code>scanf</code>里用<code>%c</code>来输出输入字符。</p>
+</li>
+<li><p>大小写转换：<code>&#39;a&#39; - &#39;A&#39;</code>得到<code>a</code>和<code>A</code>在<code>ASCII</code>上的距离，<code>a + &#39;a&#39; - &#39;A&#39;</code>可以将大写字母变为小写字母，而<code>a + &#39;A&#39; - &#39;a&#39;</code>可以将小写字母变为大写字母</p>
+</li>
+<li><p>逃逸字符：用来表达无法印出来的控制字符或特殊字符，它由一个反斜杠<code>\</code>开头，后面跟上另一个字符，这两个字符合起来，组成一个字符。</p>
+</li>
+<li><blockquote>
+<p><code>\b</code>:回退一格</p>
+<p><code>\t</code>：到下一个表格位</p>
+<p><code>\n</code>:换行</p>
+<p><code>\r</code>:回车</p>
+<p><code>\”</code>：双引号</p>
+<p><code>\’</code>：单引号</p>
+<p><code>\\</code>：反斜杠本身</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li><p>字符串是以<code>\0</code>结尾的一串字符</p>
+</li>
+<li><p><code>0</code>或<code>\0</code>相同，但和<code>&#39;0&#39;</code>不同，0标志字符串的结束，但它不是字符串的一部分，计算字符串长度的时候不包括这个<code>0</code></p>
+</li>
+<li><p>字符串以数组的形式存在，以数组或指针的形式访问，更多以指针形式</p>
+</li>
+<li><p><code>string.h</code>里有很多处理字符串的函数</p>
+</li>
+<li><p>字符串变量：<code>char *str = &quot;Hello&quot;</code>; <code>char word[] = &quot;Hello&quot;</code>; <code>char line[10] = &quot;Hello&quot;</code></p>
+</li>
+<li><p>字符串常量：<code>&quot;Hello&quot;</code>，会被编译器编程一个字符数组放在某处，这个数组的长度是6（<strong>结尾还有表示结束的0</strong>）</p>
+</li>
+<li><p>两个相邻的字符串常量会被自动连接起来</p>
+</li>
+<li><p>C语言的字符串是以字符数组的形态存在的，不能用运算符对字符串做运算，通过数组的方式可以遍历字符串，唯一特殊的地方是字符串字面量可以用来初始化字符数组</p>
+</li>
+<li><p>如果要构造一个字符串-&gt;数组；</p>
+<p>如果要处理一个字符串-&gt;指针</p>
+</li>
+<li><p>字符串可以表达为<code>char*</code>的形式，<code>char*</code>不一定是字符串，只有它所指的字符数组有结尾的0；才能说它所指的是字符串</p>
+</li>
+</ul>
+<h2 id="字符串的计算"><a href="#字符串的计算" class="headerlink" title="字符串的计算"></a>字符串的计算</h2><ul>
+<li><p>并没有产生新的字符串，只是让指针s指向了t所指的字符串，对s的任何操作就是对t做的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *t = <span class="string">&quot;title&quot;</span>;</span><br><span class="line"><span class="type">char</span> *s;</span><br><span class="line">s = t;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>scanf(“%7s”, string)</code>；在%和s之间的数字表示最多允许读入的字符的数量，这个数字应该比数组的长度小</p>
+</li>
+<li><p><code>string.h</code>:</p>
+<ul>
+<li><code>strlen</code>：返回s的字符串长度（不包括结尾的\0）</li>
+<li><code>strcmp</code>：比较两个字符串，返回：0：<code>s1 == s2</code>；正差值：<code>s1 &gt; s2</code>；负差值：<code>s1 &lt; s2</code></li>
+<li><code>strcpy</code>：把第二个参数的字符串拷贝到第一个空间；<code>restrict</code>表明两个字符串不重叠（C99），返回第一个参数</li>
+<li><code>strcat</code>：把第二个参数的字符串接到第一个参数的后面去接成一个长的字符串</li>
+<li><code>strchr</code>：从字符串左边找字符；<code>strrchr</code>：从字符串右边找字符。返回<code>NULL</code>表示没有找到。</li>
+</ul>
+</li>
+</ul>
+<h1 id="指针与字符串（进阶）"><a href="#指针与字符串（进阶）" class="headerlink" title="指针与字符串（进阶）"></a>指针与字符串（进阶）</h1><h2 id="指针的使用"><a href="#指针的使用" class="headerlink" title="指针的使用"></a>指针的使用</h2><ul>
+<li><p>比如：交换两个变量的值</p>
+</li>
+<li><p>函数返回多个值，某些值就只能通过指针返回，传入的参数实际上是需要保存带回的结果的变量</p>
+</li>
+<li><p>函数返回应用的状态，结果通过指针返回</p>
+</li>
+<li><p><strong>常见错误：</strong>定义了指针变量，还没有指向任何变量，就开始使用指针</p>
+</li>
+<li><p>函数参数表中的数组实际上是指针，<code>sizeof(a)== sizeof(int*)</code>，但是可 以用数组的运算符<code>[]</code>进行计算</p>
+</li>
+<li><p>数组变量是特殊的指针，数组变量本身表达地址，（<code>int a[10]</code>;<code>int *p = a</code>;）无需用&amp;取地址）</p>
+</li>
+<li><p><code>[]</code>运算符可以对数组做，也可以对指针做：<code>p[0]</code>等价于<code>a[0]</code> ，<code>*</code>可以对指针做，也可以对数组做</p>
+</li>
+<li><p>数组变量是<code>const</code>的指针，所以不能被赋值（<code>int a[]=</code>等价于int *const a&#x3D;）</p>
+</li>
+<li><p>指针是<code>const</code>：不能指向其他变量（声明时<code>*</code>在<code>const</code>前）</p>
+<p>指针所指是<code>const</code>：不能通过指针修改变量（声明时<code>*</code>在<code>const</code>后）</p>
+<p><code>const</code>数组：数组每个单元都是<code>const int</code>，必须通过初始化赋值</p>
+</li>
+</ul>
+<h2 id="指针运算"><a href="#指针运算" class="headerlink" title="指针运算"></a>指针运算</h2><ul>
+<li><p>指针加1表示指针指向下一个变量（地址加<code>sizeof(指针指向类型)</code>）</p>
+</li>
+<li><p>如果指针不是指向一片连续分布空间（如数组），“加1”运算毫无意义</p>
+</li>
+<li><p>指针计算：加减整数（+，+&#x3D;，-，-&#x3D;）；递增递减（++, –）；两个指针相减（结果为<code>地址差值/sizeof(指针指向类型)</code>）</p>
+</li>
+<li><p><code>*p++</code>：<strong>取出p所指的数据，再将p指向下一位置</strong>，++的优先级高于*，常用于数组类的连续空间操作，在某些CPU上可以直接被翻译成汇编指令</p>
+</li>
+<li><p>指针比较：比较在内存中的地址，数组中单元的地址递增排列</p>
+</li>
+<li><p>0地址：用NULL表示，不代表数值0</p>
+</li>
+<li><p>所有指针大小相同，指向不同类型指针无法赋值</p>
+</li>
+<li><p><code>void*</code>：不知道指向什么东西的指针，计算时与<code>char*</code>相同（但不相通）</p>
+</li>
+<li><p>指针的类型转换：<code>int *p = &amp;i</code>；<code>void *q = (void*)p</code>（<code>p</code>所指变量类型为<code>int</code>，但从<code>q</code>看所指变量类型未知）</p>
+</li>
+<li><p>指针的用处：</p>
+<ul>
+<li>需要传入较大的数据作参数</li>
+<li>传入数组后对数组操作</li>
+<li>函数返回不止一个结果</li>
+<li>需要用函数修改不止一个变量</li>
+<li>动态申请的内存</li>
+</ul>
+</li>
+<li><p>动态内存分配：<code>malloc</code>函数（<code>&lt;stdlib.h&gt;</code>），申请以字节为单位的空间，返回的类型是</p>
+<p><code>void* ( (int*)malloc(n*sizeof(int)))</code>结束后<code>free()</code>；申请失败则返回0（NULL）</p>
+</li>
+<li><p><code>free()</code>归还申请的空间给“系统”，只能还申请来的空间的首地址</p>
+</li>
+<li><p>申请了没<code>free</code>，长时间运行内存逐渐下降</p>
+</li>
+</ul>
+<h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><ul>
+<li><p><code>putchar</code>：向标准输出写一个字符，返回输出了几个字符（<code>int</code>），<code>EOF</code>表示写失败</p>
+</li>
+<li><p><code>getchar</code>：从标准输入读入一个字符，返回类型是int是为了返回<code>EOF</code></p>
+</li>
+<li><p><code>char **a</code> ：a是指针，指向一个指向字符的指针</p>
+</li>
+<li><p><code>char[ ][n]</code> !&#x3D; <code>char *a[ ]</code></p>
 </li>
 </ul>
 
