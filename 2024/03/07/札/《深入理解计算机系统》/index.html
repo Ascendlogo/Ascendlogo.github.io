@@ -19,27 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ascendlogo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。 信息就是位+上下文 源程序实际上就是一个由值0和1组成的为（又称为比特）序列，8个位组成一组，称为字节。 大部分的现代计算机系统都使用ASCII标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。 只由ASCII字符构成的文件称为文本文件，所有其他文件称为二进制文件。 区别不同数据对象的唯一方法是我们">
+    <meta name="description" content="第一章 计算机系统漫游 计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。  信息就是位+上下文 源程序实际上就是一个由值0和1组成的为（又称为比特）序列，8个位组成一组，称为字节。 大部分的现代计算机系统都使用 ASCII 标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。 只由 ASCII 字符构成的文件称为文本文件，所有其他文件称为二进制文件。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一章 计算机系统漫游">
-<meta property="og:url" content="http://ascendlogo.github.io/2023/05/25/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/index.html">
+<meta property="og:title" content="《深入理解计算机系统》">
+<meta property="og:url" content="http://ascendlogo.github.io/2024/03/07/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B/index.html">
 <meta property="og:site_name" content="Ascendlogo">
-<meta property="og:description" content="计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。 信息就是位+上下文 源程序实际上就是一个由值0和1组成的为（又称为比特）序列，8个位组成一组，称为字节。 大部分的现代计算机系统都使用ASCII标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。 只由ASCII字符构成的文件称为文本文件，所有其他文件称为二进制文件。 区别不同数据对象的唯一方法是我们">
+<meta property="og:description" content="第一章 计算机系统漫游 计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。  信息就是位+上下文 源程序实际上就是一个由值0和1组成的为（又称为比特）序列，8个位组成一组，称为字节。 大部分的现代计算机系统都使用 ASCII 标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。 只由 ASCII 字符构成的文件称为文本文件，所有其他文件称为二进制文件。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-04T07:18:42.766Z">
+<meta property="article:published_time" content="2024-03-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-08T08:08:02.566Z">
 <meta property="article:author" content="Ascendlogo">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://ascendlogo.github.io/2023/05/25/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/">
+<link rel="canonical" href="http://ascendlogo.github.io/2024/03/07/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://ascendlogo.github.io/2023/05/25/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/","path":"2023/05/25/札/《深入理解计算机系统》读书笔记/第一章 计算机系统漫游/","title":"第一章 计算机系统漫游"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://ascendlogo.github.io/2024/03/07/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B/","path":"2024/03/07/札/《深入理解计算机系统》/","title":"《深入理解计算机系统》"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>第一章 计算机系统漫游 | Ascendlogo</title>
+<title>《深入理解计算机系统》 | Ascendlogo</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js"></script>
@@ -140,7 +140,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E4%BD%8D-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">信息就是位+上下文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%A2%AB%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F%E7%BF%BB%E8%AF%91%E6%88%90%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">程序被其他程序翻译成不同的格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E6%98%AF%E5%A4%A7%E6%9C%89%E7%9B%8A%E5%A4%84%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">了解编译系统如何工作是大有益处的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AF%BB%E5%B9%B6%E8%A7%A3%E9%87%8A%E5%82%A8%E5%AD%98%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">处理器读并解释储存在内存中的指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E8%87%B3%E5%85%B3%E9%87%8D%E8%A6%81"><span class="nav-number">5.</span> <span class="nav-text">高速缓存至关重要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87%E5%BD%A2%E6%88%90%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">存储设备形成层次结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E5%88%A9%E7%94%A8%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1"><span class="nav-number">7.</span> <span class="nav-text">系统之间利用网络通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E4%B8%BB%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">重要主题</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8"><span class="nav-number">1.</span> <span class="nav-text">第一章 计算机系统漫游</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%B0%B1%E6%98%AF%E4%BD%8D-%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.1.</span> <span class="nav-text">信息就是位+上下文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%A2%AB%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F%E7%BF%BB%E8%AF%91%E6%88%90%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">程序被其他程序翻译成不同的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E6%98%AF%E5%A4%A7%E6%9C%89%E7%9B%8A%E5%A4%84%E7%9A%84"><span class="nav-number">1.3.</span> <span class="nav-text">了解编译系统如何工作是大有益处的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AF%BB%E5%B9%B6%E8%A7%A3%E9%87%8A%E5%82%A8%E5%AD%98%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">1.4.</span> <span class="nav-text">处理器读并解释储存在内存中的指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E8%87%B3%E5%85%B3%E9%87%8D%E8%A6%81"><span class="nav-number">1.5.</span> <span class="nav-text">高速缓存至关重要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E8%AE%BE%E5%A4%87%E5%BD%A2%E6%88%90%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.6.</span> <span class="nav-text">存储设备形成层次结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E5%88%A9%E7%94%A8%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1"><span class="nav-number">1.7.</span> <span class="nav-text">系统之间利用网络通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E4%B8%BB%E9%A2%98"><span class="nav-number">1.8.</span> <span class="nav-text">重要主题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">第二章 信息的表示与处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8"><span class="nav-number">2.1.</span> <span class="nav-text">信息存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="nav-number">2.1.1.</span> <span class="nav-text">十六进制表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.1.2.</span> <span class="nav-text">字数据大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80%E5%92%8C%E5%AD%97%E8%8A%82%E9%A1%BA%E5%BA%8F"><span class="nav-number">2.1.3.</span> <span class="nav-text">寻址和字节顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">2.1.4.</span> <span class="nav-text">表示字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.5.</span> <span class="nav-text">表示代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0%E7%AE%80%E4%BB%8B"><span class="nav-number">2.1.6.</span> <span class="nav-text">布尔代数简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E8%AF%AD%E8%A8%80%E7%9A%84%E4%BD%8D%E7%BA%A7%E8%BF%90%E7%AE%97"><span class="nav-number">2.1.7.</span> <span class="nav-text">C 语言的位级运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E9%80%BB%E8%BE%91%E8%AE%A1%E7%AE%97"><span class="nav-number">2.1.8.</span> <span class="nav-text">C语言中的逻辑计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-number">2.1.9.</span> <span class="nav-text">C语言中的移位运算</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.2.</span> <span class="nav-text">整数表示</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,13 +153,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
@@ -195,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/05/25/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/07/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,12 +208,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="第一章 计算机系统漫游 | Ascendlogo">
+      <meta itemprop="name" content="《深入理解计算机系统》 | Ascendlogo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第一章 计算机系统漫游
+          《深入理解计算机系统》
         </h1>
 
         <div class="post-meta-container">
@@ -224,14 +224,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-05-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-25T00:00:00+08:00">2023-05-25</time>
+      <time title="Created: 2024-03-07 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-07T00:00:00+08:00">2024-03-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-04 15:18:42" itemprop="dateModified" datetime="2024-03-04T15:18:42+08:00">2024-03-04</time>
+      <time title="Modified: 2024-03-08 16:08:02" itemprop="dateModified" datetime="2024-03-08T16:08:02+08:00">2024-03-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -240,10 +240,6 @@
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/%E6%9C%AD/" itemprop="url" rel="index"><span itemprop="name">札</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AD/%E3%80%8A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">《深入理解计算机系统》</span></a>
         </span>
     </span>
 
@@ -256,14 +252,16 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。</p>
-<h1 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h1><ul>
+    <div class="post-body" itemprop="articleBody"><h1 id="第一章-计算机系统漫游"><a href="#第一章-计算机系统漫游" class="headerlink" title="第一章 计算机系统漫游"></a>第一章 计算机系统漫游</h1><ul>
+<li>计算机系统是由硬件和系统软件组成的，他们共同工作来运行应用程序。</li>
+</ul>
+<h2 id="信息就是位-上下文"><a href="#信息就是位-上下文" class="headerlink" title="信息就是位+上下文"></a>信息就是位+上下文</h2><ul>
 <li>源程序实际上就是一个由值0和1组成的为（又称为比特）序列，8个位组成一组，称为<strong>字节</strong>。</li>
-<li>大部分的现代计算机系统都使用ASCII标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。</li>
-<li>只由ASCII字符构成的文件称为<strong>文本文件</strong>，所有其他文件称为<strong>二进制文件</strong>。</li>
+<li>大部分的现代计算机系统都使用 ASCII 标准来表示文本字符，这种方式实际上就是用一个唯一的单字节大小的整数值来表示每个字符。</li>
+<li>只由 ASCII 字符构成的文件称为<strong>文本文件</strong>，所有其他文件称为<strong>二进制文件</strong>。</li>
 <li>区别不同数据对象的唯一方法是我们读到这些数据对象时的上下文。</li>
 </ul>
-<h1 id="程序被其他程序翻译成不同的格式"><a href="#程序被其他程序翻译成不同的格式" class="headerlink" title="程序被其他程序翻译成不同的格式"></a>程序被其他程序翻译成不同的格式</h1><ul>
+<h2 id="程序被其他程序翻译成不同的格式"><a href="#程序被其他程序翻译成不同的格式" class="headerlink" title="程序被其他程序翻译成不同的格式"></a>程序被其他程序翻译成不同的格式</h2><ul>
 <li>编译系统<ul>
 <li><strong>预处理阶段</strong>。预处理器（cpp）根据以字符#开头的命令，修改原始的C程序。通常生成以<code>.i</code>为后缀名的文件。</li>
 <li><strong>编译阶段</strong>。编译器（ccl）将文本文件<code>hello.i</code>翻译成文本文件<code>hello.s</code>，它包含一个汇编语言程序。<ul>
@@ -275,12 +273,12 @@
 </ul>
 </li>
 </ul>
-<h1 id="了解编译系统如何工作是大有益处的"><a href="#了解编译系统如何工作是大有益处的" class="headerlink" title="了解编译系统如何工作是大有益处的"></a>了解编译系统如何工作是大有益处的</h1><ul>
+<h2 id="了解编译系统如何工作是大有益处的"><a href="#了解编译系统如何工作是大有益处的" class="headerlink" title="了解编译系统如何工作是大有益处的"></a>了解编译系统如何工作是大有益处的</h2><ul>
 <li>优化程序性能</li>
 <li>理解链接时出现的错误</li>
 <li>避免安全漏洞</li>
 </ul>
-<h1 id="处理器读并解释储存在内存中的指令"><a href="#处理器读并解释储存在内存中的指令" class="headerlink" title="处理器读并解释储存在内存中的指令"></a>处理器读并解释储存在内存中的指令</h1><ul>
+<h2 id="处理器读并解释储存在内存中的指令"><a href="#处理器读并解释储存在内存中的指令" class="headerlink" title="处理器读并解释储存在内存中的指令"></a>处理器读并解释储存在内存中的指令</h2><ul>
 <li><p>shell是一个命令行解释器，它输出一个提示符，等待输入一个命令行，然后执行这个命令。</p>
 </li>
 <li><p>系统的硬件组成</p>
@@ -316,7 +314,7 @@
 </li>
 </ul>
 </li>
-<li><p>运行hello程序</p>
+<li><p>运行 hello 程序</p>
 <ul>
 <li>初始时，shell程序执行它的指令，等待我们输入一个指令。当我们在键盘上输入字符串<code>./hello</code>后，shell程序将字符逐一读入寄存器，再把它存放内存中。</li>
 <li>当我们在键盘上敲回车键时，shell程序就知道我们已经结束了命令的输入。然后shell执行一系列指令来加载可执行的<code>hello</code>文件。这些指令将<code>hello</code>目标文件中的代码和数据从磁盘复制到主存。数据包括最终会被输出的字符串<code>&quot;hello, world\n&quot;</code>。<ul>
@@ -327,11 +325,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="高速缓存至关重要"><a href="#高速缓存至关重要" class="headerlink" title="高速缓存至关重要"></a>高速缓存至关重要</h1><ul>
+<h2 id="高速缓存至关重要"><a href="#高速缓存至关重要" class="headerlink" title="高速缓存至关重要"></a>高速缓存至关重要</h2><ul>
 <li>较大的存储设备要比较小的存储设备运行得慢，而快速设备的造价远高于同类的低速设备。</li>
 <li>针对这种处理器和主存之间的差异，系统设计者采用了更小更快的存储设备，称为<strong>高速缓存存储器（cache memory，简称为cache或高速缓存）</strong>，作为暂时的集结区域，存放处理器近期可能会需要的信息。</li>
 </ul>
-<h1 id="存储设备形成层次结构"><a href="#存储设备形成层次结构" class="headerlink" title="存储设备形成层次结构"></a>存储设备形成层次结构</h1><ul>
+<h2 id="存储设备形成层次结构"><a href="#存储设备形成层次结构" class="headerlink" title="存储设备形成层次结构"></a>存储设备形成层次结构</h2><ul>
 <li>每个计算机系统中的存储设备都被组织成了一个存储器层次结构。</li>
 <li>存储器层次结构的主要思想是上一层的存储器作为低一层存储器的高速缓存。</li>
 <li>操作系统的两个基本功能：<ul>
@@ -340,10 +338,10 @@
 </ul>
 </li>
 <li>文件是对I&#x2F;O设备的抽象。<ul>
-<li>文件就是字节序列，每个I&#x2F;O设备，包括磁盘、键盘、显示器，甚至网络，都可以看成是文件。</li>
+<li>文件就是字节序列，每个 I&#x2F;O 设备，包括磁盘、键盘、显示器，甚至网络，都可以看成是文件。</li>
 </ul>
 </li>
-<li>虚拟内存是对主存和磁盘I&#x2F;O设备的抽象表示。<ul>
+<li>虚拟内存是对主存和磁盘 I&#x2F;O 设备的抽象表示。<ul>
 <li>每个进程看到的内存都是一致的，称为虚拟地址空间。它们可分为以下区域：<ul>
 <li><strong>程序代码和数据</strong>。对所有的进程来说，代码是从同一固定地址开始，紧接着的是和C全局变量相对应的数据位置。代码和数据区是直接按照可执行目标文件的内容初始化的。</li>
 <li><strong>堆</strong>。代码和数据区后紧随着的是运行时堆。代码和数据区在进程的一开始运行时就被指定了大小，而堆可以在运行时动态地扩展和收缩。</li>
@@ -354,28 +352,28 @@
 </li>
 </ul>
 </li>
-<li>进程是对处理器、主存和I&#x2F;O设备的抽象表示。<ul>
+<li>进程是对处理器、主存和 I&#x2F;O 设备的抽象表示。<ul>
 <li>进程是操作系统对一个正在运行的程序的一种抽象。</li>
 <li><strong>并发运行</strong>是说一个进程的指令和另一个进程的指令是交错执行的。</li>
 <li>传统系统在一个时刻只能执行一个程序，而先进的<strong>多核</strong>处理器同时能执行多个程序。</li>
-<li>无论是单核还是多核系统中，一个CPU看上去都像是在并发地执行多个进程，这是通过处理器在进程间切换来实现的。操作系统实现这种交错执行的机制称为<strong>上下文切换</strong>。</li>
+<li>无论是单核还是多核系统中，一个 CPU 看上去都像是在并发地执行多个进程，这是通过处理器在进程间切换来实现的。操作系统实现这种交错执行的机制称为<strong>上下文切换</strong>。</li>
 <li>操作系统保持跟踪进程运行所需的所有状态信息。这种状态，也就是<strong>上下文</strong>，包括许多信息，比如PC和寄存器文件的当前值，以及主存的内容。当操作系统决定要把控制权从当前进程转移到某个新进程时，就会进行<strong>上下文切换</strong>，即保存当前进程的上下文、恢复新进程的上下文，然后将控制权传递到新进程。</li>
 <li>从一个进程到另一个进程的转换是由操作系统<strong>内核</strong>管理的。内核不是一个独立的进程。相反，它是系统管理全部进程所用代码和数据结构的集合。</li>
 <li>一个进程实际上可以由多个称为线程的执行单元组成，每个线程都运行在进程的上下文中，并共享同样的代码和全局数据。</li>
 </ul>
 </li>
 </ul>
-<h1 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h1><ul>
+<h2 id="系统之间利用网络通信"><a href="#系统之间利用网络通信" class="headerlink" title="系统之间利用网络通信"></a>系统之间利用网络通信</h2><ul>
 <li>现代系统经常通过网络和其他系统连接到一起。</li>
 </ul>
-<h1 id="重要主题"><a href="#重要主题" class="headerlink" title="重要主题"></a>重要主题</h1><ul>
+<h2 id="重要主题"><a href="#重要主题" class="headerlink" title="重要主题"></a>重要主题</h2><ul>
 <li>Amdahl定律的主要思想是当我们对系统的某个部分加速时，其对系统整体性能的影响取决于该部分的重要性和加速程度。</li>
 <li><strong>并发</strong>是一个通用的概念，指一个同时具有多个活动的系统。</li>
 <li><strong>并行</strong>指的是用并发来使一个系统运行得更快。</li>
 <li>处理必须在多个任务间切换，大多数实际的计算也都是由一个处理器来完成的。这种配置称为<strong>单处理系统</strong>。</li>
 <li>当构建一个由但操作系统内核控制的多处理器组成的系统时，我们就得到了一个<strong>多处理系统</strong>。</li>
-<li>多核处理器是将多个CPU（称为“核”）集成在一个集成电路芯片上。</li>
-<li>超线程，有时称为<strong>多线程</strong>，是一项允许一个CPU执行多个控制流的技术。</li>
+<li>多核处理器是将多个 CPU（称为“核”）集成在一个集成电路芯片上。</li>
+<li>超线程，有时称为<strong>多线程</strong>，是一项允许一个 CPU 执行多个控制流的技术。</li>
 <li>多处理器的使用可以从两方面提高系统性能。首先，它减少了在执行多个任务时模拟并发的需要。其次，它可以使应用程序执行地更快。</li>
 <li>在较低的抽象层次上，现代处理器可以同时执行多条指令的属性称为<strong>指令级并行</strong>。</li>
 <li>在<strong>流水线</strong>中，将执行一条指令所需要的活动划分成不同的步骤，将处理器的硬件组织成一系列的阶段，每个阶段执行一个步骤。</li>
@@ -383,7 +381,121 @@
 <li>允许一条指令产生多个可以并行执行的操作，这种方式称为单指令、多数据，即SIMD并行。</li>
 <li><strong>虚拟机</strong>提供对整个计算机的抽象，包括操作系统、处理器和程序。</li>
 </ul>
-
+<h1 id="第二章-信息的表示与处理"><a href="#第二章-信息的表示与处理" class="headerlink" title="第二章 信息的表示与处理"></a>第二章 信息的表示与处理</h1><ul>
+<li>现代计算机存储和处理的信息以二进制信号表示（<strong>位</strong>），他们形成了数字革命的基础。</li>
+<li>当把位组合在一起，再加上某种<strong>解释</strong>，我们就可以描述任何有限集合的元素。</li>
+<li><strong>无符号</strong>编码基于传统的二进制表示法，表示大于或等于零的数字。</li>
+<li><strong>补码</strong>编码是表示有符号整数的最常见的方式，有符号整数就是可以为正或者为负的数字。</li>
+<li><strong>浮点数</strong>编码是表示实数的科学记数法以2为基数的版本。</li>
+<li>当结果太大以至于不能表示时，某些运算就会<strong>溢出</strong>。</li>
+<li>整数的表示虽然只能编码一个相对较小的数值范围，但是这种表示是精准的；而浮点数虽然可以编码一个较大的数值范围，但这种表示只是近似的。浮点数的计算可能因为运算过程的不同而影响正常结果，整数则不会。</li>
+</ul>
+<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><ul>
+<li>大多数计算机使用8位的块（字节 byte），作为最小的可寻址的内存单位，而不是位。</li>
+<li>机器级程序将内存视为一个非常大的字节数组，称为<strong>虚拟内存</strong>。</li>
+<li>内存的每一个字节都由一个唯一的数字来标识，称为它的<strong>地址</strong>。</li>
+<li>所有可能的地址的集合就称为<strong>虚拟地址空间</strong>。</li>
+</ul>
+<h3 id="十六进制表示法"><a href="#十六进制表示法" class="headerlink" title="十六进制表示法"></a>十六进制表示法</h3><ul>
+<li>一个字节由8位组成。在二进制表示法中，它的值域是00000000<sub>2 </sub>~ 11111111<sub>2</sub>。如果看成十进制整数，它的值域就是0<sub>10</sub> ~ 255<sub>10</sub>。</li>
+<li>二进制和十六进制的之间的转换可以通过展开每个十六进制数字，将它转换为二进制格式。</li>
+<li>将一个十进制数字 x 转换为十六进制，可以反复地用16除 x。</li>
+</ul>
+<h3 id="字数据大小"><a href="#字数据大小" class="headerlink" title="字数据大小"></a>字数据大小</h3><ul>
+<li>每台计算机都有一个字长（word size），指明指针数据的标称大小（nominal size）。字长决定的最重要的系统参数就是虚拟地址空间的最大大小。</li>
+<li>对于一个字长为 ω 位的机器而言，虚拟地址的范围为0 ~ 2<sup>ω </sup> - 1。</li>
+<li>大多数64位机器也可以运行为32位机器编译的程序，这是一种向后兼容。</li>
+<li>数据类型 long 一般在32位程序中为4字节，在64位程序中则为8字节。为了避免由于依赖“典型”大小和不同编译器设置带来的奇怪行为，ISO C99引入一类数据类型，其数据大小是固定的，不随编译器和机器设置而变化，其中就有数据类型 int32_t 和 int64_t，它们分别为4个字节和8个字节。</li>
+</ul>
+<h3 id="寻址和字节顺序"><a href="#寻址和字节顺序" class="headerlink" title="寻址和字节顺序"></a>寻址和字节顺序</h3><ul>
+<li><strong>小端法</strong>：最低有效字节在最前面的方式。</li>
+<li><strong>大端法</strong>：最高有效字节在最前面的方式。</li>
+<li>许多比较新的微处理器是<strong>双端法</strong>，可以把配置成作为大端或者小端的机器运行。</li>
+<li><strong>反汇编器</strong>：一种确定可执行程序文件所表示的指令序列的工具。</li>
+</ul>
+<h3 id="表示字符串"><a href="#表示字符串" class="headerlink" title="表示字符串"></a>表示字符串</h3><ul>
+<li>在使用 ASCII 码作为字符码的任何系统上都将得到相同的结果，与字节顺序和字大小无关。因而，文本数据比二进制数据具有更强的平台独立性。</li>
+</ul>
+<h3 id="表示代码"><a href="#表示代码" class="headerlink" title="表示代码"></a>表示代码</h3><ul>
+<li>不同的机器类型使用不同且不兼容的指令和编码方式。</li>
+</ul>
+<h3 id="布尔代数简介"><a href="#布尔代数简介" class="headerlink" title="布尔代数简介"></a>布尔代数简介</h3><ul>
+<li><p>位向量就是固定长度为 ω 、由0和1组成的串。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>~</th>
+<th></th>
+<th></th>
+<th>&amp;</th>
+<th>0</th>
+<th>1</th>
+<th></th>
+<th>|</th>
+<th>0</th>
+<th>1</th>
+<th></th>
+<th>^</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>0</strong></td>
+<td>1</td>
+<td></td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+<td></td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>1</td>
+<td></td>
+<td><strong>0</strong></td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>0</td>
+<td></td>
+<td><strong>1</strong></td>
+<td>0</td>
+<td>1</td>
+<td></td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td><strong>1</strong></td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="C-语言的位级运算"><a href="#C-语言的位级运算" class="headerlink" title="C 语言的位级运算"></a>C 语言的位级运算</h3><ul>
+<li>C 语言的一个有用的特性就是它支持布尔运算。</li>
+<li>位级运算的一个常见用法就是实现<strong>掩码</strong>运算，这里掩码是一个位模式，表示从一个字中选出的位的集合。</li>
+</ul>
+<h3 id="C语言中的逻辑计算"><a href="#C语言中的逻辑计算" class="headerlink" title="C语言中的逻辑计算"></a>C语言中的逻辑计算</h3><ul>
+<li>C语言还提供了一组逻辑运算符 || 、&amp;&amp; 和 !，分别对应 OR 、AND 和 NOT运算。逻辑运算认为所有非零的参数都表示 TRUE，而参数0表示 FALSE。它们返回1或者0，分别表示结果为 TRUE 或者为 FALSE。</li>
+<li>逻辑运算符 &amp;&amp; 和 || 与它们对应的位级运算 &amp; 和 | 之间第二个重要的区别是，如果对第一个参数求值就能确定表达式的结果，那么逻辑运算符就不会对第二个参数求值。</li>
+</ul>
+<h3 id="C语言中的移位运算"><a href="#C语言中的移位运算" class="headerlink" title="C语言中的移位运算"></a>C语言中的移位运算</h3><ul>
+<li>C 语言还提供了一组<strong>移位</strong>运算，向左或者向右移动位模式。C 表达式 x&lt;&lt;k 会生成一个值，x 向左移动 k 位，丢弃最高的 k 位，并在右端补 k 个0。移位运算时从左至右可结合的。</li>
+<li>一般而言，机器支持两种形式的右移：<strong>逻辑右移</strong>和<strong>算术右移</strong>。<ul>
+<li>逻辑右移是在左端补 k 个0。</li>
+<li>算术右移是在左端补 k 个最高有效位的值，它对有符号整数数据的运算非常有用。</li>
+</ul>
+</li>
+<li>C 语言标准并没有明确定义对于有符号数应该使用哪种类型的右移——算术右移或者逻辑右移都可以。</li>
+<li>对于无符号数，右移必须是逻辑的。</li>
+<li>与 C 相比，Java 对于如何进行右移有明确的定义。表达是 x&gt;&gt;k 会将 x 算术右移 k 个位置，而 x&gt;&gt;&gt;k 会对 x 做逻辑右移。</li>
+</ul>
+<h2 id="整数表示"><a href="#整数表示" class="headerlink" title="整数表示"></a>整数表示</h2>
     </div>
 
     
@@ -396,13 +508,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/05/15/Python%E5%AD%A6%E4%B9%A0/Python%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" rel="prev" title="Python基本语法">
-                  <i class="fa fa-chevron-left"></i> Python基本语法
+                <a href="/2024/03/07/%E6%9C%AD/%E3%80%8A%E7%97%85%E9%9A%99%E9%9A%8F%E7%AC%94%E3%80%8B/" rel="prev" title="《病隙随笔》">
+                  <i class="fa fa-chevron-left"></i> 《病隙随笔》
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/05/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E7%BB%AA%E8%AE%BA/" rel="next" title="第一章 绪论">
-                  第一章 绪论 <i class="fa fa-chevron-right"></i>
+                <a href="/2024/03/07/%E6%9C%AD/%E3%80%8A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%E3%80%8B/" rel="next" title="《毛泽东选集》">
+                  《毛泽东选集》 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
