@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%B8%B2%E7%AB%A0-%E4%B8%B2/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -207,7 +207,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%B8%B2%E7%AB%A0-%E4%B8%B2/" class="post-title-link" itemprop="url">第串章 串</a>
+          <a href="/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">第五章 树与二叉树</a>
         </h2>
 
         <div class="post-meta-container">
@@ -219,7 +219,646 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-03-12 00:00:00 / Modified: 23:56:07" itemprop="dateCreated datePublished" datetime="2024-03-12T00:00:00+08:00">2024-03-12</time>
+      <time title="Created: 2024-03-15 00:00:00 / Modified: 10:46:28" itemprop="dateCreated datePublished" datetime="2024-03-15T00:00:00+08:00">2024-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="树的基本概念"><a href="#树的基本概念" class="headerlink" title="树的基本概念"></a>树的基本概念</h1><h2 id="数的定义和基本术语"><a href="#数的定义和基本术语" class="headerlink" title="数的定义和基本术语"></a>数的定义和基本术语</h2><ul>
+<li>树：从树根生发，逐级分支。</li>
+<li>空树：结点数为0的树。</li>
+<li>非空树的特性：<ul>
+<li>有且仅有一个根结点。</li>
+<li>没有后继的结点称为“叶子结点”（或终端结点）。</li>
+<li>有后继的结点称为“分支结点”（或非终端结点）。</li>
+<li>除了根结点外，任何一个结点都<strong>有且仅有一个</strong>前驱。</li>
+<li>每个结点可以有一个或多个后驱。</li>
+</ul>
+</li>
+<li>树是 n （n &gt;&#x3D; 0）个<strong>结点</strong>的有限集合，n &#x3D; 0 时，称为<strong>空树</strong>，这是一种特殊情况。在任意一颗<strong>非空树</strong>中应满足：<ol>
+<li>有且仅有一个特定的称为<strong>根</strong>的结点。</li>
+<li>当 n &gt; 1 时，其余结点可分为 m (m &gt; 0)个<strong>互不相交的有限集合</strong> T<sub>1</sub>,T<sub>2</sub>,…T<sub>m</sub>，其中每个集合本身又是一颗树，并且称为根结点的<strong>子树</strong>。</li>
+</ol>
+</li>
+<li>树是递归定义的数据结构。</li>
+<li>结点之间的关系描述：<ul>
+<li>祖先结点</li>
+<li>子孙结点</li>
+<li>双亲结点（父结点）</li>
+<li>孩子结点</li>
+<li>兄弟结点</li>
+<li>堂兄弟结点</li>
+<li>两个结点之间的<strong>路径</strong>：只能从上往下</li>
+<li><strong>路径长度</strong>：经过几条边</li>
+</ul>
+</li>
+<li>结点和树的属性描述：<ul>
+<li>结点的层次（深度）——从上往下数</li>
+<li>结点的高度——从下往上数</li>
+<li>树的高度（深度）——总共多少层</li>
+<li><strong>结点的度</strong>——有几个孩子（分支）</li>
+<li><strong>树的度</strong>——各结点的度的最大值</li>
+</ul>
+</li>
+<li>有序树：逻辑上看，树中结点的各子树从左至右是<strong>有次序的</strong>，不能互换。</li>
+<li>有序树：逻辑上看，树中结点的各子树从左至右是<strong>无次序的</strong>，不能互换。</li>
+<li>森林：森林是 m(M &gt;&#x3D; 0)棵互不相交的树的集合。</li>
+</ul>
+<h2 id="树的性质"><a href="#树的性质" class="headerlink" title="树的性质"></a>树的性质</h2><ul>
+<li><p>结点数 &#x3D; 总度数 + 1</p>
+</li>
+<li><p>树的度——各结点度的最大值</p>
+</li>
+<li><p>m叉树——每个结点最多只能有m个孩子的树</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>度为 m 的树</th>
+<th>m 叉树</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任意结点的度 &lt;&#x3D; m（最多 m 个孩子）</td>
+<td>任意结点的度 &lt;&#x3D; m（最多 m 个孩子）</td>
+</tr>
+<tr>
+<td>至少有一个结点度 &#x3D; m（有 m 个孩子）</td>
+<td>允许所有结点的度都 &lt;  m</td>
+</tr>
+<tr>
+<td>一定是非空树，至少有 m + 1 个结点</td>
+<td>可以是空树</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>度为 m 的树第 i 层至多有 m<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</p>
+<ul>
+<li>m 叉树第 i 层至多有m<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</li>
+</ul>
+</li>
+<li><p>高度为 h 的 m 叉树至多有$\frac{m^h-1}{m-1}$（等比求和）</p>
+</li>
+<li><p>高度为 h 的 m 叉树至少有 h 个结点；高度为 h 同时度为 m 的树至少有 h+m-1 个结点。</p>
+</li>
+<li><p>具有 n 个结点的 m 叉树的最小高度为 log<sub>m</sub>(n(m-1)+1)。</p>
+</li>
+</ul>
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的定义和基本术语"><a href="#二叉树的定义和基本术语" class="headerlink" title="二叉树的定义和基本术语"></a>二叉树的定义和基本术语</h2><ul>
+<li>m 叉树是 n （n &gt;&#x3D; 0）个结点的有限集合：<ul>
+<li>或者为<strong>空二叉树</strong>，即 n &#x3D; 0。</li>
+<li>或者由一个<strong>根结点</strong>和两个互不相交的被称为根的<strong>左子树</strong>和<strong>右子树</strong>组成。左子树和右子树分别是一颗二叉树。</li>
+<li>特点：<ul>
+<li>每个结点至多只有两棵子树</li>
+<li>左右子树不能颠倒（二叉树<strong>是有序树</strong>）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二叉树是递归定义的数据结构。</li>
+<li>二叉树的五种状态：<ul>
+<li>空二叉树</li>
+<li>只有左子树</li>
+<li>只有右子树</li>
+<li>只有根结点</li>
+<li>左右子树都有</li>
+</ul>
+</li>
+<li>几个特殊的二叉树：<ul>
+<li><strong>满二叉树</strong>。一棵高度为 h，且含有2<sup>h</sup>-1个结点的二叉树。特点：<ul>
+<li>只有最后一层有叶子结点。</li>
+<li>不存在度为1的结点。</li>
+<li>按层序从1开始编号，结点 i 的左孩子为 2i，右孩子为 2i+1；结点 i 的父结点为 i&#x2F;2。</li>
+</ul>
+</li>
+<li><strong>完全二叉树</strong>。当且进当其每个结点都与高度为 h 的满二叉树中编号为 1~n 的结点一一对应时，称为完全二叉树。特点：<ul>
+<li>只有最后两层可能有叶子结点。</li>
+<li>最多只有一个度为1的结点。</li>
+<li>按层序从1开始编号，结点 i 的左孩子为 2i，右孩子为 2i+1；结点 i 的父结点为 i&#x2F;2。</li>
+<li>i &lt;&#x3D; n&#x2F;2 为分支结点，i &gt; n&#x2F;2 为叶子结点。</li>
+<li>如果某结点只有一个孩子，那么一定是左孩子。</li>
+</ul>
+</li>
+<li><strong>二叉排序树</strong>。一棵二叉树或者是空二叉树，或者是具有如下性质的二叉树：<ul>
+<li><strong>左子树</strong>上所有结点的<strong>关键字</strong>均<strong>小于根结点</strong>的关键字。</li>
+<li><strong>右子树</strong>上所有结点的<strong>关键字</strong>均<strong>大于根结点</strong>的关键字。</li>
+<li>左子树和右子树又各是一颗二叉排序树。</li>
+</ul>
+</li>
+<li><strong>平衡二叉树</strong>。树上任一结点的<strong>左子树</strong>和<strong>右子树</strong>的<strong>深度之差不超过1</strong>。<ul>
+<li>平衡二叉树能有更高的搜索效率。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><ul>
+<li>设非空二叉树度为0、1和2的结点个数分别为n<sub>0</sub>、n<sub>1</sub>和n<sub>2</sub>，则 n<sub>0</sub> &#x3D; n<sub>2</sub> + 1（叶子结点比二分支结点多一个）</li>
+<li>二叉树第 i 层至多有 2<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</li>
+<li>高度为 h 的二叉树至多有$2^h-1$（等比求和）</li>
+<li>具有 n 个(n &gt; 0)结点的完全二叉树的高度 h 为 log<sub>2</sub>(n+1) 或 log<sub>2</sub>n + 1</li>
+<li>对于完全二叉树，可以由结点数 n 推出度为0、1和2的结点个数分别为n<sub>0</sub>、n<sub>1</sub>和n<sub>2</sub><ul>
+<li>完全二叉树最多只有一个度为1的结点，即 n<sub>1</sub> &#x3D; 0或1，而n<sub>0</sub> &#x3D; n<sub>2</sub> + 1故n<sub>0 </sub>+ n<sub>2</sub> 一定是奇数<ul>
+<li>若完全二叉树有 2k （偶数）个结点，则必有n<sub>1</sub> &#x3D; 1，n<sub>0</sub> &#x3D; k，n<sub>2</sub> &#x3D; k-1</li>
+<li>若完全二叉树有 2k-1 （奇数）个结点，则必有n<sub>1</sub> &#x3D; 0，n<sub>0</sub> &#x3D; k，n<sub>2</sub> &#x3D; k-1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h3 id="二叉树的顺序存储"><a href="#二叉树的顺序存储" class="headerlink" title="二叉树的顺序存储"></a>二叉树的顺序存储</h3><ul>
+<li><p>顺序存储的实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 100</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    ElemType value;	<span class="comment">//结点中的数据元素</span></span><br><span class="line">    <span class="type">bool</span> isEmpty;	<span class="comment">//结点是否为空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TreeNode t[MaxSize];</span><br></pre></td></tr></table></figure>
+
+<p>定义一个长度为 MaxSize 的数组 t，按照从上至下、从左至右的顺序依次存储<strong>完全二叉树</strong>中的各个结点。</p>
+</li>
+<li><p>几个重要的基本操作</p>
+<ul>
+<li>i 的左孩子—— 2i</li>
+<li>i 的右孩子—— 2i+1</li>
+<li>i 的父结点—— i&#x2F;2</li>
+<li>i 所在的层次—— log<sub>2</sub>(n+1))或 log<sub>2</sub>n + 1</li>
+</ul>
+</li>
+<li><p>若<strong>完全二叉树</strong>中共有 n 个结点</p>
+<ul>
+<li>判断 i 是否有左孩子——2i &lt;&#x3D; n</li>
+<li>判断 i 是否有右孩子——2i+1 &lt;&#x3D; n</li>
+<li>判断 i 是否是叶子或分支结点——i &gt; n&#x2F;2</li>
+</ul>
+</li>
+<li><p>如果不是<strong>完全二叉树</strong>，依然按层序将各结点顺序存储，则无法从结点编号反映出结点间的逻辑关系。</p>
+</li>
+<li><p>二叉的顺序存储中，一定要把二叉树的结点编号与<strong>完全二叉树</strong>对应起来。</p>
+</li>
+<li><p>最坏情况：高度为 h 且只有 h 个结点的单支树（所有结点只有右孩子），也至少需要 2<sup>h</sup>-1个存储单元。</p>
+</li>
+</ul>
+<h3 id="二叉树的链式存储"><a href="#二叉树的链式存储" class="headerlink" title="二叉树的链式存储"></a>二叉树的链式存储</h3><ul>
+<li><p>链式存储的代码实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span>	<span class="comment">//左、右孩子指针</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
+
+<p>n 个结点的二叉链表共有 n+1 个空链域。</p>
+</li>
+<li><p>二叉树的建立</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ElemType</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一棵空树</span></span><br><span class="line">BiTree root = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入根结点</span></span><br><span class="line">root = (BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTree));</span><br><span class="line">root-&gt;data = &#123;<span class="number">1</span>&#125;;</span><br><span class="line">root-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入新结点</span></span><br><span class="line">BiTNode * p = (BiTNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTNode));</span><br><span class="line">p-&gt;data = &#123;<span class="number">2</span>&#125;;</span><br><span class="line">p-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">p-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;lchild = p;	<span class="comment">//作为根结点的左孩子</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>三叉链表——方便找父结点</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span>	<span class="comment">//左、右孩子指针</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">parent</span>;</span>	<span class="comment">//父结点指针</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二叉树的先-x2F-中-x2F-后序遍历"><a href="#二叉树的先-x2F-中-x2F-后序遍历" class="headerlink" title="二叉树的先&#x2F;中&#x2F;后序遍历"></a>二叉树的先&#x2F;中&#x2F;后序遍历</h2><ul>
+<li><p>遍历：按照某种次序把所有结点都访问一遍。</p>
+</li>
+<li><p>层次遍历：基于树的层次特性确定的次序规则。</p>
+</li>
+<li><p>先&#x2F;中&#x2F;后序遍历：基于树的递归特性确定的次序规则。</p>
+<ul>
+<li>先序遍历：根左右（NLR）</li>
+<li>中序遍历：左根右（LNR）</li>
+<li>后序遍历：左右根（LRN）</li>
+</ul>
+</li>
+<li><p>二叉树的递归特性：</p>
+<ul>
+<li>要么是个空二叉树。</li>
+<li>要么就是由“根结点+左子树+右子树”组成的二叉树。</li>
+</ul>
+</li>
+<li><p>算术表达式的“分析树”</p>
+<ul>
+<li>先序遍历：根左右 -&gt; 前缀表达式</li>
+<li>中序遍历：左根右 -&gt; 中缀表达式（需要加界限符）</li>
+<li>后序遍历：左右根 -&gt; 后缀表达式</li>
+</ul>
+</li>
+<li><p><strong>先序遍历</strong>的代码实现</p>
+<ol>
+<li>若二叉树为空，则什么都不做</li>
+<li>若二叉树非空：<ol>
+<li>访问根节点</li>
+<li>先序遍历左子树</li>
+<li>先序遍历右子树</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        PreOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>中序遍历</strong>的代码实现</p>
+<ol>
+<li>若二叉树为空，则什么都不做</li>
+<li>若二叉树非空：<ol>
+<li>先序遍历左子树</li>
+<li>访问根节点</li>
+<li>先序遍历右子树</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>后序遍历</strong>的代码实现</p>
+<ol>
+<li>若二叉树为空，则什么都不做</li>
+<li>若二叉树非空：<ol>
+<li>先序遍历左子树</li>
+<li>先序遍历右子树</li>
+<li>访问根节点</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PostOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        PostOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PostOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>先序遍历——第一次路过时访问结点</p>
+</li>
+<li><p>中序遍历——第二次路过时访问结点</p>
+</li>
+<li><p>后序遍历——第三次路过时访问结点</p>
+</li>
+<li><p>应用：求树的深度</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">treeDepth</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> l = treeDepth(T-&gt;lchild);</span><br><span class="line">        <span class="type">int</span> r = treeDepth(T-&gt;rchild);</span><br><span class="line">        <span class="comment">//树的深度 = Max(左子树深度，右子树深度)+1</span></span><br><span class="line">        <span class="keyword">return</span> l &gt; r ? l+<span class="number">1</span> : r+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><ul>
+<li><p>算法思想：</p>
+<ol>
+<li>初始化一个辅助<strong>队列</strong></li>
+<li>根结点入队</li>
+<li>若队列非空，则队头结点出队，访问该结点，并将其左、右孩子插入队尾（如果有的话）</li>
+<li>重复上一步直至队列为空</li>
+</ol>
+</li>
+<li><p>代码实现</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二叉树的结点（链式存储）</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链式队列结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> &#123;</span></span><br><span class="line">    BiTNode * data;	<span class="comment">//存指针而不是结点</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;LinkNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    LinkNode *front, *rear;	<span class="comment">//队头队尾</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//层序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">LevelOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    LinkQueue Q;</span><br><span class="line">    InitQueue(Q);	<span class="comment">//初始化辅助队列</span></span><br><span class="line">    BiTree p;</span><br><span class="line">    EnQueue(Q, T);	<span class="comment">//将根结点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!IsEmpty(Q)) &#123;	<span class="comment">//队列不空则循环</span></span><br><span class="line">        DeQueue(Q, p);	<span class="comment">//队列结点出队</span></span><br><span class="line">        visit(p);	<span class="comment">//访问出队结点</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;lchild != <span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q, p-&gt;lchild);	<span class="comment">//左孩子入队</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;rchild != <span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q, p-&gt;rchild);	<span class="comment">//右孩子入队</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="由遍历序列构造二叉树"><a href="#由遍历序列构造二叉树" class="headerlink" title="由遍历序列构造二叉树"></a>由遍历序列构造二叉树</h2><ul>
+<li>一个中&#x2F;前&#x2F;后&#x2F;层序遍历序列可能对应<strong>多种</strong>二叉树形态。<strong>中序</strong> + 前&#x2F;后&#x2F;层序遍历可得到唯一二叉树。</li>
+<li>由前序&#x2F;后序&#x2F;层序找到树的根结点，并根据中序序列划分左右子树，再找到左右子树根结点。</li>
+</ul>
+<h2 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h2><ul>
+<li><p>如何找到指定结点 p 在中序遍历序列中的前驱和后继：从根结点出发，重新进行一次中序遍历，指针 q 记录当前访问的结点，指针 pre 记录上一个被访问的结点。</p>
+</li>
+<li><p>当 q &#x3D;&#x3D; p 时，pre 为前驱。</p>
+</li>
+<li><p>当 pre &#x3D;&#x3D; p 时，q 为后继。</p>
+</li>
+<li><p>中序线索二叉树：</p>
+<ul>
+<li>前驱线索：左孩子指针充当</li>
+<li>后继线索：右孩子指针充当</li>
+</ul>
+</li>
+<li><p>线索二叉树的存储结构</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二叉树的结点（链式存储）</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;	</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二叉树线索化"><a href="#二叉树线索化" class="headerlink" title="二叉树线索化"></a>二叉树线索化</h2><ul>
+<li><p>借用 pre 指针找到中序前驱</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问结点 q</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(BiTNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q == p)	<span class="comment">//当前访问结点刚好是结点 p</span></span><br><span class="line">        final = pre;	<span class="comment">//找到 p 的前驱</span></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        pre = q;	<span class="comment">//pre 指向当前访问的结点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//辅助全局变量，用于查找结点 p 的前驱</span></span><br><span class="line">BiTNode * p;	<span class="comment">//p 指向目标结点</span></span><br><span class="line">BiTNode * pre == <span class="literal">NULL</span>;	<span class="comment">//指向当前访问的结点的前驱</span></span><br><span class="line">BiTNode * final == <span class="literal">NULL</span>;	<span class="comment">//用于记录最终结果</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>中序线索化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreateInThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">        InThread(T);	<span class="comment">//中序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>先序线索化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreatePreThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">       PreThread(T);	<span class="comment">//先序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        <span class="keyword">if</span> (T-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        	PreThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>后序线索化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreatePostThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">       PostThread(T);	<span class="comment">//后序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        PreThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="线索二叉树——找前驱-x2F-后继"><a href="#线索二叉树——找前驱-x2F-后继" class="headerlink" title="线索二叉树——找前驱&#x2F;后继"></a>线索二叉树——找前驱&#x2F;后继</h2><ul>
+<li><p>在中序线索二叉树中找到指定结点 *p 的中序后继 next</p>
+<ul>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 next &#x3D; p的右子树中最左下结点</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找到以 p 为根的子树中，第一个被中序遍历的结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Firstnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//循环找到最左下结点（不一定是叶结点）</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        p = p-&gt;lchild;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在中序线索二叉树中找到结点 p 的后继结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Nextnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//右子树中最左下结点</span></span><br><span class="line">    <span class="keyword">if</span>  (p-&gt;rtag == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> Firstnode(p-&gt;rchild);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;rchild;	<span class="comment">//rtag == 1直接返回后继线索</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对中序线索二叉树进行中序遍历（利用线索实现的非递归算法）	空间复杂度：O(1)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Inorder</span><span class="params">(ThreadNode *T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = Firstnode(T); p != <span class="literal">NULL</span>; p = Nextnode(p))</span><br><span class="line">        visit(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在中序线索二叉树中找到指定结点 *p 的中序前驱 pre</p>
+<ul>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则 next &#x3D; p的左子树中最右下结点</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找到以 p 为根的子树中，最后一个被中序遍历的结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Lastnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//循环找到最右下结点（不一定是叶结点）</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        p = p-&gt;lchild;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在中序线索二叉树中找到结点 p 的前驱结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Prenode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//左子树中最右下结点</span></span><br><span class="line">    <span class="keyword">if</span>  (p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> Firstnode(p-&gt;lchild);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;lchild;	<span class="comment">//rtag == 1直接返回后继线索</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对中序线索二叉树进行逆向中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">RevInorder</span><span class="params">(ThreadNode *T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = Lastnode(T); p != <span class="literal">NULL</span>; p = Prenode(p))</span><br><span class="line">        visit(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在先序线索二叉树中找到指定结点 *p 的先序后继 next</p>
+<ul>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 <ul>
+<li>若 p 有左孩子，则先序后继为左孩子</li>
+<li>若 p 没有左孩子，则先序后继为右孩子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在先序线索二叉树中找到指定结点 *p 的先序前驱 pre</p>
+<ul>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则<ul>
+<li>p 必有左孩子。由于先序遍历中左右子树中的结点只可能是根的后继，不可能是前驱。只能从头开始先序遍历找前驱。</li>
+<li>若改用三叉链表可以找到父节点<ul>
+<li>p 为左孩子，则 p 的父结点即为其前驱</li>
+<li>p 为右孩子，<ul>
+<li>其左兄弟为空，则 p 的父结点即为其前驱</li>
+<li>其左兄弟非空，则 p 的前驱为左兄弟子树中最后一个被先序遍历的结点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在后序线索二叉树中找到指定结点 *p 的后序前驱 pre</p>
+<ul>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
+<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则 p 必有左孩子<ul>
+<li>若 p 有右孩子，则后序前驱为右孩子</li>
+<li>若 p 没有右孩子，则后序前驱为左孩子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在后序线索二叉树中找到指定结点 *p 的先序后继 next</p>
+<ul>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
+<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 <ul>
+<li>p 必有右孩子。由于先序遍历中左右子树中的结点只可能是根的后继，不可能是前驱。只能从头开始先序遍历找前驱。</li>
+<li>若改用三叉链表可以找到父节点<ul>
+<li>p 为右孩子，则 p 的父结点即为其前驱</li>
+<li>p 为左孩子，<ul>
+<li>其右兄弟为空，则 p 的父结点即为其前驱</li>
+<li>其右兄弟非空，则 p 的前驱为右兄弟子树中第一个被后序遍历的结点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="树和森林"><a href="#树和森林" class="headerlink" title="树和森林"></a>树和森林</h1><h2 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h2><ul>
+<li><p>双亲表表示法（顺序存储）</p>
+<ul>
+<li>用数组顺序存储各个结点。每个结点中保存<strong>数据元素、指向双亲结点（父节点）的“指针”</strong>。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_TREE_SIZE 100	<span class="comment">//树中最多结点数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>	<span class="comment">//树的结点定义</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据元素</span></span><br><span class="line">    <span class="type">int</span> parent;	<span class="comment">//双亲位置域</span></span><br><span class="line">&#125; PTNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>	<span class="comment">//树的类型定义</span></span><br><span class="line">    PTNode nodes[MAX_TREE_SIZE];	<span class="comment">//双亲表示</span></span><br><span class="line">    <span class="type">int</span> n;	<span class="comment">//结点数</span></span><br><span class="line">&#125; PTree;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>优缺点：</p>
+<ul>
+<li><p>优点：找双亲（父结点）方便</p>
+</li>
+<li><p>缺点：找孩子不方便，只能从头到尾遍历整个数组</p>
+</li>
+<li><p>适用于“找父亲“多，”找孩子“少的应用场景。如：并查集</p>
+</li>
+</ul>
+</li>
+<li><p>双亲表示法也可表示<strong>森林</strong>，每棵树的根结点双亲指针 &#x3D; -1。</p>
+</li>
+</ul>
+</li>
+<li><p>孩子表示法（顺序存储 + 链式存储）</p>
+<ul>
+<li>用数组顺序存储各个节点。每个结点中保存<strong>数据元素、孩子链表头指针</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> child;	<span class="comment">//孩子结点在数组中的位置</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> *<span class="title">next</span>;</span>	<span class="comment">//下一个孩子</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> *<span class="title">firstChild</span>;</span>	<span class="comment">//第一个孩子</span></span><br><span class="line">&#125; CTBox;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    CTBox nodes[MAX_TREE_SIZE];</span><br><span class="line">    <span class="type">int</span> n, r;</span><br><span class="line">&#125; CTree;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>优缺点：<ul>
+<li>优点：找孩子很方便</li>
+<li>缺点：找双亲（父结点）不方便，只能遍历每个链表</li>
+<li>适用于“找父亲“少，”找孩子“多的应用场景。如：服务流程树</li>
+</ul>
+</li>
+<li>用孩子表示法存储<strong>森林</strong>，需要记录多个根的位置。</li>
+</ul>
+</li>
+<li><p>孩子兄弟表示法（链式存储）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span> *<span class="title">firstchild</span>, *<span class="title">nextsibling</span>;</span></span><br><span class="line">&#125; CSNode, *CSTree;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>树的孩子兄弟表示法与二叉树类似，采用<strong>二叉链表</strong>实现。每个结点内保存<strong>数据元素</strong>和<strong>两个指针</strong>，但两个指针的含义和二叉树结点不同。</li>
+<li>存储<strong>森林</strong>时，森林中每棵树的根结点视为平级的兄弟关系。</li>
+</ul>
+</li>
+</ul>
+<h2 id="树、森林和二叉树的转化"><a href="#树、森林和二叉树的转化" class="headerlink" title="树、森林和二叉树的转化"></a>树、森林和二叉树的转化</h2><ul>
+<li>树转换为二叉树<ol>
+<li>先在二叉树中，画一个根结点。</li>
+<li>按“树的层序”依次处理每个结点。<ul>
+<li>处理一个结点的方法是：如果当前处理的结点在树中有孩子，就把所有孩子结点用右指针串成一串，并在二叉树中把第一个孩子挂在当前结点的左指针上。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>森林转换为二叉树<ol>
+<li>先把所有树的根结点画出来，在二叉树中用右指针串成一串。</li>
+<li>按“森林的层序”依次处理每个结点。<ul>
+<li>处理一个结点的方法是：如果当前处理的结点在树中有孩子，就把所有孩子结点用右指针串成一串，并在二叉树中把第一个孩子挂在当前结点的左指针上。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>二叉树转换为树</li>
+</ul>
+<ol>
+<li>先画出树的根结点</li>
+<li>从树的根结点开始，按“树的层序”恢复每个结点的孩子<ul>
+<li>如何恢复一个结点的孩子，在二叉树中，如果当前处理的结点有左孩子，就把左孩子和一整串右指针拆下来，按顺序挂在当前结点的下面。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>二叉树转换为森林<ol>
+<li>先把二叉树的根结点和一整串右指针拆下来，作为多棵树的根结点</li>
+<li>按“森林的层序”恢复每个结点的孩子<ul>
+<li>如何恢复一个结点的孩子，在二叉树中，如果当前处理的结点有左孩子，就把左孩子和一整串右指针拆下来，按顺序挂在当前结点的下面。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="树、森林的遍历"><a href="#树、森林的遍历" class="headerlink" title="树、森林的遍历"></a>树、森林的遍历</h2><ul>
+<li><p>树的先根遍历（深度优先遍历）。若树非空，先访问根结点，再依次对每棵子树进行先根遍历。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//树的先根遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreOrder</span><span class="params">(TreeNode *R)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (R != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(R);	<span class="comment">//访问根结点</span></span><br><span class="line">        <span class="keyword">while</span> (R 还有下一个子树 T)</span><br><span class="line">            Prerder(T);	<span class="comment">//先根遍历下一棵子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>树的后根遍历（深度优先遍历）。若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//树的后根遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PostOrder</span><span class="params">(TreeNode *R)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (R != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (R 还有下一个子树 T)</span><br><span class="line">            Prerder(T);	<span class="comment">//后根遍历下一棵子树</span></span><br><span class="line">        visit(R);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>树的后根遍序列与这棵树相应二叉树的中序序列相同。</p>
+</li>
+<li><p>数的层次遍历（用队列实现）（广度优先遍历）</p>
+<ol>
+<li>若树非空，则根结点入队</li>
+<li>若队列非空，队头元素出队并访问，同时该元素的孩子依次入队</li>
+<li>重复上一步直至队空</li>
+</ol>
+</li>
+<li><p>先序遍历森林。</p>
+<ul>
+<li>若森林为非空，则按如下规则进行遍历：<ul>
+<li>访问森林中第一棵树的根结点</li>
+<li>先序遍历第一棵树中根结点的子树森林</li>
+<li>先序遍历除去第一棵树之后剩余的树构成的森林</li>
+</ul>
+</li>
+<li>效果等同于依次对二叉树的先序遍历。</li>
+</ul>
+</li>
+<li><p>中序遍历森林。</p>
+<ul>
+<li>若森林为非空，则按如下规则进行遍历：<ul>
+<li>中序遍历森林中第一棵树的根结点的子树森林</li>
+<li>访问第一棵树的根结点</li>
+<li>中序遍历除去第一棵树之后剩余的树构成的森林</li>
+</ul>
+</li>
+<li>效果等同于依次对各个树进行后根遍历</li>
+<li>转化为二叉树后效果等同于依次对二叉树的中序遍历</li>
+</ul>
+</li>
+</ul>
+<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><ul>
+<li>结点的<strong>权</strong>：有某种现实含义的数值（如：表示结点的重要性等）</li>
+<li><strong>结点的带权路径长度</strong>：从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积</li>
+<li><strong>树的带权路径长度</strong>：树中所有<strong>叶结点</strong>的带权路径长度之和（WPL，Weighted Path Length）</li>
+<li>在含有 n 个带权叶结点的二叉树中，其中<strong>带权路径长度（WPL）最小的二叉树</strong>称为<strong>哈夫曼树</strong>，也称<strong>最优二叉树</strong>。</li>
+<li>哈夫曼树的构造：给定 n 个权值分别为 w<sub>1</sub>，w<sub>2</sub>，…，w<sub>n</sub> 的结点。<ol>
+<li>将这 n 个结点分别作为 n 棵仅含一个结点的二叉树，构成森林 F。</li>
+<li>构造一个新结点，从 F 中选取两棵根结点权值最小的树作为新结点的左、右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。</li>
+<li>从 F 中删除刚才选出的两棵树，同时将新得到的树加入 F 中。</li>
+<li>重复以上两步，直至 F 中只剩下一棵树为止。</li>
+</ol>
+</li>
+<li>每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。</li>
+<li>哈夫曼树的结点总数为 2n-1。</li>
+<li>哈夫曼树中不存在度为1的结点。</li>
+<li>哈夫曼树并不唯一，但 WPL 必然相同且为最优。</li>
+<li>固定长度编码——每个字符用相等长度的二进制位表示。</li>
+<li>可变长度编码——允许对不同字符用不等长的二进制位表示。</li>
+<li>若没有一个编码是另一个编码的前缀，则称这样的编码为<strong>前缀编码</strong>。非前缀编码有歧义。</li>
+<li>由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，每个字符出现的频度作为结点的权值，再构建哈夫曼树。</li>
+</ul>
+<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><ul>
+<li><p>用互不相交的树，表示多个“集合”	</p>
+<ul>
+<li>如何“<strong>查</strong>”到一个元素到底属于哪一个集合——从指定元素出发，找到根结点</li>
+<li>如何把两个集合“<strong>并</strong>”为一个集合——让一棵树成为另一棵树的子树即可</li>
+</ul>
+</li>
+<li><p>“并查集”的存储结构：参考树的双亲表示法</p>
+<ul>
+<li>集合的两个基本操作——“并”和“查”<ul>
+<li>Find——“查”操作：确定一个指定元素所属集合</li>
+<li>Union——“并”操作：将两个不相交的集合合并为一个</li>
+<li>并查集（Disjoint Set）是逻辑结构——集合的一种具体实现，只进行“并”和“查”两种基本操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>“并查集”的代码实现——初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE 13</span></span><br><span class="line"><span class="type">int</span> UFSets[SIZE];</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化并查集</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Initial</span><span class="params">(<span class="type">int</span> S[])</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; SIZE; i++)</span><br><span class="line">        S[i] = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>“并查集”的代码实现——并、查</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find “查”操作，找 x 所属集合（返回 x 所属根结点）	最坏时间复杂度：O(n)</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span>(S[x] &gt;= <span class="number">0</span>)	<span class="comment">//循环寻找 x 的根</span></span><br><span class="line">        x = S[x];</span><br><span class="line">    <span class="keyword">return</span> x;	<span class="comment">//根的S[]小于0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Union “并”操作，将两个集合合并为一个	时间复杂度：O(1)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span> &#123;</span><br><span class="line">    <span class="comment">//要求 Root1 与 Root2 是不同的集合</span></span><br><span class="line">    <span class="keyword">if</span> (Root1 == Root2)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//将根 Root2 连接到另一根 Root1 下面</span></span><br><span class="line">    S[Root2] = Root1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优化思路：在每次 Union 操作构建树的时候，尽量不让树长高</p>
+<ul>
+<li>用根结点的绝对值表示树的结点总数（例如 -6 而不是 -1）</li>
+<li>Union 操作，让小树合并到大树</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Union “并”操作，小树合并到大树</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Root1 == Root2)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (S[Root2] &gt; S[Root1]) &#123;	<span class="comment">//Root2 结点数更少</span></span><br><span class="line">        S[Root1] += S[Root2];	<span class="comment">//累加结点总数</span></span><br><span class="line">        S[Root2] = Root1;	<span class="comment">//小树合并到大树</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        S[Root2] += S[Root1];	<span class="comment">//累加结点总数</span></span><br><span class="line">        S[Root1] = Root2;	<span class="comment">//小树合并到大树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该方法构造的树高不超过 log<sub>2</sub>n+1</p>
+</li>
+<li><p>并查集的进一步优化</p>
+<ul>
+<li><p>Find 操作的优化（压缩路径）：先找到根结点，再将查找路径上所有结点都挂到根结点下。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find “查”操作优化，先找到根结点，再进行“压缩路径”</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span> &#123;</span><br><span class="line">    <span class="type">int</span> root = x;</span><br><span class="line">    <span class="keyword">while</span> (S[root] &gt;= <span class="number">0</span>)</span><br><span class="line">        root = S[root];	<span class="comment">//循环找到根</span></span><br><span class="line">    <span class="keyword">while</span> (x != root) &#123;	<span class="comment">//压缩路径	</span></span><br><span class="line">        <span class="type">int</span> t = S[x];	<span class="comment">//t 指向 x 的父结点下</span></span><br><span class="line">        S[x] = root;	<span class="comment">//x 直接挂到根结点下</span></span><br><span class="line">        x = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;	<span class="comment">//返回根结点编号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每次 Find 操作，先找根，再“压缩路径”，可使树的高度不超过 O(α(n))。α(n) 是一个增长很缓慢的函数，对于常见的 n 值，通常 α(n) &lt;&#x3D; 4，因此优化后并查集的 Find、Union 操作时间开销都很低。</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/" class="post-title-link" itemprop="url">第四章 串</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-12T00:00:00+08:00">2024-03-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-13 11:38:26" itemprop="dateModified" datetime="2024-03-13T11:38:26+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -420,9 +1059,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-03-11 00:00:00 / Modified: 10:59:06" itemprop="dateCreated datePublished" datetime="2024-03-11T00:00:00+08:00">2024-03-11</time>
+      <time title="Created: 2024-03-11 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-11T00:00:00+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-13 21:47:42" itemprop="dateModified" datetime="2024-03-13T21:47:42+08:00">2024-03-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -756,7 +1401,7 @@
 </ul>
 </li>
 <li>按列优先原则将各元素存入一维数组中。<ul>
-<li>共有$\frac{n * (n+1)}{2}$个元素，按行优先原则a<sub>i,j</sub>是第[n + (n - 1) + … + (n - j + 2)] + (i - j) +1个元素。</li>
+<li>共有$\frac{n * (n+1)}{2}$个元素，按行优先原则a<sub>i,j</sub>是第[n + (n-1) + … + (n-j+2)] + (i-j) +1个元素。</li>
 <li>找上三角区元素：找a<sub>j,i</sub></li>
 </ul>
 </li>
@@ -1653,90 +2298,6 @@
 <li>我们能够掌控的是能力，我们无法掌控的是机遇。没有机遇你展现不了能力，没有能力你抓不住机遇。我们能做的只有提升能力，抓住机遇。</li>
 <li>成功或失败是上天决定的，前进或停下是我决定的。命定但不注定。</li>
 <li>从无所不能，到无所能，到有所能。循此苦旅，以达天际。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/07/07/%E6%82%9F/%E4%B9%A6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/07/07/%E6%82%9F/%E4%B9%A6/" class="post-title-link" itemprop="url">书</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-07-07 00:00:00 / Modified: 16:02:54" itemprop="dateCreated datePublished" datetime="2023-07-07T00:00:00+08:00">2023-07-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%82%9F/" itemprop="url" rel="index"><span itemprop="name">悟</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li><p>如果用一句话形容书我想是“润物细无声”。</p>
-</li>
-<li><p>读书，是为了那些不能读书的人。</p>
-</li>
 </ul>
 
       
