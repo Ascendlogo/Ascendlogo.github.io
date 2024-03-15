@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">113</span>
+          <span class="site-state-item-count">114</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -795,6 +795,150 @@
 </li>
 </ul>
 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/" class="post-title-link" itemprop="url">第六章 图</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-03-15 00:00:00 / Modified: 16:40:44" itemprop="dateCreated datePublished" datetime="2024-03-15T00:00:00+08:00">2024-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><ul>
+<li><strong>图 G</strong> 由<strong>顶点集 V</strong> 和<strong>边集 E</strong> 组成，记为 G &#x3D; (V, E)，其中 V(G) 表示图 G 中顶点的有限非空集；E(G) 表示图 G 中顶点之间的关系（边）集合。若 V &#x3D; {v<sub>1</sub>, v<sub>2</sub>, …, v<sub>n</sub>}，则用 |V| 表示图 G 中<strong>顶点的个数</strong>，也称<strong>图 G 的阶</strong>，E &#x3D; {(u, v) | u ∈ U, v ∈ V}，用 <strong>|E|</strong> 表示图 G 中<strong>边的条数</strong>。</li>
+<li>线性表可以是空表，树可以是空树，但图不可以是空，即 <strong>V 一定是非空集</strong>。而 <strong>E 可以为空集</strong>。</li>
+<li>若 E 是<strong>无向边</strong>（简称<strong>边</strong>）的有限集合时，则图 G 为<strong>无向图</strong>。边是顶点的无序对，**记为(v, w)或(w, v)<strong>，因为</strong>(v, w) &#x3D; (w, v)**，其中 v、w 是顶点。可以说顶点 w 和顶点 v 互为邻接点。边(v, w)依附于顶点 w 和 v，或者说边(v, w)和顶点 v、w 相关联。</li>
+<li>若 E 是<strong>有向边</strong>（也称<strong>弧</strong>）的有限集合时，则图 G 为<strong>有向图</strong>。弧是顶点的有序对，<strong>记为&lt;v, w&gt;<strong>，其中 v、w 是顶点，v 称为</strong>弧尾</strong>，w 称为<strong>弧头</strong>，&lt;v, w&gt; 称为从顶点 v 到顶点 w 的弧，也称 v 邻接到 w，或 w 邻接自 v。**&lt;v, w&gt; !&#x3D; &lt;w, v&gt;**。</li>
+<li>简单图<ul>
+<li>不存在重复边</li>
+<li>不存在顶点到自身的边</li>
+</ul>
+</li>
+<li>多重图：图 G 中某两个结点之间的边数多于一条，又允许顶点通过同一条边和自己关联，则 G 为多重图。</li>
+<li>对于无向图：<ul>
+<li>顶点 v 的度是指依附于该顶点的边的条数，记为 TD(v)</li>
+<li>在具有 n 个顶点、e 条边的无向图中，$\sum\limits_{i&#x3D;1}^nTD(V_i) &#x3D; 2e$，即无向图的全部顶点的度的和等于边数的2倍。</li>
+</ul>
+</li>
+<li>对于有向图：<ul>
+<li>入度是以顶点 v 为终点的有向边的数目，记为 ID(v)</li>
+<li>出度是以顶点 v 为起点的有向边的数目，记为 OD(v)</li>
+<li>顶点的 v 的度等于其入度和出度之和，即 TD(v) &#x3D; ID(v) + OD(v)</li>
+<li>在具有 n 个顶点、 e 条边的有向图中， $\sum\limits_{i&#x3D;1}^nID(V_i) &#x3D; \sum\limits_{i&#x3D;1}^nOD(V_i) &#x3D; e$</li>
+</ul>
+</li>
+<li><strong>路径</strong>——顶点 v<sub>p</sub> 到顶点 v<sub>p</sub> 之间的一条路径是指顶点序列，V<sub>p</sub>, V<sub>i1</sub>, V<sub>i2</sub>, …, V<sub>q</sub>。</li>
+<li><strong>回路</strong>——第一个顶点和最后一个顶点相同的路径称为回路或环。</li>
+<li><strong>简单路径</strong>——在路径序列中，顶点不重复出现的路径称为简单路径。</li>
+<li><strong>简单回路</strong>——除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
+<li><strong>路径长度</strong>——路径上边的数目。</li>
+<li><strong>点到点的距离</strong>——从顶点 u 出发到顶点 v 的<strong>最短路径</strong>若存在，则<strong>此路径的长度称为从 u 到 v 的距离</strong>；若从 u 到 v 根本<strong>不存在路径</strong>，则记<strong>该距离为无穷（∞）</strong>。</li>
+<li><strong>无向图</strong>中，若从顶点 v 到顶点 w 有路径存在，则称 v 和 w 是<strong>连通</strong>的。若图 G 中任意两个顶点都是连通的，则称图 G 为<strong>连通图</strong>，否则称为<strong>非连通图</strong>。<ul>
+<li>对于 n个顶点的<strong>无向图</strong> G，<ul>
+<li>若 G 是<strong>连通图</strong>，则<strong>最少</strong>有 n-1 条边</li>
+<li>若 G 是<strong>非连通图</strong>，则<strong>最多</strong>可能有 $C_{n-1}^2$条边</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>有向图</strong>中，若从顶点 v 到顶点 w 和从顶点 w 到顶点 v之间都有路径，则称这两个顶点是<strong>强连通</strong>的。<ul>
+<li>对于 n 个顶点的有向图 G，若 G 是<strong>强连通图</strong>，则<strong>最少</strong>有 n 条边（形成<strong>回路</strong>）</li>
+</ul>
+</li>
+<li>设有两个图 G &#x3D; (V, E) 和 G’ &#x3D; (V’, E’)，若 V‘ 是 V 的子集，且 E’ 是 E 的子集，则称 G’ 是 G 的<strong>子图</strong>。</li>
+<li>若有满足 V(G’) &#x3D; V(G) 的子图 G’，则称其为 G 的<strong>生成子图</strong>。</li>
+<li><strong>无向图</strong>中的<strong>极大连通子图</strong>（子图必须连通，且包含尽可能多的顶点和边）称为无向图的<strong>连通分量</strong>。</li>
+<li><strong>有向图</strong>中的<strong>极大强连通子图</strong>（子图必须强连通，同时保留尽可能多的边）称为有向图的<strong>强连通分量</strong>。</li>
+<li><strong>连通图</strong>的<strong>生成树</strong>是<strong>包含图中全部顶点的一个极小连通子图</strong>（边尽可能的少，但要保持连通）。若图中顶点树为 n，则它的生成树含有 n-1 条边。对生成树而言，若砍去它的一条边，则会变成非连通图，若加上一条边则会形成一个回路。</li>
+<li>在<strong>非连通图</strong>中，<strong>连通分量的生成树</strong>构成了非连通图的<strong>生成森林</strong>。</li>
+<li><strong>边的权</strong>——在一个图中，每条边都可以标上具有某种含义的数值，该数值称为该边的权值。</li>
+<li><strong>带权图&#x2F;网</strong>——边上带有权值的图称为<strong>带权图</strong>，也称<strong>网</strong>。</li>
+<li><strong>带权路径长度</strong>——当图是带权图时，一条<strong>路径上所有边的权值之和</strong>，称为该路径的带权路径长度。</li>
+<li><strong>无向完全图</strong>——无向图中任意两个顶点之间都存在边。<ul>
+<li>若无向图的顶点数 |V| &#x3D; n，则 |E|∈[0, $C^2_n$] &#x3D; [0, n(n-1)&#x2F;2]</li>
+</ul>
+</li>
+<li><strong>有向完全图</strong>——有向图中任意两个顶点之间都存在方向相反的两条弧。<ul>
+<li>若有向图的顶点数 |V| &#x3D; n，则 |E|∈[0, 2$C^2_n$] &#x3D; [0, n(n-1)]</li>
+</ul>
+</li>
+<li>边数很少的图称为<strong>稀疏图</strong>，反之称为<strong>稠密图</strong>。二者没有绝对的界限，一般来说 |E| &lt; |V|log|V| 时，可以将 G 视为稀疏图。</li>
+<li><strong>树</strong>——<strong>不存在回路</strong>，且<strong>连通</strong>的<strong>无向图</strong><ul>
+<li>n 个顶点的树，必有 n-1 条边</li>
+<li>n 个顶点的图，<strong>若 |E| &gt; n-1，则一定有回路</strong></li>
+</ul>
+</li>
+<li><strong>有向树</strong>——一个顶点的入度为0，其余顶点的入度均为1的<strong>有向图</strong>，称为有向树。</li>
 </ul>
 
       
@@ -2202,102 +2346,6 @@
 <li>人得以不断发展的重要动力是灰暗的生活与光明的未来之间的矛盾。</li>
 <li>勇敢的人先享受世界。</li>
 <li>人生的分界线就在这里，跨过这一步就是英雄，退回这一步就是懦夫。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/11/25/%E6%82%9F/%E5%BF%A7%E6%80%9D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/25/%E6%82%9F/%E5%BF%A7%E6%80%9D/" class="post-title-link" itemprop="url">忧思</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-11-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-25T00:00:00+08:00">2023-11-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-29 14:30:57" itemprop="dateModified" datetime="2023-12-29T14:30:57+08:00">2023-12-29</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%82%9F/" itemprop="url" rel="index"><span itemprop="name">悟</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>睿智，得乎静；刚勇，显与动。是故大丈夫处世，必忧思以深远，行决以神速，孤心磨砺以求成也。</li>
-<li>万事万物各行其道我又何必庸人自扰。</li>
-<li>去寻找全局最优解，而不是局部最优解。</li>
-<li>伟人之所以伟大，只是因为我们跪在地上，站起来吧！</li>
-<li>先不不喜欢的事情做好才能去做喜欢的事。</li>
-<li>故天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。</li>
-<li>熬过每一个今天，成功自然会来。</li>
-<li>我们能够掌控的是能力，我们无法掌控的是机遇。没有机遇你展现不了能力，没有能力你抓不住机遇。我们能做的只有提升能力，抓住机遇。</li>
-<li>成功或失败是上天决定的，前进或停下是我决定的。命定但不注定。</li>
-<li>从无所不能，到无所能，到有所能。循此苦旅，以达天际。</li>
 </ul>
 
       

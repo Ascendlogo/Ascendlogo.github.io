@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">113</span>
+          <span class="site-state-item-count">114</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -180,6 +180,97 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2022/06/15/C++%E5%AD%A6%E4%B9%A0/MFC%E5%AD%A6%E4%B9%A0/%E7%95%8C%E9%9D%A2%E6%8C%82%E8%BD%BD%E9%80%9A%E7%94%A8%E4%BB%A3%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/15/C++%E5%AD%A6%E4%B9%A0/MFC%E5%AD%A6%E4%B9%A0/%E7%95%8C%E9%9D%A2%E6%8C%82%E8%BD%BD%E9%80%9A%E7%94%A8%E4%BB%A3%E7%A0%81/" class="post-title-link" itemprop="url">界面挂载通用代码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-06-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-15T00:00:00+08:00">2022-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-04 15:17:42" itemprop="dateModified" datetime="2024-03-04T15:17:42+08:00">2024-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/C/MFC/" itemprop="url" rel="index"><span itemprop="name">MFC</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在MFC框架下将CInfoDlg界面挂载到主页面</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Context.m_pNewViewClass = <span class="built_in">RUNTIME_CLASS</span>(CInfoDlg);</span><br><span class="line"></span><br><span class="line">Context.m_pCurrentFrame = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">Context.m_pLastView = (CFormView *)m_spliter.<span class="built_in">GetPane</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">m_spliter.<span class="built_in">DeleteView</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">m_spliter.<span class="built_in">CreateView</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="built_in">RUNTIME_CLASS</span>(CInfoDlg), <span class="built_in">CSize</span>(<span class="number">600</span>, <span class="number">0</span>), &amp;Context);</span><br><span class="line"></span><br><span class="line">CInfoDlg *pNewView = (CInfoDlg *)m_spliter.<span class="built_in">GetPane</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">m_spliter.<span class="built_in">RecalcLayout</span>();</span><br><span class="line"></span><br><span class="line">pNewView-&gt;<span class="built_in">OnInitialUpdate</span>();</span><br><span class="line"></span><br><span class="line">m_spliter.<span class="built_in">SetActivePane</span>(<span class="number">0</span>, <span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -315,7 +406,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-14 16:37:15" itemprop="dateModified" datetime="2024-03-14T16:37:15+08:00">2024-03-14</time>
+      <time title="Modified: 2024-03-15 10:51:45" itemprop="dateModified" datetime="2024-03-15T10:51:45+08:00">2024-03-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,7 +432,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Linklist</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> data;</span><br><span class="line">	Linklist *next;</span><br><span class="line">&#125;；</span><br></pre></td></tr></table></figure>
 
 <p>函数实现</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(LinkList *list)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> value;<span class="comment">//要删除的结点数据</span></span><br><span class="line">    cin&gt;&gt;value;</span><br><span class="line">    Linklist *t = list-&gt;next,*in = list;</span><br><span class="line">    <span class="keyword">while</span>(t != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">		Linklist *t = list -&gt;next,* in = list;</span><br><span class="line">        <span class="keyword">while</span>(t != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> is = <span class="number">1</span>;<span class="comment">//判断是否查找到对象</span></span><br><span class="line">            <span class="keyword">if</span>(t-&gt;date != age)is = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(is == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                in -&gt;next = t-&gt;next;</span><br><span class="line">                <span class="built_in">delete</span>(t);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            t = t-&gt;next;</span><br><span class="line">            in = in-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(t == <span class="literal">NULL</span>)<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">deleteNode</span><span class="params">(LinkList *list)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> value;<span class="comment">//要删除的结点数据</span></span><br><span class="line">    cin&gt;&gt;value;</span><br><span class="line">    Linklist *t = list-&gt;next,*in = list;</span><br><span class="line">    <span class="keyword">while</span>(t != <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Linklist *t = list -&gt;next,* in = list;</span><br><span class="line">        <span class="keyword">while</span>(t != <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> is = <span class="number">1</span>;<span class="comment">//判断是否查找到对象</span></span><br><span class="line">            <span class="keyword">if</span>(t-&gt;date != age)is = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(is == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                in -&gt;next = t-&gt;next;</span><br><span class="line">                <span class="built_in">delete</span>(t);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            t = t-&gt;next;</span><br><span class="line">            in = in-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(t == <span class="literal">NULL</span>)<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
