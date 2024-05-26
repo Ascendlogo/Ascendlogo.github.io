@@ -1098,7 +1098,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/18/LeetCode/Fizz%20Buzz/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.JPG">
@@ -1116,7 +1116,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Linux常用命令总结</a>
+          <a href="/2023/03/18/LeetCode/Fizz%20Buzz/" class="post-title-link" itemprop="url">Fizz Buzz</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1134,7 +1134,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-25 16:12:20" itemprop="dateModified" datetime="2023-06-25T16:12:20+08:00">2023-06-25</time>
+      <time title="Modified: 2023-06-25 16:58:38" itemprop="dateModified" datetime="2023-06-25T16:58:38+08:00">2023-06-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1142,7 +1142,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
         </span>
     </span>
 
@@ -1156,390 +1156,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="文件和目录命令"><a href="#文件和目录命令" class="headerlink" title="文件和目录命令"></a>文件和目录命令</h1><ul>
-<li><p>ls</p>
+          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fizz-buzz/description/">412.Fizz Buzz</a></p>
+<p>Given an integer <code>n</code>, return <em>a string array</em> <code>answer</code> <em>(<strong>1-indexed</strong>) where</em>:</p>
 <ul>
-<li><p><code>-a</code>显示指定目录下所有子目录和文件，包括隐藏文件</p>
-</li>
-<li><p><code>-l</code>纵向显示文件列表和详细信息</p>
-</li>
-<li><p><code>-h</code>以KB显示文件大小</p>
-</li>
-<li><p>通配符的使用</p>
-<ul>
-<li><blockquote>
-<p><code>*</code>表示任意个数字符</p>
-<p><code>？</code>表示任意一个字符</p>
-<p><code>[]</code>表示可以匹配字符组中的任意一个</p>
-<p><code>[abc]</code>匹配a，b，c中任意一个</p>
-<p><code>[a-f]</code>匹配a到f范围中任意一个字符</p>
-</blockquote>
-</li>
+<li><code>answer[i] == &quot;FizzBuzz&quot;</code> if <code>i</code> is divisible by <code>3</code> and <code>5</code>.</li>
+<li><code>answer[i] == &quot;Fizz&quot;</code> if <code>i</code> is divisible by <code>3</code>.</li>
+<li><code>answer[i] == &quot;Buzz&quot;</code> if <code>i</code> is divisible by <code>5</code>.</li>
+<li><code>answer[i] == i</code> (as a string) if none of the above conditions are true.</li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>cd </p>
-<ul>
-<li><code>cd</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd ～</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd . </code>保持当前目录不变</li>
-<li><code>cd ..</code> 切换到上级目录</li>
-<li><code>cd -</code> 可以在最近两次工作目录之间来回切换</li>
-<li>绝对路径：在输入路径时最前面不是&#x2F;或～，表示相对当前目录所在的目录位置</li>
-<li>相对路径：在输入路径时，最前面是&#x2F;或者～，表示从根目录&#x2F;家目录开始的具体位置</li>
-</ul>
-</li>
-<li><p>touch</p>
-<ul>
-<li>文件不存在，创建文件</li>
-<li>文件存在，修改末次修改时间</li>
-</ul>
-</li>
-<li><p>mkdir</p>
-<ul>
-<li>创建目录，同一个目录下目录和文件都不能同名</li>
-<li><code>-p</code>创建多级目录</li>
-</ul>
-</li>
-<li><p>rm</p>
-<ul>
-<li>删除后无法恢复</li>
-<li><code>-f</code>强制删除，忽略不存在的文件</li>
-<li><code>-r</code>递归删除目录下内容，删除文件夹时使用</li>
-</ul>
-</li>
-<li><p>tree</p>
-<ul>
-<li>以树状图列出文件目录结构</li>
-<li><code>-d</code>只显示目录</li>
-</ul>
-</li>
-</ul>
-<h1 id="拷贝和移动命令"><a href="#拷贝和移动命令" class="headerlink" title="拷贝和移动命令"></a>拷贝和移动命令</h1><ul>
-<li><p>cp</p>
-<ul>
-<li><code>cp 源文件 目标文件</code>复制文件或目录到另一个文件或目录中</li>
-<li><code>-i</code>覆盖文件前提示</li>
-<li><code>-r</code>若给出源文件是目录文件，则cp将递归复制该目录下所有子目录和文件，目标文件必须为一个目录名</li>
-</ul>
-</li>
-<li><p>mv</p>
-<ul>
-<li>mv 源文件 目标文件：移动或重命名文件或目录</li>
-<li><code>-i</code>覆盖前提示</li>
-</ul>
-</li>
-</ul>
-<h1 id="文件内容命令"><a href="#文件内容命令" class="headerlink" title="文件内容命令"></a>文件内容命令</h1><ul>
-<li><p>cat</p>
-<ul>
-<li>显示文件全部内容</li>
-<li><code>-b</code>为文件标行号</li>
-<li><code>-n</code>为所有行标行号（包括空行）</li>
-</ul>
-</li>
-<li><p>more</p>
-<ul>
-<li>分屏显示文件</li>
-<li><code>Space</code>显示下一页</li>
-<li><code>Enter</code>一次滚动一行</li>
-<li><code>b</code>回滚一屏</li>
-<li><code>f</code>前滚一屏</li>
-<li><code>q</code>退出</li>
-</ul>
-</li>
-<li><p>grep</p>
-<ul>
-<li>文本搜索工具</li>
-<li><code>-n</code>显示匹配行及行号</li>
-<li><code>-v</code>显示不含不包含目标文本的行</li>
-<li><code>-i</code>忽略大小写</li>
-<li><code>^a</code>行首，搜索以a开始的行</li>
-<li><code>ke$</code>行尾，搜索以ke为结尾的行</li>
-</ul>
-</li>
-<li><p>echo</p>
-<ul>
-<li>显示参数指定的文字</li>
-<li><code>&gt;</code>表示输出，会覆盖文件原有内容</li>
-<li><code>&gt;&gt;</code>表示输入，会将内容追加到已有文件的</li>
-</ul>
-</li>
-<li><p>管道<code>|</code></p>
-<ul>
-<li>将一个命令的输出通过管道作为另一个命令的输入</li>
-<li>more</li>
-<li>grep</li>
-</ul>
-</li>
-</ul>
-<h1 id="远程操作命令"><a href="#远程操作命令" class="headerlink" title="远程操作命令"></a>远程操作命令</h1><ul>
-<li><p>shutdown</p>
-<ul>
-<li><code>shutdown</code> 选项 时间</li>
-<li><code>-r</code>重新启动</li>
-<li><code>-c</code>取消关机计划</li>
-</ul>
-</li>
-<li><p>ifconfig</p>
-<ul>
-<li>查看配置网卡设置信息</li>
-<li><code>127.0.0.1</code>本地回环地址</li>
-</ul>
-</li>
-<li><p>ping</p>
-<ul>
-<li>检测计算机到计算机网络连接是否正常，数值越大，速度越慢</li>
-</ul>
-</li>
-<li><p>scp</p>
-<ul>
-<li>远程拷贝命令</li>
-<li><code>scp -P port  filename user@remote:Desktop/filename</code><ul>
-<li>复制当前目录下文件到远程文件夹</li>
-</ul>
-</li>
-<li><code>scp -P port  user@remote:Desktop/filename filename</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-<li>WIN scp command<ul>
-<li><code>scp -rp .\Desktop\Notes logo@192.168.142.128:Desktop/</code></li>
-<li>复制当前目录下文件夹到远程目录</li>
-<li><code>scp -p logo@192.168.142.128:Desktop/linuxNotes/Command.md C:\Users\admin\Desktop</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>-r</code>复制文件夹</li>
-</ul>
-</li>
-<li><p>ssh</p>
-<ul>
-<li><p><code>ssh -p 22 user@remote</code></p>
-</li>
-<li><p><code>ssh-keygen</code>生成ssh钥匙</p>
-</li>
-<li><p><code>ssh-copy-id -p port user@remote</code>让远程服务器记住公匙</p>
-</li>
-<li><p>添加别名：在<code>~/.ssh/config</code>中追加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host logo_ubuntu</span><br><span class="line">	Hostname 192.168.142.128</span><br><span class="line">	User logo</span><br><span class="line">	Port 22</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h1 id="用户权限命令"><a href="#用户权限命令" class="headerlink" title="用户权限命令"></a>用户权限命令</h1><ul>
-<li><p>ls -l 拓展</p>
-<ul>
-<li><blockquote>
-<p>r 可读 4</p>
-<p>w 可写 2</p>
-<p>x 可执行 1</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>第一列（一个字符）：是否是文件夹标记</p>
-<p>第二列（三个字符）：文件拥有者权限</p>
-<p>第三列（三个字符）：组权限</p>
-<p>第四列（三个字符）：其他用户权限</p>
-<p>第五列（数字）：硬连接数</p>
-<ul>
-<li>硬连接数：有多少种方式可以访问当前目录&#x2F;文件</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>chmod</p>
-<ul>
-<li>修改用户&#x2F;组对文件&#x2F;目录权限</li>
-<li><code>chmod +/- rwx 文件|目录名</code><ul>
-<li>执行文件：<code>./文件名</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>sudo</p>
-<ul>
-<li>以其他身份来执行命令，预设的身份为root</li>
-</ul>
-</li>
-</ul>
-<h1 id="组管理命令"><a href="#组管理命令" class="headerlink" title="组管理命令"></a>组管理命令</h1><ul>
-<li>创建组&#x2F;删除组都需要<code>sudo</code></li>
-<li><code>groupadd 组名</code>添加组</li>
-<li><code>groupdel 组名</code>删除组</li>
-<li><code>cat/etc/group</code>确认组信息</li>
-<li>组信息保存在<code>/etc/group</code>文件中</li>
-<li><code>/etc</code>目录是专门用来保存系统配置信息的目录</li>
-<li><code>chgrp -R 组名 文件/目录名</code>递归修改文件&#x2F;目录的所属组</li>
-</ul>
-<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><ul>
-<li><p><code>useradd -m -g 组</code>添加新用户</p>
-<ul>
-<li>-m 自动建立用户家目录</li>
-<li>-g 指定用户所在的组，否则会建立一个和用户同名的组</li>
-</ul>
-</li>
-<li><p><code>passwd 用户名</code>设置用户密码</p>
-</li>
-<li><p><code>userdel -r 用户名</code>删除信息</p>
-<ul>
-<li>-r 删除用户家目录</li>
-</ul>
-</li>
-<li><p><code>cat /etc/passwd | grep 用户名</code>确认用户信息，新建用户后，用户信息会保存在&#x2F;etc&#x2F;passwd中</p>
-</li>
-<li><p><code>id 用户名</code>查看用户UID（用户标识）和GID（组标识）信息</p>
-</li>
-<li><p><code>who</code>查看当前所有登陆的用户列表</p>
-</li>
-<li><p><code>whoami</code>查看当前登陆用户的账户名</p>
-</li>
-<li><p>passwd文件：<code>/etc/passwd</code>文件保存的是用户的信息，由6个分号组成的7个信息</p>
-<ul>
-<li><blockquote>
-<p>用户名</p>
-<p>密码（x，表示加密的密码）</p>
-<p>UID</p>
-<p>GID</p>
-<p>用户全名或本地账号</p>
-<p>家目录</p>
-<p>登陆使用的Shell，就是登陆之后使用的终端命令，ubuntu默认的是dash</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>usermod -g 组 用户名</code>修改用户主组</p>
-</li>
-<li><p><code>usermod -G 组 用户名</code>修改用户附加组</p>
-<ul>
-<li><code>usermod -G sudo 用户名</code>给用户添加sudo权限</li>
-</ul>
-</li>
-<li><p><code>usermod -s /bin/bash</code>修改用户登陆Shell为bash，XShell下dash存在缺陷</p>
-</li>
-<li><p>which</p>
-<ul>
-<li><code>which 命令</code>查看执行命令所在位置<ul>
-<li><blockquote>
-<p><code>/user/passwd</code>用于保存用户信息的文件</p>
-<p><code>/user/bin/passwd</code>用于修改用户密码的程序</p>
-<p><code>/bin</code>二进制执行文件目录，主要用于具体应用</p>
-<p><code>/sbin</code>系统管理员专用的二进制代码存放目录，主要用于系统管理</p>
-<p><code>/usr/bin</code>后期安装的一些软件</p>
-<p><code>/usr/sbin</code>超级用户的一些管理程序</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>su</p>
-<ul>
-<li><code>su - 用户名</code>切换用户和目录</li>
-<li><code>exit</code>退出当前登陆目录</li>
-<li><code>su</code>切换到root，但不安全</li>
-</ul>
-</li>
-<li><p>修改文件权限</p>
-<ul>
-<li><code>chown 用户名 文件名|目录名</code>修改文件的拥有者</li>
-<li><code>chgrp -R 组名 文件名|目录名</code>递归修改文件的组</li>
-<li><code>chmod -R 755</code>递归修改文件权限，三个数字分别代表拥有者&#x2F;组&#x2F;其他用户的权限</li>
-<li>r -&gt; 4  w -&gt; 2  x -&gt; 1,例如755-&gt;rwx r-x r-x</li>
-</ul>
-</li>
-</ul>
-<h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><ul>
-<li><p><code>date</code>查看当前系统时间</p>
-</li>
-<li><p><code>cal </code>查看日历</p>
-<ul>
-<li><code>-y</code>查看一年的日历</li>
-</ul>
-</li>
-<li><p><code>df -h</code>显示磁盘剩余空间</p>
-</li>
-<li><p><code>du -h[目录名]</code>显示目录下文件大小</p>
-</li>
-<li><p><code>ps aux</code>查看进程的详细状况</p>
-<ul>
-<li><p><code>ps</code>默认只会显示当前用户通过终端启动的应用程序</p>
-</li>
-<li><blockquote>
-<p>a 显示终端上的所有进程，包括其他用户的进程</p>
-<p>u 显示进程的详细状态</p>
-<p>x 显示没有控制终端的进程</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>top</code>动态显示运行中的进程并排序</p>
-</li>
-<li><p><code>kill [-9] 进程代号</code>终止指定代号的进程，-9表示强行终止</p>
-<ul>
-<li>使用<code>kill</code>时不要终止root身份开启的进程</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><ul>
-<li><p>find</p>
-<ul>
-<li><code>find[路径] -name &quot;*.py&quot;</code>查找文件</li>
-</ul>
-</li>
-<li><p>ln</p>
-<ul>
-<li><code>ln -s 被链接的源文件 链接文件</code>建立文件的软链接</li>
-<li>无<code>-s</code>建立的是硬链接文件（两个文件占用相同大小的硬盘空间）</li>
-<li>源文件要使用绝对路经，方便移动链接文件后仍能正常使用</li>
-<li>在Linux中文件名和文件数据是分开存储的</li>
-</ul>
-</li>
-</ul>
-<h1 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h1><ul>
-<li><p><code>tar -cvf 打包文件.tar</code>打包文件</p>
-</li>
-<li><p><code>tar -xvf 打包文件.tar</code>解包文件</p>
-</li>
-<li><blockquote>
-<p>c 生成档案文件，创建打包文件</p>
-<p>x 解开档案文件</p>
-<p>v 列出归档解档的详细过程，显示进度</p>
-<p>f 指定档案文件名称，f后面一定是.tar文件，所以必须放选项最后</p>
-</blockquote>
-</li>
-<li><p>gzip</p>
-<ul>
-<li><p>tar只负责打包文件，但不压缩</p>
-</li>
-<li><p>用gzip压缩打包后文件扩展名为<code>filename.tar.gz</code></p>
-</li>
-<li><p><code>tar -zcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz </code>解压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz -C 目标路径</code>解压缩文件到指定路径（指定路径必须存在）</p>
-</li>
-</ul>
-</li>
-<li><p>bzip2</p>
-<ul>
-<li><code>tar -jcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</li>
-<li><code>tar -jxvf 打包文件.tar.gz </code>解压缩文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><ul>
-<li><p><code>sudo apt install 软件包</code></p>
-</li>
-<li><p><code>sudo apt remove 软件包</code></p>
-</li>
-<li><p><code>sudo apt upgrade</code></p>
-</li>
-</ul>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 3</span><br><span class="line">Output: [&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 5</span><br><span class="line">Output: [&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 15</span><br><span class="line">Output: [&quot;1&quot;,&quot;2&quot;,&quot;Fizz&quot;,&quot;4&quot;,&quot;Buzz&quot;,&quot;Fizz&quot;,&quot;7&quot;,&quot;8&quot;,&quot;Fizz&quot;,&quot;Buzz&quot;,&quot;11&quot;,&quot;Fizz&quot;,&quot;13&quot;,&quot;14&quot;,&quot;FizzBuzz&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(1)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">fizzBuzz</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; ans_vec;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; i % <span class="number">5</span> == <span class="number">0</span>)ans_vec.<span class="built_in">push_back</span>(<span class="string">&quot;FizzBuzz&quot;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>)ans_vec.<span class="built_in">push_back</span>(<span class="string">&quot;Fizz&quot;</span>);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (i % <span class="number">5</span> == <span class="number">0</span>)ans_vec.<span class="built_in">push_back</span>(<span class="string">&quot;Buzz&quot;</span>);</span><br><span class="line">            <span class="keyword">else</span> ans_vec.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans_vec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
