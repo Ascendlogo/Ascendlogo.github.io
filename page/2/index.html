@@ -1182,6 +1182,159 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/05/25/Python%E5%AD%A6%E4%B9%A0/auto_login/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/25/Python%E5%AD%A6%E4%B9%A0/auto_login/" class="post-title-link" itemprop="url">auto_login</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-05-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-25T00:00:00+08:00">2023-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-07-05 11:36:15" itemprop="dateModified" datetime="2023-07-05T11:36:15+08:00">2023-07-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>每次电脑连接校园网都需要输入密码。甚至有时电脑无法自动弹出上网登录界面。因而希望做一个脚本来实现自动登录。</p>
+<h1 id="校园网上网原理"><a href="#校园网上网原理" class="headerlink" title="校园网上网原理"></a>校园网上网原理</h1><p>设备模仿目标服务器向客户端发送HTTP Redirect，将客户浏览器重定向到一个预先指定的Web服务器。在这个Web服务器的页面上，用户输入账号密码等信息，后台认证通过后，该服务器会向前述设备发送认证通过消息，该设备会建立认证通过表项。下一次客户Internet（不仅仅HTTP，所有）请求过来的时候，查表找到表项后，正常转发。客户即可正常上网了。</p>
+<h1 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h1><ul>
+<li><p>request库</p>
+<ul>
+<li><p>Python中可以实现简单的HTTP的模块</p>
+</li>
+<li><p>基本GET请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">&quot;http://httpbin.org/get&quot;</span>)</span><br><span class="line"><span class="comment"># text输出文本内容</span></span><br><span class="line"><span class="built_in">print</span>(response.text)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>POST请求和GET请求</p>
+<ul>
+<li>GET请求和POST请求区别在于前者通常是通过url地址，而后者常见的则是form表单请求</li>
+</ul>
+</li>
+<li><p>Tkinter库</p>
+<ul>
+<li><p>Python中可以实现简单窗口视窗设计的模块</p>
+</li>
+<li><p>创建并显示视窗基本写法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk  <span class="comment"># 在代码里面导入库，起一个别名，以后代码里面就用这个别名</span></span><br><span class="line">root = tk.Tk()  <span class="comment"># 这个库里面有Tk()这个方法，这个方法的作用就是创建一个窗口</span></span><br><span class="line">root.mainloop()  <span class="comment"># 加上这一句，就可以看见窗口了，循环显示窗口</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>安徽大学校园网登录方式为GET请求。IP会随着位置的不同而可能重新分配。</p>
+<ul>
+<li><p>方案一</p>
+<ul>
+<li><p>将下列代码写入html文件并加入开机自启动计划中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		onload = function()&#123;</span><br><span class="line">			window.open(&quot;url&quot;, &quot;_self&quot;) # url为请求网址</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不足：</p>
+<ul>
+<li>无法识别当前IP地址，不适用于因为校园内地理位置的改变而改变IP地址的情况。</li>
+<li>仅开机时html文件会运行，仅适用于电脑开机时连接校园网情况，不满足连接WiFi时自动输入账号密码的实际需求。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>方案二</p>
+<ul>
+<li><p>python代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> font</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">ip, url_cmcc, url</span>):</span><br><span class="line"></span><br><span class="line">    url = re.sub(<span class="string">r&#x27;\d+\.\d+\.\d+\.\d+&amp;&#x27;</span>, ip + <span class="string">&#x27;&amp;&#x27;</span>, url, <span class="number">1</span>)</span><br><span class="line">    url_cmcc = re.sub(<span class="string">r&#x27;\d+\.\d+\.\d+\.\d+&amp;&#x27;</span>, ip + <span class="string">&#x27;&amp;&#x27;</span>, url_cmcc, <span class="number">1</span>)</span><br><span class="line">    res_cmcc = requests.get(url_cmcc)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;&quot;msg&quot;:&quot;&quot;&#x27;</span> <span class="keyword">in</span> res_cmcc.text:</span><br><span class="line">        res = requests.get(url)</span><br><span class="line">        login_gui(ip, res.text, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        login_gui(ip, res_cmcc.text, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_ip</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">        s.connect((<span class="string">&#x27;8.8.8.8&#x27;</span>, <span class="number">80</span>))</span><br><span class="line">        ip = s.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        s.close()</span><br><span class="line">    <span class="keyword">return</span> ip</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_gui</span>(<span class="params">ip, text, model</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> model == <span class="number">1</span>:</span><br><span class="line">        mod = <span class="string">&#x27;cmcc登录&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        mod = <span class="string">&#x27;普通登录&#x27;</span></span><br><span class="line"></span><br><span class="line">    root = tk.Tk()</span><br><span class="line">    root.title(<span class="string">&#x27;校园网登录&#x27;</span>)</span><br><span class="line">    var = tk.StringVar()</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;&quot;msg&quot;:&quot;&quot;&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;当前设备已登录\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">r&#x27;\u8ba4\u8bc1\u6210\u529f&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;登录成功\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">&#x27;bGRhcCBhdXRoIGVycm9y&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;密码错误\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">&#x27;aW51c2UsIGxvZ2luIGFnYWluL&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;其他设备已登录\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;您可能欠费停机\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    lab = tk.Label(root, textvariable=var, font=(<span class="string">&#x27;Courier&#x27;</span>, <span class="number">15</span>), width=<span class="number">20</span>, height=<span class="number">20</span>)</span><br><span class="line">    lab.pack()  <span class="comment"># 把标签置入root界面布局</span></span><br><span class="line">    root.geometry(<span class="string">&quot;300x200+600+300&quot;</span>)  <span class="comment"># 将窗口移动到新位置（宽度为400，高度为300，上边距为100，左边距为100）</span></span><br><span class="line">    root.mainloop()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    url_cmcc = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    ip = get_ip()</span><br><span class="line">    login(ip, url_cmcc, url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以改进的地方：</p>
+<ul>
+<li><p>可设置自动获取url来保存各个位置的<code>wlan_ac_ip</code>进而便捷地在校园任何地方都能自动连接校园网</p>
+</li>
+<li><p>可以进一步完善代码关于账号和密码输入部分以便于校园内同学使用</p>
+</li>
+</ul>
+</li>
+<li><p>可利用pyinstaller对文件进行打包</p>
+<ul>
+<li><code>pyinstaller -F -w main.py</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_43404934/article/details/122331463?ops_request_misc=%7B%22request_id%22:%22168852791816782425186970%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852791816782425186970&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122331463-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=request%E5%BA%93&spm=1018.2226.3001.4187">request库</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/youtufeitu/article/details/124306915?ops_request_misc=%7B%22request_id%22:%22168852796316800197099041%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852796316800197099041&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-124306915-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=POST%E8%AF%B7%E6%B1%82%E5%92%8CGET%E8%AF%B7%E6%B1%82&spm=1018.2226.3001.4187">POST请求和GET请求</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46018418/article/details/105927203?ops_request_misc=%7B%22request_id%22:%22168852799516800192292061%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852799516800192292061&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105927203-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=Tkinter%E5%BA%93&spm=1018.2226.3001.4187">Tkinter库</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44579321/article/details/127960439">校园网自动登陆</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/364016452">校园网自动登录全平台解决方案</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38830593/article/details/123092015?ops_request_misc=%7B%22request_id%22:%22168852774716800182194125%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=168852774716800182194125&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-123092015-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=pyinstaller%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85&spm=1018.2226.3001.4187">pyinstaller对文件进行打包</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/05/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E7%BB%AA%E8%AE%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1332,159 +1485,6 @@
 <h2 id="算法的空间复杂度"><a href="#算法的空间复杂度" class="headerlink" title="算法的空间复杂度"></a>算法的空间复杂度</h2><ul>
 <li>算法<strong>原地工作</strong>：算法所需的内存空间为常量。</li>
 <li>函数递归调用带来的内存开销：空间复杂度 &#x3D; 递归调用的深度</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/05/25/Python%E5%AD%A6%E4%B9%A0/auto_login/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/05/25/Python%E5%AD%A6%E4%B9%A0/auto_login/" class="post-title-link" itemprop="url">auto_login</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-05-25 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-25T00:00:00+08:00">2023-05-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-07-05 11:36:15" itemprop="dateModified" datetime="2023-07-05T11:36:15+08:00">2023-07-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>每次电脑连接校园网都需要输入密码。甚至有时电脑无法自动弹出上网登录界面。因而希望做一个脚本来实现自动登录。</p>
-<h1 id="校园网上网原理"><a href="#校园网上网原理" class="headerlink" title="校园网上网原理"></a>校园网上网原理</h1><p>设备模仿目标服务器向客户端发送HTTP Redirect，将客户浏览器重定向到一个预先指定的Web服务器。在这个Web服务器的页面上，用户输入账号密码等信息，后台认证通过后，该服务器会向前述设备发送认证通过消息，该设备会建立认证通过表项。下一次客户Internet（不仅仅HTTP，所有）请求过来的时候，查表找到表项后，正常转发。客户即可正常上网了。</p>
-<h1 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h1><ul>
-<li><p>request库</p>
-<ul>
-<li><p>Python中可以实现简单的HTTP的模块</p>
-</li>
-<li><p>基本GET请求</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">&quot;http://httpbin.org/get&quot;</span>)</span><br><span class="line"><span class="comment"># text输出文本内容</span></span><br><span class="line"><span class="built_in">print</span>(response.text)</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>POST请求和GET请求</p>
-<ul>
-<li>GET请求和POST请求区别在于前者通常是通过url地址，而后者常见的则是form表单请求</li>
-</ul>
-</li>
-<li><p>Tkinter库</p>
-<ul>
-<li><p>Python中可以实现简单窗口视窗设计的模块</p>
-</li>
-<li><p>创建并显示视窗基本写法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk  <span class="comment"># 在代码里面导入库，起一个别名，以后代码里面就用这个别名</span></span><br><span class="line">root = tk.Tk()  <span class="comment"># 这个库里面有Tk()这个方法，这个方法的作用就是创建一个窗口</span></span><br><span class="line">root.mainloop()  <span class="comment"># 加上这一句，就可以看见窗口了，循环显示窗口</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>安徽大学校园网登录方式为GET请求。IP会随着位置的不同而可能重新分配。</p>
-<ul>
-<li><p>方案一</p>
-<ul>
-<li><p>将下列代码写入html文件并加入开机自启动计划中。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;width=, initial-scale=1.0&quot;&gt;</span><br><span class="line">	&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		onload = function()&#123;</span><br><span class="line">			window.open(&quot;url&quot;, &quot;_self&quot;) # url为请求网址</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>不足：</p>
-<ul>
-<li>无法识别当前IP地址，不适用于因为校园内地理位置的改变而改变IP地址的情况。</li>
-<li>仅开机时html文件会运行，仅适用于电脑开机时连接校园网情况，不满足连接WiFi时自动输入账号密码的实际需求。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>方案二</p>
-<ul>
-<li><p>python代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk</span><br><span class="line"><span class="keyword">from</span> tkinter <span class="keyword">import</span> font</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>(<span class="params">ip, url_cmcc, url</span>):</span><br><span class="line"></span><br><span class="line">    url = re.sub(<span class="string">r&#x27;\d+\.\d+\.\d+\.\d+&amp;&#x27;</span>, ip + <span class="string">&#x27;&amp;&#x27;</span>, url, <span class="number">1</span>)</span><br><span class="line">    url_cmcc = re.sub(<span class="string">r&#x27;\d+\.\d+\.\d+\.\d+&amp;&#x27;</span>, ip + <span class="string">&#x27;&amp;&#x27;</span>, url_cmcc, <span class="number">1</span>)</span><br><span class="line">    res_cmcc = requests.get(url_cmcc)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;&quot;msg&quot;:&quot;&quot;&#x27;</span> <span class="keyword">in</span> res_cmcc.text:</span><br><span class="line">        res = requests.get(url)</span><br><span class="line">        login_gui(ip, res.text, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        login_gui(ip, res_cmcc.text, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_ip</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">        s.connect((<span class="string">&#x27;8.8.8.8&#x27;</span>, <span class="number">80</span>))</span><br><span class="line">        ip = s.getsockname()[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        s.close()</span><br><span class="line">    <span class="keyword">return</span> ip</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_gui</span>(<span class="params">ip, text, model</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> model == <span class="number">1</span>:</span><br><span class="line">        mod = <span class="string">&#x27;cmcc登录&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        mod = <span class="string">&#x27;普通登录&#x27;</span></span><br><span class="line"></span><br><span class="line">    root = tk.Tk()</span><br><span class="line">    root.title(<span class="string">&#x27;校园网登录&#x27;</span>)</span><br><span class="line">    var = tk.StringVar()</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;&quot;msg&quot;:&quot;&quot;&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;当前设备已登录\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">r&#x27;\u8ba4\u8bc1\u6210\u529f&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;登录成功\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">&#x27;bGRhcCBhdXRoIGVycm9y&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;密码错误\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">elif</span> <span class="string">&#x27;aW51c2UsIGxvZ2luIGFnYWluL&#x27;</span> <span class="keyword">in</span> text:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;其他设备已登录\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        var.<span class="built_in">set</span>(<span class="string">&#x27;您可能欠费停机\nip地址:%s\n%s&#x27;</span> % (ip, mod))</span><br><span class="line">    lab = tk.Label(root, textvariable=var, font=(<span class="string">&#x27;Courier&#x27;</span>, <span class="number">15</span>), width=<span class="number">20</span>, height=<span class="number">20</span>)</span><br><span class="line">    lab.pack()  <span class="comment"># 把标签置入root界面布局</span></span><br><span class="line">    root.geometry(<span class="string">&quot;300x200+600+300&quot;</span>)  <span class="comment"># 将窗口移动到新位置（宽度为400，高度为300，上边距为100，左边距为100）</span></span><br><span class="line">    root.mainloop()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    url_cmcc = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    url = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    ip = get_ip()</span><br><span class="line">    login(ip, url_cmcc, url)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以改进的地方：</p>
-<ul>
-<li><p>可设置自动获取url来保存各个位置的<code>wlan_ac_ip</code>进而便捷地在校园任何地方都能自动连接校园网</p>
-</li>
-<li><p>可以进一步完善代码关于账号和密码输入部分以便于校园内同学使用</p>
-</li>
-</ul>
-</li>
-<li><p>可利用pyinstaller对文件进行打包</p>
-<ul>
-<li><code>pyinstaller -F -w main.py</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_43404934/article/details/122331463?ops_request_misc=%7B%22request_id%22:%22168852791816782425186970%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852791816782425186970&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-122331463-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=request%E5%BA%93&spm=1018.2226.3001.4187">request库</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/youtufeitu/article/details/124306915?ops_request_misc=%7B%22request_id%22:%22168852796316800197099041%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852796316800197099041&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-124306915-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=POST%E8%AF%B7%E6%B1%82%E5%92%8CGET%E8%AF%B7%E6%B1%82&spm=1018.2226.3001.4187">POST请求和GET请求</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46018418/article/details/105927203?ops_request_misc=%7B%22request_id%22:%22168852799516800192292061%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=168852799516800192292061&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-105927203-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=Tkinter%E5%BA%93&spm=1018.2226.3001.4187">Tkinter库</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44579321/article/details/127960439">校园网自动登陆</a></li>
-<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/364016452">校园网自动登录全平台解决方案</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38830593/article/details/123092015?ops_request_misc=%7B%22request_id%22:%22168852774716800182194125%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=168852774716800182194125&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-4-123092015-null-null.142%5Ev88%5Econtrol,239%5Ev2%5Einsert_chatgpt&utm_term=pyinstaller%E5%AF%B9%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E6%89%93%E5%8C%85&spm=1018.2226.3001.4187">pyinstaller对文件进行打包</a></li>
 </ul>
 
       
