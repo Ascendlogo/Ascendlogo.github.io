@@ -1121,7 +1121,7 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://ascendlogo.github.io/categories/%E6%9C%AD/</loc>
     <lastmod>2024-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1135,20 +1135,6 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%82%9F/</loc>
-    <lastmod>2024-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%9C%AD/</loc>
-    <lastmod>2024-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ascendlogo.github.io/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/</loc>
     <lastmod>2024-07-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -1156,7 +1142,21 @@
   </url>
   
   <url>
+    <loc>http://ascendlogo.github.io/categories/%E6%82%9F/</loc>
+    <lastmod>2024-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ascendlogo.github.io/categories/Algo/</loc>
+    <lastmod>2024-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ascendlogo.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2024-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
