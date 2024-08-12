@@ -151,13 +151,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">119</span>
+          <span class="site-state-item-count">120</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
   </nav>
@@ -192,7 +192,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/19/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.JPG">
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/19/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/" class="post-title-link" itemprop="url">电力相关名词解释积累</a>
+          <a href="/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">第一章 计算机系统基础</a>
         </h2>
 
         <div class="post-meta-container">
@@ -222,7 +222,245 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-07-19 00:00:00 / Modified: 16:10:35" itemprop="dateCreated datePublished" datetime="2024-07-19T00:00:00+08:00">2024-07-19</time>
+      <time title="Created: 2024-08-12 00:00:00 / Modified: 17:34:26" itemprop="dateCreated datePublished" datetime="2024-08-12T00:00:00+08:00">2024-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h1><h2 id="数的转换"><a href="#数的转换" class="headerlink" title="数的转换"></a>数的转换</h2><ul>
+<li><p>数制及其特征</p>
+<table>
+<thead>
+<tr>
+<th align="center">数制</th>
+<th align="center">基本数码</th>
+<th align="center">基数</th>
+<th align="center">位权</th>
+<th align="center">形式表示符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">十进制</td>
+<td align="center">0,1,2,3…9</td>
+<td align="center">r&#x3D;10</td>
+<td align="center">10<sup>n</sup></td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">二进制</td>
+<td align="center">0,1</td>
+<td align="center">r&#x3D;2</td>
+<td align="center">2<sup>n</sup></td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">八进制</td>
+<td align="center">0,1,2,3,4…7</td>
+<td align="center">r&#x3D;8</td>
+<td align="center">8<sup>n</sup></td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center">十六进制</td>
+<td align="center">0-9,A,B,C,D,E,F</td>
+<td align="center">r&#x3D;16</td>
+<td align="center">16<sup>n</sup></td>
+<td align="center">H</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>R进制-&gt;十进制</p>
+<ul>
+<li>使用<strong>位权展开法</strong></li>
+<li>将R进制的每一位数值用R<sup>k</sup>形式表示</li>
+<li>R为底数&#x2F;基数</li>
+<li>k为指数</li>
+</ul>
+</li>
+<li><p>十进制-&gt;R进制</p>
+<ul>
+<li>使用<strong>短除法</strong></li>
+</ul>
+</li>
+<li><p>二进制&lt;–&gt;八进制</p>
+</li>
+<li><p>二进制&lt;–&gt;十六进制</p>
+</li>
+</ul>
+<h2 id="数据的存储单位"><a href="#数据的存储单位" class="headerlink" title="数据的存储单位"></a>数据的存储单位</h2><ul>
+<li>在计算机中，数据的最小存储单位为BIT，1比特为1个二进制位。字节（Byte），1个字节为8个二进制位</li>
+<li>二进制有两个数：0,1</li>
+<li>位（Bit）</li>
+<li>字节（Byte）<ul>
+<li>1B&#x3D;8bit</li>
+<li>1KB&#x3D;1024B</li>
+<li>1MB&#x3D;1024KB</li>
+<li>1GB&#x3D;1024MB</li>
+</ul>
+</li>
+<li>除字节Byte外，还有千字节（KB），兆字节（MB），吉字节（GB），太字节（TB）</li>
+</ul>
+<h2 id="二进制的运算"><a href="#二进制的运算" class="headerlink" title="二进制的运算"></a>二进制的运算</h2><ul>
+<li>二进制的算术运算：加、减、乘、除</li>
+<li>二进制的逻辑运算：与、或、非、异或</li>
+</ul>
+<h1 id="数据的表示"><a href="#数据的表示" class="headerlink" title="数据的表示"></a>数据的表示</h1><h2 id="数的表示"><a href="#数的表示" class="headerlink" title="数的表示"></a>数的表示</h2><ul>
+<li><p>机器数和真值：两者之间的区别是真值的符号在机器数中用二进制符号位表示</p>
+</li>
+<li><p>码制</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">数值+1</th>
+<th align="center">数值-1</th>
+<th align="center">1+（-1）</th>
+<th align="center">整数数值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">原码</td>
+<td align="center">0000 0001</td>
+<td align="center">1000 0001</td>
+<td align="center">1000 0010</td>
+<td align="center">-（2<sup>n-1</sup>-1）~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">反码</td>
+<td align="center">0000 0001</td>
+<td align="center">1111 1110</td>
+<td align="center">1111 1111</td>
+<td align="center">-（2<sup>n-1</sup>-1）~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">补码</td>
+<td align="center">0000 00001</td>
+<td align="center">1111 1111</td>
+<td align="center">0000 0000</td>
+<td align="center">-2<sup>n-1</sup>~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">移码</td>
+<td align="center">1000 0001</td>
+<td align="center">0111 1111</td>
+<td align="center">1000 0000</td>
+<td align="center">-2<sup>n-1</sup>~2<sup>n-1</sup>-1</td>
+</tr>
+</tbody></table>
+<ul>
+<li>原码：第一位为符号位，其余组成真值</li>
+<li>反码：正数与原码相同；负数除第一位外其余数值位按位取反</li>
+<li>补码：正数与原码相同；负数在反码基础上加一（常用于加减法运算，部分计算机数的表示、存储）</li>
+<li>移码：在补码基础上数值不变，符号位取反（常用于浮点数的阶码）</li>
+</ul>
+</li>
+</ul>
+<h2 id="定点数和浮点数"><a href="#定点数和浮点数" class="headerlink" title="定点数和浮点数"></a>定点数和浮点数</h2><ul>
+<li>定点数：小数点的位置固定不变的数，小数点不需要占用一位二进制<ul>
+<li>定点整数：小数点固定在最右边</li>
+<li>定点小数：小数点固定在某一位</li>
+</ul>
+</li>
+<li>浮点数：N&#x3D;R<sup>e</sup>*M，其中M称为尾数，e是指数（阶码，用移码表示），R为基数（阶码的底）<ul>
+<li>阶符</li>
+<li>阶码：决定数值表示的范围</li>
+<li>数符</li>
+<li>尾数：决定数值表示的精度</li>
+<li>流程：对阶-&gt;尾数计算-&gt;结果格式化</li>
+</ul>
+</li>
+</ul>
+<h1 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h1><h2 id="计算机的结构"><a href="#计算机的结构" class="headerlink" title="计算机的结构"></a>计算机的结构</h2><ul>
+<li><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png" alt="image-20240812173410572"></li>
+<li>运算器<ul>
+<li>算术逻辑单元ALU：数据的算术运算和逻辑运算</li>
+<li>累加寄存器AC：通用寄存器，为ALU提供一个工作区，用来暂时保存数据</li>
+<li>数据缓冲寄存器DR：写内存时，暂存指令或数据</li>
+<li>状态条件寄存器PSW：存状态标志与控制标志（<strong>争议</strong>：也有将其归为控制的）</li>
+</ul>
+</li>
+<li>控制器<ul>
+<li>程序计数器PC：存储下一条要执行指令的地址（<strong>地址</strong>不同于指令组成中的<strong>地址码</strong>）</li>
+<li>指令寄存器IR：存储即将要执行的指令</li>
+<li>指令译码器ID：对进行分析解释</li>
+<li>时序部件：提供时序控制信号指令中的操作码字段</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/" class="post-title-link" itemprop="url">电力相关名词解释积累</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-07-25 00:00:00 / Modified: 10:05:27" itemprop="dateCreated datePublished" datetime="2024-07-25T00:00:00+08:00">2024-07-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -763,6 +1001,58 @@
 </ul>
 </li>
 </ul>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><ul>
+<li><strong>定义</strong>：数据链路层定义了在单个链路上如何传输数据，这些协议与被讨论的各种介质（如ATM、FDDI等）有关。数据链路层通过物理线路（物理链路）加上实现通信协议的硬件和软件，构成逻辑上的数据链路。</li>
+<li><strong>功能</strong>：<ul>
+<li>封装成帧</li>
+<li>差错控制</li>
+<li>流量控制</li>
+<li>链路管理</li>
+<li>MAC寻址</li>
+<li>区别数据和控制信息</li>
+<li>透明传输</li>
+</ul>
+</li>
+</ul>
+<h1 id="面向对象的用电信息数据交换协议"><a href="#面向对象的用电信息数据交换协议" class="headerlink" title="面向对象的用电信息数据交换协议"></a>面向对象的用电信息数据交换协议</h1><ul>
+<li><strong>定义</strong>：基于面向对象的建模方法建立的一套使用于用电采集系统的互操作性数据交换通信协议。面对对象建模以接口类实现继承关系，以对象来封装数据及操作，以对象为互操作的基本要素。</li>
+</ul>
+<h1 id="对象标识"><a href="#对象标识" class="headerlink" title="对象标识"></a>对象标识</h1><ul>
+<li><strong>定义</strong>：标识终端中对象唯一名称的编码。</li>
+</ul>
+<h1 id="逻辑名"><a href="#逻辑名" class="headerlink" title="逻辑名"></a>逻辑名</h1><ul>
+<li><strong>定义</strong>：用于标识接口类的实例，它是接口类的第一个属性，它的值与对象标识一致。</li>
+</ul>
+<h1 id="类标识码"><a href="#类标识码" class="headerlink" title="类标识码"></a>类标识码</h1><ul>
+<li><strong>定义</strong>：用于区别对象接口类的标识码，即接口类的名称。</li>
+</ul>
+<h1 id="服务器地址"><a href="#服务器地址" class="headerlink" title="服务器地址"></a>服务器地址</h1><ul>
+<li><strong>定义</strong>：客户机&#x2F;服务器访问模型中的服务器的通信地址。</li>
+</ul>
+<h2 id="逻辑地址"><a href="#逻辑地址" class="headerlink" title="逻辑地址"></a>逻辑地址</h2><ul>
+<li><strong>定义</strong>：服务器模型中逻辑设备的地址。</li>
+</ul>
+<h2 id="客户机地址"><a href="#客户机地址" class="headerlink" title="客户机地址"></a>客户机地址</h2><ul>
+<li><strong>定义</strong>：客户机&#x2F;服务器访问模型中的客户机的通信地址。</li>
+</ul>
+<h1 id="采集启动时标"><a href="#采集启动时标" class="headerlink" title="采集启动时标"></a>采集启动时标</h1><ul>
+<li><strong>定义</strong>：启动采集任务时的设备时钟当前值，其值只与启动时刻有关，与执行时间的长短无关。</li>
+</ul>
+<h1 id="采集成功时标"><a href="#采集成功时标" class="headerlink" title="采集成功时标"></a>采集成功时标</h1><ul>
+<li><strong>定义</strong>：客户机成功接收到服务器响应时的设备时钟的当前值。</li>
+</ul>
+<h1 id="采集存储时标"><a href="#采集存储时标" class="headerlink" title="采集存储时标"></a>采集存储时标</h1><ul>
+<li><strong>定义</strong>：采集到的数据进行存储的时间。</li>
+</ul>
+<h1 id="组地址"><a href="#组地址" class="headerlink" title="组地址"></a>组地址</h1><ul>
+<li><strong>定义</strong>：具有某一相同属性的设备群组编码，如属于同一行业，同一变电站，同一线路，可以响应同一个命令。</li>
+</ul>
+<h1 id="通配地址"><a href="#通配地址" class="headerlink" title="通配地址"></a>通配地址</h1><ul>
+<li><strong>定义</strong>：在十进制编码表示的地址码中出现了一位或多位采用了通配符的地址码。</li>
+</ul>
+<h2 id="消息鉴别码"><a href="#消息鉴别码" class="headerlink" title="消息鉴别码"></a>消息鉴别码</h2><ul>
+<li><strong>定义</strong>：用于鉴别消息完整性的固定长度的认证标识。</li>
+</ul>
 
       
     </div>
@@ -848,166 +1138,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45116099/article/details/136537514">一文总结嵌入式七大通信总线协议</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-16 16:24:09" itemprop="dateModified" datetime="2024-07-16T16:24:09+08:00">2024-07-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
-<li>D——电能表</li>
-</ul>
-<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
-<li><p>D——单相</p>
-</li>
-<li><p>H——三相</p>
-</li>
-<li><p>J——直流</p>
-</li>
-<li><p>S——三相三线</p>
-</li>
-<li><p>T——三相四线</p>
-</li>
-</ul>
-<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
-<li>A——数字化</li>
-<li>E——机电式</li>
-<li>S——电子式</li>
-<li>Z——智能</li>
-</ul>
-<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
-<li>D——多功能</li>
-<li>F——多费率</li>
-<li>H——谐波</li>
-<li>K——费控</li>
-<li>P——最大需量</li>
-<li>X——无功（”有功“和”有无功组合“缺省，”无功“放到特征描述栏，纯无功电能表时采用）</li>
-<li>Y——预付费</li>
-</ul>
-<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
-<li>C——槽装式（嵌入式）</li>
-<li>H——多用户</li>
-<li>J——防窃电</li>
-<li>L——长寿命</li>
-<li>M——模组化</li>
-<li>U——导轨</li>
-</ul>
-<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
-<li>如果产品是统一设计的，采用设计序号。</li>
-</ul>
-<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
-<li><strong>-</strong></li>
-</ul>
-<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
-<li>B——蓝牙通信</li>
-<li>C——CDMA</li>
-<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
-<li>F——WIFI</li>
-<li>G——GPRS</li>
-<li>H——HRF</li>
-<li>J——微功率无线</li>
-<li>L——有线网络</li>
-<li>N——以太网</li>
-<li>P——公用电话线</li>
-<li>Q——光纤</li>
-<li>W——230MHz专网</li>
-<li>Y——音频</li>
-<li>Z——载波</li>
-<li>NB——NBIoT</li>
-<li>4G——4G</li>
-<li>5G——5G</li>
-<li>其他字母组合——新通信方式简称</li>
-</ul>
-<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
-<li><strong>&#x2F;</strong></li>
-</ul>
-<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
-<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
-<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
-<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
-<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
-<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
-<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
-<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
-</ul>
 
       
     </div>
@@ -1369,6 +1499,166 @@
 <li><strong>智能电流互感器</strong>：常用于智能电网、物联网和远程监测等应用，提供更高级别的数据处理和管理能力。</li>
 </ul>
 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-16 16:24:09" itemprop="dateModified" datetime="2024-07-16T16:24:09+08:00">2024-07-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
+<li>D——电能表</li>
+</ul>
+<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
+<li><p>D——单相</p>
+</li>
+<li><p>H——三相</p>
+</li>
+<li><p>J——直流</p>
+</li>
+<li><p>S——三相三线</p>
+</li>
+<li><p>T——三相四线</p>
+</li>
+</ul>
+<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
+<li>A——数字化</li>
+<li>E——机电式</li>
+<li>S——电子式</li>
+<li>Z——智能</li>
+</ul>
+<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
+<li>D——多功能</li>
+<li>F——多费率</li>
+<li>H——谐波</li>
+<li>K——费控</li>
+<li>P——最大需量</li>
+<li>X——无功（”有功“和”有无功组合“缺省，”无功“放到特征描述栏，纯无功电能表时采用）</li>
+<li>Y——预付费</li>
+</ul>
+<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
+<li>C——槽装式（嵌入式）</li>
+<li>H——多用户</li>
+<li>J——防窃电</li>
+<li>L——长寿命</li>
+<li>M——模组化</li>
+<li>U——导轨</li>
+</ul>
+<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
+<li>如果产品是统一设计的，采用设计序号。</li>
+</ul>
+<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
+<li><strong>-</strong></li>
+</ul>
+<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
+<li>B——蓝牙通信</li>
+<li>C——CDMA</li>
+<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
+<li>F——WIFI</li>
+<li>G——GPRS</li>
+<li>H——HRF</li>
+<li>J——微功率无线</li>
+<li>L——有线网络</li>
+<li>N——以太网</li>
+<li>P——公用电话线</li>
+<li>Q——光纤</li>
+<li>W——230MHz专网</li>
+<li>Y——音频</li>
+<li>Z——载波</li>
+<li>NB——NBIoT</li>
+<li>4G——4G</li>
+<li>5G——5G</li>
+<li>其他字母组合——新通信方式简称</li>
+</ul>
+<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
+<li><strong>&#x2F;</strong></li>
+</ul>
+<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
+<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
+<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
+<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
+<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
+<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
+<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
+<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
 </ul>
 
       
@@ -2558,215 +2848,6 @@
 <p>每次 Find 操作，先找根，再“压缩路径”，可使树的高度不超过 O(α(n))。α(n) 是一个增长很缓慢的函数，对于常见的 n 值，通常 α(n) &lt;&#x3D; 4，因此优化后并查集的 Find、Union 操作时间开销都很低。</p>
 </li>
 </ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/" class="post-title-link" itemprop="url">第四章 串</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-03-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-12T00:00:00+08:00">2024-03-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-13 11:38:26" itemprop="dateModified" datetime="2024-03-13T11:38:26+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="定义和基本操作"><a href="#定义和基本操作" class="headerlink" title="定义和基本操作"></a>定义和基本操作</h1><ul>
-<li><p><strong>串</strong>，即<strong>字符串（String）</strong>是由零个或多个<strong>字符</strong>组成的有限序列。一般记为 S &#x3D; ‘a<sub>1</sub>a<sub>2</sub>……a<sub>n</sub>‘（n &gt;&#x3D; 0)。其中，S 是<strong>串名</strong>，单引号（有的地方用双引号）括起来的字符序列是串的值；a<sub>i</sub>可以是字母、数字或其他字符；串中字符的个数 n 称为<strong>串的长度</strong>。n &#x3D; 0时的串称为<strong>空串</strong>（用∅表示）</p>
-</li>
-<li><p>子串：串中任意个连续的字符组成 的子序列。</p>
-</li>
-<li><p>主串：包含子串的串。</p>
-</li>
-<li><p>字符在主串中的位置：字符在串中的序号。</p>
-</li>
-<li><p>子串在主串中的位置：子串的第一个字符在主串中的位置。</p>
-</li>
-<li><p>空串和空格串：</p>
-<ul>
-<li>M &#x3D; ‘’（空串）</li>
-<li>N &#x3D; ‘   ‘（三个空格符号组成的空格串，每个空格字符占1B）</li>
-</ul>
-</li>
-<li><p>串是一种特殊的线性表，数据元素之间呈线性关系。</p>
-</li>
-<li><p>串的数据对象限定为字符集（如中文字符、英文字符、数字字符和标点符号等）。</p>
-</li>
-<li><p>串的基本操作，如增删改查等<strong>通常以子串为操作对象</strong>。</p>
-</li>
-<li><p>基本操作：</p>
-<ul>
-<li><code>StrAssign(&amp;T, chars)</code>：赋值操作。把串T赋值为 chars。</li>
-<li><code>StrCopy(&amp;T, S)</code>：复制操作。由串 S 复制得到串 T。</li>
-<li><code>StrEmpty(S)</code>：判空操作。若 S 为空串，则返回 TRUE，否则返回 FALSE。</li>
-<li><code>StrLength(S)</code>：求串长。返回串 S 的元素个数。</li>
-<li><code>ClearString(&amp;S)</code>：清空操作。将 S 清为空串。</li>
-<li><code>DestroyString(&amp;S)</code>：销毁串。将串 S 销毁（回收存储空间）。</li>
-<li><code>Concat(&amp;Y, S1, S2)</code>：串联接。用 T 返回由 S1 和 S2联接而成的新串。</li>
-<li><code>SubString(&amp;Sub, S, pos, len)</code>：：求子串。用 sub 返回串 S 的第 pos 个字符起长度为 len 的子串。</li>
-<li><code>Index(S, T)</code>：定位操作。若主串中存在与串 T 值相同的子串，则返回它在主串 S 中第一次出现的位置；否则函数值为0。</li>
-<li><code>StrCompare(S, T)</code>：比较操作。若 S &gt; T，则返回值 &gt; 0；若 S &#x3D; T，则返回值 &#x3D; 0；若 S &lt; T，则返回值 &lt; 0。</li>
-</ul>
-</li>
-<li><p>字符集：</p>
-<ul>
-<li>英文字符——ASCII字符集</li>
-<li>中英文——Unicode字符集</li>
-<li>基于同一个字符集，可以有多种编码方案。</li>
-</ul>
-</li>
-</ul>
-<h1 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h1><ul>
-<li><p>顺序存储</p>
-<ul>
-<li><p>静态数组实现（定长顺序存储）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXLEN 255	<span class="comment">//预定义最大串长为255</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[MAXLEN];	<span class="comment">//每个分量存储一个字符</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的实际长度</span></span><br><span class="line">&#125; SString;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态数组实现（堆分配存储）</p>
-<ul>
-<li>用完需要手动 free</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> *ch;	<span class="comment">//按串长分配存储区，ch 指向串的基地址</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的长度</span></span><br><span class="line">&#125; HString;</span><br><span class="line">HString S;</span><br><span class="line">S.ch = (<span class="type">char</span> *)<span class="built_in">malloc</span>(MAXLEN * <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">S.length = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>四种顺序存储方案：</p>
-<ul>
-<li>最后一个位置放 length</li>
-<li>第一个位置放 length</li>
-<li>没有 length，以 ‘\0’ 表示结尾</li>
-<li>ch[0] 废弃不用，最后一个位置放 length</li>
-</ul>
-</li>
-<li><p>串的链式存储</p>
-<ul>
-<li><p>存储密度低：每个字符1B，每个指针4B</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch;	<span class="comment">//每个结点存1个字符</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; StringNode, * String;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>存储密度提高</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[<span class="number">4</span>];	<span class="comment">//每个结点存多个字符</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> * <span class="title">next</span>;</span></span><br><span class="line">&#125; StringNode, * String;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><code>SubString(&amp;Sub, S, pos, len)</code>：：求子串。用 sub 返回串 S 的第 pos 个字符起长度为 len 的子串。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXLEN 255	<span class="comment">//预定义最大串长为255</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[MAXLEN];	<span class="comment">//每个分量存储一个字符</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的实际长度</span></span><br><span class="line">&#125; SString;</span><br><span class="line"></span><br><span class="line"><span class="comment">//求子串</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">SubString</span><span class="params">(SString &amp;sub, SString S, <span class="type">int</span> pos, <span class="type">int</span> len)</span> &#123;</span><br><span class="line">    <span class="comment">//子串范围越界</span></span><br><span class="line">    <span class="keyword">if</span> (pos + len - <span class="number">1</span> &gt; S.length)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = pos; i &lt; pos + len; i++)</span><br><span class="line">        SUb.ch[i - pos + <span class="number">1</span>] = S.ch[i];</span><br><span class="line">    Sub.length = len;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>StrCompare(S, T)</code>：比较操作。若 S &gt; T，则返回值 &gt; 0；若 S &#x3D; T，则返回值 &#x3D; 0；若 S &lt; T，则返回值 &lt; 0。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Strcompare</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= S.length &amp;&amp; i &lt;= T.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (S.ch[i] != T.ch[i])</span><br><span class="line">            <span class="keyword">return</span> S.ch[i] - T.ch[i];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//扫描过的所有字符都相同，则长度长的串更大</span></span><br><span class="line">    <span class="keyword">return</span> S.length-T.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>Index(S, T)</code>：定位操作。若主串中存在与串 T 值相同的子串，则返回它在主串 S 中第一次出现的位置；否则函数值为0。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, n = Strlength(S), m = StrLength(T);</span><br><span class="line">    SString sub;	<span class="comment">//用于暂存子串</span></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= n - m + <span class="number">1</span>) &#123;</span><br><span class="line">        SubString(sub, S, i, m);</span><br><span class="line">        <span class="keyword">if</span>(StrCompare(sub, T) != <span class="number">0</span>)</span><br><span class="line">            ++i;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> i;	<span class="comment">//返回子串在主串中的位置</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;	<span class="comment">//S 中不存在与 T 相等的子串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="朴素模式匹配算法"><a href="#朴素模式匹配算法" class="headerlink" title="朴素模式匹配算法"></a>朴素模式匹配算法</h1><ul>
-<li><p>字符串模式匹配：在主串中找到与模式串相同的子串，并返回其所在位置。</p>
-<ul>
-<li>子串——主串的一部分，一定能找到</li>
-<li>模式串——不一定能在主串中找到</li>
-</ul>
-</li>
-<li><p>朴素模式匹配算法：主串长度为 n，模式串长度为 m。将主串中<strong>所有长度为 m 的子串</strong>依次与模式串对比，直到找到一个完全匹配的子串，或所有子串都不匹配为止。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.length &amp;&amp; j &lt;= T.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(S.ch[i] == T.ch[i]) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            i = i - j +<span class="number">2</span>;</span><br><span class="line">            j = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.length)</span><br><span class="line">        <span class="keyword">return</span> i-T.length;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最坏时间复杂度：O(nm)</p>
-</li>
-</ul>
-<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h2 id="KMP算法的实现"><a href="#KMP算法的实现" class="headerlink" title="KMP算法的实现"></a>KMP算法的实现</h2><ul>
-<li><p>朴素模式匹配算法</p>
-<ul>
-<li>一旦发现当前这个子串中某个字符不匹配，就只能转而匹配下一个子串（从头开始）</li>
-<li>不匹配的字符之前，一定是和模式串一致的</li>
-</ul>
-</li>
-<li><p>KMP算法中主串指针不回溯。</p>
-</li>
-<li><p>算法实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index_KMP</span><span class="params">(SString S, SString T, <span class="type">int</span> next[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.length &amp;&amp; j &lt;=T.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || S.ch[i] == T.ch[j]) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;	<span class="comment">//继续比较后继字符</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            j = next[j];	<span class="comment">//模式串向右移动</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.length)</span><br><span class="line">        <span class="keyword">return</span> i - T.length;	<span class="comment">//匹配成功</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>KMP算法，最坏时间复杂度 O(m+n)，其中，求 next 数组时间复杂度 O(m)</p>
-</li>
-</ul>
-<h2 id="求-next-数组"><a href="#求-next-数组" class="headerlink" title="求 next 数组"></a>求 next 数组</h2><ul>
-<li>next 数组的作用：当模式串的第 j 个字符失配时，从模式串的第 next[j] 的继续往后匹配。</li>
-<li>任何模式串都一样，第一个字符不匹配时，只能匹配下一个子串。因此，next[1] 都为0。</li>
-<li>任何模式串都一样，第二个字符不匹配时，只能匹配下一个子串。因此，next[2] 都为1。</li>
-<li>在不匹配的位置前边，划一条分界线。模式串一步一步往右移，直到分界线之前“能对上”，或模式串完全跨过分界线为止。此时 j 指向哪儿，next 数组值就是多少。</li>
-</ul>
-<h2 id="KMP算法的进一步优化"><a href="#KMP算法的进一步优化" class="headerlink" title="KMP算法的进一步优化"></a>KMP算法的进一步优化</h2><ul>
-<li><p>求 nextval 数组</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nextval[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span>; j &lt;= T; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (T.ch[next[j]] == T.ch[j])</span><br><span class="line">        nextval[j] = nextval[next[j]];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        nextval[j] = next[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用 nextval 数组代替 next 数组进行计算。</p>
 </li>
 </ul>
 
