@@ -1109,13 +1109,6 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/Linux/</loc>
-    <lastmod>2024-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ascendlogo.github.io/categories/C%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2024-08-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1123,14 +1116,21 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
+    <loc>http://ascendlogo.github.io/categories/Python/</loc>
     <lastmod>2024-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/Python/</loc>
+    <loc>http://ascendlogo.github.io/categories/Linux/</loc>
+    <lastmod>2024-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ascendlogo.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</loc>
     <lastmod>2024-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1158,6 +1158,13 @@
   </url>
   
   <url>
+    <loc>http://ascendlogo.github.io/categories/%E6%9C%AD/</loc>
+    <lastmod>2024-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ascendlogo.github.io/categories/Algo/</loc>
     <lastmod>2024-08-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -1166,13 +1173,6 @@
   
   <url>
     <loc>http://ascendlogo.github.io/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/</loc>
-    <lastmod>2024-08-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%9C%AD/</loc>
     <lastmod>2024-08-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

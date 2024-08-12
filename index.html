@@ -222,7 +222,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-08-12 00:00:00 / Modified: 17:34:26" itemprop="dateCreated datePublished" datetime="2024-08-12T00:00:00+08:00">2024-08-12</time>
+      <time title="Created: 2024-08-12 00:00:00 / Modified: 19:32:50" itemprop="dateCreated datePublished" datetime="2024-08-12T00:00:00+08:00">2024-08-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -403,6 +403,52 @@
 <li>时序部件：提供时序控制信号指令中的操作码字段</li>
 </ul>
 </li>
+</ul>
+<h2 id="计算机基本概念"><a href="#计算机基本概念" class="headerlink" title="计算机基本概念"></a>计算机基本概念</h2><ul>
+<li>CPU的性能指标：主频、字长、CPU缓存、核心数量</li>
+<li>总线的分类：数据总线、控制总线、地址总线</li>
+<li>总线的性能指标：带宽、位宽、工作频率</li>
+<li>BIOS&#x2F;CMOS</li>
+<li>系统性能评测方法：时钟频率、指令执行、等效指令速度法、数据处理速率（PDR）、核心程序法、基准测试程序</li>
+</ul>
+<h2 id="总线系统"><a href="#总线系统" class="headerlink" title="总线系统"></a>总线系统</h2><ul>
+<li>一条总线同一时刻仅允许一个设备发送，但允许多个设备接收</li>
+<li>总线的分类<ul>
+<li>数据总线：在CPU与RAM之间来回传送需要处理或是需要存储的数据</li>
+<li>地址总线：用来指定在RAM之中存储的数据的地址</li>
+<li>控制总线：将微处理器控制单元的信号传送到周边设备</li>
+</ul>
+</li>
+<li>总线的性能指标：带宽、位宽、工作频率（带宽&#x3D;位宽*工作频率）</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>一条指令就是机器语言的一个语句，是一组有意义的二进制代码</li>
+<li>组成<ul>
+<li>操作码字段OP：指出了计算机要执行什么性质的操作</li>
+<li>地址码字段A：包含各操作数的地址及操作结果的存放地址等</li>
+</ul>
+</li>
+</ul>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><ul>
+<li>立即寻址方式：操作数直接在指令中，速度快，灵活性差</li>
+<li>直接寻址方式：指令中存放的是操作数的地址</li>
+<li>间接寻址方式：指令中存放了一个地址，这个地址对应的内容是操作数的地址</li>
+<li>寄存器寻址方式：寄存器存放操作数</li>
+<li>寄存器间接寻址方式：寄存器内存放的是操作数的地址</li>
+</ul>
+<h1 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h1><ul>
+<li>流水线：多条指令重叠进行操作的一种准并行处理实现技术</li>
+<li>流水线周期：执行时间最长的一段</li>
+<li>流水线计算公式<ul>
+<li>1条指令执行时间+（指令条数-1）*流线线周期<ul>
+<li>理论公式：(t<sub>1</sub>+t<sub>2</sub>+…+t<sub>k</sub>)+(n-1)*Δt</li>
+<li>实践公式：k * Δt + (n-1) * Δt</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流水线的吞吐率（TP）计算的最基本的公式为：TP&#x3D;n&#x2F;T<sub>k</sub>（T<sub>k</sub>表示总共花费时间）</li>
+<li>流水线的最大吞吐率：流水线周期的倒数</li>
 </ul>
 
       
