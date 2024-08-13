@@ -229,7 +229,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-13 11:04:02" itemprop="dateModified" datetime="2024-08-13T11:04:02+08:00">2024-08-13</time>
+      <time title="Modified: 2024-08-13 19:36:54" itemprop="dateModified" datetime="2024-08-13T19:36:54+08:00">2024-08-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -456,6 +456,130 @@
 </li>
 <li>流水线的吞吐率（TP）计算的最基本的公式为：TP&#x3D;n&#x2F;T<sub>k</sub>（T<sub>k</sub>表示总共花费时间）</li>
 <li>流水线的最大吞吐率：流水线周期的倒数</li>
+</ul>
+<h1 id="多级存储器结构"><a href="#多级存储器结构" class="headerlink" title="多级存储器结构"></a>多级存储器结构</h1><h2 id="金字塔形层次结构"><a href="#金字塔形层次结构" class="headerlink" title="金字塔形层次结构"></a>金字塔形层次结构</h2><ul>
+<li>存储器被组织成金字塔形的层次结构，自上而下组成6个层次结构，依次变得更慢、访问频率更低、容量更大、每字节的造价更便宜<ul>
+<li>S0：寄存器。CPU寄存器保存来自cache的字</li>
+<li>S1：芯片内的高速缓存（cache）。芯片内的cache保存取自芯片外cache的cache行</li>
+<li>S2：芯片外的高速缓存（SRAM，DRAM，DDRAM）。芯片外的cache保存取自主存储器上的cache行</li>
+<li>S3：主存储器（Flash，PROM，EPROM，E2PROM）。主存储器保存取自外部存储器上的文件</li>
+<li>S4：外部存储器（磁盘，光盘，CF卡，SD卡）外部存储器保存远程二级存储器上的文件</li>
+<li>S5：远程二级存储器（分布式文件系统，Web服务器）</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><ul>
+<li><p>功能：提高CPU数据输入输出的速率，突破所谓的“冯诺依曼瓶颈”</p>
+</li>
+<li><p>速度：在计算机的存储系统体系中，Cache是访问速度较快的层次</p>
+</li>
+<li><p>原理：使用Cache改善系统性能的依据是程序的局部性原理</p>
+</li>
+<li><p>组成：Cache由两部分组成：控制部分和Cache存储器部分</p>
+</li>
+<li><p>平均系统周期时间（以读操作为例：使用“Cache+主存储器”）t<sub>3</sub>&#x3D;hxt<sub>1</sub>+(1-h)xt<sub>2</sub></p>
+<ul>
+<li>h代表对Cache的访问命中率</li>
+<li>t<sub>1</sub>表示Cache的周期时间</li>
+<li>t<sub>2</sub>表示主存储器周期时间</li>
+<li>t<sub>3</sub>表示系统的平均周期</li>
+<li>(1-h)又称为失效率（未命中率）</li>
+</ul>
+</li>
+<li><p>地址映像</p>
+<ul>
+<li>通常由SRAM（Static Random Access Memory，静态存储器）组成，其访问速度远高于主存，接近CPU</li>
+<li>其功能是提高CPU数据输入输出的速率。其理论依据是程序的局部性原理。实现基础是将主存和Cache划分成大小相同的块&#x2F;页</li>
+<li>装入缓存时将主存块与Cache块的映射关系存入相联存储表（硬件实现）中</li>
+<li>CPU通过主存地址访问时先访问Cache（命中可提升速度，所以其关键性能指标是命中率），依据主存地址关联相联存储表转换为Cache地址。如果在Cache没有，才需要访问主存（Cache页置换，置换算法会影响命中率）</li>
+</ul>
+</li>
+<li><p>直接映像和变换</p>
+<ul>
+<li>主存储器中一块只能映像到cache的一个特定快中</li>
+<li>主存和缓存分为相同大小的数据块</li>
+<li>主存空间按缓存容量分为区，每一区的块数与缓存的总块数相等</li>
+<li>主存中某区的一块存入缓存时只能存入缓存中块号相同的位置</li>
+<li>特点：<ul>
+<li>地址变换电路简单，访问速度快</li>
+<li>空间利用率低，冲突概率高</li>
+<li>对页面置换算法依赖度高，且Cache空间利用率较低，命中率较低</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>全相联地址映像和变换</p>
+<ul>
+<li>主存中任意一块可以映像到Cache中的任意一块的位置上</li>
+<li>主存和缓存分成相同大小的数据块</li>
+<li>主存的某一数据块可以装入缓存的任意一块空间中</li>
+<li>特点：<ul>
+<li>空间利用率高</li>
+<li>冲突概率低</li>
+<li>实现复杂，速度慢，适合小容量cache</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组相联地址映像和变换</p>
+<ul>
+<li>主存和cache按同样大小分块</li>
+<li>cache分为若干组，如两块一组，主存按cache组数分区</li>
+<li>每个组采用<strong>直接映射方式</strong></li>
+<li>组内的块则采用<strong>全相连映像方式</strong></li>
+<li>特点：<ul>
+<li>是以上两种方式的折中</li>
+<li>实现难度和造价要比直接映像方式高</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="I-O控制方式"><a href="#I-O控制方式" class="headerlink" title="I&#x2F;O控制方式"></a>I&#x2F;O控制方式</h1><ul>
+<li>直接程序控制：无条件传送方式、程序查询方式</li>
+<li>中断方式</li>
+<li>直接存储器存取方式（DMA）：在传送数据块的过程中不需要CPU干涉</li>
+<li>输入输出处理机（IOP）</li>
+</ul>
+<h1 id="可靠性和校验码"><a href="#可靠性和校验码" class="headerlink" title="可靠性和校验码"></a>可靠性和校验码</h1><h2 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h2><ul>
+<li>串联系统R&#x3D;R<sub>1</sub>xR<sub>2</sub>x…xR<sub>n</sub>，R为可靠度，R<sub>1</sub>~R<sub>n</sub>每个串联部分可靠度</li>
+<li>并联系统R&#x3D;1-(1-R<sub>1</sub>)x(1-R<sub>2</sub>)x…x(1-R<sub>n</sub>)，（1-R）又称为失效率</li>
+<li>混合系统为串联和并联的叠加</li>
+</ul>
+<h2 id="校验码"><a href="#校验码" class="headerlink" title="校验码"></a>校验码</h2><ul>
+<li><p>码距：一个编码系统的码距就是整个编码系统中任意（所有）两个码字（合法编码）的最小距离</p>
+<ul>
+<li>举例：要对A，B两个字母进行编码<ul>
+<li>若用1位长度的二进制编码，若A&#x3D;1，B&#x3D;0。这样A，B之间的最小码距为1</li>
+<li>若用1位长度的二进制编码，若A&#x3D;11，B&#x3D;00。这样A，B之间的最小码距为2</li>
+<li>若用1位长度的二进制编码，若A&#x3D;111，B&#x3D;000。这样A，B之间的最小码距为3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>奇偶校验码：</p>
+<ul>
+<li>通过在编码中增加一位校验位来使编码中的1的个数为奇数（奇校验）或者为偶数（偶校验），从而使码距变为2</li>
+<li>仅可检错，可检测1（奇数）位错</li>
+</ul>
+</li>
+<li><p>CRC（循环冗余码）：</p>
+<ul>
+<li><p>利用生成多项式为K个数据位产生r个校验位来进行编码，其编码长度为k+r</p>
+</li>
+<li><p>三者中<strong>唯一</strong>用到模2运算</p>
+</li>
+<li><p>仅可检错，可检测多位错</p>
+</li>
+</ul>
+</li>
+<li><p>海明码：</p>
+<ul>
+<li>在数据位之间插入K个校验位，通过扩大码距来实现检查和纠错</li>
+<li>设数据位是n位，校验位是k位，则n和k必须满足 2<sup>k</sup>-1&gt;&#x3D;n+k</li>
+<li>可检错，且可纠1位错</li>
+</ul>
+</li>
 </ul>
 
       
@@ -1217,6 +1341,166 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-16 16:24:09" itemprop="dateModified" datetime="2024-07-16T16:24:09+08:00">2024-07-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
+<li>D——电能表</li>
+</ul>
+<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
+<li><p>D——单相</p>
+</li>
+<li><p>H——三相</p>
+</li>
+<li><p>J——直流</p>
+</li>
+<li><p>S——三相三线</p>
+</li>
+<li><p>T——三相四线</p>
+</li>
+</ul>
+<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
+<li>A——数字化</li>
+<li>E——机电式</li>
+<li>S——电子式</li>
+<li>Z——智能</li>
+</ul>
+<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
+<li>D——多功能</li>
+<li>F——多费率</li>
+<li>H——谐波</li>
+<li>K——费控</li>
+<li>P——最大需量</li>
+<li>X——无功（”有功“和”有无功组合“缺省，”无功“放到特征描述栏，纯无功电能表时采用）</li>
+<li>Y——预付费</li>
+</ul>
+<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
+<li>C——槽装式（嵌入式）</li>
+<li>H——多用户</li>
+<li>J——防窃电</li>
+<li>L——长寿命</li>
+<li>M——模组化</li>
+<li>U——导轨</li>
+</ul>
+<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
+<li>如果产品是统一设计的，采用设计序号。</li>
+</ul>
+<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
+<li><strong>-</strong></li>
+</ul>
+<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
+<li>B——蓝牙通信</li>
+<li>C——CDMA</li>
+<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
+<li>F——WIFI</li>
+<li>G——GPRS</li>
+<li>H——HRF</li>
+<li>J——微功率无线</li>
+<li>L——有线网络</li>
+<li>N——以太网</li>
+<li>P——公用电话线</li>
+<li>Q——光纤</li>
+<li>W——230MHz专网</li>
+<li>Y——音频</li>
+<li>Z——载波</li>
+<li>NB——NBIoT</li>
+<li>4G——4G</li>
+<li>5G——5G</li>
+<li>其他字母组合——新通信方式简称</li>
+</ul>
+<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
+<li><strong>&#x2F;</strong></li>
+</ul>
+<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
+<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
+<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
+<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
+<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
+<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
+<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
+<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E5%B8%B8%E8%A7%81%E5%85%83%E5%99%A8%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1552,166 +1836,6 @@
 <li><strong>智能电流互感器</strong>：常用于智能电网、物联网和远程监测等应用，提供更高级别的数据处理和管理能力。</li>
 </ul>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-07-16 16:24:09" itemprop="dateModified" datetime="2024-07-16T16:24:09+08:00">2024-07-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
-<li>D——电能表</li>
-</ul>
-<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
-<li><p>D——单相</p>
-</li>
-<li><p>H——三相</p>
-</li>
-<li><p>J——直流</p>
-</li>
-<li><p>S——三相三线</p>
-</li>
-<li><p>T——三相四线</p>
-</li>
-</ul>
-<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
-<li>A——数字化</li>
-<li>E——机电式</li>
-<li>S——电子式</li>
-<li>Z——智能</li>
-</ul>
-<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
-<li>D——多功能</li>
-<li>F——多费率</li>
-<li>H——谐波</li>
-<li>K——费控</li>
-<li>P——最大需量</li>
-<li>X——无功（”有功“和”有无功组合“缺省，”无功“放到特征描述栏，纯无功电能表时采用）</li>
-<li>Y——预付费</li>
-</ul>
-<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
-<li>C——槽装式（嵌入式）</li>
-<li>H——多用户</li>
-<li>J——防窃电</li>
-<li>L——长寿命</li>
-<li>M——模组化</li>
-<li>U——导轨</li>
-</ul>
-<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
-<li>如果产品是统一设计的，采用设计序号。</li>
-</ul>
-<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
-<li><strong>-</strong></li>
-</ul>
-<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
-<li>B——蓝牙通信</li>
-<li>C——CDMA</li>
-<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
-<li>F——WIFI</li>
-<li>G——GPRS</li>
-<li>H——HRF</li>
-<li>J——微功率无线</li>
-<li>L——有线网络</li>
-<li>N——以太网</li>
-<li>P——公用电话线</li>
-<li>Q——光纤</li>
-<li>W——230MHz专网</li>
-<li>Y——音频</li>
-<li>Z——载波</li>
-<li>NB——NBIoT</li>
-<li>4G——4G</li>
-<li>5G——5G</li>
-<li>其他字母组合——新通信方式简称</li>
-</ul>
-<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
-<li><strong>&#x2F;</strong></li>
-</ul>
-<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
-<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
-<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
-<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
-<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
-<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
-<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
-<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
 </ul>
 
       
