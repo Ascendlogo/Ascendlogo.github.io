@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="codeva-3i9UuBpy3a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ascendlogo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="数值转换数的转换 数制及其特征    数制 基本数码 基数 位权 形式表示符    十进制 0,1,2,3…9 r&#x3D;10 10n D   二进制 0,1 r&#x3D;2 2n B   八进制 0,1,2,3,4…7 r&#x3D;8 8n O   十六进制 0-9,A,B,C,D,E,F r&#x3D;16 16n H    R进制-&gt;十进制  使用位权展开法 将R进制的每一位数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一章 计算机系统基础">
+<meta property="og:url" content="http://ascendlogo.github.io/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Ascendlogo">
+<meta property="og:description" content="数值转换数的转换 数制及其特征    数制 基本数码 基数 位权 形式表示符    十进制 0,1,2,3…9 r&#x3D;10 10n D   二进制 0,1 r&#x3D;2 2n B   八进制 0,1,2,3,4…7 r&#x3D;8 8n O   十六进制 0-9,A,B,C,D,E,F r&#x3D;16 16n H    R进制-&gt;十进制  使用位权展开法 将R进制的每一位数">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png">
+<meta property="article:published_time" content="2024-08-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-08-13T03:04:02.733Z">
+<meta property="article:author" content="Ascendlogo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png">
+
+
+<link rel="canonical" href="http://ascendlogo.github.io/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://ascendlogo.github.io/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/","path":"2024/08/12/嵌入式/第一章 计算机系统基础/","title":"第一章 计算机系统基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>第一章 计算机系统基础 | Ascendlogo</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?34928f5ef5c81b7346cdf1c4aee47714"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ascendlogo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">数值转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.1.</span> <span class="nav-text">数的转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E4%BD%8D"><span class="nav-number">1.2.</span> <span class="nav-text">数据的存储单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.</span> <span class="nav-text">二进制的运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">数据的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.1.</span> <span class="nav-text">数的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E5%92%8C%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">定点数和浮点数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="nav-number">3.</span> <span class="nav-text">计算机的基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">计算机的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">3.2.</span> <span class="nav-text">计算机基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.3.</span> <span class="nav-text">总线系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">3.4.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="nav-number">3.5.</span> <span class="nav-text">寻址方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-number">4.</span> <span class="nav-text">流水线</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ascendlogo"
+      src="/images/header.JPG">
+  <p class="site-author-name" itemprop="name">Ascendlogo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">120</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Ascendlogo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Ascendlogo" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/08/12/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="第一章 计算机系统基础 | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第一章 计算机系统基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-08-12T00:00:00+08:00">2024-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-13 11:04:02" itemprop="dateModified" datetime="2024-08-13T11:04:02+08:00">2024-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h1><h2 id="数的转换"><a href="#数的转换" class="headerlink" title="数的转换"></a>数的转换</h2><ul>
+<li><p>数制及其特征</p>
+<table>
+<thead>
+<tr>
+<th align="center">数制</th>
+<th align="center">基本数码</th>
+<th align="center">基数</th>
+<th align="center">位权</th>
+<th align="center">形式表示符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">十进制</td>
+<td align="center">0,1,2,3…9</td>
+<td align="center">r&#x3D;10</td>
+<td align="center">10<sup>n</sup></td>
+<td align="center">D</td>
+</tr>
+<tr>
+<td align="center">二进制</td>
+<td align="center">0,1</td>
+<td align="center">r&#x3D;2</td>
+<td align="center">2<sup>n</sup></td>
+<td align="center">B</td>
+</tr>
+<tr>
+<td align="center">八进制</td>
+<td align="center">0,1,2,3,4…7</td>
+<td align="center">r&#x3D;8</td>
+<td align="center">8<sup>n</sup></td>
+<td align="center">O</td>
+</tr>
+<tr>
+<td align="center">十六进制</td>
+<td align="center">0-9,A,B,C,D,E,F</td>
+<td align="center">r&#x3D;16</td>
+<td align="center">16<sup>n</sup></td>
+<td align="center">H</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>R进制-&gt;十进制</p>
+<ul>
+<li>使用<strong>位权展开法</strong></li>
+<li>将R进制的每一位数值用R<sup>k</sup>形式表示</li>
+<li>R为底数&#x2F;基数</li>
+<li>k为指数</li>
+</ul>
+</li>
+<li><p>十进制-&gt;R进制</p>
+<ul>
+<li>使用<strong>短除法</strong></li>
+</ul>
+</li>
+<li><p>二进制&lt;–&gt;八进制</p>
+</li>
+<li><p>二进制&lt;–&gt;十六进制</p>
+</li>
+</ul>
+<h2 id="数据的存储单位"><a href="#数据的存储单位" class="headerlink" title="数据的存储单位"></a>数据的存储单位</h2><ul>
+<li>在计算机中，数据的最小存储单位为BIT，1比特为1个二进制位。字节（Byte），1个字节为8个二进制位</li>
+<li>二进制有两个数：0,1</li>
+<li>位（Bit）</li>
+<li>字节（Byte）<ul>
+<li>1B&#x3D;8bit</li>
+<li>1KB&#x3D;1024B</li>
+<li>1MB&#x3D;1024KB</li>
+<li>1GB&#x3D;1024MB</li>
+</ul>
+</li>
+<li>除字节Byte外，还有千字节（KB），兆字节（MB），吉字节（GB），太字节（TB）</li>
+</ul>
+<h2 id="二进制的运算"><a href="#二进制的运算" class="headerlink" title="二进制的运算"></a>二进制的运算</h2><ul>
+<li>二进制的算术运算：加、减、乘、除</li>
+<li>二进制的逻辑运算：与、或、非、异或</li>
+</ul>
+<h1 id="数据的表示"><a href="#数据的表示" class="headerlink" title="数据的表示"></a>数据的表示</h1><h2 id="数的表示"><a href="#数的表示" class="headerlink" title="数的表示"></a>数的表示</h2><ul>
+<li><p>机器数和真值：两者之间的区别是真值的符号在机器数中用二进制符号位表示</p>
+</li>
+<li><p>码制</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">数值+1</th>
+<th align="center">数值-1</th>
+<th align="center">1+（-1）</th>
+<th align="center">整数数值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">原码</td>
+<td align="center">0000 0001</td>
+<td align="center">1000 0001</td>
+<td align="center">1000 0010</td>
+<td align="center">-（2<sup>n-1</sup>-1）~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">反码</td>
+<td align="center">0000 0001</td>
+<td align="center">1111 1110</td>
+<td align="center">1111 1111</td>
+<td align="center">-（2<sup>n-1</sup>-1）~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">补码</td>
+<td align="center">0000 00001</td>
+<td align="center">1111 1111</td>
+<td align="center">0000 0000</td>
+<td align="center">-2<sup>n-1</sup>~2<sup>n-1</sup>-1</td>
+</tr>
+<tr>
+<td align="center">移码</td>
+<td align="center">1000 0001</td>
+<td align="center">0111 1111</td>
+<td align="center">1000 0000</td>
+<td align="center">-2<sup>n-1</sup>~2<sup>n-1</sup>-1</td>
+</tr>
+</tbody></table>
+<ul>
+<li>原码：第一位为符号位，其余组成真值</li>
+<li>反码：正数与原码相同；负数除第一位外其余数值位按位取反</li>
+<li>补码：正数与原码相同；负数在反码基础上加一（常用于加减法运算，部分计算机数的表示、存储）</li>
+<li>移码：在补码基础上数值不变，符号位取反（常用于浮点数的阶码）</li>
+</ul>
+</li>
+</ul>
+<h2 id="定点数和浮点数"><a href="#定点数和浮点数" class="headerlink" title="定点数和浮点数"></a>定点数和浮点数</h2><ul>
+<li>定点数：小数点的位置固定不变的数，小数点不需要占用一位二进制<ul>
+<li>定点整数：小数点固定在最右边</li>
+<li>定点小数：小数点固定在某一位</li>
+</ul>
+</li>
+<li>浮点数：N&#x3D;R<sup>e</sup>*M，其中M称为尾数，e是指数（阶码，用移码表示），R为基数（阶码的底）<ul>
+<li>阶符</li>
+<li>阶码：决定数值表示的范围</li>
+<li>数符</li>
+<li>尾数：决定数值表示的精度</li>
+<li>流程：对阶-&gt;尾数计算-&gt;结果格式化</li>
+</ul>
+</li>
+</ul>
+<h1 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h1><h2 id="计算机的结构"><a href="#计算机的结构" class="headerlink" title="计算机的结构"></a>计算机的结构</h2><ul>
+<li><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png" alt="image-20240812173410572"></li>
+<li>运算器<ul>
+<li>算术逻辑单元ALU：数据的算术运算和逻辑运算</li>
+<li>累加寄存器AC：通用寄存器，为ALU提供一个工作区，用来暂时保存数据</li>
+<li>数据缓冲寄存器DR：写内存时，暂存指令或数据</li>
+<li>状态条件寄存器PSW：存状态标志与控制标志（<strong>争议</strong>：也有将其归为控制的）</li>
+</ul>
+</li>
+<li>控制器<ul>
+<li>程序计数器PC：存储下一条要执行指令的地址（<strong>地址</strong>不同于指令组成中的<strong>地址码</strong>）</li>
+<li>指令寄存器IR：存储即将要执行的指令</li>
+<li>指令译码器ID：对进行分析解释</li>
+<li>时序部件：提供时序控制信号指令中的操作码字段</li>
+</ul>
+</li>
+</ul>
+<h2 id="计算机基本概念"><a href="#计算机基本概念" class="headerlink" title="计算机基本概念"></a>计算机基本概念</h2><ul>
+<li>CPU的性能指标：主频、字长、CPU缓存、核心数量</li>
+<li>总线的分类：数据总线、控制总线、地址总线</li>
+<li>总线的性能指标：带宽、位宽、工作频率</li>
+<li>BIOS&#x2F;CMOS</li>
+<li>系统性能评测方法：时钟频率、指令执行、等效指令速度法、数据处理速率（PDR）、核心程序法、基准测试程序</li>
+</ul>
+<h2 id="总线系统"><a href="#总线系统" class="headerlink" title="总线系统"></a>总线系统</h2><ul>
+<li>一条总线同一时刻仅允许一个设备发送，但允许多个设备接收</li>
+<li>总线的分类<ul>
+<li>数据总线：在CPU与RAM之间来回传送需要处理或是需要存储的数据</li>
+<li>地址总线：用来指定在RAM之中存储的数据的地址</li>
+<li>控制总线：将微处理器控制单元的信号传送到周边设备</li>
+</ul>
+</li>
+<li>总线的性能指标：带宽、位宽、工作频率（带宽&#x3D;位宽*工作频率）</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>一条指令就是机器语言的一个语句，是一组有意义的二进制代码</li>
+<li>组成<ul>
+<li>操作码字段OP：指出了计算机要执行什么性质的操作</li>
+<li>地址码字段A：包含各操作数的地址及操作结果的存放地址等</li>
+</ul>
+</li>
+</ul>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><ul>
+<li>立即寻址方式：操作数直接在指令中，速度快，灵活性差</li>
+<li>直接寻址方式：指令中存放的是操作数的地址</li>
+<li>间接寻址方式：指令中存放了一个地址，这个地址对应的内容是操作数的地址</li>
+<li>寄存器寻址方式：寄存器存放操作数</li>
+<li>寄存器间接寻址方式：寄存器内存放的是操作数的地址</li>
+</ul>
+<h1 id="流水线"><a href="#流水线" class="headerlink" title="流水线"></a>流水线</h1><ul>
+<li>流水线：多条指令重叠进行操作的一种准并行处理实现技术</li>
+<li>流水线周期：执行时间最长的一段</li>
+<li>流水线计算公式<ul>
+<li>1条指令执行时间+（指令条数-1）*流线线周期<ul>
+<li>理论公式：(t<sub>1</sub>+t<sub>2</sub>+…+t<sub>k</sub>)+(n-1)*Δt</li>
+<li>实践公式：k * Δt + (n-1) * Δt</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流水线的吞吐率（TP）计算的最基本的公式为：TP&#x3D;n&#x2F;T<sub>k</sub>（T<sub>k</sub>表示总共花费时间）</li>
+<li>流水线的最大吞吐率：流水线周期的倒数</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/25/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/" rel="prev" title="电力相关名词解释积累">
+                  <i class="fa fa-chevron-left"></i> 电力相关名词解释积累
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ascendlogo</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
