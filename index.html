@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">121</span>
+          <span class="site-state-item-count">122</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,377 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/01/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/01/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">第三章 操作系统知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-01T00:00:00+08:00">2024-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-02 09:10:18" itemprop="dateModified" datetime="2024-09-02T09:10:18+08:00">2024-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="操作系统的作用"><a href="#操作系统的作用" class="headerlink" title="操作系统的作用"></a>操作系统的作用</h1><ul>
+<li>通过资源管理（软硬件资源管理），提高计算机系统的效率改善人机界面，向用户提供友好的工作环境。</li>
+</ul>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h2><ul>
+<li>进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位。它由程序块、进程控制块（PCB）和数据块三部分组成。</li>
+<li>进程与程序的区别<ul>
+<li>进程是程序的一次执行过程，没有程序就没有进程</li>
+<li>程序是完成某个特定功能的一系列程序语句的集合，只要不被破坏，它就永远存在</li>
+<li>程序是一个静态的概念，而进程是一个动态的概念，它由创建而产生，完成任务后因撤销而消亡；进程是系统进行资源分配和调度的独立单位，而程序不是</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程状态：三态模型"><a href="#进程状态：三态模型" class="headerlink" title="进程状态：三态模型"></a>进程状态：三态模型</h2><ul>
+<li>运行态：占有处理器正在运行</li>
+<li>就绪态：指具备运行条件，等待系统分配处理器以便运行</li>
+<li>等待态：又称为阻塞态或睡眠态，指不具备运行条件，正在等待某个事件的完成<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902090949.png" alt="三态模型"></li>
+<li>运行态–等待态：等待使用资源，如等待外设传输，等待人工干预</li>
+<li>等待态–就绪态：资源得到满足，如外设传输结束，人工干预完成</li>
+<li>运行态–就绪态：运行时间片到，出现有更高优先权进程</li>
+<li>就绪态–运行态：CPU空闲时选择一个就绪进程</li>
+</ul>
+<h2 id="进程状态：五态模型"><a href="#进程状态：五态模型" class="headerlink" title="进程状态：五态模型"></a>进程状态：五态模型</h2><ul>
+<li>挂起：将进程调出内存，保存到外存队列中，并释放资源</li>
+<li>激活：恢复挂起进程，重新调入内存<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902091000.png" alt="五态模型"></li>
+<li>目的：释放进程占用的资源以缓解资源不足</li>
+<li>原因：终端用户的请求，父进程的请求、OS的需要（如负荷调节、对换等）</li>
+</ul>
+<h2 id="前驱图"><a href="#前驱图" class="headerlink" title="前驱图"></a>前驱图</h2><ul>
+<li>出度：多少箭头出</li>
+<li>入度：多少箭头入</li>
+</ul>
+<h2 id="进程的同步和互斥"><a href="#进程的同步和互斥" class="headerlink" title="进程的同步和互斥"></a>进程的同步和互斥</h2><ul>
+<li>互斥：间接制约</li>
+<li>同步：直接制约</li>
+</ul>
+<h2 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h2><ul>
+<li>临界资源：诸进程间需要互斥方式对其进行共享的资源，如打印机、磁带机等</li>
+<li>临界区：每个进程中访问临界资源的那段代码称为临界区</li>
+<li>信号量：是一种特殊的变量</li>
+<li>P操作：申请资源，阻塞进程</li>
+<li>V操作：释放资源，唤醒进程<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902091015.png" alt="PV操作"></li>
+</ul>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><ul>
+<li>进程管理是操作系统的核心，但如果设计不当，就会出现死锁的问题。如果一个进程在等待一个不可能发生的事，则进程就死锁了。而如果一个或多个进程产生死锁，就会造成系统死锁。</li>
+<li>死锁的预防：打破四大条件<ul>
+<li>互斥</li>
+<li>保持和等待</li>
+<li>不剥夺</li>
+<li>环路等待</li>
+</ul>
+</li>
+<li>死锁的避免<ul>
+<li>有序资源分配法</li>
+<li><strong>银行家算法</strong></li>
+</ul>
+</li>
+<li>银行家算法：分配资源的原则<ul>
+<li>当一个进程对资源的最大需求量不超过系统中的资源数时可以接纳该进程</li>
+<li>进程可以分期请求资源，但请求的总数不能超过最大需求量</li>
+<li>当系统现有的资源不能满足进程尚需资源数时，对进程的请求可以推迟分配，但总能使进程在有限的时间里得到资源</li>
+</ul>
+</li>
+</ul>
+<h2 id="任务的调度的概述"><a href="#任务的调度的概述" class="headerlink" title="任务的调度的概述"></a>任务的调度的概述</h2><ul>
+<li>任务的调度要解决的问题：<ul>
+<li>WHEN：何时分配CPU<ul>
+<li>任务调度的时机，5种情形</li>
+</ul>
+</li>
+<li>HOW：如何分配CPU<ul>
+<li>任务调度方式，不可抢占，可抢占</li>
+</ul>
+</li>
+<li>WHAT：按什么原则分配CPU<ul>
+<li>任务调度算法，先来先服务、短作业优先、时间片轮转调度、优先级算法</li>
+<li>调度算法的性能指标</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h2><ul>
+<li>定义：调度用来确定多任务环境下任务执行的顺序和在获得CPU资源后能够执行的时间长度。</li>
+<li>操作系统通过一个<strong>调度程序</strong>来实现调度功能<ul>
+<li>调度程序以函数的形式存在，用来实现操作系统的调度算法</li>
+<li>调度程序本身并不是一个任务，是一个函数调用，可在内核的各个部分进行调用</li>
+</ul>
+</li>
+<li>调度程序：可以看作CPU的资源管理者<ul>
+<li>从就绪队列中选择一个任务去执行</li>
+<li>调度算法：调度程序在决策过程中所采用的算法，是在一个特定时刻用来确定将要运行的任务的一组规则</li>
+</ul>
+</li>
+</ul>
+<h2 id="任务调度的时机"><a href="#任务调度的时机" class="headerlink" title="任务调度的时机"></a>任务调度的时机</h2><ul>
+<li>一般来说有5种情形可能会发生任务的调度。<ul>
+<li>当一个新的任务被创建时，需要做出一个调度决策，是立即执行这个新任务还是继续执行父任务</li>
+<li>当一个任务运行结束时，它不再占用CPU，这时调度器必须做出一个决策，从就绪队列中选择某个任务去运行</li>
+<li>当一个任务由于I&#x2F;O操作、信号量或其他原因被阻塞时，也必须另选一个任务运行</li>
+<li>当一个I&#x2F;O操作已经完成，而等待该I&#x2F;O操作的任务将从阻塞状态变为就绪状态</li>
+<li>当一个时钟中断发生时，会唤醒一些延时任务或者可能会发现当前任务的时间片已用完，从而把它变为就绪状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="任务调度的方式"><a href="#任务调度的方式" class="headerlink" title="任务调度的方式"></a>任务调度的方式</h2><ul>
+<li>不可抢占调度方式（Non-Preemptive）：<ul>
+<li>如果一个任务被调度程序选中，就会一直运行下去</li>
+<li>直到它因为某种原因（如I&#x2F;O操作或任务间的同步）被阻塞了，或者它主动地交出了CPU的使用权。</li>
+<li>调度时机中的前3种情况（任务创建、任务运行结束、任务被阻塞），都可能会发生调度。第4、5种情况（即发生中断），不会发生调度</li>
+</ul>
+</li>
+<li>可抢占调度方式（Preemptive）：<ul>
+<li>当一个任务正在运行的时候，调度程序可以去打断它，并安排其他的任务去运行</li>
+<li>调度时机中所有的5种情况，都可能会发生调度</li>
+</ul>
+</li>
+<li>实时操作系统大都采用可抢占调度方式<ul>
+<li>使关键任务能够打断非关键任务的执行，确保关键任务的截止时间能够得到满足</li>
+</ul>
+</li>
+</ul>
+<h2 id="任务调度算法的性能指标"><a href="#任务调度算法的性能指标" class="headerlink" title="任务调度算法的性能指标"></a>任务调度算法的性能指标</h2><ul>
+<li>CPU的使用率（CPU utilization）</li>
+<li>响应时间（responsive time）：调度器为一个就绪任务进行上下文切换时所需的时间，以及任务在就绪队列中的等待时间</li>
+<li>周转时间：一个任务从提交到完成所经历的时间</li>
+<li>调度开销：调度器在做出调度决策时所需要的时间和空间开销</li>
+<li>公平性：大致相当的两个任务所得到的CPU时间应该大致相同。要防止饥饿，即一个任务始终得不到处理器去运行</li>
+<li>均衡性：尽可能使整个系统的各个部分（CPU、I&#x2F;O）都忙起来，提高系统资源的使用效率</li>
+<li>吞吐量：单位时间内完成的任务数量</li>
+<li><strong>这些性能指标之间具有一定的冲突性</strong><ul>
+<li>比如可通过让更多的任务处于就绪状态来提高CPU的使用率，但这显然会降低系统的响应时间</li>
+<li>调度程序的设计需要优先考虑最重要的需求，然后在各种因素之间进行折中处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h2><ul>
+<li>先来先服务算法（First Come First Served，FCFS）：也叫先进先出算法（First In First Out，FIFO）按照任务到达的先后次序进行调度，是不可抢占的调度方式<ul>
+<li>若当前任务占用CPU在运行，一直等到它执行完或被阻塞，才释放CPU</li>
+<li>被阻塞的任务，唤醒后，放在就绪队列的末尾，重新开始排队</li>
+</ul>
+</li>
+<li>先来先服务算法特点：<ul>
+<li>简单，易于理解，易于实现</li>
+<li>一批任务的平均周转时间取决于各个任务到达的顺序，如果短任务位于长任务之后，将增大平均周转时间</li>
+</ul>
+</li>
+</ul>
+<h2 id="SJF"><a href="#SJF" class="headerlink" title="SJF"></a>SJF</h2><ul>
+<li>短作业优先算法（Shortest Job First，SJF）：各个任务开始执行之前，事先预计好它的执行时间，从中选择用时较短的任务优先执行</li>
+<li>短作业优先算法有2种实现方案：<ul>
+<li>不可抢占方式：任务正在运行时，即使来了一个更短的任务，也不会被打断，只有当它运行完毕或被阻塞时，才会让出CPU，进行新的调度</li>
+<li>可抢占方式：如果一个新的短任务到了，且它的运行时间要小于当前正在运行的任务的剩余时间，则新任务会抢占CPU去运行。也称为最短剩余时间优先算法（Shortest Remaining Time First，SRTF）</li>
+</ul>
+</li>
+</ul>
+<h2 id="RR"><a href="#RR" class="headerlink" title="RR"></a>RR</h2><ul>
+<li><p>时间片轮转调度（round-robin scheduing RR）算法：</p>
+<ul>
+<li>所有的就绪任务按照先来先服务的原则排成一个队列</li>
+<li>在每次调度的时候，把处理器分派给队列当中的第一个任务，让它去执行一小段时间（时间片）。在这个时间段里任务被阻塞或结束，或者任务的时间片用完了，它会被送到就绪队列的末尾，然后调度器再执行当前队列的第一个任务</li>
+</ul>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>时间片轮转调度（round-robin scheduing RR）算法的优点：<ul>
+<li>公平性：每个就绪任务平均地分配使用CPU的时间</li>
+<li>活动性：每个就绪任务都能一直保持着活动性</li>
+</ul>
+</li>
+<li>采用时间片轮转调度算法，任务的时间片大小要适当选择</li>
+<li>时间片大小的选择会影响系统的性能和效率<ul>
+<li>时间片太大，时间片轮转调度就没有意义</li>
+<li>时间片太小，任务切换过于频繁，处理器开销大，真正用于运行应用程序的时间会减小</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>时间片轮转法有一个默认前提，即位于就绪队列中的各个任务时同等重要的</p>
+<ul>
+<li>任务按照先来后到的顺序排成一个队列</li>
+<li>大家轮流执行相同长度的时间片</li>
+</ul>
+</li>
+</ul>
+<h2 id="优先级算法："><a href="#优先级算法：" class="headerlink" title="优先级算法："></a>优先级算法：</h2><ul>
+<li><p>给每个任务都设置一个优先级</p>
+</li>
+<li><p>在任务调度的时候，让所有处于就绪状态的任务中选择优先级最高的那个任务去运行</p>
+</li>
+<li><p>优先级算法分为：可抢占式和不可抢占式</p>
+<ul>
+<li>可抢占式：当一个任务正在运行，一个优先级更高的新任务进入就绪状态，会立即抢占CPU运行新任务</li>
+<li>不可抢占式：当一个任务正在运行，一个优先级更高的新任务进入就绪状态，等当前任务执行完再决定</li>
+</ul>
+</li>
+<li><p>优先级算法确定方式：</p>
+<ul>
+<li>静态方式<ul>
+<li>在创建任务的时候就确定任务的优先级，且一直保持不变直到任务结束</li>
+<li>缺点：高优先级的任务会一直占用着CPU运行，低优先级的任务可能会长时间地得不到CPU，一直处于“饥饿”状态</li>
+</ul>
+</li>
+<li>动态方式<ul>
+<li>在创建任务的时候确定任务的优先级，但该优先级可以在任务的运行过程中动态改变，以获得更好的调度性能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在优先级算法中，把任务按照不同的优先级进行分组，不同组的任务之间使用优先级算法，同一组的各任务之间使用时间片轮转法</p>
+</li>
+<li><p>采用优先级调度算法还有一个问题是可能会发生<strong>优先级反转</strong>（priority inversion），出现任务“饥饿”现象</p>
+</li>
+<li><p>理想情况下，高优先级任务就绪后，能够立即抢占低优先级任务而得到执行</p>
+</li>
+<li><p>实际系统中，但在有多个任务需要使用共享资源的情况下，可能会出现高优先级任务被低优先级任务阻塞，并等待低优先级任务执行的现象</p>
+</li>
+<li><p>优先级反转（priority inversion）</p>
+<ul>
+<li>高优先级任务需要等待低优先级任务释放资源，而低优先级任务又正在等待中等优先级任务的现象</li>
+</ul>
+</li>
+</ul>
+<h2 id="任务间通信"><a href="#任务间通信" class="headerlink" title="任务间通信"></a>任务间通信</h2><ul>
+<li><p>任务间通信（intertask communication）：任务之间为了协调工作，需要相互交换数据和控制信息</p>
+</li>
+<li><p>任务之间的通信可以分为两种类型：</p>
+<ul>
+<li>低级通信：只能传递状态和整数值等控制信息，例如信号量机制、异步信号机制</li>
+<li>高级通信：能够传输任意数量的数据，主要有三类：<strong>共享内存</strong>、<strong>消息传递</strong>和<strong>管道</strong></li>
+</ul>
+</li>
+<li><p>共享内存（shared memory）：各个任务共享其地址空间中的某些部分，在此区域，可以任意读写和使用任意的数据结构，把它看成一个通用的缓冲区</p>
+<ul>
+<li>使用共享内存来传递数据时，通常需和任务间的互斥机制结合起来，以免产生竞争条件，确保数据顺利传送</li>
+</ul>
+</li>
+<li><p>消息：内存空间中一段长度可变的缓冲区，其长度和内容均可以由用户定义，其内容可以是实际的数据、数据块的指针或空</p>
+</li>
+<li><p>对消息内容的解释由应用完成</p>
+<ul>
+<li>从操作系统观点看，消息没有定义的格式，所有的消息都是字节流，没有特定的含义</li>
+<li>从应用观点看，根据应用定义的消息格式，消息被解释成特定的含义</li>
+<li>应用可以只把消息当成一个标志，这时消息机制用于实现同步</li>
+</ul>
+</li>
+<li><p>消息传递：任务与任务之间通过发送和接受消息来交换信息</p>
+</li>
+<li><p>消息机制由操作系统来维护，包括定义寻址方式、认证协议、消息的数量等，一般提供两个基本操作</p>
+<ul>
+<li>send操作：发送一条消息</li>
+<li>receive操作：接受一条消息</li>
+</ul>
+</li>
+<li><p>任务间的通信方式：</p>
+<ul>
+<li>直接通信。在通信过程中双方必须明确地知道（命名）彼此：<ul>
+<li>Send（p，message）发送一个消息到任务p</li>
+<li>Receive（Q，message）从任务Q接受一个消息</li>
+</ul>
+</li>
+<li>间接通信。通信双方不需要指出消息的来源或去向，而通过中间机制来通信。如：<ul>
+<li>snend（A，message）发送一个消息给邮箱A</li>
+<li>receive（A，message）从邮箱A接受一个消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一些操作系统内核把消息进一步分为：邮箱和消息队列</p>
+<ul>
+<li>邮箱仅能存放单条消息，它提供了一种低开销的机制来传递信息。每个邮箱可以保存一条大小为若干个字节的消息</li>
+<li>消息队列可存放若干消息，提供了一种任务间缓冲通信的方法，间接通信方式</li>
+</ul>
+</li>
+<li><p>管道（pipe）是提供非结构化数据交换和实现任务间同步的内核对象。在传统的实现中，管道是单向数据交换设施</p>
+<ul>
+<li>数据在管道中像一个非结构字节流，按FIFO的次序从管道中读出</li>
+<li>当管道空时，阻塞读者，当管道满时，阻塞写者</li>
+</ul>
+</li>
+<li><p>管道和消息队列的区别</p>
+<ul>
+<li>管道不存储多个消息，它存储的数据是非结构化的字节流</li>
+<li>管道中的数据严格地遵循先进先出的顺序</li>
+<li>管道支持选择（select）操作，而消息队列不支持</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -987,9 +1358,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2024-07-25 00:00:00 / Modified: 10:05:27" itemprop="dateCreated datePublished" datetime="2024-07-25T00:00:00+08:00">2024-07-25</time>
+      <time title="Created: 2024-07-25 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-25T00:00:00+08:00">2024-07-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-27 17:13:49" itemprop="dateModified" datetime="2024-08-27T17:13:49+08:00">2024-08-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1199,7 +1576,7 @@
 <li><strong>定义</strong>：确定直接接入电能表有关特性的电流值，I<sub>b</sub>&#x3D;10I<sub>tr</sub>。</li>
 </ul>
 <h1 id="额定电流"><a href="#额定电流" class="headerlink" title="额定电流"></a>额定电流</h1><ul>
-<li><strong>定义</strong>：确定经互感器接入电能表有关特性的电流值，I<sub>n</sub>&#x3D;20I<sub>tr</sub>。</li>
+<li><strong>定义</strong>：确定经互感器接入电能表有关特性的电流值，I<sub>n</sub>&#x3D;20I<sub>tr</sub>。额定电流和基本电流之间并不是2倍关系，二者是相对于<strong>不同电能表</strong>而言的表述，二者转折电流不同，而额定电流是等于基本电流的。这里的额定电流指的是电能表外部有<strong>互感器</strong>的情况。</li>
 </ul>
 <h1 id="需量"><a href="#需量" class="headerlink" title="需量"></a>需量</h1><ul>
 <li><strong>定义</strong>：规定时间内的平均功率。</li>
@@ -1693,6 +2070,166 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-08-26 16:20:46" itemprop="dateModified" datetime="2024-08-26T16:20:46+08:00">2024-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
+<li>D——电能表</li>
+</ul>
+<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
+<li><p>D——单相</p>
+</li>
+<li><p>H——三相</p>
+</li>
+<li><p>J——直流</p>
+</li>
+<li><p>S——三相三线</p>
+</li>
+<li><p>T——三相四线</p>
+</li>
+</ul>
+<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
+<li>A——数字化</li>
+<li>E——机电式</li>
+<li>S——电子式</li>
+<li>Z——智能</li>
+</ul>
+<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
+<li>D——多功能</li>
+<li>F——多费率</li>
+<li>H——谐波</li>
+<li>K——费控</li>
+<li>P——最大需量</li>
+<li>X——无功（“有功”和“有无功组合”缺省，“无功”放到特征描述栏，纯无功电能表时采用）</li>
+<li>Y——预付费</li>
+</ul>
+<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
+<li>C——槽装式（嵌入式）</li>
+<li>H——多用户</li>
+<li>J——防窃电</li>
+<li>L——长寿命</li>
+<li>M——模组化</li>
+<li>U——导轨</li>
+</ul>
+<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
+<li>如果产品是统一设计的，采用设计序号。</li>
+</ul>
+<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
+<li><strong>-</strong></li>
+</ul>
+<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
+<li>B——蓝牙通信</li>
+<li>C——CDMA</li>
+<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
+<li>F——WIFI</li>
+<li>G——GPRS</li>
+<li>H——HRF</li>
+<li>J——微功率无线</li>
+<li>L——有线网络</li>
+<li>N——以太网</li>
+<li>P——公用电话线</li>
+<li>Q——光纤</li>
+<li>W——230MHz专网</li>
+<li>Y——音频</li>
+<li>Z——载波</li>
+<li>NB——NBIoT</li>
+<li>4G——4G</li>
+<li>5G——5G</li>
+<li>其他字母组合——新通信方式简称</li>
+</ul>
+<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
+<li><strong>&#x2F;</strong></li>
+</ul>
+<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
+<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
+<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
+<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
+<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
+<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
+<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
+<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90%E5%B8%B8%E8%A7%81%E5%85%83%E5%99%A8%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2028,166 +2565,6 @@
 <li><strong>智能电流互感器</strong>：常用于智能电网、物联网和远程监测等应用，提供更高级别的数据处理和管理能力。</li>
 </ul>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/12/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E8%83%BD%E8%A1%A8%E9%93%AD%E7%89%8C%E6%B3%A8%E5%86%8C%E5%9E%8B%E5%8F%B7%E5%90%AB%E4%B9%89/" class="post-title-link" itemprop="url">电能表铭牌注册型号含义</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-07-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-07-12T00:00:00+08:00">2024-07-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-26 16:20:46" itemprop="dateModified" datetime="2024-08-26T16:20:46+08:00">2024-08-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="类别代号"><a href="#类别代号" class="headerlink" title="类别代号"></a>类别代号</h1><ul>
-<li>D——电能表</li>
-</ul>
-<h1 id="第一组别"><a href="#第一组别" class="headerlink" title="第一组别"></a>第一组别</h1><ul>
-<li><p>D——单相</p>
-</li>
-<li><p>H——三相</p>
-</li>
-<li><p>J——直流</p>
-</li>
-<li><p>S——三相三线</p>
-</li>
-<li><p>T——三相四线</p>
-</li>
-</ul>
-<h1 id="第二组别"><a href="#第二组别" class="headerlink" title="第二组别"></a>第二组别</h1><ul>
-<li>A——数字化</li>
-<li>E——机电式</li>
-<li>S——电子式</li>
-<li>Z——智能</li>
-</ul>
-<h1 id="特征描述1"><a href="#特征描述1" class="headerlink" title="特征描述1"></a>特征描述1</h1><ul>
-<li>D——多功能</li>
-<li>F——多费率</li>
-<li>H——谐波</li>
-<li>K——费控</li>
-<li>P——最大需量</li>
-<li>X——无功（“有功”和“有无功组合”缺省，“无功”放到特征描述栏，纯无功电能表时采用）</li>
-<li>Y——预付费</li>
-</ul>
-<h1 id="特征描述2"><a href="#特征描述2" class="headerlink" title="特征描述2"></a>特征描述2</h1><ul>
-<li>C——槽装式（嵌入式）</li>
-<li>H——多用户</li>
-<li>J——防窃电</li>
-<li>L——长寿命</li>
-<li>M——模组化</li>
-<li>U——导轨</li>
-</ul>
-<h1 id="注册号"><a href="#注册号" class="headerlink" title="注册号"></a>注册号</h1><ul>
-<li>如果产品是统一设计的，采用设计序号。</li>
-</ul>
-<h1 id="自由字段"><a href="#自由字段" class="headerlink" title="自由字段"></a>自由字段</h1><h1 id="连接符"><a href="#连接符" class="headerlink" title="连接符"></a>连接符</h1><ul>
-<li><strong>-</strong></li>
-</ul>
-<h1 id="通信信道"><a href="#通信信道" class="headerlink" title="通信信道"></a>通信信道</h1><ul>
-<li>B——蓝牙通信</li>
-<li>C——CDMA</li>
-<li>D——多种通信方式（具备种以上通信方式，例如双模）</li>
-<li>F——WIFI</li>
-<li>G——GPRS</li>
-<li>H——HRF</li>
-<li>J——微功率无线</li>
-<li>L——有线网络</li>
-<li>N——以太网</li>
-<li>P——公用电话线</li>
-<li>Q——光纤</li>
-<li>W——230MHz专网</li>
-<li>Y——音频</li>
-<li>Z——载波</li>
-<li>NB——NBIoT</li>
-<li>4G——4G</li>
-<li>5G——5G</li>
-<li>其他字母组合——新通信方式简称</li>
-</ul>
-<h1 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h1><ul>
-<li><strong>&#x2F;</strong></li>
-</ul>
-<h1 id="改进号"><a href="#改进号" class="headerlink" title="改进号"></a>改进号</h1><h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><ul>
-<li>DDZM1234-Z——单相智能电能表，M表示模组化，注册号为1234，通信信道为载波通信</li>
-<li>DDZKM1234iot-Z&#x2F;a——单相费控智能电能表，M表示模组化，注册号为1234，物联网，通信信道为载波通信，a表示第一次改版</li>
-<li>DTSY1234c——三相四线电子式预付费电能表，注册号为1234，c表示CPU卡</li>
-<li>DTSY1234s——三相四线电子式预付费电能表，注册号为1234，s表示射频卡</li>
-<li>DTEL862&#x2F;b——三相四线机电式电能表，L表示长寿命，设计序号为862，b表示第二次改版</li>
-<li>DTSX1234——三相四线电子式无功电能表，注册号为1234</li>
-<li>DJSF1234——直流电子式多费率电能表，注册号为1234</li>
 </ul>
 
       
@@ -2595,150 +2972,6 @@
 <li>游戏规则是人订的，但游戏——游戏的欲望、游戏的限制、游戏的种种困阻和种种可能性，都是神定。</li>
 <li>残奥会的圣火不由次神点燃。</li>
 <li>自从我学会了寻找，我就已经找到。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/" class="post-title-link" itemprop="url">第六章 图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-03-15 00:00:00 / Modified: 18:11:10" itemprop="dateCreated datePublished" datetime="2024-03-15T00:00:00+08:00">2024-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><ul>
-<li><strong>图 G</strong> 由<strong>顶点集 V</strong> 和<strong>边集 E</strong> 组成，记为 G &#x3D; (V, E)，其中 V(G) 表示图 G 中顶点的有限非空集；E(G) 表示图 G 中顶点之间的关系（边）集合。若 V &#x3D; {v<sub>1</sub>, v<sub>2</sub>, …, v<sub>n</sub>}，则用 |V| 表示图 G 中<strong>顶点的个数</strong>，也称<strong>图 G 的阶</strong>，E &#x3D; {(u, v) | u ∈ U, v ∈ V}，用 <strong>|E|</strong> 表示图 G 中<strong>边的条数</strong>。</li>
-<li>线性表可以是空表，树可以是空树，但图不可以是空，即 <strong>V 一定是非空集</strong>。而 <strong>E 可以为空集</strong>。</li>
-<li>若 E 是<strong>无向边</strong>（简称<strong>边</strong>）的有限集合时，则图 G 为<strong>无向图</strong>。边是顶点的无序对，**记为(v, w)或(w, v)<strong>，因为</strong>(v, w) &#x3D; (w, v)**，其中 v、w 是顶点。可以说顶点 w 和顶点 v 互为邻接点。边(v, w)依附于顶点 w 和 v，或者说边(v, w)和顶点 v、w 相关联。</li>
-<li>若 E 是<strong>有向边</strong>（也称<strong>弧</strong>）的有限集合时，则图 G 为<strong>有向图</strong>。弧是顶点的有序对，<strong>记为&lt;v, w&gt;<strong>，其中 v、w 是顶点，v 称为</strong>弧尾</strong>，w 称为<strong>弧头</strong>，&lt;v, w&gt; 称为从顶点 v 到顶点 w 的弧，也称 v 邻接到 w，或 w 邻接自 v。**&lt;v, w&gt; !&#x3D; &lt;w, v&gt;**。</li>
-<li>简单图<ul>
-<li>不存在重复边</li>
-<li>不存在顶点到自身的边</li>
-</ul>
-</li>
-<li>多重图：图 G 中某两个结点之间的边数多于一条，又允许顶点通过同一条边和自己关联，则 G 为多重图。</li>
-<li>对于无向图：<ul>
-<li>顶点 v 的度是指依附于该顶点的边的条数，记为 TD(v)</li>
-<li>在具有 n 个顶点、e 条边的无向图中，$\sum\limits_{i&#x3D;1}^nTD(V_i) &#x3D; 2e$，即无向图的全部顶点的度的和等于边数的2倍。</li>
-</ul>
-</li>
-<li>对于有向图：<ul>
-<li>入度是以顶点 v 为终点的有向边的数目，记为 ID(v)</li>
-<li>出度是以顶点 v 为起点的有向边的数目，记为 OD(v)</li>
-<li>顶点的 v 的度等于其入度和出度之和，即 TD(v) &#x3D; ID(v) + OD(v)</li>
-<li>在具有 n 个顶点、 e 条边的有向图中， $\sum\limits_{i&#x3D;1}^nID(V_i) &#x3D; \sum\limits_{i&#x3D;1}^nOD(V_i) &#x3D; e$</li>
-</ul>
-</li>
-<li><strong>路径</strong>——顶点 v<sub>p</sub> 到顶点 v<sub>p</sub> 之间的一条路径是指顶点序列，V<sub>p</sub>, V<sub>i1</sub>, V<sub>i2</sub>, …, V<sub>q</sub>。</li>
-<li><strong>回路</strong>——第一个顶点和最后一个顶点相同的路径称为回路或环。</li>
-<li><strong>简单路径</strong>——在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><strong>简单回路</strong>——除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><strong>路径长度</strong>——路径上边的数目。</li>
-<li><strong>点到点的距离</strong>——从顶点 u 出发到顶点 v 的<strong>最短路径</strong>若存在，则<strong>此路径的长度称为从 u 到 v 的距离</strong>；若从 u 到 v 根本<strong>不存在路径</strong>，则记<strong>该距离为无穷（∞）</strong>。</li>
-<li><strong>无向图</strong>中，若从顶点 v 到顶点 w 有路径存在，则称 v 和 w 是<strong>连通</strong>的。若图 G 中任意两个顶点都是连通的，则称图 G 为<strong>连通图</strong>，否则称为<strong>非连通图</strong>。<ul>
-<li>对于 n个顶点的<strong>无向图</strong> G，<ul>
-<li>若 G 是<strong>连通图</strong>，则<strong>最少</strong>有 n-1 条边</li>
-<li>若 G 是<strong>非连通图</strong>，则<strong>最多</strong>可能有 $C_{n-1}^2$条边</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>有向图</strong>中，若从顶点 v 到顶点 w 和从顶点 w 到顶点 v之间都有路径，则称这两个顶点是<strong>强连通</strong>的。<ul>
-<li>对于 n 个顶点的有向图 G，若 G 是<strong>强连通图</strong>，则<strong>最少</strong>有 n 条边（形成<strong>回路</strong>）</li>
-</ul>
-</li>
-<li>设有两个图 G &#x3D; (V, E) 和 G’ &#x3D; (V’, E’)，若 V‘ 是 V 的子集，且 E’ 是 E 的子集，则称 G’ 是 G 的<strong>子图</strong>。</li>
-<li>若有满足 V(G’) &#x3D; V(G) 的子图 G’，则称其为 G 的<strong>生成子图</strong>。</li>
-<li><strong>无向图</strong>中的<strong>极大连通子图</strong>（子图必须连通，且包含尽可能多的顶点和边）称为无向图的<strong>连通分量</strong>。</li>
-<li><strong>有向图</strong>中的<strong>极大强连通子图</strong>（子图必须强连通，同时保留尽可能多的边）称为有向图的<strong>强连通分量</strong>。</li>
-<li><strong>连通图</strong>的<strong>生成树</strong>是<strong>包含图中全部顶点的一个极小连通子图</strong>（边尽可能的少，但要保持连通）。若图中顶点树为 n，则它的生成树含有 n-1 条边。对生成树而言，若砍去它的一条边，则会变成非连通图，若加上一条边则会形成一个回路。</li>
-<li>在<strong>非连通图</strong>中，<strong>连通分量的生成树</strong>构成了非连通图的<strong>生成森林</strong>。</li>
-<li><strong>边的权</strong>——在一个图中，每条边都可以标上具有某种含义的数值，该数值称为该边的权值。</li>
-<li><strong>带权图&#x2F;网</strong>——边上带有权值的图称为<strong>带权图</strong>，也称<strong>网</strong>。</li>
-<li><strong>带权路径长度</strong>——当图是带权图时，一条<strong>路径上所有边的权值之和</strong>，称为该路径的带权路径长度。</li>
-<li><strong>无向完全图</strong>——无向图中任意两个顶点之间都存在边。<ul>
-<li>若无向图的顶点数 |V| &#x3D; n，则 |E|∈[0, $C^2_n$] &#x3D; [0, n(n-1)&#x2F;2]</li>
-</ul>
-</li>
-<li><strong>有向完全图</strong>——有向图中任意两个顶点之间都存在方向相反的两条弧。<ul>
-<li>若有向图的顶点数 |V| &#x3D; n，则 |E|∈[0, 2$C^2_n$] &#x3D; [0, n(n-1)]</li>
-</ul>
-</li>
-<li>边数很少的图称为<strong>稀疏图</strong>，反之称为<strong>稠密图</strong>。二者没有绝对的界限，一般来说 |E| &lt; |V|log|V| 时，可以将 G 视为稀疏图。</li>
-<li><strong>树</strong>——<strong>不存在回路</strong>，且<strong>连通</strong>的<strong>无向图</strong><ul>
-<li>n 个顶点的树，必有 n-1 条边</li>
-<li>n 个顶点的图，<strong>若 |E| &gt; n-1，则一定有回路</strong></li>
-</ul>
-</li>
-<li><strong>有向树</strong>——一个顶点的入度为0，其余顶点的入度均为1的<strong>有向图</strong>，称为有向树。</li>
 </ul>
 
       
