@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="referrer" content="no-referrer"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="codeva-3i9UuBpy3a">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ascendlogo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="串行接口基本原理与结构 串行通信：数据是一位一位地进行传输的，在传输中每一位数据都占据一个固定的时间长度 优点： 传输线少、成本低 特别适合远距离传送   缺点： 速度慢    串行数据传送3种基本的通信模式 单工通信：数据仅能从设备A到设备B进行单一方向的传输。如遥控、遥测等  半双工通信：数据可以从设备A到设备B进行传输，也可以从设备B到设备A进行传输，但不能在同一时刻进行双向传输。如对讲机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第十四章 嵌入式系统总线和通信接口">
+<meta property="og:url" content="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/index.html">
+<meta property="og:site_name" content="Ascendlogo">
+<meta property="og:description" content="串行接口基本原理与结构 串行通信：数据是一位一位地进行传输的，在传输中每一位数据都占据一个固定的时间长度 优点： 传输线少、成本低 特别适合远距离传送   缺点： 速度慢    串行数据传送3种基本的通信模式 单工通信：数据仅能从设备A到设备B进行单一方向的传输。如遥控、遥测等  半双工通信：数据可以从设备A到设备B进行传输，也可以从设备B到设备A进行传输，但不能在同一时刻进行双向传输。如对讲机">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190440.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190511.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190530.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190728.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190642.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190823.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190747.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190835.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190842.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190918.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912093355.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912094844.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162932.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162855.png">
+<meta property="article:published_time" content="2024-09-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-12T08:29:51.699Z">
+<meta property="article:author" content="Ascendlogo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190440.png">
+
+
+<link rel="canonical" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/","path":"2024/09/10/嵌入式/第十四章 嵌入式系统总线和通信接口/","title":"第十四章 嵌入式系统总线和通信接口"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>第十四章 嵌入式系统总线和通信接口 | Ascendlogo</title>
+  
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?34928f5ef5c81b7346cdf1c4aee47714"></script>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ascendlogo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">串行接口基本原理与结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E8%A1%8C%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%813%E7%A7%8D%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">串行数据传送3种基本的通信模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E5%9C%A8%E4%BF%A1%E6%81%AF%E6%A0%BC%E5%BC%8F%E4%B8%8A%E5%88%92%E5%88%86"><span class="nav-number">1.2.</span> <span class="nav-text">串行通信在信息格式上划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.1.</span> <span class="nav-text">异步通信方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">同步通信方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RS-232%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.3.</span> <span class="nav-text">RS-232串行接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RS-422%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">RS-422串行接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RS-485%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.5.</span> <span class="nav-text">RS-485串行接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B9%B6%E8%A1%8C%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">并行接口基本原理与结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PCI%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">PCI接口基本原理与结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#USB%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">USB接口基本原理与结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SPI%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">SPI接口基本原理与结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#I2C%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">6.</span> <span class="nav-text">I2C接口基本原理与结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">网络接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">7.1.</span> <span class="nav-text">以太网接口基本原理与结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAN%E6%80%BB%E7%BA%BF%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">7.2.</span> <span class="nav-text">CAN总线接口基本原理与结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%BA%BF%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">7.3.</span> <span class="nav-text">无线以太网基本原理与结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1394%E6%8E%A5%E5%8F%A3%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="nav-number">7.4.</span> <span class="nav-text">1394接口基本原理与结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BA%BF%E5%88%86%E7%B1%BB"><span class="nav-number">8.</span> <span class="nav-text">总线分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E6%80%BB%E7%BA%BF"><span class="nav-number">8.1.</span> <span class="nav-text">内部总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF"><span class="nav-number">8.2.</span> <span class="nav-text">系统总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E9%83%A8%E6%80%BB%E7%BA%BF"><span class="nav-number">8.3.</span> <span class="nav-text">外部总线</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ascendlogo"
+      src="/images/header.JPG">
+  <p class="site-author-name" itemprop="name">Ascendlogo</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">124</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Ascendlogo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Ascendlogo" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="第十四章 嵌入式系统总线和通信接口 | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第十四章 嵌入式系统总线和通信接口
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-09-10 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-12 16:29:51" itemprop="dateModified" datetime="2024-09-12T16:29:51+08:00">2024-09-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="串行接口基本原理与结构"><a href="#串行接口基本原理与结构" class="headerlink" title="串行接口基本原理与结构"></a>串行接口基本原理与结构</h1><ul>
+<li>串行通信：数据是一位一位地进行传输的，在传输中每一位数据都占据一个固定的时间长度</li>
+<li>优点：<ul>
+<li>传输线少、成本低</li>
+<li>特别适合远距离传送</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>速度慢</li>
+</ul>
+</li>
+</ul>
+<h2 id="串行数据传送3种基本的通信模式"><a href="#串行数据传送3种基本的通信模式" class="headerlink" title="串行数据传送3种基本的通信模式"></a>串行数据传送3种基本的通信模式</h2><ul>
+<li><p>单工通信：数据仅能从设备A到设备B进行单一方向的传输。如遥控、遥测等</p>
+</li>
+<li><p>半双工通信：数据可以从设备A到设备B进行传输，也可以从设备B到设备A进行传输，但不能在同一时刻进行双向传输。如对讲机</p>
+</li>
+<li><p>全双工通信：数据可以在同一时刻从设备A传输到设备B，或从设备B传输到设备A，即可以同时双向传输。如电话</p>
+</li>
+</ul>
+<h2 id="串行通信在信息格式上划分"><a href="#串行通信在信息格式上划分" class="headerlink" title="串行通信在信息格式上划分"></a>串行通信在信息格式上划分</h2><h3 id="异步通信方式"><a href="#异步通信方式" class="headerlink" title="异步通信方式"></a>异步通信方式</h3><ul>
+<li><p>是指通信的发送和接收设备使用各自的时钟，控制数据的发送和接收过程</p>
+</li>
+<li><p>为使双方的收发协调，要求发送和接收设备的时钟尽可能一致</p>
+</li>
+<li><p>数据是一帧一帧传送的，每帧数据包含有起始位（“0”）、数据位、奇偶校验位和停止位（“1”），每帧数据的传送靠起始位来同步</p>
+</li>
+<li><p>一帧数据的各位代码间的时间间隔是固定的，而相邻两帧的数据其时间间隔是不固定的</p>
+</li>
+<li><p>在异步通信的数据传送中，传输线上允许空字符</p>
+</li>
+<li><p>异步通信对字符格式、波特率、校验位有确定的要求</p>
+<ul>
+<li><p>字符格式</p>
+<ul>
+<li>每个字符传送时，必须前面加一起始位，后面加上1、1.5或2位停止位</li>
+<li>例如ASCII码传送时，一帧数据的组成是：前面一个起始位，接着7位ASCII编码，再接着一位奇偶校验位，最后一位停止位，共10位<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190440.png" alt="串行异步通信字符格式"></li>
+</ul>
+</li>
+<li><p>波特率</p>
+<ul>
+<li>传送数据位的速率称为波特率，用位&#x2F;秒（bit&#x2F;s）来表示，称之为波特</li>
+<li>例如，数据传送的速率为120字符&#x2F;秒，每帧包括10个数据位，则传送波特率为：10X120&#x3D;1200b&#x2F;s&#x3D;1200波特</li>
+<li>异步通信的波特率的数值通常为：150、300、600、1200、2400、4800、9600、14400、28800等，数值成倍数变化</li>
+</ul>
+</li>
+<li><p>校验位</p>
+<ul>
+<li>偶校验就是要使字符加上校验位有偶数个“1”</li>
+<li>奇校验就是要使字符加上校验位有奇数个“1”</li>
+<li>例如数据“00010011”，共有奇数个“1”，偶校验时，则校验位就置为“1”，奇校验时，则校验位就置为“0”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>异步通信的特点</p>
+<ul>
+<li>不要求收发双方时钟的严格一致，实现容易，设备开销小</li>
+<li>但每个字符要附加2~3位用于起止位，各帧之间还有间隔，因此传输效率不高。实际使用率只有约80%</li>
+</ul>
+</li>
+</ul>
+<h3 id="同步通信方式"><a href="#同步通信方式" class="headerlink" title="同步通信方式"></a>同步通信方式</h3><ul>
+<li>是一种比特同步通信技术，要求收发双方具有同频同相的同步时钟信号，只需在传送报文的最前面附加特定的同步字符，使收发双方建立同步，此后便在同步时钟的控制下逐位发送&#x2F;接收</li>
+<li>同步传输采用字符块的方式，减少每一个字符的控制和错误检测数据位，因而可以具有较高的传输速率</li>
+<li>即将许多字符聚集成一字符后，在每块信息之前要加上1~2个同步字符，字符块之后再加入适当的错误检测数据才传送出去</li>
+<li>特点<ul>
+<li>数据传输速率较高</li>
+<li>但要求发送方时钟和接受方时钟保持严格同步</li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-232串行接口"><a href="#RS-232串行接口" class="headerlink" title="RS-232串行接口"></a>RS-232串行接口</h2><ul>
+<li><p>RS-232C是美国电子工业协会（EIA）制定的一种串行通信接口标准</p>
+</li>
+<li><p>RS-232C接口规格</p>
+<ul>
+<li><p>EIA所制定的传送电气规格</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">L（LOW）</th>
+<th align="center">H（Hight）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">电压范围</td>
+<td align="center">-25V~3V</td>
+<td align="center">+3V~+25V</td>
+</tr>
+<tr>
+<td align="center">负逻辑</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>RS-232C通常以±12V的电压来驱动信号线，TTL标准与RS-232C标准之间的电平转换电路通常采用集成电路芯片实现，如M2AX23等</p>
+</li>
+</ul>
+</li>
+<li><p>RS-232C接口信号</p>
+<ul>
+<li><p>EIA制定的RS-232C接口与外界的相连采用25芯（DB-25）和9芯（DB-9）D型插接件，实际应用中，并不是每只引脚信号都必须用到。</p>
+</li>
+<li><p>各引脚功能如下<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190511.png" alt="RS232"></p>
+<table>
+<thead>
+<tr>
+<th align="center">引脚号</th>
+<th align="center">符号名称</th>
+<th align="center">名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">CD</td>
+<td align="center">载波检测</td>
+<td align="left">主要用于Modem通知计算机其处于在线状态，即Modem检测到拨号音</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">RXD</td>
+<td align="center">接收数据线</td>
+<td align="left">用于接收外部设备送来的数据</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">TXD</td>
+<td align="center">发送数据线</td>
+<td align="left">用于将计算机的数据发送给外部设备</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">DTR</td>
+<td align="center">数据终端就绪</td>
+<td align="left">当此引脚高电平时，通知Modem可以进行数据传输，计算机已经准备好</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">SG</td>
+<td align="center">信号地</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">DSR</td>
+<td align="center">数据设备就绪</td>
+<td align="left">此引脚为高电平时，通知计算机Modem已经准备好，可以进行数据通信</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">RTS</td>
+<td align="center">请求发送</td>
+<td align="left">此引脚由计算机来控制，用以通知Modem马上传送数据至计算机；否则，Modem将收到的数据暂时放入缓冲区中</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">CTS</td>
+<td align="center">允许发送</td>
+<td align="left">此引脚由Modem控制，用以通知计算机将要传送的数据送至Modem</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">RI</td>
+<td align="center">振铃提示</td>
+<td align="left">Modem通知计算机有呼叫进来，是否接听呼叫由计算机决定</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>RS-232C的基本连接方式</p>
+<ul>
+<li>计算机利用RS-232C接口进行串口通信，有简单连接和完全连接两种连接方式</li>
+<li>简单连接又称三线连接，即只连接发送数据线、接受数据线和信号地、实现全双工通信</li>
+<li>如果应用中还需要使用RS-232C的控制信号，则采用完全连接方式<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190530.png" alt="RS232两种连接方式"></li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-422串行接口"><a href="#RS-422串行接口" class="headerlink" title="RS-422串行接口"></a>RS-422串行接口</h2><ul>
+<li>RS-422标准是RS-232的改进型，是一种单机发送、多机接收的单向、平衡传输规范，传输速率可达10Mb&#x2F;s。采用差分传输方式，也称做平衡传输<ul>
+<li>允许在相同传输线上连接多个接收节点，最多可接10个节点，即一个主设备（Master），其余10个为从设备（Salve），从设备之间不能通信</li>
+<li>支持一点对多点的双向通信。RS-422四线接口由于采用单独的发送和接受通道，因此不必控制数据方向，各装置之间任何必需的信号交换均可以按软件方式（XON&#x2F;XOFF握手）或硬件方式（一对单独的双绞线）实现</li>
+</ul>
+</li>
+<li>RS-422的最大传输距离为4000英尺（约1219m），最大传输速率为10Mb&#x2F;s<ul>
+<li>传输速率与平衡双绞线的长度有关，只有在很短的距离下才能获得最高传输速率</li>
+<li>在最大传输距离时，传输速率为100Kb&#x2F;s</li>
+<li>一般100m长的双绞线上所能获得的最大传输速率仅为1Mb&#x2F;s</li>
+<li>RS-422需要再传输电缆的最远端连接一个电阻，要求电阻阻值约等于传输电缆的特性阻抗<ul>
+<li>在短距离（300m以下）传输时可以不连接电阻</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-485串行接口"><a href="#RS-485串行接口" class="headerlink" title="RS-485串行接口"></a>RS-485串行接口</h2><ul>
+<li><p>在RS-422的基础上，为扩展应用范围，EIA制定了RS-485标准，增加了多点、双向通信能力</p>
+<ul>
+<li>在通信距离为几十米至上千米时，通常采用RS-485收发器</li>
+<li>RS-485收发器采用平衡发送和差分发送</li>
+<li>即在发送端，驱动器将TTL电平信号转换成差分信号输出；在接受端，接收器将差分信号变成TTL电平，因此具有抑制共模干扰能力</li>
+<li>接受器能够检测低达200mV的电压，具有高的灵敏度，故数据传输距离可达千米以上</li>
+</ul>
+</li>
+<li><p>RS-485可以采用二线与四线方式，二线制可实现真正的多点双向通信</p>
+<ul>
+<li>采用四线连接时，与RS-422一样只能实现点对多的通信，即只能有一个主设备，其余为从设备</li>
+<li>RS-485可以连接多达32个设备</li>
+</ul>
+</li>
+<li><p>RS-485的共模输出电压在-7~+12V之间，接收器最小输入阻抗为12kΩ</p>
+</li>
+<li><p>RS-485满足所有RS-422的规范，所以RS-485的驱动器可以在RS-422网络中应用</p>
+</li>
+<li><p>RS-485的最大传输速率为10Mb&#x2F;s。在最大传输距离时，传输速率为100Kb&#x2F;s</p>
+</li>
+<li><p>RS-485需要两个终端电阻，接在传输总线的两端，要求电阻阻值约等于传输电缆的特性阻抗</p>
+<ul>
+<li>在短距离传输（300m以下）时可不需要终端电阻</li>
+</ul>
+</li>
+</ul>
+<h1 id="并行接口基本原理与结构"><a href="#并行接口基本原理与结构" class="headerlink" title="并行接口基本原理与结构"></a>并行接口基本原理与结构</h1><ul>
+<li><p>并行通信通常是将数据字节的各位用多条数据线同时进行传送</p>
+<ul>
+<li>一般用来连接打印机、扫描仪等，所以又称打印口</li>
+</ul>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>控制简单、传输速度快</li>
+<li>由于传输线较多，长距离传送时成本高且接收方的各位同时接收存在困难</li>
+</ul>
+</li>
+<li><p>并行接口可以分为</p>
+<ul>
+<li>SPP（标准并口）</li>
+<li>EPP（增强型并口）</li>
+<li>ECP（扩展型并口）</li>
+</ul>
+</li>
+<li><p>并行总线分为：</p>
+<ul>
+<li>标准并行总线</li>
+<li>非标准并行总线</li>
+</ul>
+</li>
+<li><p>常用的并行<strong>标准</strong>总线：<strong>IEEE488总线</strong>和<strong>SCSI总线</strong>，<strong>MXI总线</strong>是一种高性能<strong>非标准</strong>的通用多用户并行总线</p>
+</li>
+<li><p>IEEE488总线</p>
+<ul>
+<li>又称GPIB总线（General Purpose Interface Bus，通用接口总线）</li>
+<li>位并行、字节串行双向异步方式传输信号</li>
+<li>总线方式连接，仪器设备直接并联于总线上，总线上最多可连接15台设备</li>
+<li>最大传输距离为20m，信号传输速度一般为500Kb&#x2F;s，最大传输速度为1Mb&#x2F;s</li>
+<li>广泛应用在仪器、仪表、测控领域</li>
+</ul>
+</li>
+<li><p>SCSI（Small Computer System Interface，小型计算机系统接口）总线：</p>
+<ul>
+<li>速度可达5Mb&#x2F;s，传输距离6m</li>
+<li>传输速率很高</li>
+<li>普遍用作计算机的高速外设总线，如连接高速硬盘驱动器</li>
+</ul>
+</li>
+<li><p>MXI（Multi-system extension Interface bus，多系统扩展接口总线）</p>
+<ul>
+<li>是一种高性能非标准的通用多用户并行总线</li>
+<li>32位高速并行总线</li>
+<li>最高速度可达23Mb&#x2F;s，传输距离20m</li>
+<li>用作计算机与测控机箱的互连</li>
+</ul>
+</li>
+</ul>
+<h1 id="PCI接口基本原理与结构"><a href="#PCI接口基本原理与结构" class="headerlink" title="PCI接口基本原理与结构"></a>PCI接口基本原理与结构</h1><ul>
+<li><p>PCI（Peripheral Component Interconnect，外围设备互连）总线是由Intel公司推出的一种局部总线，是当前用于系统扩展最流行的总线之一</p>
+</li>
+<li><p>PCI总线是地址、数据多路复用的高性能32位和64位总线，是微处理器与外围控制部件、外围附加板之间的互连机构</p>
+</li>
+<li><p>PCI定义了32位数据总线，并且可扩展为64位。总线速度有33MHz和66MHz两种</p>
+<ul>
+<li>改良的PCI系统PCI-X，数据传输速度最高可以达到64位@133MHz</li>
+<li>PCI总线主板插槽的体积比ISA总线插槽小，支持突发读写操作（突发数据传输），可同时支持多组外围设备</li>
+</ul>
+</li>
+<li><p>与ISA总线不同，PCI总线的地址总线与数据总线是分时复用的，支持即插即用（PNP：PLug-and-Play）、中断共享等功能</p>
+</li>
+<li><p>PCI总线在数据传输时，由一个PCI设备做发起者（称为Master、Initiator），而另一个PCI设备做目标（称为Slave、Target）</p>
+<ul>
+<li>总线上所有时序的产生和控制都由Master发起</li>
+<li>PCI总线在同一时刻只能供一对设备完成传输，要求有一个仲裁机构来决定谁有权拿到总线的控制权</li>
+</ul>
+</li>
+</ul>
+<h1 id="USB接口基本原理与结构"><a href="#USB接口基本原理与结构" class="headerlink" title="USB接口基本原理与结构"></a>USB接口基本原理与结构</h1><ul>
+<li><p>USB（Universal Serial Bus，通用串行总线）是由Compaq、HP、Intel、Lucent、Microsoft、NEC和Philips公司制定的连接计算机与外围设备的机外串行总线</p>
+<ul>
+<li>最多可连接127个设备</li>
+<li>用于多种嵌入式系统设备的数据通信。如移动硬盘、PDA</li>
+</ul>
+</li>
+<li><p>热插拔。USB提供机箱外的热插拔功能，连接外设不必再打开机箱，也不必关闭主机电源，USB可智能地识别USB链上外围设备的动态插入和拆除，具有自动配置和重新配置外设的能力，连接设备方便，使用简单</p>
+</li>
+<li><p>可连接多个外部设备</p>
+<ul>
+<li>每个USB系统中有一个主机，USB总线采用“级联”方式可连接多个外部设备</li>
+<li>每个USB设备用一个USB插头连接到上一个USB设备插座上，而其本身又提供一或多个USB插座供下一个或多个USB设备连接使用</li>
+<li>这种多重连接是通过集线器（Hub）来实现的，整个USB网络中最多可连接127个设备，支持多个设备同时操作</li>
+</ul>
+</li>
+<li><p>低成本的电缆和连接器</p>
+<ul>
+<li>USB采用统一的4引脚插头和一根四芯的电缆传送信号和电源</li>
+<li>电缆长度可长达5m</li>
+</ul>
+</li>
+<li><p>总线供电</p>
+<ul>
+<li>USB总线可为连接在其上的设备提供5V电压&#x2F;100mA电流的供电，最大可提供500mA的电流</li>
+<li>USB设备也可采用自供电方式。可以通过电池或其他的电力设备</li>
+<li>支持节约能源的挂机和唤醒模式</li>
+</ul>
+</li>
+<li><p>USB总线的电缆有一对标准尺寸的双绞信号线和一对标准尺寸的电源线，共4根导线</p>
+<table>
+<thead>
+<tr>
+<th align="center">连接序号</th>
+<th align="center">信号名称</th>
+<th align="center">典型连接线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">VBUS（USB电源）</td>
+<td align="center">红</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">D+（正差分信号）</td>
+<td align="center">白</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">D-（负差分信号）</td>
+<td align="center">绿</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">GND（USB地）</td>
+<td align="center">黑</td>
+</tr>
+<tr>
+<td align="center">外层</td>
+<td align="center">屏蔽层</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h1 id="SPI接口基本原理与结构"><a href="#SPI接口基本原理与结构" class="headerlink" title="SPI接口基本原理与结构"></a>SPI接口基本原理与结构</h1><ul>
+<li><p>SPI（Serial Peripheral Interface，串行外围设备接口）是由Motorola公司开发的一个低成本、易使用的接口，主要用在微控制器（MCU）和外围设备芯片之间进行连接。SPI接口可以用来连接存储器、A&#x2F;D转换器、D&#x2F;A转换器、实时时钟日历、LCD驱动器、传感器、音频芯片，其他处理器等。</p>
+</li>
+<li><p>SPI是一个4线接口，主要使用4个信号</p>
+<ul>
+<li>主机输出&#x2F;从机输入（MOSI）</li>
+<li>主机输入&#x2F;从机输出（MISO）</li>
+<li>串行SCLK或SCK</li>
+<li>外设片选（&#x2F;CS）</li>
+<li>有些处理器有SPI接口专用的芯片选择，称为从机选择（&#x2F;SS）</li>
+</ul>
+</li>
+<li><p>MOSI信号由主机产生，从机接收。在有些芯片上，MOSI只被简单地标为串行输入（SI），或串行数据输入（SDI）</p>
+</li>
+<li><p>MISO信号由从机产生，不过还是在主机的控制下产生的。在一些芯片上，MISO有时被称为串行输出（SO）或串行数据输出（SDO）</p>
+</li>
+<li><p>外设片选信号：通常只是由主机的备用I&#x2F;O引脚产生的</p>
+</li>
+<li><p>与标准的串行接口不同，SPI是一个同步协议接口，所有的传输都参考一个共同的时钟，这个同步时钟信号由主机（处理器）产生，接收数据的外设（从设备）使用时钟来对串行比特流的接收进行同步化。可以将多个具有SPI接口的芯片连到主机的同一个SPI接口上，主机通过控制从设备的片选输入引脚来选择接收数据的从设备。</p>
+</li>
+<li><p>如图所示，微处理器通过SPI接口与外设进行连接<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190728.png" alt="SPI连线"></p>
+<ul>
+<li>主机和外设都包含一个串行移位寄存器，主机写入一个字节到它的SPI串行寄存器，SPI寄存器通过MOSI信号线将字节传送给外设</li>
+<li>外设也可以将自己移位寄存器中的内容通过MISO信号线传送给主机。主机和外设的两个移位寄存器中的内容被相互交换</li>
+<li>外设的写操作和读操作是同步完成的，因此SPI成为一个很有效的协议</li>
+</ul>
+</li>
+<li><p>如果只是进行写操作，主机只需忽略收到的字节</p>
+</li>
+<li><p>如果主机要读取外设的一个字节，就必须发送一个空字节来触发从机的数据传输</p>
+</li>
+<li><p>当主机发送一个连续的数据流时，有些外设能进行多字节传输</p>
+<ul>
+<li>如多数具有SPI接口的存储器芯片都以这种方式工作。在这种传输方式下，SPI外设的芯片选择端必须在整个传输过程中保持低电平</li>
+<li>如，存储器芯片会希望在一个“写”命令之后紧接着收到的是4个地址字节（起始地址），这样后面接收到的数据就可以存储到该地址</li>
+</ul>
+</li>
+<li><p>其他外设只需要一个单字节（比如一个发给A&#x2F;D转换器的命令），有些设置还支持菊花链连接，如图所示<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190642.png" alt="SPI菊花链连接方式"></p>
+<ul>
+<li>主机处理器从其SPI接口发送3个字节的数据</li>
+<li>第1个字节发送给外设A，当第2个字节发送给外设A的时候，第1个字节已移出了A，而传送给了B</li>
+<li>同样，主机想要从外设A读取一个结果，它必须再发送一个3字节（空字节）的序列，这样就可以把A中的数据移到B中，然后再移到C中，最后送回到主机。在这个过程中，主机还依次从B和C接收到字节</li>
+<li>注意，菊花链连接不一定适用于所有的SPI设备，特别是要求多字节传输的（比如存储器芯片）设备。有的外设芯片不支持菊花链连接</li>
+</ul>
+</li>
+<li><p>根据时钟极性和时钟相位的不同，SPI有4种工作模式</p>
+<ul>
+<li><strong>时钟极性</strong>有高电平、低电平两种</li>
+<li><strong>时钟相位</strong>有两个：时钟相位0和时钟相位1</li>
+</ul>
+</li>
+<li><p>时钟极性（CPOL：Clock Polarity）：</p>
+<ul>
+<li>时钟极性为低电平时：空闲时时钟（SCK）处于低电平，传输时跳到高电平</li>
+<li>时钟极性为高电平时：空闲时时钟（SCK）处于高电平，传输时跳到低电平</li>
+</ul>
+</li>
+<li><p>时钟相位（CPHA：Clock Phase）：</p>
+<ul>
+<li>当CPHA为0时，时钟周期的前一边缘采集数据</li>
+<li>当CPHA为1时，时钟周期的后一边缘采集数据</li>
+</ul>
+</li>
+</ul>
+<h1 id="I2C接口基本原理与结构"><a href="#I2C接口基本原理与结构" class="headerlink" title="I2C接口基本原理与结构"></a>I<sup>2</sup>C接口基本原理与结构</h1><ul>
+<li><p>I<sup>2</sup>C BUS（Inter Integrated Circuit BUS，内部集成电路总线）是由Philips公司推出的二线制串行扩展总线，用于连接微控制器及其外围设备</p>
+<ul>
+<li>I<sup>2</sup>C总线是具有总线仲裁和高低速设备同步等功能的高性能多主机总线</li>
+<li>直接用导线连接设备，通信时无需片选信号</li>
+<li>I<sup>2</sup>C总线的协议层包含物理层和数据链路层。物理层有两根信号线，在链路层每个连接到I<sup>2</sup>C总线上的设备都有唯一的地址</li>
+</ul>
+</li>
+<li><p>在I<sup>2</sup>C总线上，物理层只需要两条线——串行数据SDA线、串行时钟SCL线，它们用于总线上器件之间的信息传递</p>
+<ul>
+<li>SDA和SCL都是双向的</li>
+<li>每个器件都有一个唯一的地址以供识别，而且各器件都可以作为一个发送器或接收器（由器件的功能决定）<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190823.png" alt="IIC接线"></li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C总线有4种操作模式</p>
+<ul>
+<li>主发送模式</li>
+<li>主接受模式</li>
+<li>从发送模式</li>
+<li>从接受模式</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C的启动信号</p>
+<ul>
+<li>当I<sup>2</sup>C接口处于从模式时，想要数据传输，必须检测SDA线上的启动信号，启动信号由主器件产生</li>
+<li>在SCL信号为高时，SDA产生一个由高变低的电平变化，即产生一个启动信号</li>
+<li>当I<sup>2</sup>C总线上产生了启动信号后，那么这条总线就被发出启动信号的主器件占用了，变成“忙”状态</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C的停止信号</p>
+<ul>
+<li>在SCL信号为高时，SDA产生一个由低变高的电平变化，产生停止信号</li>
+<li>停止信号也由主器件产生，作用是停止与某个从器件之间的数据传输</li>
+<li>当I<sup>2</sup>C总线上产生了一个停止信号后，那么在几个时钟周期之后总线就被释放，变成“闲”状态<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190747.png" alt="IIC启动和停止信号"></li>
+</ul>
+</li>
+<li><p>主器件产生一个启动信号后，会立即送出一个从地址，用来通知将与它进行数据通信的从器件</p>
+<ul>
+<li>1个字节的地址包括7位的地址信息和1位的传输方向指示位（R&#x2F;W’）</li>
+<li>如果第7位为“0”，表示主机发送数据（W’），即进行一个写操作</li>
+<li>如果为“1”，表示主机接收数据（R），即进行一个读操作</li>
+</ul>
+</li>
+<li><p>数据传输格式<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190835.png" alt="IIC数据传输格式"></p>
+<ul>
+<li>SDA线上传输的每个字节长度都是8位，每次传输中字节的数量是没有限制的</li>
+<li>在起始条件后面的第一个字节是地址域，之后每个传输的字节后面都有一个应答（ACK）位（即一帧共有9位）</li>
+<li>传输中串行数据的MSB（字节的高位）首先发送</li>
+</ul>
+</li>
+<li><p>应答信号</p>
+<ul>
+<li>为了完成1个字节的传输操作，接收器应该在接收完1个字节之后发送ACK位到发送器，告诉发送器，已经收到了这个字节</li>
+<li>ACK脉冲信号在SCL线上第9个时钟处发出（前面8个时钟完成1个字节的数据传输，SCL上的时钟都是由主器件产生的）</li>
+<li>当发送器要接收ACK脉冲时，应该释放SDA信号线，即将SDA置高</li>
+<li>接受器在接受完前面8位数据后，将SDA拉低</li>
+<li>发送器探测到SDA为低，就认为接收器成果接收了前面的8位数据</li>
+</ul>
+</li>
+<li><p>总线竞争的仲裁</p>
+<ul>
+<li>I<sup>2</sup>C总线上可以挂接有多个器件，有时会发生两个或多个主器件同时向占用总线的情况</li>
+<li>I<sup>2</sup>C总线具有多主控能力，可对发生在SDA线上的总线竞争进行仲裁</li>
+<li>仲裁原则：当多个主器件同时想占用总线时，如果某个主器件发送高电平，而另一个主器件发送低电平，则发送电平与此时SDA总线电平不符的那个器件将自动关闭其输出级</li>
+</ul>
+</li>
+<li><p>总线竞争的仲裁在两个层次上进行的</p>
+<ul>
+<li>首先是地址位的比较，如果主器件寻址同一个从器件，则进入数据位的比较，从而确保了竞争仲裁的可靠性</li>
+<li>由于是利用I<sup>2</sup>C总线上的信息进行仲裁，不会造成信息的丢失</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C总线的数据传输过程：</p>
+<ol>
+<li>开始：主设备产生启动信号，表明数据传输开始</li>
+<li>地址：主设备发送地址信息，包含7位的从设备地址和1位的数据方向指示位（读或写位，表示数据流的方向）</li>
+<li>数据：根据指示位，数据在主设备和从设备之间进行传输。数据一般以8位传输，MSB先传；具体能传输多少量的数据并没有限制。接收器产生1位的ACK（应答信号）表明收到了每个字节。传输过程中可以被中止和重新开始</li>
+<li>停止：主设备产生停止信号，结束数据传输</li>
+</ol>
+</li>
+</ul>
+<h1 id="网络接口"><a href="#网络接口" class="headerlink" title="网络接口"></a>网络接口</h1><h2 id="以太网接口基本原理与结构"><a href="#以太网接口基本原理与结构" class="headerlink" title="以太网接口基本原理与结构"></a>以太网接口基本原理与结构</h2><ul>
+<li><p>以太网（Ethernet）是目前应用最广泛的局域网通讯方式，同时也是一种协议</p>
+</li>
+<li><p>以太网协议定义了一系列软件和硬件标准，从而将不同的设备连接在一起</p>
+</li>
+<li><p>嵌入式系统通常使用的以太网协议是IEEE802.3标准，以太网接口电路主要由媒质接入控制MAC控制器和物理层接口（Physical Layer，PHY）两大部分构成</p>
+</li>
+<li><p>在802.3版本的标准中，没有采用直接的二进制编码（即用0V表示“0”，用5V表示“1”），而是采用</p>
+<ul>
+<li>曼彻斯特编码（Manchester Encoding）</li>
+<li>差分曼彻斯特编码（Differential Manchester Encoding）<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190842.png" alt="曼彻斯特编码"></li>
+</ul>
+</li>
+<li><p>曼彻斯特编码的规律：每位中间有一个电平跳变，从高到低的跳变表示“0”，从低到高的跳变表示“1”</p>
+</li>
+<li><p>差分曼彻斯特编码的规律：每位的中间有一个电平跳变，但不用这个跳变来表示数据，而是利用每个码元<strong>开始时</strong>有无跳变来表示“0”或“1”，有跳变表示“0”，无跳变表示“1”（保持性）</p>
+</li>
+<li><p>曼彻斯特编码和差分曼彻斯特编码相比，前者编码简单，后者能提供更好的噪声抑制性能</p>
+</li>
+<li><p>802.3 Mac层的以太网的物理传输帧如表所示</p>
+<table>
+<thead>
+<tr>
+<th>PR</th>
+<th>SD</th>
+<th>DA</th>
+<th>SA</th>
+<th>TYPE</th>
+<th>DATA</th>
+<th>PAD</th>
+<th>FCS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>56位</td>
+<td>8位</td>
+<td>48位</td>
+<td>48位</td>
+<td>16位</td>
+<td>不超过1500字节</td>
+<td>可选</td>
+<td>32位</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>PR：同步位，用于收发双方的时钟同步，同时也指明了传输的速率，是56位的二进制数101010101010…，最后两位是10</p>
+</li>
+<li><p>SD：分隔符，表示下面跟着的是真正的数据而不是同步时钟，为8位的10101011</p>
+</li>
+<li><p>DA：目的地符，以太网的地址为48位二进制地址，表明该帧传输给哪个网卡。如果为FFFFFFFFFFFF，是广播地址。广播地址的数据可以被任何网卡接收到</p>
+</li>
+<li><p>SA：源地址，48位，表明该帧的数据是哪个网卡发的，即发送端的网卡地址，是6个字节</p>
+</li>
+<li><p>TYPE：类型手段，表明该帧的数据是什么类型的数据，不同协议的类型字段不同。如：0800H表示数据为IP包，0806H表示数据为ARP包，814CH是SNMP包，8137H为IPX&#x2F;SPX包</p>
+</li>
+<li><p>DATA：数据段，该段数据不能超过1500B。以太网规定整个传输包的最大长度不能超过1514B（14B为DA，SA，TYPE）</p>
+</li>
+<li><p>PAD：填充位。以太网帧传输的数据包最小不能小于60B（除去DA、SA、TYPE的14B），还必须传输64B的数据，当数据段的数据不足46B时，后面通常是补0（也可以补其他值）</p>
+</li>
+<li><p>FCS：32位数据校验位。32位的CRC校验，该校验由网卡自动计算，自动生成，自动校验，自动在数据段后面填入。不需要软件还礼</p>
+</li>
+<li><p>通常PR、SD、PAD、FCS数据段是网卡（包括物理层和Mac层的处理）自动产生的，剩下的DA、SA、TYPE、DATA4个段的内容由上层软件控制</p>
+</li>
+</ul>
+</li>
+<li><p>以太网数据传输的特点</p>
+<ul>
+<li>所有数据位的传输由低位开始，传输的位流用曼彻斯特编码</li>
+<li>以太网是基于冲突检测的总线复用方法，冲突退避算法是由硬件自动执行</li>
+<li>以太网传输的数据段的长度，DA+SA+TYPE+DATA+PAD最小为60B，最大为1514B</li>
+<li>通常的以太网卡可以接受3种地址的数据：广播地址、多播地址（或者叫组播地址，在嵌入式系统中很少用到）、自己的地址。但有时，用于网络分析和监控，网卡也可以设置为接受任何数据包</li>
+<li>任何两个网卡的物理地址都是不一样的，是世界上唯一的，网卡地址由专门机构分配。不同厂家使用不同地址段，同一厂家的任何两个网卡的地址也是唯一的。根据网卡的地址段（网卡地址的前3个字节）可以知道网卡的生产厂家</li>
+</ul>
+</li>
+<li><p>嵌入式以太网接口实现的方法</p>
+<ul>
+<li><p>嵌入式处理器+网卡芯片</p>
+<ul>
+<li>把以太网芯片连接到嵌入式处理器的总线上</li>
+<li>通用性强，对嵌入式处理器没有特殊要求，不受处理器的限制，但是，嵌入式处理器和网络数据交换通过外部总线（通常是并行总线）交换数据，速度慢，可靠性不高，电路板走线复杂</li>
+<li>目前常见的以太网接口芯片，如CS8900，RTL8019&#x2F;8029&#x2F;8039、DM9008及DWL650无线网卡等</li>
+</ul>
+</li>
+<li><p>带有以太网接口的嵌入式处理器</p>
+<ul>
+<li>带有以太网接口的嵌入式处理器通常是面向网络应用而设计的，要求嵌入式处理器有通用的网络接口（比如：MII接口）</li>
+<li>处理器和网络数据交换通过内部总线，速度快</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网络编程接口</p>
+<ul>
+<li><p>BSD套接字（BSD Sockets）是使用的最广泛的网络程序编程方法</p>
+<ul>
+<li>主要用于应用程序的编写，用于网络上主机与主机之间的相互通信</li>
+<li>很多操作系统都支持BSD套接字编程。例如，UNIX、Linux、VxWorks、Windows的Winsock基本上是来自BSD Sockets</li>
+</ul>
+</li>
+<li><p>套接字（Sockets）分为Stream Sockets和Data Sockets</p>
+<ul>
+<li>Stream Sockets是可靠性的双向数据传输，对应使用TCP协议传输数据</li>
+<li>Data Sockets是不可靠连接，对应使用UDP协议传输数据<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190918.png" alt="网络编程接口"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="CAN总线接口基本原理与结构"><a href="#CAN总线接口基本原理与结构" class="headerlink" title="CAN总线接口基本原理与结构"></a>CAN总线接口基本原理与结构</h2><ul>
+<li><p>Can（Controller Area Network，控制器局域网）是德国Bosch公司与1983年为汽车应用而开发的，它是一种现场总线（FieldBus），能有效支持分布式控制和实时控制的串行通信网络。1993年11月，ISO正式颁布了控制器局域网CAN国际标准（ISO11898）</p>
+</li>
+<li><p>CAN总线是一种多主方式的串行通信总线</p>
+<ul>
+<li>理想的由CAN总线构成的单一网络中，是可以挂接任意多个节点，实际应用中节点数目受网络硬件的电气特性所限制。例如：当使用Philips P82C250作为CAN收发器时，同一网络中允许挂接110个节点。</li>
+<li>CAN总线具有很高的实时性能，已经在汽车工业、航空工业、工业控制、安全防护等领域得到了广泛应用。</li>
+</ul>
+</li>
+<li><p>CAN总线的通信介质可采用双绞线、同轴电缆和光导纤维，最常用的是双绞线</p>
+<ul>
+<li>通信距离与波特率有关，最大通信距离可达10km，最大通信波特率可达1Mbps</li>
+<li>CAN总线仲裁采用11位标识和非破坏性位仲裁总线结构机制，可以确定数据块的优先级，保证在网络节点冲突时最高优先级结点不需要冲突等待</li>
+<li>CAN总线采用了多主竞争式总线结构，具有多主站运行和分散仲裁的串行总线以及广播通信的特点</li>
+<li>CAN总线上任意结点可在任意时刻主动向网络上其他节点发送信息而不分主次，因此可在各节点之间实现自由通信</li>
+</ul>
+</li>
+<li><p>CAN总线信号使用差分电传送</p>
+<ul>
+<li>两条信号线被称为CAN_H和CAN_L，静态时均是2.5V左右，此时状态表示为逻辑1，也可以叫作“隐性”</li>
+<li>采用CAN_H比CAN_L高表示逻辑0，称为“显性”，通常电压值为CAN_H&#x3D;3.5V和CAN_L&#x3D;1.5V</li>
+<li>当“显性”位和“隐性”位同时发送的时候，最后总线数值将为“显性”</li>
+<li>这种特性为CAN总线的仲裁奠定了基础</li>
+</ul>
+</li>
+<li><p>一些面向工业控制的嵌入式处理器集成了一个或者多个CAN总线控制器</p>
+<ul>
+<li>例如：Phillips公司的LPC2194和LPC2294（ARM7TDMI内核）带有4个CAN总线控制器</li>
+<li>CAN总线控制器主要是完成时序逻辑转换等工作，要在电气特性上满足CAN总线标准，还需要一个CAN总线的物理层芯片，用它来实现TTL电平到CAN总线电平特性的转换，即CAN收发器<br> <img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912093355.png" alt="image-20240912093354492"></li>
+</ul>
+</li>
+<li><p>实际上，多数嵌入式处理器都不带CAN总线控制器</p>
+<ul>
+<li>通常的解决方案是在嵌入式处理器的外部总线上扩展CAN总线接口芯片</li>
+<li>例如：Phillips公司的<strong>SJA1000</strong> CAN总线接口芯片，Microchip公司的MCP251x系列（<strong>MCP2510</strong>和MCP2515）CAN总线接口芯片，这两种芯片都支持CAN2.0B标准</li>
+</ul>
+</li>
+<li><p>SJA 1000的总线采用的是地址线和数据线复用的方式，多数嵌入式处理器采用SJA 1000扩展CAN总线较为复杂</p>
+</li>
+<li><p>MCP2510是由Microchip公司产生的CAN协议控制器，完全支持CAN总线V2.0A&#x2F;B技术规范</p>
+<ul>
+<li>0~8字节的有效数据长度，支持远程帧</li>
+<li>最大1Mb&#x2F;s的可编程波特率</li>
+<li>两个支持过滤器（Filter，Mask）的接收缓冲区，三个发送缓冲区</li>
+<li>支持回环（Loop Back）模式，便于测试</li>
+<li>SPI高速串行总线，最大5MHz</li>
+<li>3V到5.5V供电</li>
+</ul>
+</li>
+<li><p>大多数嵌入式处理器都有SPI总线控制器，MCP2510可以3V到5.5V供电，能够直接和3.3V I&#x2F;O口的嵌入式处理器连接，电路原理图如图所示<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912094844.png" alt="image-20240912094843626"></p>
+</li>
+<li><p>MCP2510使用3.3V电压供电，可以直接和三星S3C44B0X处理器通过SPI总线连接。相关的资源如下：<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162932.png" alt="CAN扩展原理图"></p>
+<ul>
+<li>使用一个扩展的I&#x2F;O口（EXIO2）作为片选信号，低电平有效</li>
+<li>用S3C2410A的外部中断6（EXINT6）作为中断管脚，低电平有效</li>
+<li>16MHz晶体作为输入时钟，MCP2510内部有振荡电路，用晶体可以直接起振使用TJA1050作为CAN总线收发器</li>
+</ul>
+</li>
+<li><p>CAN总线收发器TJA1050必须使用5V供电。MCP2510和TJA1050连接的两个信号都是单向的信号。需单向满足I&#x2F;O口的电气特性</p>
+<ul>
+<li>从MCP2510输出的TXCAN信号是否满足TJA1050的输入电平。TJA1050为5V供电时，输入高电平V<sub>ih</sub>的范围是2~5.3V。而3.3V供电的MCP2510输出TXCAN信号高电平V<sub>oh</sub>最小值为2.6V，可以满足要求</li>
+<li>从TJA1050输出的RXD信号是否满足MCP2510的输入电平。3.3V供电的MCP2510输入信号RXCAN高电平范围V<sub>ih</sub>：2~4.3V，无法满足5V逻辑的TJA1050输出电平——电阻分压实现单向电平转换</li>
+</ul>
+</li>
+<li><p>分压电阻值的选择，需要考虑两个问题</p>
+<ul>
+<li>TJA1050输出信号的驱动能力（输出电流&lt;&#x3D;15mA）</li>
+<li>MCP2510的RXCAN管脚的输入阻抗（输入电流&lt;&#x3D;5μA）</li>
+</ul>
+</li>
+</ul>
+<h2 id="无线以太网基本原理与结构"><a href="#无线以太网基本原理与结构" class="headerlink" title="无线以太网基本原理与结构"></a>无线以太网基本原理与结构</h2><ul>
+<li>WLAN（Wireless Local Area Network，无线局域网）是利用无线通信技术在一定的局部范围内建立的，是计算机网络与无线通信技术相结合的产物，以无线多址通道作为传输媒介，提供有线局域网的功能</li>
+<li>传输介质<ul>
+<li>红外线IR</li>
+<li>射频RF波段</li>
+</ul>
+</li>
+<li>WLAN的标准：主要是针对物理层和媒质访问控制层（MAC层）。涉及到所有使用的无线频率范围、控制接口通信协议等技术规范和技术标准<ul>
+<li>802.11原始标准（2Mbps，2.4GHz）办公室、校园局域网</li>
+<li>802.11b物理层补充（11Mbps，2.4GHz）办公室、家庭、宾馆、车站、机场等场合</li>
+<li>802.11a物理层补充（54Mbps，5.2GHz）话音、数据和图像</li>
+<li>802.11g物理层补充（54Mbps，2.4GHz）传输速率和安全性</li>
+<li>802.11h无线覆盖半径的调整（室内和室外信道，5.2GHz）</li>
+</ul>
+</li>
+</ul>
+<h2 id="1394接口基本原理与结构"><a href="#1394接口基本原理与结构" class="headerlink" title="1394接口基本原理与结构"></a>1394接口基本原理与结构</h2><ul>
+<li><p>IEEE 1394是Apple公司率先提出的一种高品质、高传输速率的串行总线技术，1995年被IEEE认定为串行工业总线标准</p>
+<ul>
+<li>1394作为一种标准总线，可以在不同的工业设备之间架起一座沟通的桥梁</li>
+<li>在一条总线上可以接入63个设备</li>
+<li>实时多媒体领域。大容量存储以及打印机、扫描仪上等等</li>
+<li>IEEE1394规范仅支持64位固定解址模式</li>
+</ul>
+</li>
+<li><p>支持多种总线速度，适应不同应用要求</p>
+<ul>
+<li>IEEE 1394a：100Mb&#x2F;s、200Mb&#x2F;s、400Mb&#x2F;s</li>
+<li>IEEE 1394b：800Mb&#x2F;s、1600Mb&#x2F;s、3200Mb&#x2F;s</li>
+</ul>
+</li>
+<li><p>支持热插拔</p>
+<ul>
+<li>设备的资源均由总线控制器自动分配</li>
+<li>总线控制器会自动重新配置好设备</li>
+</ul>
+</li>
+<li><p>接口有两种类型</p>
+<ul>
+<li>6针的六角形接口和4针的小型四角形接口</li>
+<li>6针的六角形接口可向所连接的设备供电，而4针的四角形接口则不能</li>
+</ul>
+</li>
+<li><p>支持同步和异步两种传输方式</p>
+<ul>
+<li>设备可以根据需要动态地选择传输方式，总线自动完成带宽分配</li>
+<li>要求实时传输并对数据的完整性要求不严格的场合，可采用同步传输方式</li>
+<li>对数据完整性要求较高的场合，采用异步传输的方式更好</li>
+</ul>
+</li>
+<li><p>支持点到点通信模式，IEEE 1394是多主总线，每个设备均可以获取总线的控制权，与其他设备进行通信</p>
+</li>
+<li><p>两种传输方式：Backplane模式和Cable模式</p>
+<ul>
+<li>Backplane模式最小的速率也比USB1.1最高速率高，分别为12.5Mbps&#x2F;s、25Mbps&#x2F;s、50Mbps&#x2F;s，可以用于多数的高带宽应用</li>
+<li>Cable模式是速度非常快的模式，分为100Mbps&#x2F;s、200Mbps&#x2F;s和400Mbps&#x2F;s几种，在200Mbps&#x2F;s下可以传输不经压缩的高质量数据电影</li>
+</ul>
+</li>
+<li><p>遵循ANSIIEEE 1212控制及状态寄存器（CSR）标准，定义了64位的地址空间。可寻址1024条总线的63个节点，每个节点可包含256TB的内存空间</p>
+</li>
+<li><p>支持较远距离的传输</p>
+<ul>
+<li>普通线缆：2个设备之间的最大距离可达4.5m（高级线缆可达15m）</li>
+<li>玻璃光缆或5类双绞线：设备间距离可达100m以上</li>
+</ul>
+</li>
+<li><p>支持公平仲裁原则，为每一种传输方式保证足够的传输带宽，支持错误检测和处理</p>
+</li>
+<li><p>六线电缆具有电源线，可传输8~40V的直流电压</p>
+<ul>
+<li>2对双绞线：信号传递</li>
+<li>1对双绞线：供应电源</li>
+</ul>
+</li>
+<li><p>IEEE1394的协议栈由3层组成：物理层、链路层和事物层，另外还有一个管理层<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162855.png" alt="1394"></p>
+<ul>
+<li>物理层和链路层由硬件构成，通常集成在同一块芯片上</li>
+<li>事务层主要由软件实现</li>
+</ul>
+</li>
+<li><p>物理层提供IEEE1394的电气和机械接口，功能是重组字节流并将它们发送到目的节点上去</p>
+<ul>
+<li>物理层为链路层提供服务</li>
+<li>解析字节流并发送数据包给链路层</li>
+</ul>
+</li>
+<li><p>链路层提供了给事务层确认的数据服务，包括：寻址、数据组帧和数据校验</p>
+<ul>
+<li>提供直接面向应用的服务</li>
+<li>支持同步和异步传输模式</li>
+<li>链路层的底层提供了仲裁机制</li>
+</ul>
+</li>
+<li><p>事务层为应用提供服务</p>
+<ul>
+<li>只支持异步传输</li>
+<li>定义了3种基于请求响应的服务：read、write、lock</li>
+<li>即是将发送者的数据送往接受者；读即是将有关数据返回到发送者；锁定即是写、读指令功能的组合</li>
+</ul>
+</li>
+<li><p>管理层定义了一个管理节点所使用的所有协议、服务以及进程</p>
+<ul>
+<li>电缆环境下，IEEE 1394定义了2类管理：总线管理（BM）和同步资源管理（IRM）</li>
+<li>总线管理（BM）：总线的电源管理信息、拓扑结构信息、不同节点的速度极限信息，一遍协调不同速度设备之间的通信</li>
+<li>同步资源管理（IRM）：管理同步资源，如：可用频道信息、带宽的分配</li>
+</ul>
+</li>
+</ul>
+<h1 id="总线分类"><a href="#总线分类" class="headerlink" title="总线分类"></a>总线分类</h1><h2 id="内部总线"><a href="#内部总线" class="headerlink" title="内部总线"></a>内部总线</h2><ul>
+<li>说明：内部总线是微机内各外围芯片与处理器之间的总线，用于芯片一级的互连</li>
+<li>常用总线：I<sup>2</sup>总线、SPI总线、SCI总线等</li>
+</ul>
+<h2 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h2><ul>
+<li>说明：系统总线是微机中各插件板与系统板之间的总线，用于插件板一级的互连</li>
+<li>常用总线：ISA总线、EISA总线、VESA总线、PCI总线</li>
+</ul>
+<h2 id="外部总线"><a href="#外部总线" class="headerlink" title="外部总线"></a>外部总线</h2><ul>
+<li>说明：外部总线则是微机和外部设备之间的总线，微机作为一种设备，通过该总线和其他设备进行信息与数据交换，它用于设备一级的互连</li>
+<li>常用总线：RS232、RS485、USB总线、IEEE1394总线等</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/09/01/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" rel="prev" title="第三章 操作系统知识">
+                  <i class="fa fa-chevron-left"></i> 第三章 操作系统知识
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/" rel="next" title="第十三章 嵌入式输入输出设备">
+                  第十三章 嵌入式输入输出设备 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ascendlogo</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

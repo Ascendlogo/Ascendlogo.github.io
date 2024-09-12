@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png">
 <meta property="article:published_time" content="2024-08-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-13T11:36:54.418Z">
+<meta property="article:modified_time" content="2024-09-03T09:02:42.015Z">
 <meta property="article:author" content="Ascendlogo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240812173413.png">
@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">122</span>
+          <span class="site-state-item-count">124</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -237,7 +237,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-08-13 19:36:54" itemprop="dateModified" datetime="2024-08-13T19:36:54+08:00">2024-08-13</time>
+      <time title="Modified: 2024-09-03 17:02:42" itemprop="dateModified" datetime="2024-09-03T17:02:42+08:00">2024-09-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -420,7 +420,7 @@
 <li>控制器<ul>
 <li>程序计数器PC：存储下一条要执行指令的地址（<strong>地址</strong>不同于指令组成中的<strong>地址码</strong>）</li>
 <li>指令寄存器IR：存储即将要执行的指令</li>
-<li>指令译码器ID：对进行分析解释</li>
+<li>指令译码器ID：对指令进行分析解释</li>
 <li>时序部件：提供时序控制信号指令中的操作码字段</li>
 </ul>
 </li>
@@ -510,7 +510,7 @@
 </li>
 <li><p>直接映像和变换</p>
 <ul>
-<li>主存储器中一块只能映像到cache的一个特定快中</li>
+<li>主存储器中一块只能映像到cache的一个特定块中</li>
 <li>主存和缓存分为相同大小的数据块</li>
 <li>主存空间按缓存容量分为区，每一区的块数与缓存的总块数相等</li>
 <li>主存中某区的一块存入缓存时只能存入缓存中块号相同的位置</li>
@@ -542,7 +542,7 @@
 <li>每个组采用<strong>直接映射方式</strong></li>
 <li>组内的块则采用<strong>全相连映像方式</strong></li>
 <li>特点：<ul>
-<li>是以上两种方式的折中</li>
+<li>是以上两种方式的折衷</li>
 <li>实现难度和造价要比直接映像方式高</li>
 </ul>
 </li>
