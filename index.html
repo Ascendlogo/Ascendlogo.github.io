@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">124</span>
+          <span class="site-state-item-count">125</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -193,7 +193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/13/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.JPG">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/" class="post-title-link" itemprop="url">第十三章 嵌入式输入输出设备</a>
+          <a href="/2024/09/13/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">第六章 嵌入式软件程序设计</a>
         </h2>
 
         <div class="post-meta-container">
@@ -223,7 +223,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-09-10 00:00:00 / Modified: 14:09:25" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
+      <time title="Created: 2024-09-13 00:00:00 / Modified: 10:43:37" itemprop="dateCreated datePublished" datetime="2024-09-13T00:00:00+08:00">2024-09-13</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,168 +245,203 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="GPIO的原理与结构"><a href="#GPIO的原理与结构" class="headerlink" title="GPIO的原理与结构"></a>GPIO的原理与结构</h1><ul>
-<li>GPIO（General Purpose I&#x2F;O，通用输入&#x2F;输出接口）也称为并行I&#x2F;O（parallel I&#x2F;O），是最基本的I&#x2F;O形式<ul>
-<li>有一组输入引脚或输出引脚组成，CPU对它们能够进行存取操作</li>
-<li>有些GPIO引脚能够通过软件编程改变输出&#x2F;输出方向</li>
+          <h1 id="嵌入式系统开发与设计"><a href="#嵌入式系统开发与设计" class="headerlink" title="嵌入式系统开发与设计"></a>嵌入式系统开发与设计</h1><ul>
+<li>一个嵌入式应用项目的开发过程是一个硬件设计和软件设计的综合过程，一般而言要经历以下几个步骤：<ul>
+<li>硬件的设计与实现</li>
+<li>设备驱动软件的设计与实现</li>
+<li>嵌入式操作系统的选择、移植，以及API接口函数的设计</li>
+<li>支撑软件的设计与调试</li>
+<li>应用程序的设计与调试</li>
+<li>系统联调，样机交付</li>
 </ul>
 </li>
-<li>一个双向GPIO端口（D<sub>0</sub>）的简化功能逻辑图如图所示，图中：<ul>
-<li>PORT：数据寄存器</li>
-<li>DDR（Data Direction Register）：数据方向寄存器<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140433.png" alt="GPIO"></li>
+<li>嵌入式应用程序的生成与加载<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913103939.png" alt="嵌入式应用程序的生产与加载"></li>
+<li>嵌入式软件开发有如下的几个特点<ul>
+<li>需要交叉编译工具</li>
+<li>通过仿真手段进行调试</li>
+<li>开发板是中间目标机</li>
+<li>可利用的资源有限</li>
+<li>需要与硬件打交道</li>
+</ul>
+</li>
+<li>嵌入式软件开发的挑战<ul>
+<li>软硬件协同设计</li>
+<li>嵌入式操作系统</li>
+<li>代码优化</li>
+<li>有限的I&#x2F;O功能</li>
+</ul>
+</li>
+<li>嵌入式系统开发的最大特点：软硬件综合开发<ul>
+<li>嵌入式产品是软硬件的结合体</li>
+<li>软件针对硬件开发、固化，不能进行任意修改</li>
+</ul>
+</li>
+<li>嵌入式软件开发模式通常是包括三种<ul>
+<li>本机开发</li>
+<li>交叉开发</li>
+<li>模拟开发</li>
+</ul>
+</li>
+<li>嵌入式软件开发流程<ul>
+<li>嵌入式平台选型</li>
+<li>软件设计</li>
+<li>特性设计</li>
+<li>编码</li>
+<li>测试</li>
+<li>下载和运行</li>
 </ul>
 </li>
 </ul>
-<h1 id="A-D接口基本原理与结构"><a href="#A-D接口基本原理与结构" class="headerlink" title="A&#x2F;D接口基本原理与结构"></a>A&#x2F;D接口基本原理与结构</h1><ul>
-<li>A&#x2F;D转换器是把电模拟量转换为数字量的电路。实现A&#x2F;D转换的方法有很多，常用的方法有：<ul>
-<li>计数法</li>
-<li>双积分法</li>
-<li>逐次逼近法<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140453.png" alt="AD转换"></li>
-</ul>
+<h1 id="嵌入式程序设计"><a href="#嵌入式程序设计" class="headerlink" title="嵌入式程序设计"></a>嵌入式程序设计</h1><h2 id="程序设计语言"><a href="#程序设计语言" class="headerlink" title="程序设计语言"></a>程序设计语言</h2><ul>
+<li><p>程序设计语言<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913103952.png" alt="程序设计语言"></p>
 </li>
-</ul>
-<h2 id="计数式A-D转换器原理"><a href="#计数式A-D转换器原理" class="headerlink" title="计数式A&#x2F;D转换器原理"></a>计数式A&#x2F;D转换器原理</h2><ul>
-<li>计数式A&#x2F;D转换器电路的主要部件包括：比较器、计数器、D&#x2F;A转换器和标准电压源。转换原理图如下所示：<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140508.png" alt="计数式AD转换原理"></li>
-<li>特点<ul>
-<li>结构简单</li>
-<li>但转换速度较慢</li>
-<li>特别是模拟电压较高时，转换速度更慢</li>
-<li>例如对一个8位A&#x2F;D转换器，若输入模拟量为最大值，计数器要从0开始计数到255，做255次D&#x2F;A转换和电压比较的工作，才能完成转换</li>
-</ul>
-</li>
-</ul>
-<h2 id="双积分A-D转换器原理"><a href="#双积分A-D转换器原理" class="headerlink" title="双积分A&#x2F;D转换器原理"></a>双积分A&#x2F;D转换器原理</h2><ul>
-<li>双积分式A&#x2F;D转换法电路主要部件包括：积分器、比较器、计数器和标准电压源。转换原理图如下所示：</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140518.png" alt="双积分AD转换原理"></p>
+<li><p>各种程序语言特点</p>
 <ul>
-<li>工作原理：<ul>
-<li>对输入模拟电压和参考电压进行两次积分，将电压变换成与其成正比的时间间隔</li>
-<li>利用时钟脉冲和计数器测出其时间间隔，完成A&#x2F;D转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140541.png" alt="双积分AD转换积分原理"></li>
-</ul>
-</li>
-<li>双积分式A&#x2F;D转换器的转换过程如下：<ul>
-<li>对输入待测的模拟电压V<sub>i</sub>进行固定时间的积分</li>
-<li>转换至标准电压V<sub>REF</sub>进行固定斜率的反向积分（定值积分），反向积分进行到一定时间，便返回起始值。对标准电压V<sub>REF</sub>进行反向积分的时间T正比于输入模拟电压，输入模拟电压越大，反向积分回到起始值的时间T越长，有V<sub>i</sub>&#x3D;（T2&#x2F;T1）V<sub>REF</sub></li>
-<li>用标准时钟脉冲测定反向积分时间（如计数器），就可以得到对应于输入模拟电压的数字量，实现A&#x2F;D转换</li>
-</ul>
-</li>
-<li>特点：<ul>
-<li>具有很强的抗工频干扰能力</li>
-<li>转换精度高</li>
-<li>但转换速度慢</li>
-<li>通常转换速率小于10Hz，主要用于数字式测试仪表、温度测量等方面</li>
+<li>Fortran语言（科学计算，执行效率高）</li>
+<li>Pascal语言（为教学而开发的，表达能力强，Delphi）</li>
+<li>C语言（指针操作能力强，高效）</li>
+<li>Lisp语言（函数式程序语言，符号处理，人工智能）</li>
+<li>C++语言（面向对象，高效）</li>
+<li>Java语言（面向对象，中间代码，跨平台）</li>
+<li>C#语言（面向对象，中间代码，.Net）</li>
+<li>Prolog语言（逻辑推理，简洁性，表达能力，数据库和专家系统）</li>
+<li>Python语言（一种脚本语言）</li>
 </ul>
 </li>
 </ul>
-<h2 id="逐次逼近式A-D转换器原理"><a href="#逐次逼近式A-D转换器原理" class="headerlink" title="逐次逼近式A&#x2F;D转换器原理"></a>逐次逼近式A&#x2F;D转换器原理</h2><ul>
-<li>逐次逼近式A&#x2F;D转换法电路主要部件包括：比较器、D&#x2F;A转换器、逐次逼近寄存器和基准电压源</li>
+<h2 id="程序语言的数据成分"><a href="#程序语言的数据成分" class="headerlink" title="程序语言的数据成分"></a>程序语言的数据成分</h2><ul>
+<li>数据是程序操作的对象，具有以下属性<ul>
+<li>数据名称：由用户通过标识符命名</li>
+<li>数据类型：说明数据占用内存的大小和存放形式</li>
+<li>存储类别：说明数据在内存中的位置和生存期</li>
+<li>作用域：说明可以使用数据的代码范围</li>
+<li>生存域：说明数据占用内存的时间范围</li>
 </ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140602.png" alt="逐次逼近式AD转换器"></p>
+</li>
+<li>程序设计语言的基本成分包括：<ul>
+<li>数据</li>
+<li>运算</li>
+<li>控制</li>
+<li>传输</li>
+</ul>
+</li>
+<li>数据类型<ul>
+<li>基本类型：整型、字符型、实型、布尔类型</li>
+<li>特殊类型：空类型（void）</li>
+<li>用户定义类型：枚举类型</li>
+<li>构造类型：数组、结构、联合</li>
+<li>指针类型：type*</li>
+<li>抽象类型：类类型</li>
+</ul>
+</li>
+<li>数据类型转换规则：char，short-&gt;int-&gt;unsigned-&gt;long，float-&gt;double</li>
+</ul>
+<h2 id="程序语言的运算成分"><a href="#程序语言的运算成分" class="headerlink" title="程序语言的运算成分"></a>程序语言的运算成分</h2><ul>
+<li>指明允许使用的运算符号及运算规则，运算符号要规定优先级和结合性，大多数高级程序语言的基本运算包括了<ul>
+<li>算术运算</li>
+<li>关系运算</li>
+<li>逻辑运算</li>
+<li>位运算</li>
+</ul>
+</li>
+</ul>
+<h2 id="程序语言的控制成分"><a href="#程序语言的控制成分" class="headerlink" title="程序语言的控制成分"></a>程序语言的控制成分</h2><ul>
+<li>三种基本逻辑结构<ul>
+<li>顺序结构：是一种线性有序的结构，由一系列依次执行的语句或模块组成</li>
+<li>循环结构：是由一个或几个模块构成，程序运行时重复执行，直到满足某一条件为止</li>
+<li>选择结构：是根据条件成立与否选择执行路径的结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="传值-传址"><a href="#传值-传址" class="headerlink" title="传值&#x2F;传址"></a>传值&#x2F;传址</h2><ul>
+<li>传值调用：实际上重新复制了一个副本给形参，不改变调用函数实参变量的内容</li>
+<li>传址调用：将实参地址给形参，将改变调用函数实参变量的内容<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104002.png" alt="传值"></li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><ul>
+<li>前缀表达式<code>+ab</code></li>
+<li>中缀表达式<code>a+b</code></li>
+<li>后缀表达式<code>ab+</code>（逆波兰式）</li>
+</ul>
+<h2 id="编译器的工作阶段"><a href="#编译器的工作阶段" class="headerlink" title="编译器的工作阶段"></a>编译器的工作阶段</h2><ul>
+<li>词法错误：非法字符，关键字或标识符拼写错误</li>
+<li>语法错误：语法结构出错，if…end if不匹配，缺分号</li>
+<li>语义错误：死循环，零除数，其他逻辑错误<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104015.png" alt="编译器的工作阶段"></li>
+</ul>
+<h2 id="解释程序基本原理"><a href="#解释程序基本原理" class="headerlink" title="解释程序基本原理"></a>解释程序基本原理</h2><ul>
+<li><p>解释程序是另一种语言处理程序，在词法、语法和语义分析方面与编译程序的工作原理基本相同</p>
+</li>
+<li><p>但在运行用户程序时，它直接执行源程序或源程序的内部形式。因此，解释程序与编译程序最大的区别就是不产生源程序的目标程序</p>
+</li>
+<li><p>解释程序通常可分为两部分</p>
 <ul>
-<li>工作原理：<ul>
-<li>实质上就是对分搜索法，和天平称重的使用原理一样</li>
-<li>在进行A&#x2F;D转换时，由D&#x2F;A转换器从高位到低位逐位增加转换位数，产生不同的输出电压，把输入电压与输出电压进行比较而实现</li>
-<li>首先使逐次逼近寄存器的最高位为1，这相当于取出基准电压的1&#x2F;2与输入电压比较，如果在输入电压小于1&#x2F;2的基准电压，则最高位置0，反之置1。之后，次高位置1，相当于在1&#x2F;2得到范围中再作对分搜索，以此类推，逐次逼近</li>
+<li>分析部分，包括通常的词法分析、语法分析和语义分析程序。经分析后把源程序翻译成中间代码</li>
+<li>解释部分，用来对第一部分所产生的中间代码进行解释执行</li>
 </ul>
 </li>
-<li>特点：<ul>
-<li>转换速度快</li>
-<li>转换精度高</li>
-<li>对N位A&#x2F;D转换只需N个时钟脉冲即可完成</li>
-<li>可用于测量微秒级的过渡过程的变化，是目前应用最普遍的一种A&#x2F;D转换方法</li>
+<li><p>解释语句实现高级语言的三种方式</p>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104052.png" alt="解释程序基本原理"></p>
+<ul>
+<li>源程序被直接解释执行的处理方式，如图标记A，这种解释程序对源程序逐个字符进行检查，然后执行语句规定的动作。如GOTO L</li>
+<li>解释程序也可以先将源程序翻译成某种中间代码的形式，然后对中间代码进行解释，实现用户程序的运行。解释方式B和C的不同之处在于中间代码的级别</li>
 </ul>
 </li>
 </ul>
-<h1 id="D-A接口基本原理与结构"><a href="#D-A接口基本原理与结构" class="headerlink" title="D&#x2F;A接口基本原理与结构"></a>D&#x2F;A接口基本原理与结构</h1><ul>
-<li>D&#x2F;A转换器是把输入的数字量转换为与输入量成比例的模拟信号的器件，简称为DAC（Digital to Analog Converter）<ul>
-<li>在集成化的D&#x2F;A转换器中，通常采用电阻网络实现将数字量转换为模拟电流</li>
-<li>然后再用运算放大器完成模拟电流到模拟电压的转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140700.png" alt="AD转换"></li>
+<h2 id="C预处理"><a href="#C预处理" class="headerlink" title="C预处理"></a>C预处理</h2><ul>
+<li><code>#define</code>：定义宏</li>
+<li><code>#include</code>：包含一个源代码文件</li>
+<li><code>#undef</code>：取消已定义的宏</li>
+<li><code>#ifdef</code>：如果宏已经定义，则返回真</li>
+<li><code>#ifndef</code>：如果宏没有定义，则返回真</li>
+<li><code>#if</code>：一般含义是如果<code>#if</code>后面的常量表达式为<code>true</code>，则编译它与<code>#endif</code>之间的代码，否则跳过这些代码</li>
+<li><code>#else</code>：类似C语言中的<code>else</code>，<code>#else</code>建立另一选择（<code>#if</code>失败的情况下）</li>
+<li><code>#elif</code>：类似于<code>elseif</code>，它形成一个<code>if else-if</code>阶梯状语句，进行多种编译选择 </li>
+<li><code>endif</code>：标识一个<code>#if</code>块的结束</li>
+<li><code>error</code>：当遇到标准错误时，输出错误消息</li>
+<li><code>pragma</code>：使用标准化方法，向编译器发布特殊的命令到编译器中</li>
 </ul>
+<h2 id="预定义宏"><a href="#预定义宏" class="headerlink" title="预定义宏"></a>预定义宏</h2><ul>
+<li><p><code>__DATE__</code>：当前源文件的编译日期，格式为“Mmm dd yyyy”的字符串字面量</p>
 </li>
-<li>一个4位T型电阻网络DAC如图所示<ul>
-<li>电路由R-2R电阻解码网络、模拟电子开关和求和放大电路构成，因为R和2R组成T型，故称为T型电阻网络DAC<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140919.png" alt="屏幕截图 2024-09-10 093116"></li>
-</ul>
+<li><p><code>__TIME__</code>：当前源文件的编译时间。格式为“hh:mm:ss”的字符串字面量</p>
 </li>
-</ul>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
-<li>电压输出型<ul>
-<li>电压输出型D&#x2F;A转换器虽有直接从电阻阵列输出电压的，但一般采用内置输出放大器以低阻抗输出</li>
-<li>直接输出电压的器件仅用于高阻抗负载，由于无输出放大器部分的延迟，故常作为高速D&#x2F;A转换器使用</li>
-</ul>
+<li><p><code>__FILE__</code>：当前源文件名称，含路径信息</p>
 </li>
-<li>电流输出型<ul>
-<li>电流输出型D&#x2F;A转换器直接输出电流，但应用中通常外接电流-电压转换电路得到电压输出</li>
-<li>电流-电压可以直接在输出引脚上连接一个负载电阻，实现电流-电压转换</li>
-<li>但多采用的是外接运算放大器的形式</li>
-<li>大部分CMOS D&#x2F;A转换器当输出电压不为零时不能正确动作，所以必须外接运算放大器</li>
-<li>在D&#x2F;A转换器的电流建立时间上加入了外接运算放大器的延迟，D&#x2F;A响应变慢</li>
-<li>运算放大器因输出引脚的内部电容容易起振，有时必须作相位补偿</li>
-</ul>
+<li><p><code>__FUNC__</code>：当前函数名称</p>
 </li>
-<li>乘算型：<ul>
-<li>D&#x2F;A转换器中有使用恒定基准电压的，也有在基准电压输入上加交流信号的，后者由于能得到数字输入和基准电压输入相乘的结果而输出，因而称为乘算型D&#x2F;A转换器</li>
-<li>乘算型D&#x2F;A转换器一般不仅可以进行乘法运算，而且可以作为使输入信号数字化衰减的衰减器及对输入信号进行调制的调制器使用</li>
-</ul>
+<li><p><code>__LINE__</code>：当前程序行的行号，表示为十进制整型常量</p>
+</li>
+<li><p><code>__STDC__</code>：若当前编译器符合ISO标准，那么该宏的值为1，否则未定义</p>
+</li>
+<li><p><code>__STDC_HOSTED__</code>：（C99）如果当前是宿主系统，则该宏的值为1，否则为0</p>
 </li>
 </ul>
-<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><ul>
-<li>分辨率（Resolution）：<ul>
-<li>DAC电路所能分辨的最小输出电压与满量程输出电压之比称为DAC的分辨率</li>
-<li>最小输出电压是指输入数字量只有最低有效位为1时的输出电压</li>
-<li>最大输出电压是指输入数字量各位全为1时的输出电压</li>
-<li>DAC的分辨率可用下式表示：<strong>分辨率&#x3D;(1&#x2F;(2<sup>n</sup>-1)) * 量程</strong>，式中，n表示数字量的二进制位数</li>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>基本数据类型<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104125.png" alt="基本数据类型"></li>
+<li>变量<ul>
+<li>常量（字面量和const常量）</li>
+<li>void类型（特殊类型）</li>
+<li>数组（构造类型）</li>
+<li>枚举类型（自定义类型）</li>
+<li>结构体、位域和共用体（构造类型）</li>
 </ul>
 </li>
-<li>DAC产生误差的主要原因有：<ul>
-<li>基准电压V<sub>REF</sub>的波动</li>
-<li>运放的零点漂移</li>
-<li>电阻网络中电阻阻值偏差等原因</li>
 </ul>
-</li>
-<li>转换误差<ul>
-<li>转换误差重用满量程FSR（Full Scale Range）的百分数来表示</li>
-<li>例如，一个DAC的线性误差为0.05%，就是说转换误差是满量程输出的万分之五</li>
-<li>有时转换误差用最低有效位LSB（Least Significant Bit）的倍数来表示</li>
-<li>例如，一个DAC的转换误差是LSB&#x2F;2，则表示输出电压的绝对误差是最低有效位（LSB）为1时输出电压的1&#x2F;2</li>
+<h2 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h2><ul>
+<li>如图所示是一个程序运行时的内存分布<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104136.png" alt="屏幕截图 2024-09-13 095810"></li>
 </ul>
-</li>
-<li>DAC的转换误差主要有<strong>失调误差</strong>和<strong>满值误差</strong></li>
-<li>失调误差<ul>
-<li>输入数字量全为0时，模拟输出值与理论输出值的偏差</li>
-<li>在一定温度下的失调误差可以通过外部电路调整措施进行补偿，也有些DAC芯片本身有调零端进行调零</li>
-<li>对于没有设置调零端的芯片，可以采用外接校正偏置电路加到运放求和端</li>
-</ul>
-</li>
-<li>满值误差<ul>
-<li>又称增益误差，是指输入数字量全为1时，实际输出电压不等于满值的偏差</li>
-<li>调整运放的反馈电阻</li>
-</ul>
-</li>
-<li>DAC的分辨率和转换误差共同决定了DAC的精度<ul>
-<li>要使DAC的精度高，不仅要选择位数高的DAC，还要选用稳定度高的参考电压源V<sub>REF</sub>和低漂移的运算放大器与其配合</li>
-</ul>
-</li>
-<li>建立时间（Setting Time）<ul>
-<li>是描述DAC转换速度快慢的一个重要参数，一般是指输入数字量变化后，输出模拟量稳定到相应数值范围所经历的时间</li>
-<li>DAC中的电阻网络，模拟开关等是非理想器件，各种寄生参数及开关延迟等都会限制转换速度</li>
-<li>一般电流输出D&#x2F;A转换建立时间较短，电压输出D&#x2F;A转换建立时间较长</li>
-<li>实际上建立时间的长短不仅与DAC本身的转换速度有关，还与数字量变化范围有关</li>
-<li>输入数字量从全0变到全1（或者从全1变到全0）时，建立时间最长，称为满量程变化建立时间</li>
-<li>一般产品手册上给出的是满量程变化建立时间</li>
-</ul>
-</li>
-<li>精度（Accuracy）<ul>
-<li>绝对精度：在一个转换器中，对应于一个数字量的实际模拟输入电压和理想的模拟输入电压之差并非是一个常数。把它们之间的差的最大值，定义为“绝对误差”。通常以数字量的最小有效位（LSB）的分数值来表示绝对精度，如±1LSB。绝对误差包括量化精度和其他所有精度</li>
-<li>相对精度：是指整个转换范围内，任一数字量所对应的模拟输入量的实际值与理论值之差，用模拟电压满量程的百分比表示</li>
-<li>例如，满量程为10V，10位A&#x2F;D芯片，若其绝对精度为±1&#x2F;2LSB，则其最小有效位的量化单位为9.77mV，其绝对精度为4.88mV，其相对精度为0.048%</li>
-</ul>
-</li>
-<li>量程<ul>
-<li>量程是指所能转换的模拟输入电压范围，分单极性、双极性两种类型</li>
-<li>例如，单极性的量程为0 ~ +5V，0 ~ +20V；双极性的量程为-5 ~ +5V，-10 ~ +10V</li>
-</ul>
-</li>
+<h2 id="函数调用的过程"><a href="#函数调用的过程" class="headerlink" title="函数调用的过程"></a>函数调用的过程</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104158.png" alt="函数调用的例子"></p>
+<ol>
+<li>程序开始运行时，main函数被装入到内存，代码存放在内存的代码区域</li>
+<li>全局变量区域分配了一个存储单元给变量z，并初始化为0</li>
+<li>接下来，系统调用主函数main去运行</li>
+<li>当这个函数调用发生时，系统就会在栈中给它分配一块内存空间（栈帧），存放main函数内部定义的局部变量x，y</li>
+<li>PC跳转到主函数的第一条语句，开始执行</li>
+<li>函数执行完后，首先释放栈帧，x和y所占用的空间被释放，不能再访问</li>
+<li>整个程序结束，全部变量z释放，不能再访问</li>
+</ol>
+<h2 id="变量的存储与作用域"><a href="#变量的存储与作用域" class="headerlink" title="变量的存储与作用域"></a>变量的存储与作用域</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104214.png" alt="变量的存储与作用域"></p>
+<h2 id="面向对象的语言"><a href="#面向对象的语言" class="headerlink" title="面向对象的语言"></a>面向对象的语言</h2><ul>
+<li>Peter Coad和Edward Yourdon提出用下面的等式来识别面向对象方法，采用这四个概念开发的软件系统是面向对象的<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104220.png" alt="屏幕截图 2024-09-13 101143"></li>
 </ul>
 
       
@@ -434,7 +469,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.JPG">
@@ -452,7 +487,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/" class="post-title-link" itemprop="url">第十四章 嵌入式系统总线和通信接口</a>
+          <a href="/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/" class="post-title-link" itemprop="url">第十四章 嵌入式系统总线和通信接口</a>
         </h2>
 
         <div class="post-meta-container">
@@ -463,14 +498,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-09-10 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
+      <time title="Created: 2024-09-11 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-11T00:00:00+08:00">2024-09-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-09-12 16:29:51" itemprop="dateModified" datetime="2024-09-12T16:29:51+08:00">2024-09-12</time>
+      <time title="Modified: 2024-09-12 16:38:08" itemprop="dateModified" datetime="2024-09-12T16:38:08+08:00">2024-09-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1299,6 +1334,247 @@
 <h2 id="外部总线"><a href="#外部总线" class="headerlink" title="外部总线"></a>外部总线</h2><ul>
 <li>说明：外部总线则是微机和外部设备之间的总线，微机作为一种设备，通过该总线和其他设备进行信息与数据交换，它用于设备一级的互连</li>
 <li>常用总线：RS232、RS485、USB总线、IEEE1394总线等</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/" class="post-title-link" itemprop="url">第十三章 嵌入式输入输出设备</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-09-10 00:00:00 / Modified: 14:09:25" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="GPIO的原理与结构"><a href="#GPIO的原理与结构" class="headerlink" title="GPIO的原理与结构"></a>GPIO的原理与结构</h1><ul>
+<li>GPIO（General Purpose I&#x2F;O，通用输入&#x2F;输出接口）也称为并行I&#x2F;O（parallel I&#x2F;O），是最基本的I&#x2F;O形式<ul>
+<li>有一组输入引脚或输出引脚组成，CPU对它们能够进行存取操作</li>
+<li>有些GPIO引脚能够通过软件编程改变输出&#x2F;输出方向</li>
+</ul>
+</li>
+<li>一个双向GPIO端口（D<sub>0</sub>）的简化功能逻辑图如图所示，图中：<ul>
+<li>PORT：数据寄存器</li>
+<li>DDR（Data Direction Register）：数据方向寄存器<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140433.png" alt="GPIO"></li>
+</ul>
+</li>
+</ul>
+<h1 id="A-D接口基本原理与结构"><a href="#A-D接口基本原理与结构" class="headerlink" title="A&#x2F;D接口基本原理与结构"></a>A&#x2F;D接口基本原理与结构</h1><ul>
+<li>A&#x2F;D转换器是把电模拟量转换为数字量的电路。实现A&#x2F;D转换的方法有很多，常用的方法有：<ul>
+<li>计数法</li>
+<li>双积分法</li>
+<li>逐次逼近法<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140453.png" alt="AD转换"></li>
+</ul>
+</li>
+</ul>
+<h2 id="计数式A-D转换器原理"><a href="#计数式A-D转换器原理" class="headerlink" title="计数式A&#x2F;D转换器原理"></a>计数式A&#x2F;D转换器原理</h2><ul>
+<li>计数式A&#x2F;D转换器电路的主要部件包括：比较器、计数器、D&#x2F;A转换器和标准电压源。转换原理图如下所示：<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140508.png" alt="计数式AD转换原理"></li>
+<li>特点<ul>
+<li>结构简单</li>
+<li>但转换速度较慢</li>
+<li>特别是模拟电压较高时，转换速度更慢</li>
+<li>例如对一个8位A&#x2F;D转换器，若输入模拟量为最大值，计数器要从0开始计数到255，做255次D&#x2F;A转换和电压比较的工作，才能完成转换</li>
+</ul>
+</li>
+</ul>
+<h2 id="双积分A-D转换器原理"><a href="#双积分A-D转换器原理" class="headerlink" title="双积分A&#x2F;D转换器原理"></a>双积分A&#x2F;D转换器原理</h2><ul>
+<li>双积分式A&#x2F;D转换法电路主要部件包括：积分器、比较器、计数器和标准电压源。转换原理图如下所示：</li>
+</ul>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140518.png" alt="双积分AD转换原理"></p>
+<ul>
+<li>工作原理：<ul>
+<li>对输入模拟电压和参考电压进行两次积分，将电压变换成与其成正比的时间间隔</li>
+<li>利用时钟脉冲和计数器测出其时间间隔，完成A&#x2F;D转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140541.png" alt="双积分AD转换积分原理"></li>
+</ul>
+</li>
+<li>双积分式A&#x2F;D转换器的转换过程如下：<ul>
+<li>对输入待测的模拟电压V<sub>i</sub>进行固定时间的积分</li>
+<li>转换至标准电压V<sub>REF</sub>进行固定斜率的反向积分（定值积分），反向积分进行到一定时间，便返回起始值。对标准电压V<sub>REF</sub>进行反向积分的时间T正比于输入模拟电压，输入模拟电压越大，反向积分回到起始值的时间T越长，有V<sub>i</sub>&#x3D;（T2&#x2F;T1）V<sub>REF</sub></li>
+<li>用标准时钟脉冲测定反向积分时间（如计数器），就可以得到对应于输入模拟电压的数字量，实现A&#x2F;D转换</li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>具有很强的抗工频干扰能力</li>
+<li>转换精度高</li>
+<li>但转换速度慢</li>
+<li>通常转换速率小于10Hz，主要用于数字式测试仪表、温度测量等方面</li>
+</ul>
+</li>
+</ul>
+<h2 id="逐次逼近式A-D转换器原理"><a href="#逐次逼近式A-D转换器原理" class="headerlink" title="逐次逼近式A&#x2F;D转换器原理"></a>逐次逼近式A&#x2F;D转换器原理</h2><ul>
+<li>逐次逼近式A&#x2F;D转换法电路主要部件包括：比较器、D&#x2F;A转换器、逐次逼近寄存器和基准电压源</li>
+</ul>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140602.png" alt="逐次逼近式AD转换器"></p>
+<ul>
+<li>工作原理：<ul>
+<li>实质上就是对分搜索法，和天平称重的使用原理一样</li>
+<li>在进行A&#x2F;D转换时，由D&#x2F;A转换器从高位到低位逐位增加转换位数，产生不同的输出电压，把输入电压与输出电压进行比较而实现</li>
+<li>首先使逐次逼近寄存器的最高位为1，这相当于取出基准电压的1&#x2F;2与输入电压比较，如果在输入电压小于1&#x2F;2的基准电压，则最高位置0，反之置1。之后，次高位置1，相当于在1&#x2F;2得到范围中再作对分搜索，以此类推，逐次逼近</li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>转换速度快</li>
+<li>转换精度高</li>
+<li>对N位A&#x2F;D转换只需N个时钟脉冲即可完成</li>
+<li>可用于测量微秒级的过渡过程的变化，是目前应用最普遍的一种A&#x2F;D转换方法</li>
+</ul>
+</li>
+</ul>
+<h1 id="D-A接口基本原理与结构"><a href="#D-A接口基本原理与结构" class="headerlink" title="D&#x2F;A接口基本原理与结构"></a>D&#x2F;A接口基本原理与结构</h1><ul>
+<li>D&#x2F;A转换器是把输入的数字量转换为与输入量成比例的模拟信号的器件，简称为DAC（Digital to Analog Converter）<ul>
+<li>在集成化的D&#x2F;A转换器中，通常采用电阻网络实现将数字量转换为模拟电流</li>
+<li>然后再用运算放大器完成模拟电流到模拟电压的转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140700.png" alt="AD转换"></li>
+</ul>
+</li>
+<li>一个4位T型电阻网络DAC如图所示<ul>
+<li>电路由R-2R电阻解码网络、模拟电子开关和求和放大电路构成，因为R和2R组成T型，故称为T型电阻网络DAC<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140919.png" alt="屏幕截图 2024-09-10 093116"></li>
+</ul>
+</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li>电压输出型<ul>
+<li>电压输出型D&#x2F;A转换器虽有直接从电阻阵列输出电压的，但一般采用内置输出放大器以低阻抗输出</li>
+<li>直接输出电压的器件仅用于高阻抗负载，由于无输出放大器部分的延迟，故常作为高速D&#x2F;A转换器使用</li>
+</ul>
+</li>
+<li>电流输出型<ul>
+<li>电流输出型D&#x2F;A转换器直接输出电流，但应用中通常外接电流-电压转换电路得到电压输出</li>
+<li>电流-电压可以直接在输出引脚上连接一个负载电阻，实现电流-电压转换</li>
+<li>但多采用的是外接运算放大器的形式</li>
+<li>大部分CMOS D&#x2F;A转换器当输出电压不为零时不能正确动作，所以必须外接运算放大器</li>
+<li>在D&#x2F;A转换器的电流建立时间上加入了外接运算放大器的延迟，D&#x2F;A响应变慢</li>
+<li>运算放大器因输出引脚的内部电容容易起振，有时必须作相位补偿</li>
+</ul>
+</li>
+<li>乘算型：<ul>
+<li>D&#x2F;A转换器中有使用恒定基准电压的，也有在基准电压输入上加交流信号的，后者由于能得到数字输入和基准电压输入相乘的结果而输出，因而称为乘算型D&#x2F;A转换器</li>
+<li>乘算型D&#x2F;A转换器一般不仅可以进行乘法运算，而且可以作为使输入信号数字化衰减的衰减器及对输入信号进行调制的调制器使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><ul>
+<li>分辨率（Resolution）：<ul>
+<li>DAC电路所能分辨的最小输出电压与满量程输出电压之比称为DAC的分辨率</li>
+<li>最小输出电压是指输入数字量只有最低有效位为1时的输出电压</li>
+<li>最大输出电压是指输入数字量各位全为1时的输出电压</li>
+<li>DAC的分辨率可用下式表示：<strong>分辨率&#x3D;(1&#x2F;(2<sup>n</sup>-1)) * 量程</strong>，式中，n表示数字量的二进制位数</li>
+</ul>
+</li>
+<li>DAC产生误差的主要原因有：<ul>
+<li>基准电压V<sub>REF</sub>的波动</li>
+<li>运放的零点漂移</li>
+<li>电阻网络中电阻阻值偏差等原因</li>
+</ul>
+</li>
+<li>转换误差<ul>
+<li>转换误差重用满量程FSR（Full Scale Range）的百分数来表示</li>
+<li>例如，一个DAC的线性误差为0.05%，就是说转换误差是满量程输出的万分之五</li>
+<li>有时转换误差用最低有效位LSB（Least Significant Bit）的倍数来表示</li>
+<li>例如，一个DAC的转换误差是LSB&#x2F;2，则表示输出电压的绝对误差是最低有效位（LSB）为1时输出电压的1&#x2F;2</li>
+</ul>
+</li>
+<li>DAC的转换误差主要有<strong>失调误差</strong>和<strong>满值误差</strong></li>
+<li>失调误差<ul>
+<li>输入数字量全为0时，模拟输出值与理论输出值的偏差</li>
+<li>在一定温度下的失调误差可以通过外部电路调整措施进行补偿，也有些DAC芯片本身有调零端进行调零</li>
+<li>对于没有设置调零端的芯片，可以采用外接校正偏置电路加到运放求和端</li>
+</ul>
+</li>
+<li>满值误差<ul>
+<li>又称增益误差，是指输入数字量全为1时，实际输出电压不等于满值的偏差</li>
+<li>调整运放的反馈电阻</li>
+</ul>
+</li>
+<li>DAC的分辨率和转换误差共同决定了DAC的精度<ul>
+<li>要使DAC的精度高，不仅要选择位数高的DAC，还要选用稳定度高的参考电压源V<sub>REF</sub>和低漂移的运算放大器与其配合</li>
+</ul>
+</li>
+<li>建立时间（Setting Time）<ul>
+<li>是描述DAC转换速度快慢的一个重要参数，一般是指输入数字量变化后，输出模拟量稳定到相应数值范围所经历的时间</li>
+<li>DAC中的电阻网络，模拟开关等是非理想器件，各种寄生参数及开关延迟等都会限制转换速度</li>
+<li>一般电流输出D&#x2F;A转换建立时间较短，电压输出D&#x2F;A转换建立时间较长</li>
+<li>实际上建立时间的长短不仅与DAC本身的转换速度有关，还与数字量变化范围有关</li>
+<li>输入数字量从全0变到全1（或者从全1变到全0）时，建立时间最长，称为满量程变化建立时间</li>
+<li>一般产品手册上给出的是满量程变化建立时间</li>
+</ul>
+</li>
+<li>精度（Accuracy）<ul>
+<li>绝对精度：在一个转换器中，对应于一个数字量的实际模拟输入电压和理想的模拟输入电压之差并非是一个常数。把它们之间的差的最大值，定义为“绝对误差”。通常以数字量的最小有效位（LSB）的分数值来表示绝对精度，如±1LSB。绝对误差包括量化精度和其他所有精度</li>
+<li>相对精度：是指整个转换范围内，任一数字量所对应的模拟输入量的实际值与理论值之差，用模拟电压满量程的百分比表示</li>
+<li>例如，满量程为10V，10位A&#x2F;D芯片，若其绝对精度为±1&#x2F;2LSB，则其最小有效位的量化单位为9.77mV，其绝对精度为4.88mV，其相对精度为0.048%</li>
+</ul>
+</li>
+<li>量程<ul>
+<li>量程是指所能转换的模拟输入电压范围，分单极性、双极性两种类型</li>
+<li>例如，单极性的量程为0 ~ +5V，0 ~ +20V；双极性的量程为-5 ~ +5V，-10 ~ +10V</li>
+</ul>
+</li>
 </ul>
 
       
@@ -3698,88 +3974,6 @@
 <li><strong>智能电流互感器</strong>：常用于智能电网、物联网和远程监测等应用，提供更高级别的数据处理和管理能力。</li>
 </ul>
 </li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/07/09/%E6%9C%AD/%E3%80%8A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%E3%80%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/07/09/%E6%9C%AD/%E3%80%8A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%E3%80%8B/" class="post-title-link" itemprop="url">《毛泽东选集》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-07-09 00:00:00 / Modified: 15:39:30" itemprop="dateCreated datePublished" datetime="2024-07-09T00:00:00+08:00">2024-07-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AD/" itemprop="url" rel="index"><span itemprop="name">札</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>他们站在一切人之上——之前站在一切人之下，所以叫做反常。</li>
-<li>今天的暂时的妥协，即酝酿着明天的更大的战争。</li>
 </ul>
 
       
