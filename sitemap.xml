@@ -1170,13 +1170,6 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/Python/</loc>
-    <lastmod>2024-10-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ascendlogo.github.io/categories/Linux/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -1191,7 +1184,7 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%82%9F/</loc>
+    <loc>http://ascendlogo.github.io/categories/Python/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1205,7 +1198,7 @@
   </url>
   
   <url>
-    <loc>http://ascendlogo.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://ascendlogo.github.io/categories/%E6%82%9F/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1213,6 +1206,13 @@
   
   <url>
     <loc>http://ascendlogo.github.io/categories/%E6%9C%AD/</loc>
+    <lastmod>2024-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ascendlogo.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2024-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
