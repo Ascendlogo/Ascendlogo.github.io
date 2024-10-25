@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">126</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,884 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/05/15/Python%E5%AD%A6%E4%B9%A0/Python%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/15/Python%E5%AD%A6%E4%B9%A0/Python%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="post-title-link" itemprop="url">Python基本语法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-05-15 00:00:00" itemprop="dateCreated datePublished" datetime="2023-05-15T00:00:00+08:00">2023-05-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-02-22 16:23:39" itemprop="dateModified" datetime="2024-02-22T16:23:39+08:00">2024-02-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h1><ul>
+<li><table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th align="center">描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td align="center">除</td>
+<td>9 &#x2F; 2 &#x3D; 4.5</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x2F;</td>
+<td align="center">取整除</td>
+<td>9 &#x2F;&#x2F; 2 &#x3D; 4</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余数</td>
+<td>9 % 2 &#x3D; 1</td>
+</tr>
+<tr>
+<td align="center">**</td>
+<td align="center">幂</td>
+<td>2 ** 3 &#x3D; 8</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>在Python中<code>*</code>还可以用于字符串，计算结果就是字符串重复指定次数的结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [1]:&quot;-&quot; * 5</span><br><span class="line">Out[1]&quot;-----&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h1><ul>
+<li><p>数字型</p>
+<ul>
+<li><p>整型 int</p>
+</li>
+<li><p>浮点型 float</p>
+</li>
+<li><p>布尔型 bool</p>
+</li>
+<li><p>True</p>
+</li>
+<li><p>False</p>
+</li>
+<li><p>复数型 complex</p>
+</li>
+<li><p>主要用于科学计算，例如：平面场问题、波动问题、电容电感等问题</p>
+</li>
+</ul>
+</li>
+<li><p>非数字型</p>
+<ul>
+<li>字符串</li>
+<li>列表</li>
+<li>元组</li>
+<li>字典</li>
+</ul>
+</li>
+<li><p>提示：在Python2.x中，整数还可分为<code>int</code>和<code>long</code></p>
+</li>
+<li><p>使用<code>type</code>函数可以查看一个变量类型</p>
+<ul>
+<li>In [1]: type(name)</li>
+</ul>
+</li>
+<li><blockquote>
+<p>字符串之间可以用<code>+</code>进行拼接</p>
+<p>字符串可以和整数使用*重复拼接相同的字符串</p>
+<p>数字型变量和字符串之间不能进行其他运算</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="变量的输入和输出"><a href="#变量的输入和输出" class="headerlink" title="变量的输入和输出"></a>变量的输入和输出</h1><ul>
+<li><p><code>input()</code></p>
+<ul>
+<li><code>字符串变量 = input(&quot;提示信息：&quot;)</code></li>
+<li><code>input()</code>输入的内容都认为是一个字符串</li>
+</ul>
+</li>
+<li><p>类型转换函数</p>
+<ul>
+<li><code>int(x)</code>将x转换为一个整数</li>
+<li><code>float(x)</code>将x装换为一个浮点数</li>
+</ul>
+</li>
+<li><p>变量的格式化输出</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>格式化字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>有符号十进制整数，<code>%06</code>表示输出的整数显示6位数，不足的地方用0补全</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数，<code>%.02f</code>表示小数点后只显示两位</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>输出%</td>
+</tr>
+</tbody></table>
+</li>
+<li><p><code>print(&quot;Name:%s,Age:%d&quot;% (name, age))</code>，<code>name</code>变量中为姓名信息，<code>age</code>变量中为年龄信息</p>
+</li>
+<li><p><code>print(&quot;abc&quot;, end = &quot;a&quot;)</code>在默认情况下，print输出后会自动在末尾添加换行，利用end可用end内容替代换行</p>
+</li>
+<li><p><code>print(&quot;&quot;)</code>在一行输出后添加换行</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><ul>
+<li><table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\\</td>
+<td>反斜杠符号</td>
+</tr>
+<tr>
+<td>\&#96;</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\\“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>横向制表符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h1 id="函数的基本使用"><a href="#函数的基本使用" class="headerlink" title="函数的基本使用"></a>函数的基本使用</h1><ul>
+<li><p>函数的定义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function</span>():</span><br><span class="line">    <span class="comment"># 函数内容</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义的函数只有被调用才会执行</p>
+</li>
+</ul>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><ul>
+<li>每一个以扩展名<code>.py</code>为结尾的python源文件都是一个模块</li>
+<li>导入模块需要<code>import</code></li>
+<li>模块名也是标识符，需要遵循标识符命名规则</li>
+<li><code>.pyc</code>表示编译过文件</li>
+</ul>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><ul>
+<li><p>查看列表<code>List</code>能使用的功能</p>
+<ul>
+<li>在ipython3中操作：</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In [1]:name_list.(+tab键)</span><br><span class="line">name_list.append  name_list.count等等</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>分类</th>
+<th>关键字&#x2F;函数&#x2F;方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>增加</td>
+<td>列表.insert(索引,数据)</td>
+<td>在指定位置插入数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.append(数据)</td>
+<td>在末尾追加数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.extend(列表2)</td>
+<td>将列表2的数据追加到列表</td>
+</tr>
+<tr>
+<td>2</td>
+<td>修改</td>
+<td>列表[索引] &#x3D; 数据</td>
+<td>修改指定索引的数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>del 列表[索引]</td>
+<td>删除指定索引的数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.remove(数据)</td>
+<td>删除第一个出现的指定数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.pop</td>
+<td>删除末尾数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.pop(索引)</td>
+<td>删除指定索引数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.clear</td>
+<td>情空列表</td>
+</tr>
+<tr>
+<td>4</td>
+<td>统计</td>
+<td>len(列表)</td>
+<td>列表长度</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.count(数据)</td>
+<td>数据在列表中出现次数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.index(数据)</td>
+<td>返回数据索引</td>
+</tr>
+<tr>
+<td>5</td>
+<td>排序</td>
+<td>列表.sort()</td>
+<td>升序排序</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.sort(reverse&#x3D;True)</td>
+<td>降序排序</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>列表.reverse()</td>
+<td>逆转，反转</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>使用<code>del</code>关键字可以从内存中删除变量</p>
+</li>
+<li><p>关键字后面不需要使用括号，函数需要</p>
+</li>
+<li><p>迭代循环<code>for num in nums</code></p>
+</li>
+<li><p>列表中可以存储不同类型数据</p>
+</li>
+</ul>
+<h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h1><ul>
+<li><p><code>Tuple</code>与列表类似，不同之处在于元组的元素不能修改</p>
+<ul>
+<li>元组表示多个元素组成的序列</li>
+<li>元组在<code>Python</code>开发中有特定的应用场景</li>
+</ul>
+</li>
+<li><p>用于存储一串信息，数据之间使用<code>,</code>分隔</p>
+</li>
+<li><p>元组用<code>()</code>定义</p>
+</li>
+<li><p>元组的索引从0开始</p>
+</li>
+<li><p>创建空元组<code>()</code></p>
+</li>
+<li><p>查看元组能使用的功能方法如列表</p>
+</li>
+<li><p>可用<code>for in</code>遍历元组</p>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li>函数的参数和返回值</li>
+<li>格式化字符串</li>
+<li>让列表不可被修改，以保护列表安全</li>
+</ul>
+</li>
+<li><blockquote>
+<p>list(元组)# 元组转换为列表</p>
+<p>tuple(列表)# 列表转换为元组</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><ul>
+<li><p><code>dictionary</code>（字典）可用于存储多个数据</p>
+</li>
+<li><p>字典是无序对象合集，列表是有序对象合集</p>
+</li>
+<li><p>字典用<code>&#123;&#125;</code>定义</p>
+</li>
+<li><p>字典使用<strong>键值对</strong>存储数据，键值之间使用<code>，</code>分隔</p>
+<ul>
+<li>键<code>key</code>是索引</li>
+<li>值<code>value</code>是数据</li>
+<li>键和值之间使用<code>:</code>分隔</li>
+<li>键必须是唯一的</li>
+<li>值可以取任何数据类型，但键只能使用字符串、数字和元组</li>
+</ul>
+</li>
+<li><p>举例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xiaoming = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;小明&quot;</span>,</span><br><span class="line">            <span class="string">&quot;age&quot;</span>: <span class="number">18</span>,</span><br><span class="line">            <span class="string">&quot;gender&quot;</span>: <span class="literal">True</span>,</span><br><span class="line">            <span class="string">&quot;height&quot;</span>: <span class="number">1.75</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>小明</td>
+</tr>
+<tr>
+<td>age</td>
+<td>18</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>True</td>
+</tr>
+<tr>
+<td>height</td>
+<td>1.75</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>字典取值使用<code>[]</code></p>
+<ul>
+<li>例如：<code>pirnt([&quot;name&quot;])</code></li>
+</ul>
+</li>
+<li><p><code>xiaoming[&quot;GPA&quot;] = 3.5</code>若key不存在则会新增键值对</p>
+</li>
+<li><p>查看元组能使用的功能方法如列表</p>
+</li>
+<li><p><code>for k in xiaoming</code>变量<code>k</code>是键值</p>
+</li>
+<li><p>使用场景</p>
+<ul>
+<li>使用多个键值对存储描述一个物体的相关信息</li>
+<li>将多个字典放在一个列表中再进行遍历，再循环体内部针对每一个字典进行相同的处理</li>
+</ul>
+</li>
+</ul>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ul>
+<li><p>可以用<code>&quot;&quot;</code> 或<code>&#39;&#39;</code>定义字符串，使用<code>&#39;&#39;</code>往往用于定义字符串内有<code>&quot;&quot;</code>的情况</p>
+<ul>
+<li><code>str2 = &#39;my name is &quot;logo&quot;&#39;</code></li>
+</ul>
+</li>
+<li><p><code>index(&quot;substring&quot;)</code>查询子字符串<code>substring</code>不存在代码会报错</p>
+</li>
+<li><p>判断类型</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>string.isspace()</code></td>
+<td>若string只包含空格，返回True</td>
+</tr>
+<tr>
+<td><code>sting.isalnum()</code></td>
+<td>若string至少有一个字符并且所以字符或数字返回True</td>
+</tr>
+<tr>
+<td><code>string.isalpha()</code></td>
+<td>若string至少有一个并且所有字符都是字母返回True</td>
+</tr>
+<tr>
+<td><code>string.isdecimal()</code></td>
+<td>若string只包含数字则返回True（全角数字）</td>
+</tr>
+<tr>
+<td><code>string.isdigit()</code></td>
+<td>若string只包含数字则返回True（全角数字，（1），<code>\u00b2</code>）</td>
+</tr>
+<tr>
+<td><code>string.isnumeric()</code></td>
+<td>若string只包含数字则返回True（全角数字，汉字数字）</td>
+</tr>
+<tr>
+<td><code>string.istitle()</code></td>
+<td>若string是标题化的（每个单词首字母大写）则返回True</td>
+</tr>
+<tr>
+<td><code>string.islower()</code></td>
+<td>若string中包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是小写，则返回True</td>
+</tr>
+<tr>
+<td><code>string.isupper()</code></td>
+<td>若string中包含至少一个区分大小写的字符，并且所有这些（区分大小写的）字符都是大写，则返回True</td>
+</tr>
+</tbody></table>
+<ul>
+<li>查找和替换</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>string.startswith(str)</code></td>
+<td>若string以<code>str</code>开头则返回True</td>
+</tr>
+<tr>
+<td><code>string.endwith(str)</code></td>
+<td>若string以<code>str</code>结尾则返回True</td>
+</tr>
+<tr>
+<td><code>string.find(str,start=0,end=len(string))</code></td>
+<td>若<code>str</code>在 string的start到end中则返回索引值，否则返回-1</td>
+</tr>
+<tr>
+<td><code>string.rfind(str,start=0,end=len(string))</code></td>
+<td>类似<code>find()</code>函数，从右边开始</td>
+</tr>
+<tr>
+<td><code>string.index(str,start=0,end=len(string))</code></td>
+<td>与<code>find()</code>类似，但是<code>str</code>不在string中会报错</td>
+</tr>
+<tr>
+<td><code>string.rindex(str,start=0,end=len(string))</code></td>
+<td>类似于<code>index()</code>，从右边开始</td>
+</tr>
+<tr>
+<td><code>string.replace(old_str,new_str,num=string.count(old))</code></td>
+<td>把string中<code>old_str</code>替换为<code>new_str</code>，若<code>num</code>指定，则替换不超过<code>num</code>次</td>
+</tr>
+</tbody></table>
+<ul>
+<li>大小写转换</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>string.capitalize()</code></td>
+<td>把字符串第一个字符大写</td>
+</tr>
+<tr>
+<td><code>string.title()</code></td>
+<td>把字符串每个单词首字母大写</td>
+</tr>
+<tr>
+<td><code>string.lower()</code></td>
+<td>转换string所有大写字母为小写</td>
+</tr>
+<tr>
+<td><code>string.upper()</code></td>
+<td>转换string所有小写字母为大写</td>
+</tr>
+<tr>
+<td><code>string.swapcase()</code></td>
+<td>翻转string中的大小写</td>
+</tr>
+</tbody></table>
+<ul>
+<li>去除空白字符</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>string.lstrip()</code></td>
+<td>截掉 string 左边（开始）的空白字符</td>
+</tr>
+<tr>
+<td><code>string.rstrip()</code></td>
+<td>截掉 string 右边（末尾）的空白字符</td>
+</tr>
+<tr>
+<td><code>string.strip()</code></td>
+<td>截掉 string 左右两边的空白字符</td>
+</tr>
+</tbody></table>
+<ul>
+<li>拆分和连接</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>string.partition(str)</code></td>
+<td>把字符串 string 分成一个 3 元素的元组 (<code>str</code>前面, <code>str</code>, <code>str</code>后面)</td>
+</tr>
+<tr>
+<td><code>string.rpartition(str)</code></td>
+<td>类似于 partition() 方法，不过是从右边开始查找</td>
+</tr>
+<tr>
+<td><code>string.split(str=&quot;&quot;, num)</code></td>
+<td>以 <code>str</code> 为分隔符拆分 string，如果 <code>num</code> 有指定值，则仅分隔 <code>num + 1</code> 个子字符串，<code>str</code> 默认包含 ‘\r’, ‘\t’, ‘\n’ 和空格</td>
+</tr>
+<tr>
+<td><code>string.splitlines()</code></td>
+<td>按照行(‘\r’, ‘\n’, ‘\r\n’)分隔，返回一个包含各行作为元素的列表</td>
+</tr>
+<tr>
+<td><code>string.join(seq)</code></td>
+<td>以 string 作为分隔符，将 seq 中所有的元素（的字符串表示）合并为一个新的字符串</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>切片</strong> 方法适用于 <strong>字符串</strong>、<strong>列表</strong>、<strong>元组</strong><ul>
+<li><strong>切片</strong> 使用 <strong>索引值</strong> 来限定范围，从一个大的 <strong>字符串</strong> 中 <strong>切出</strong> 小的 <strong>字符串</strong></li>
+<li><strong>列表</strong> 和 <strong>元组</strong> 都是 <strong>有序</strong> 的集合，都能够 <strong>通过索引值</strong> 获取到对应的数据</li>
+<li><strong>字典</strong> 是一个 <strong>无序</strong> 的集合，是使用 <strong>键值对</strong> 保存数据</li>
+<li><code>nums_str[开始索引:结束索引:步长]</code></li>
+<li><strong>注意</strong>：<ul>
+<li>指定的区间属于 <strong>左闭右开</strong> 型 <code>[开始索引,  结束索引)</code> &#x3D;&gt; <code>开始索引 &gt;= 范围 &lt; 结束索引</code></li>
+<li>从 <code>起始</code> 位开始，到 <strong><code>结束</code>位的前一位</strong> 结束（<strong>不包含结束位本身</strong>)</li>
+<li>从头开始，<strong>开始索引</strong> <strong>数字可以省略，冒号不能省略</strong></li>
+<li>到末尾结束，<strong>结束索引</strong> <strong>数字可以省略，冒号不能省略</strong></li>
+<li>步长默认为 <code>1</code>，如果连续切片，<strong>数字和冒号都可以省略</strong></li>
+</ul>
+</li>
+<li>索引的顺序和倒序<ul>
+<li>在 Python 中不仅支持 <strong>顺序索引</strong>，同时还支持 <strong>倒序索引</strong>，步长为-1</li>
+<li>所谓倒序索引就是 <strong>从右向左</strong> 计算索引<ul>
+<li>最右边的索引值是 <strong>-1</strong>，依次递减</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="公共方法"><a href="#公共方法" class="headerlink" title="公共方法"></a>公共方法</h1><ul>
+<li>内置函数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(item)</td>
+<td>计算容器中元素个数</td>
+<td></td>
+</tr>
+<tr>
+<td>del(item)</td>
+<td>删除变量</td>
+<td>del 有两种方式</td>
+</tr>
+<tr>
+<td>max(item)</td>
+<td>返回容器中元素最大值</td>
+<td>如果是字典，只针对 key 比较</td>
+</tr>
+<tr>
+<td>min(item)</td>
+<td>返回容器中元素最小值</td>
+<td>如果是字典，只针对 key 比较</td>
+</tr>
+<tr>
+<td><code>cmp(item1, item2)</code></td>
+<td>比较两个值，-1 小于&#x2F;0 相等&#x2F;1 大于</td>
+<td><code>Python 3.x </code>取消了 <code>cmp </code>函数</td>
+</tr>
+</tbody></table>
+<p>  <strong>注意</strong></p>
+<ul>
+<li><strong>字符串</strong> 比较符合以下规则： “0” &lt; “A” &lt; “a”</li>
+</ul>
+<ul>
+<li><p>切片</p>
+<table>
+<thead>
+<tr>
+<th align="center">描述</th>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>支持的数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">切片</td>
+<td>“0123456789”[::-2]</td>
+<td>“97531”</td>
+<td>字符串、列表、元组</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>切片</strong> 使用 <strong>索引值</strong> 来限定范围，从一个大的 <strong>字符串</strong> 中 <strong>切出</strong> 小的 <strong>字符串</strong></li>
+<li><strong>列表</strong> 和 <strong>元组</strong> 都是 <strong>有序</strong> 的集合，都能够 <strong>通过索引值</strong> 获取到对应的数据</li>
+<li><strong>字典</strong> 是一个 <strong>无序</strong> 的集合，是使用 <strong>键值对</strong> 保存数据</li>
+</ul>
+</li>
+<li><p>运算符</p>
+<table>
+<thead>
+<tr>
+<th align="center">运算符</th>
+<th>Python 表达式</th>
+<th>结果</th>
+<th>描述</th>
+<th>支持的数据类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td>[1, 2] + [3, 4]</td>
+<td>[1, 2, 3, 4]</td>
+<td>合并</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>[“Hi!”] * 4</td>
+<td>[‘Hi!’, ‘Hi!’, ‘Hi!’, ‘Hi!’]</td>
+<td>重复</td>
+<td>字符串、列表、元组</td>
+</tr>
+<tr>
+<td align="center">in</td>
+<td>3 in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td align="center">not in</td>
+<td>4 not in (1, 2, 3)</td>
+<td>True</td>
+<td>元素是否不存在</td>
+<td>字符串、列表、元组、字典</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code> <code>&gt;=</code> <code> ==</code> <code>&lt;</code> <code>&lt;=</code></td>
+<td>(1, 2, 3) &lt; (2, 2, 3)</td>
+<td>True</td>
+<td>元素比较</td>
+<td>字符串、列表、元组</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>in</code> 在对 <strong>字典</strong> 操作时，判断的是 <strong>字典的键</strong></li>
+<li><code>in</code> 和 <code>not in</code> 被称为 <strong>成员运算符</strong></li>
+</ul>
+</li>
+<li><p>成员运算符</p>
+<p>成员运算符用于 <strong>测试</strong> 序列中是否包含指定的 <strong>成员</strong></p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>in</td>
+<td>如果在指定的序列中找到值返回 True，否则返回 False</td>
+<td><code>3 in (1, 2, 3)</code> 返回 <code>True</code></td>
+</tr>
+<tr>
+<td>not in</td>
+<td>如果在指定的序列中没有找到值返回 True，否则返回 False</td>
+<td><code>3 not in (1, 2, 3)</code> 返回 <code>False</code></td>
+</tr>
+</tbody></table>
+<p>注意：在对 <strong>字典</strong> 操作时，判断的是 <strong>字典的键</strong></p>
+</li>
+<li><p>完整的 for 循环语法</p>
+<ul>
+<li>在 <code>Python</code> 中完整的 <code>for 循环</code> 的语法如下：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 集合:</span><br><span class="line">    </span><br><span class="line">    循环体代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    没有通过 <span class="keyword">break</span> 退出循环，循环结束后，会执行的代码</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>应用场景</p>
+<ul>
+<li><p>在 <strong>迭代遍历</strong> 嵌套的数据类型时，例如 <strong>一个列表包含了多个字典</strong></p>
+</li>
+<li><p>需求：要判断 某一个字典中 是否存在 指定的 值 </p>
+<ul>
+<li><p>如果 <strong>存在</strong>，提示并且退出循环</p>
+</li>
+<li><p>如果 <strong>不存在</strong>，在 <strong>循环整体结束</strong> 后，希望 <strong>得到一个统一的提示</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h1 id="LINUX-上的-Shebang-符号"><a href="#LINUX-上的-Shebang-符号" class="headerlink" title="LINUX 上的 Shebang 符号(#!)"></a>LINUX 上的 <code>Shebang</code> 符号(<code>#!</code>)</h1><ul>
+<li><code>#!</code>这个符号叫做 <code>Shebang</code> 或者 <code>Sha-bang</code></li>
+<li><code>Shebang</code> 通常在 <code>Unix</code> 系统脚本的中 <strong>第一行开头</strong> 使用</li>
+<li>指明 <strong>执行这个脚本文件</strong> 的 <strong>解释程序</strong></li>
+<li><strong>使用 Shebang 的步骤</strong></li>
+</ul>
+<ol>
+<li>使用 <code>which</code> 查询 <code>python3</code> 解释器所在路径</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">which</span> python3</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>修改要运行的 <strong>主 python 文件</strong>，在第一行增加以下内容</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/python3</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>修改 <strong>主 python 文件</strong> 的文件权限，增加执行权限</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">chmod</span> +x cards_main.py</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>在需要时执行程序即可</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./cards_main.py</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1039,106 +1917,6 @@
 <p>时间复杂度：O(n)</p>
 <p>空间复杂度：O(1)</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countSegments</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> segmentCount = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((i == <span class="number">0</span> || s[i - <span class="number">1</span>] == <span class="string">&#x27; &#x27;</span>) &amp;&amp; s[i] != <span class="string">&#x27; &#x27;</span>) &#123;</span><br><span class="line">                segmentCount++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> segmentCount;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/20/LeetCode/Add%20Strings/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/20/LeetCode/Add%20Strings/" class="post-title-link" itemprop="url">Add Strings</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-20 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-20T00:00:00+08:00">2023-03-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-25 16:25:49" itemprop="dateModified" datetime="2023-06-25T16:25:49+08:00">2023-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/add-strings/description/">415.Add Strings</a></p>
-<p>Given two non-negative integers, <code>num1</code> and <code>num2</code> represented as string, return <em>the sum of</em> <code>num1</code> <em>and</em> <code>num2</code> <em>as a string</em>.</p>
-<p>You must solve the problem without using any built-in library for handling large integers (such as <code>BigInteger</code>). You must also not convert the inputs to integers directly.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num1 = &quot;11&quot;, num2 = &quot;123&quot;</span><br><span class="line">Output: &quot;134&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num1 = &quot;456&quot;, num2 = &quot;77&quot;</span><br><span class="line">Output: &quot;533&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 3:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num1 = &quot;0&quot;, num2 = &quot;0&quot;</span><br><span class="line">Output: &quot;0&quot;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度：O(max(len1,len2)</p>
-<p>空间复杂度：O(1)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">addStrings</span><span class="params">(string num1, string num2)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i = num1.<span class="built_in">length</span>() - <span class="number">1</span>, j = num2.<span class="built_in">length</span>() - <span class="number">1</span>, add = <span class="number">0</span>;</span><br><span class="line">        string ans = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> || j &gt;= <span class="number">0</span> || add != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="type">int</span> x = i &gt;= <span class="number">0</span> ? num1[i] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> y = j &gt;= <span class="number">0</span> ? num2[j] - <span class="string">&#x27;0&#x27;</span> : <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> result = x + y + add;</span><br><span class="line">            ans.<span class="built_in">push_back</span>(<span class="string">&#x27;0&#x27;</span> + result % <span class="number">10</span>);</span><br><span class="line">            add = result / <span class="number">10</span>;</span><br><span class="line">            i -= <span class="number">1</span>;</span><br><span class="line">            j -= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
