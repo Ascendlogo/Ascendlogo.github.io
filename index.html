@@ -223,7 +223,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-02-20 00:00:00 / Modified: 14:27:45" itemprop="dateCreated datePublished" datetime="2025-02-20T00:00:00+08:00">2025-02-20</time>
+      <time title="Created: 2025-02-20 00:00:00 / Modified: 14:51:22" itemprop="dateCreated datePublished" datetime="2025-02-20T00:00:00+08:00">2025-02-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -272,10 +272,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure>
 </li>
-<li><pre><code class="bash">apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">15. 重启docker</span><br><span class="line"></span><br><span class="line">16. ```bash</span><br><span class="line">    service docker restart</span><br><span class="line"></span><br><span class="line">17. 配置加速地址</span><br><span class="line"></span><br><span class="line">18. ```bash</span><br><span class="line">    sudo mkdir -p /etc/docker</span><br><span class="line">    sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;registry-mirrors&quot;: [</span><br><span class="line">            &quot;https://do.nark.eu.org&quot;,</span><br><span class="line">            &quot;https://dc.j8.work&quot;,</span><br><span class="line">            &quot;https://docker.m.daocloud.io&quot;,</span><br><span class="line">            &quot;https://dockerproxy.com&quot;,</span><br><span class="line">            &quot;https://docker.mirrors.ustc.edu.cn&quot;,</span><br><span class="line">            &quot;https://docker.nju.edu.cn&quot;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    EOF</span><br><span class="line">    sudo systemctl daemon-reload</span><br><span class="line">    sudo systemctl restart docker</span><br><span class="line">    systemctl status docker</span><br></pre></td></tr></table></figure>
-</code></pre>
+<li><p>重启docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置加速地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://do.nark.eu.org&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://dc.j8.work&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.m.daocloud.io&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://dockerproxy.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.nju.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>验证配置是否成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
@@ -405,9 +408,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-02-19 00:00:00 / Modified: 19:40:28" itemprop="dateCreated datePublished" datetime="2025-02-19T00:00:00+08:00">2025-02-19</time>
+      <time title="Created: 2025-02-19 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-19T00:00:00+08:00">2025-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-20 14:40:27" itemprop="dateModified" datetime="2025-02-20T14:40:27+08:00">2025-02-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -444,7 +453,7 @@
 <li>WWW协议<ul>
 <li>URL          协议：&#x2F;&#x2F;主机地址[:80]&#x2F;路径&#x2F;文件名</li>
 <li>浏览器      IE     Netscape    Firefox</li>
-<li>协议          http 80   https 443（是以安全为目标的HTTP通道，简单讲是HTTP的</li>
+<li>协议          http 80   https 443（是以安全为目标的HTTP通道，简单讲是HTTP的安全版）</li>
 <li>http 404  链接指向的网页不存在，即原始网页的URL失效</li>
 </ul>
 </li>
