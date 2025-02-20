@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,1775 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/13/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/13/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">第六章 嵌入式软件程序设计</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-09-13 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-13T00:00:00+08:00">2024-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-09-18 10:56:52" itemprop="dateModified" datetime="2024-09-18T10:56:52+08:00">2024-09-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="嵌入式系统开发与设计"><a href="#嵌入式系统开发与设计" class="headerlink" title="嵌入式系统开发与设计"></a>嵌入式系统开发与设计</h1><ul>
+<li>一个嵌入式应用项目的开发过程是一个硬件设计和软件设计的综合过程，一般而言要经历以下几个步骤：<ul>
+<li>硬件的设计与实现</li>
+<li>设备驱动软件的设计与实现</li>
+<li>嵌入式操作系统的选择、移植，以及API接口函数的设计</li>
+<li>支撑软件的设计与调试</li>
+<li>应用程序的设计与调试</li>
+<li>系统联调，样机交付</li>
+</ul>
+</li>
+<li>嵌入式应用程序的生成与加载<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913103939.png" alt="嵌入式应用程序的生产与加载"></li>
+<li>嵌入式软件开发有如下的几个特点<ul>
+<li>需要交叉编译工具</li>
+<li>通过仿真手段进行调试</li>
+<li>开发板是中间目标机</li>
+<li>可利用的资源有限</li>
+<li>需要与硬件打交道</li>
+</ul>
+</li>
+<li>嵌入式软件开发的挑战<ul>
+<li>软硬件协同设计</li>
+<li>嵌入式操作系统</li>
+<li>代码优化</li>
+<li>有限的I&#x2F;O功能</li>
+</ul>
+</li>
+<li>嵌入式系统开发的最大特点：软硬件综合开发<ul>
+<li>嵌入式产品是软硬件的结合体</li>
+<li>软件针对硬件开发、固化，不能进行任意修改</li>
+</ul>
+</li>
+<li>嵌入式软件开发模式通常是包括三种<ul>
+<li>本机开发</li>
+<li>交叉开发</li>
+<li>模拟开发</li>
+</ul>
+</li>
+<li>嵌入式软件开发流程<ul>
+<li>嵌入式平台选型</li>
+<li>软件设计</li>
+<li>特性设计</li>
+<li>编码</li>
+<li>测试</li>
+<li>下载和运行</li>
+</ul>
+</li>
+</ul>
+<h1 id="嵌入式程序设计"><a href="#嵌入式程序设计" class="headerlink" title="嵌入式程序设计"></a>嵌入式程序设计</h1><h2 id="程序设计语言"><a href="#程序设计语言" class="headerlink" title="程序设计语言"></a>程序设计语言</h2><ul>
+<li><p>程序设计语言<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913103952.png" alt="程序设计语言"></p>
+</li>
+<li><p>各种程序语言特点</p>
+<ul>
+<li>Fortran语言（科学计算，执行效率高）</li>
+<li>Pascal语言（为教学而开发的，表达能力强，Delphi）</li>
+<li>C语言（指针操作能力强，高效）</li>
+<li>Lisp语言（函数式程序语言，符号处理，人工智能）</li>
+<li>C++语言（面向对象，高效）</li>
+<li>Java语言（面向对象，中间代码，跨平台）</li>
+<li>C#语言（面向对象，中间代码，.Net）</li>
+<li>Prolog语言（逻辑推理，简洁性，表达能力，数据库和专家系统）</li>
+<li>Python语言（一种脚本语言）</li>
+</ul>
+</li>
+</ul>
+<h2 id="程序语言的数据成分"><a href="#程序语言的数据成分" class="headerlink" title="程序语言的数据成分"></a>程序语言的数据成分</h2><ul>
+<li>数据是程序操作的对象，具有以下属性<ul>
+<li>数据名称：由用户通过标识符命名</li>
+<li>数据类型：说明数据占用内存的大小和存放形式</li>
+<li>存储类别：说明数据在内存中的位置和生存期</li>
+<li>作用域：说明可以使用数据的代码范围</li>
+<li>生存域：说明数据占用内存的时间范围</li>
+</ul>
+</li>
+<li>程序设计语言的基本成分包括：<ul>
+<li>数据</li>
+<li>运算</li>
+<li>控制</li>
+<li>传输</li>
+</ul>
+</li>
+<li>数据类型<ul>
+<li>基本类型：整型、字符型、实型、布尔类型</li>
+<li>特殊类型：空类型（void）</li>
+<li>用户定义类型：枚举类型</li>
+<li>构造类型：数组、结构、联合</li>
+<li>指针类型：type*</li>
+<li>抽象类型：类类型</li>
+</ul>
+</li>
+<li>数据类型转换规则：char，short-&gt;int-&gt;unsigned-&gt;long，float-&gt;double</li>
+</ul>
+<h2 id="程序语言的运算成分"><a href="#程序语言的运算成分" class="headerlink" title="程序语言的运算成分"></a>程序语言的运算成分</h2><ul>
+<li>指明允许使用的运算符号及运算规则，运算符号要规定优先级和结合性，大多数高级程序语言的基本运算包括了<ul>
+<li>算术运算</li>
+<li>关系运算</li>
+<li>逻辑运算</li>
+<li>位运算</li>
+</ul>
+</li>
+</ul>
+<h2 id="程序语言的控制成分"><a href="#程序语言的控制成分" class="headerlink" title="程序语言的控制成分"></a>程序语言的控制成分</h2><ul>
+<li>三种基本逻辑结构<ul>
+<li>顺序结构：是一种线性有序的结构，由一系列依次执行的语句或模块组成</li>
+<li>循环结构：是由一个或几个模块构成，程序运行时重复执行，直到满足某一条件为止</li>
+<li>选择结构：是根据条件成立与否选择执行路径的结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="传值-传址"><a href="#传值-传址" class="headerlink" title="传值&#x2F;传址"></a>传值&#x2F;传址</h2><ul>
+<li>传值调用：实际上重新复制了一个副本给形参，不改变调用函数实参变量的内容</li>
+<li>传址调用：将实参地址给形参，将改变调用函数实参变量的内容<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104002.png" alt="传值"></li>
+</ul>
+<h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><ul>
+<li>前缀表达式<code>+ab</code></li>
+<li>中缀表达式<code>a+b</code></li>
+<li>后缀表达式<code>ab+</code>（逆波兰式）</li>
+</ul>
+<h2 id="编译器的工作阶段"><a href="#编译器的工作阶段" class="headerlink" title="编译器的工作阶段"></a>编译器的工作阶段</h2><ul>
+<li>词法错误：非法字符，关键字或标识符拼写错误</li>
+<li>语法错误：语法结构出错，if…end if不匹配，缺分号</li>
+<li>语义错误：死循环，零除数，其他逻辑错误<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104015.png" alt="编译器的工作阶段"></li>
+</ul>
+<h2 id="解释程序基本原理"><a href="#解释程序基本原理" class="headerlink" title="解释程序基本原理"></a>解释程序基本原理</h2><ul>
+<li><p>解释程序是另一种语言处理程序，在词法、语法和语义分析方面与编译程序的工作原理基本相同</p>
+</li>
+<li><p>但在运行用户程序时，它直接执行源程序或源程序的内部形式。因此，解释程序与编译程序最大的区别就是不产生源程序的目标程序</p>
+</li>
+<li><p>解释程序通常可分为两部分</p>
+<ul>
+<li>分析部分，包括通常的词法分析、语法分析和语义分析程序。经分析后把源程序翻译成中间代码</li>
+<li>解释部分，用来对第一部分所产生的中间代码进行解释执行</li>
+</ul>
+</li>
+<li><p>解释语句实现高级语言的三种方式</p>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104052.png" alt="解释程序基本原理"></p>
+<ul>
+<li>源程序被直接解释执行的处理方式，如图标记A，这种解释程序对源程序逐个字符进行检查，然后执行语句规定的动作。如GOTO L</li>
+<li>解释程序也可以先将源程序翻译成某种中间代码的形式，然后对中间代码进行解释，实现用户程序的运行。解释方式B和C的不同之处在于中间代码的级别</li>
+</ul>
+</li>
+</ul>
+<h2 id="C预处理"><a href="#C预处理" class="headerlink" title="C预处理"></a>C预处理</h2><ul>
+<li><code>#define</code>：定义宏</li>
+<li><code>#include</code>：包含一个源代码文件</li>
+<li><code>#undef</code>：取消已定义的宏</li>
+<li><code>#ifdef</code>：如果宏已经定义，则返回真</li>
+<li><code>#ifndef</code>：如果宏没有定义，则返回真</li>
+<li><code>#if</code>：一般含义是如果<code>#if</code>后面的常量表达式为<code>true</code>，则编译它与<code>#endif</code>之间的代码，否则跳过这些代码</li>
+<li><code>#else</code>：类似C语言中的<code>else</code>，<code>#else</code>建立另一选择（<code>#if</code>失败的情况下）</li>
+<li><code>#elif</code>：类似于<code>elseif</code>，它形成一个<code>if else-if</code>阶梯状语句，进行多种编译选择 </li>
+<li><code>#endif</code>：标识一个<code>#if</code>块的结束</li>
+<li><code>#error</code>：当遇到标准错误时，输出错误消息</li>
+<li><code>#pragma</code>：使用标准化方法，向编译器发布特殊的命令到编译器中</li>
+</ul>
+<h2 id="预定义宏"><a href="#预定义宏" class="headerlink" title="预定义宏"></a>预定义宏</h2><ul>
+<li><p><code>__DATE__</code>：当前源文件的编译日期，格式为“Mmm dd yyyy”的字符串字面量</p>
+</li>
+<li><p><code>__TIME__</code>：当前源文件的编译时间。格式为“hh:mm:ss”的字符串字面量</p>
+</li>
+<li><p><code>__FILE__</code>：当前源文件名称，含路径信息</p>
+</li>
+<li><p><code>__FUNC__</code>：当前函数名称</p>
+</li>
+<li><p><code>__LINE__</code>：当前程序行的行号，表示为十进制整型常量</p>
+</li>
+<li><p><code>__STDC__</code>：若当前编译器符合ISO标准，那么该宏的值为1，否则未定义</p>
+</li>
+<li><p><code>__STDC_HOSTED__</code>：（C99）如果当前是宿主系统，则该宏的值为1，否则为0</p>
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>基本数据类型<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104125.png" alt="基本数据类型"></li>
+<li>变量<ul>
+<li>常量（字面量和const常量）</li>
+<li>void类型（特殊类型）</li>
+<li>数组（构造类型）</li>
+<li>枚举类型（自定义类型）</li>
+<li>结构体、位域和共用体（构造类型）</li>
+</ul>
+</li>
+</ul>
+<h2 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h2><ul>
+<li>如图所示是一个程序运行时的内存分布<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104136.png" alt="屏幕截图 2024-09-13 095810"></li>
+</ul>
+<h2 id="函数调用的过程"><a href="#函数调用的过程" class="headerlink" title="函数调用的过程"></a>函数调用的过程</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104158.png" alt="函数调用的例子"></p>
+<ol>
+<li>程序开始运行时，main函数被装入到内存，代码存放在内存的代码区域</li>
+<li>全局变量区域分配了一个存储单元给变量z，并初始化为0</li>
+<li>接下来，系统调用主函数main去运行</li>
+<li>当这个函数调用发生时，系统就会在栈中给它分配一块内存空间（栈帧），存放main函数内部定义的局部变量x，y</li>
+<li>PC跳转到主函数的第一条语句，开始执行</li>
+<li>函数执行完后，首先释放栈帧，x和y所占用的空间被释放，不能再访问</li>
+<li>整个程序结束，全部变量z释放，不能再访问</li>
+</ol>
+<h2 id="变量的存储与作用域"><a href="#变量的存储与作用域" class="headerlink" title="变量的存储与作用域"></a>变量的存储与作用域</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104214.png" alt="变量的存储与作用域"></p>
+<h2 id="面向对象的语言"><a href="#面向对象的语言" class="headerlink" title="面向对象的语言"></a>面向对象的语言</h2><ul>
+<li>Peter Coad和Edward Yourdon提出用下面的等式来识别面向对象方法，采用这四个概念开发的软件系统是面向对象的<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240913104220.png" alt="屏幕截图 2024-09-13 101143"></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/" class="post-title-link" itemprop="url">第十四章 嵌入式系统总线和通信接口</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-09-11 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-11T00:00:00+08:00">2024-09-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-10-08 15:07:55" itemprop="dateModified" datetime="2024-10-08T15:07:55+08:00">2024-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="串行接口基本原理与结构"><a href="#串行接口基本原理与结构" class="headerlink" title="串行接口基本原理与结构"></a>串行接口基本原理与结构</h1><ul>
+<li>串行通信：数据是一位一位地进行传输的，在传输中每一位数据都占据一个固定的时间长度</li>
+<li>优点：<ul>
+<li>传输线少、成本低</li>
+<li>特别适合远距离传送</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>速度慢</li>
+</ul>
+</li>
+</ul>
+<h2 id="串行数据传送3种基本的通信模式"><a href="#串行数据传送3种基本的通信模式" class="headerlink" title="串行数据传送3种基本的通信模式"></a>串行数据传送3种基本的通信模式</h2><ul>
+<li><p>单工通信：数据仅能从设备A到设备B进行单一方向的传输。如遥控、遥测等</p>
+</li>
+<li><p>半双工通信：数据可以从设备A到设备B进行传输，也可以从设备B到设备A进行传输，但不能在同一时刻进行双向传输。如对讲机</p>
+</li>
+<li><p>全双工通信：数据可以在同一时刻从设备A传输到设备B，或从设备B传输到设备A，即可以同时双向传输。如电话</p>
+</li>
+</ul>
+<h2 id="串行通信在信息格式上划分"><a href="#串行通信在信息格式上划分" class="headerlink" title="串行通信在信息格式上划分"></a>串行通信在信息格式上划分</h2><h3 id="异步通信方式"><a href="#异步通信方式" class="headerlink" title="异步通信方式"></a>异步通信方式</h3><ul>
+<li><p>是指通信的发送和接收设备使用各自的时钟，控制数据的发送和接收过程</p>
+</li>
+<li><p>为使双方的收发协调，要求发送和接收设备的时钟尽可能一致</p>
+</li>
+<li><p>数据是一帧一帧传送的，每帧数据包含有起始位（“0”）、数据位、奇偶校验位和停止位（“1”），每帧数据的传送靠起始位来同步</p>
+</li>
+<li><p>一帧数据的各位代码间的时间间隔是固定的，而相邻两帧的数据其时间间隔是不固定的</p>
+</li>
+<li><p>在异步通信的数据传送中，传输线上允许空字符</p>
+</li>
+<li><p>异步通信对字符格式、波特率、校验位有确定的要求</p>
+<ul>
+<li><p>字符格式</p>
+<ul>
+<li>每个字符传送时，必须前面加一起始位，后面加上1、1.5或2位停止位</li>
+<li>例如ASCII码传送时，一帧数据的组成是：前面一个起始位，接着7位ASCII编码，再接着一位奇偶校验位，最后一位停止位，共10位<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190440.png" alt="串行异步通信字符格式"></li>
+</ul>
+</li>
+<li><p>波特率</p>
+<ul>
+<li>传送数据位的速率称为波特率，用位&#x2F;秒（bit&#x2F;s）来表示，称之为波特</li>
+<li>例如，数据传送的速率为120字符帧&#x2F;秒，每帧包括10个数据位，则传送波特率为：10X120&#x3D;1200b&#x2F;s&#x3D;1200波特</li>
+<li>异步通信的波特率的数值通常为：150、300、600、1200、2400、4800、9600、14400、28800等，数值成倍数变化</li>
+</ul>
+</li>
+<li><p>校验位</p>
+<ul>
+<li>偶校验就是要使字符加上校验位有偶数个“1”</li>
+<li>奇校验就是要使字符加上校验位有奇数个“1”</li>
+<li>例如数据“00010011”，共有奇数个“1”，偶校验时，则校验位就置为“1”，奇校验时，则校验位就置为“0”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>异步通信的特点</p>
+<ul>
+<li>不要求收发双方时钟的严格一致，实现容易，设备开销小</li>
+<li>但每个字符要附加2~3位用于起止位，各帧之间还有间隔，因此传输效率不高。实际使用率只有约80%</li>
+</ul>
+</li>
+</ul>
+<h3 id="同步通信方式"><a href="#同步通信方式" class="headerlink" title="同步通信方式"></a>同步通信方式</h3><ul>
+<li>是一种比特同步通信技术，要求收发双方具有同频同相的同步时钟信号，只需在传送报文的最前面附加特定的同步字符，使收发双方建立同步，此后便在同步时钟的控制下逐位发送&#x2F;接收</li>
+<li>同步传输采用字符块的方式，减少每一个字符的控制和错误检测数据位，因而可以具有较高的传输速率</li>
+<li>即将许多字符聚集成一字符后，在每块信息之前要加上1~2个同步字符，字符块之后再加入适当的错误检测数据才传送出去</li>
+<li>特点<ul>
+<li>数据传输速率较高</li>
+<li>但要求发送方时钟和接受方时钟保持严格同步</li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-232串行接口"><a href="#RS-232串行接口" class="headerlink" title="RS-232串行接口"></a>RS-232串行接口</h2><ul>
+<li><p>RS-232C是美国电子工业协会（EIA）制定的一种串行通信接口标准</p>
+</li>
+<li><p>RS-232C接口规格</p>
+<ul>
+<li><p>EIA所制定的传送电气规格</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">L（LOW）</th>
+<th align="center">H（Hight）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">电压范围</td>
+<td align="center">-25V~3V</td>
+<td align="center">+3V~+25V</td>
+</tr>
+<tr>
+<td align="center"><strong>负逻辑</strong></td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>RS-232C通常以±12V的电压来驱动信号线，TTL标准与RS-232C标准之间的电平转换电路通常采用集成电路芯片实现，如M2AX23等</p>
+</li>
+</ul>
+</li>
+<li><p>RS-232C接口信号</p>
+<ul>
+<li><p>EIA制定的RS-232C接口与外界的相连采用25芯（DB-25）和9芯（DB-9）D型插接件，实际应用中，并不是每只引脚信号都必须用到。</p>
+</li>
+<li><p>各引脚功能如下<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190511.png" alt="RS232"></p>
+<table>
+<thead>
+<tr>
+<th align="center">引脚号</th>
+<th align="center">符号名称</th>
+<th align="center">名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">CD</td>
+<td align="center">载波检测</td>
+<td align="left">主要用于Modem通知计算机其处于在线状态，即Modem检测到拨号音</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">RXD</td>
+<td align="center">接收数据线</td>
+<td align="left">用于接收外部设备送来的数据</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">TXD</td>
+<td align="center">发送数据线</td>
+<td align="left">用于将计算机的数据发送给外部设备</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">DTR</td>
+<td align="center">数据终端就绪</td>
+<td align="left">当此引脚高电平时，通知Modem可以进行数据传输，计算机已经准备好</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">SG</td>
+<td align="center">信号地</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">DSR</td>
+<td align="center">数据设备就绪</td>
+<td align="left">此引脚为高电平时，通知计算机Modem已经准备好，可以进行数据通信</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">RTS</td>
+<td align="center">请求发送</td>
+<td align="left">此引脚由计算机来控制，用以通知Modem马上传送数据至计算机；否则，Modem将收到的数据暂时放入缓冲区中</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">CTS</td>
+<td align="center">允许发送</td>
+<td align="left">此引脚由Modem控制，用以通知计算机将要传送的数据送至Modem</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">RI</td>
+<td align="center">振铃提示</td>
+<td align="left">Modem通知计算机有呼叫进来，是否接听呼叫由计算机决定</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>RS-232C的基本连接方式</p>
+<ul>
+<li>计算机利用RS-232C接口进行串口通信，有简单连接和完全连接两种连接方式</li>
+<li>简单连接又称三线连接，即只连接发送数据线、接受数据线和信号地、实现全双工通信</li>
+<li>如果应用中还需要使用RS-232C的控制信号，则采用完全连接方式<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190530.png" alt="RS232两种连接方式"></li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-422串行接口"><a href="#RS-422串行接口" class="headerlink" title="RS-422串行接口"></a>RS-422串行接口</h2><ul>
+<li>RS-422标准是RS-232的改进型，是一种单机发送、多机接收的单向、平衡传输规范，传输速率可达10Mb&#x2F;s。采用差分传输方式，也称做平衡传输<ul>
+<li>允许在相同传输线上连接多个接收节点，最多可接10个节点，即一个主设备（Master），其余10个为从设备（Salve），从设备之间不能通信</li>
+<li>支持一点对多点的双向通信。RS-422四线接口由于采用单独的发送和接受通道，因此不必控制数据方向，各装置之间任何必需的信号交换均可以按软件方式（XON&#x2F;XOFF握手）或硬件方式（一对单独的双绞线）实现</li>
+</ul>
+</li>
+<li>RS-422的最大传输距离为4000英尺（约1219m），最大传输速率为10Mb&#x2F;s<ul>
+<li>传输速率与平衡双绞线的长度有关，只有在很短的距离下才能获得最高传输速率</li>
+<li>在最大传输距离时，传输速率为100Kb&#x2F;s</li>
+<li>一般100m长的双绞线上所能获得的最大传输速率仅为1Mb&#x2F;s</li>
+<li>RS-422需要再传输电缆的最远端连接一个电阻，要求电阻阻值约等于传输电缆的特性阻抗<ul>
+<li>在短距离（300m以下）传输时可以不连接电阻</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="RS-485串行接口"><a href="#RS-485串行接口" class="headerlink" title="RS-485串行接口"></a>RS-485串行接口</h2><ul>
+<li><p>在RS-422的基础上，为扩展应用范围，EIA制定了RS-485标准，增加了多点、双向通信能力</p>
+<ul>
+<li>在通信距离为几十米至上千米时，通常采用RS-485收发器</li>
+<li>RS-485收发器采用平衡发送和差分发送</li>
+<li>即在发送端，驱动器将TTL电平信号转换成差分信号输出；在接受端，接收器将差分信号变成TTL电平，因此具有抑制共模干扰能力</li>
+<li>接受器能够检测低达200mV的电压，具有高的灵敏度，故数据传输距离可达千米以上</li>
+</ul>
+</li>
+<li><p>RS-485可以采用二线与四线方式，二线制可实现真正的多点双向通信</p>
+<ul>
+<li>采用四线连接时，与RS-422一样只能实现点对多的通信，即只能有一个主设备，其余为从设备</li>
+<li>RS-485可以连接多达32个设备</li>
+</ul>
+</li>
+<li><p>RS-485的共模输出电压在-7~+12V之间，接收器最小输入阻抗为12kΩ</p>
+</li>
+<li><p>RS-485满足所有RS-422的规范，所以RS-485的驱动器可以在RS-422网络中应用</p>
+</li>
+<li><p>RS-485的最大传输速率为10Mb&#x2F;s。在最大传输距离时，传输速率为100Kb&#x2F;s</p>
+</li>
+<li><p>RS-485需要两个终端电阻，接在传输总线的两端，要求电阻阻值约等于传输电缆的特性阻抗</p>
+<ul>
+<li>在短距离传输（300m以下）时可不需要终端电阻</li>
+</ul>
+</li>
+</ul>
+<h1 id="并行接口基本原理与结构"><a href="#并行接口基本原理与结构" class="headerlink" title="并行接口基本原理与结构"></a>并行接口基本原理与结构</h1><ul>
+<li><p>并行通信通常是将数据字节的各位用多条数据线同时进行传送</p>
+<ul>
+<li>一般用来连接打印机、扫描仪等，所以又称打印口</li>
+</ul>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>控制简单、传输速度快</li>
+<li>由于传输线较多，长距离传送时成本高且接收方的各位同时接收存在困难</li>
+</ul>
+</li>
+<li><p>并行接口可以分为</p>
+<ul>
+<li>SPP（标准并口）</li>
+<li>EPP（增强型并口）</li>
+<li>ECP（扩展型并口）</li>
+</ul>
+</li>
+<li><p>并行总线分为：</p>
+<ul>
+<li><strong>标准</strong>并行总线</li>
+<li><strong>非标准</strong>并行总线</li>
+</ul>
+</li>
+<li><p>常用的并行标准总线：<strong>IEEE488总线</strong>和<strong>SCSI总线</strong>。</p>
+</li>
+<li><p><strong>MXI总线</strong>是一种高性能非标准的通用多用户并行总线</p>
+</li>
+<li><p>IEEE488总线</p>
+<ul>
+<li>又称GPIB总线（General Purpose Interface Bus，通用接口总线）</li>
+<li>位并行、字节串行双向异步方式传输信号</li>
+<li>总线方式连接，仪器设备直接并联于总线上，总线上最多可连接15台设备</li>
+<li>最大传输距离为20m，信号传输速度一般为500Kb&#x2F;s，最大传输速度为1Mb&#x2F;s</li>
+<li>广泛应用在仪器、仪表、测控领域</li>
+</ul>
+</li>
+<li><p>SCSI（Small Computer System Interface，小型计算机系统接口）总线：</p>
+<ul>
+<li>速度可达5Mb&#x2F;s，传输距离6m</li>
+<li>传输速率很高</li>
+<li>普遍用作计算机的高速外设总线，如连接高速硬盘驱动器</li>
+</ul>
+</li>
+<li><p>MXI（Multi-system extension Interface bus，多系统扩展接口总线）</p>
+<ul>
+<li>是一种高性能非标准的通用多用户并行总线</li>
+<li>32位高速并行总线</li>
+<li>最高速度可达23Mb&#x2F;s，传输距离20m</li>
+<li>用作计算机与测控机箱的互连</li>
+</ul>
+</li>
+</ul>
+<h1 id="PCI接口基本原理与结构"><a href="#PCI接口基本原理与结构" class="headerlink" title="PCI接口基本原理与结构"></a>PCI接口基本原理与结构</h1><ul>
+<li><p>PCI（Peripheral Component Interconnect，外围设备互连）总线是由Intel公司推出的一种局部总线，是当前用于系统扩展最流行的总线之一</p>
+</li>
+<li><p>PCI总线是地址、数据多路复用的高性能32位和64位总线，是微处理器与外围控制部件、外围附加板之间的互连机构</p>
+</li>
+<li><p>PCI定义了32位数据总线，并且可扩展为64位。总线速度有33MHz和66MHz两种</p>
+<ul>
+<li>改良的PCI系统PCI-X，数据传输速度最高可以达到64位@133MHz</li>
+<li>PCI总线主板插槽的体积比ISA总线插槽小，支持突发读写操作（突发数据传输），可同时支持多组外围设备</li>
+</ul>
+</li>
+<li><p>与ISA总线不同，PCI总线的地址总线与数据总线是分时复用的，支持即插即用（PNP：PLug-and-Play）、中断共享等功能</p>
+</li>
+<li><p>PCI总线在数据传输时，由一个PCI设备做发起者（称为Master、Initiator），而另一个PCI设备做目标（称为Slave、Target）</p>
+<ul>
+<li>总线上所有时序的产生和控制都由Master发起</li>
+<li>PCI总线在同一时刻只能供一对设备完成传输，要求有一个仲裁机构来决定谁有权拿到总线的控制权</li>
+</ul>
+</li>
+</ul>
+<h1 id="USB接口基本原理与结构"><a href="#USB接口基本原理与结构" class="headerlink" title="USB接口基本原理与结构"></a>USB接口基本原理与结构</h1><ul>
+<li><p>USB（Universal Serial Bus，通用串行总线）是由Compaq、HP、Intel、Lucent、Microsoft、NEC和Philips公司制定的连接计算机与外围设备的机外串行总线</p>
+<ul>
+<li>最多可连接127个设备</li>
+<li>用于多种嵌入式系统设备的数据通信。如移动硬盘、PDA</li>
+</ul>
+</li>
+<li><p>热插拔。USB提供机箱外的热插拔功能，连接外设不必再打开机箱，也不必关闭主机电源，USB可智能地识别USB链上外围设备的动态插入和拆除，具有自动配置和重新配置外设的能力，连接设备方便，使用简单</p>
+</li>
+<li><p>可连接多个外部设备</p>
+<ul>
+<li>每个USB系统中有一个主机，USB总线采用“级联”方式可连接多个外部设备</li>
+<li>每个USB设备用一个USB插头连接到上一个USB设备插座上，而其本身又提供一或多个USB插座供下一个或多个USB设备连接使用</li>
+<li>这种多重连接是通过集线器（Hub）来实现的，整个USB网络中最多可连接127个设备，支持多个设备同时操作</li>
+</ul>
+</li>
+<li><p>低成本的电缆和连接器</p>
+<ul>
+<li>USB采用统一的4引脚插头和一根四芯的电缆传送信号和电源</li>
+<li>电缆长度可长达5m</li>
+</ul>
+</li>
+<li><p>总线供电</p>
+<ul>
+<li>USB总线可为连接在其上的设备提供5V电压&#x2F;100mA电流的供电，最大可提供500mA的电流</li>
+<li>USB设备也可采用自供电方式。可以通过电池或其他的电力设备</li>
+<li>支持节约能源的挂机和唤醒模式</li>
+</ul>
+</li>
+<li><p>USB总线的电缆有一对标准尺寸的双绞信号线和一对标准尺寸的电源线，共4根导线</p>
+<table>
+<thead>
+<tr>
+<th align="center">连接序号</th>
+<th align="center">信号名称</th>
+<th align="center">典型连接线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">VBUS（USB电源）</td>
+<td align="center">红</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">D+（正差分信号）</td>
+<td align="center">白</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">D-（负差分信号）</td>
+<td align="center">绿</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">GND（USB地）</td>
+<td align="center">黑</td>
+</tr>
+<tr>
+<td align="center">外层</td>
+<td align="center">屏蔽层</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h1 id="SPI接口基本原理与结构"><a href="#SPI接口基本原理与结构" class="headerlink" title="SPI接口基本原理与结构"></a>SPI接口基本原理与结构</h1><ul>
+<li><p>SPI（Serial Peripheral Interface，串行外围设备接口）是由Motorola公司开发的一个低成本、易使用的接口，主要用在微控制器（MCU）和外围设备芯片之间进行连接。SPI接口可以用来连接存储器、A&#x2F;D转换器、D&#x2F;A转换器、实时时钟日历、LCD驱动器、传感器、音频芯片，其他处理器等。</p>
+</li>
+<li><p>SPI是一个4线接口，主要使用4个信号</p>
+<ul>
+<li>主机输出&#x2F;从机输入（MOSI）</li>
+<li>主机输入&#x2F;从机输出（MISO）</li>
+<li>串行SCLK或SCK</li>
+<li>外设片选（&#x2F;CS）</li>
+<li>有些处理器有SPI接口专用的芯片选择，称为从机选择（&#x2F;SS）</li>
+</ul>
+</li>
+<li><p>MOSI信号由主机产生，从机接收。在有些芯片上，MOSI只被简单地标为串行输入（SI），或串行数据输入（SDI）</p>
+</li>
+<li><p>MISO信号由从机产生，不过还是在主机的控制下产生的。在一些芯片上，MISO有时被称为串行输出（SO）或串行数据输出（SDO）</p>
+</li>
+<li><p>外设片选信号：通常只是由主机的备用I&#x2F;O引脚产生的</p>
+</li>
+<li><p>与标准的串行接口不同，SPI是一个同步协议接口，所有的传输都参考一个共同的时钟，这个同步时钟信号由主机（处理器）产生，接收数据的外设（从设备）使用时钟来对串行比特流的接收进行同步化。可以将多个具有SPI接口的芯片连到主机的同一个SPI接口上，主机通过控制从设备的片选输入引脚来选择接收数据的从设备。</p>
+</li>
+<li><p>如图所示，微处理器通过SPI接口与外设进行连接<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190728.png" alt="SPI连线"></p>
+<ul>
+<li>主机和外设都包含一个串行移位寄存器，主机写入一个字节到它的SPI串行寄存器，SPI寄存器通过MOSI信号线将字节传送给外设</li>
+<li>外设也可以将自己移位寄存器中的内容通过MISO信号线传送给主机。主机和外设的两个移位寄存器中的内容被相互交换</li>
+<li>外设的写操作和读操作是同步完成的，因此SPI成为一个很有效的协议</li>
+</ul>
+</li>
+<li><p>如果只是进行写操作，主机只需忽略收到的字节</p>
+</li>
+<li><p>如果主机要读取外设的一个字节，就必须发送一个空字节来触发从机的数据传输</p>
+</li>
+<li><p>当主机发送一个连续的数据流时，有些外设能进行多字节传输</p>
+<ul>
+<li>如多数具有SPI接口的存储器芯片都以这种方式工作。在这种传输方式下，SPI外设的芯片选择端必须在整个传输过程中保持低电平</li>
+<li>如，存储器芯片会希望在一个“写”命令之后紧接着收到的是4个地址字节（起始地址），这样后面接收到的数据就可以存储到该地址</li>
+</ul>
+</li>
+<li><p>其他外设只需要一个单字节（比如一个发给A&#x2F;D转换器的命令），有些设置还支持菊花链连接，如图所示<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190642.png" alt="SPI菊花链连接方式"></p>
+<ul>
+<li>主机处理器从其SPI接口发送3个字节的数据</li>
+<li>第1个字节发送给外设A，当第2个字节发送给外设A的时候，第1个字节已移出了A，而传送给了B</li>
+<li>同样，主机想要从外设A读取一个结果，它必须再发送一个3字节（空字节）的序列，这样就可以把A中的数据移到B中，然后再移到C中，最后送回到主机。在这个过程中，主机还依次从B和C接收到字节</li>
+<li>注意，菊花链连接不一定适用于所有的SPI设备，特别是要求多字节传输的（比如存储器芯片）设备。有的外设芯片不支持菊花链连接</li>
+</ul>
+</li>
+<li><p>根据时钟极性和时钟相位的不同，SPI有4种工作模式</p>
+<ul>
+<li><strong>时钟极性</strong>有高电平、低电平两种</li>
+<li><strong>时钟相位</strong>有两个：时钟相位0和时钟相位1</li>
+</ul>
+</li>
+<li><p>时钟极性（CPOL：Clock Polarity）：</p>
+<ul>
+<li>时钟极性为低电平时：空闲时时钟（SCK）处于低电平，传输时跳到高电平</li>
+<li>时钟极性为高电平时：空闲时时钟（SCK）处于高电平，传输时跳到低电平</li>
+</ul>
+</li>
+<li><p>时钟相位（CPHA：Clock Phase）：</p>
+<ul>
+<li>当CPHA为0时，时钟周期的前一边缘采集数据</li>
+<li>当CPHA为1时，时钟周期的后一边缘采集数据</li>
+</ul>
+</li>
+</ul>
+<h1 id="I2C接口基本原理与结构"><a href="#I2C接口基本原理与结构" class="headerlink" title="I2C接口基本原理与结构"></a>I<sup>2</sup>C接口基本原理与结构</h1><ul>
+<li><p>I<sup>2</sup>C BUS（Inter Integrated Circuit BUS，内部集成电路总线）是由Philips公司推出的二线制串行扩展总线，用于连接微控制器及其外围设备</p>
+<ul>
+<li>I<sup>2</sup>C总线是具有总线仲裁和高低速设备同步等功能的高性能多主机总线</li>
+<li>直接用导线连接设备，通信时无需片选信号</li>
+<li>I<sup>2</sup>C总线的协议层包含物理层和数据链路层。物理层有两根信号线，在链路层每个连接到I<sup>2</sup>C总线上的设备都有唯一的地址</li>
+</ul>
+</li>
+<li><p>在I<sup>2</sup>C总线上，物理层只需要两条线——串行数据SDA线、串行时钟SCL线，它们用于总线上器件之间的信息传递</p>
+<ul>
+<li>SDA和SCL都是双向的</li>
+<li>每个器件都有一个唯一的地址以供识别，而且各器件都可以作为一个发送器或接收器（由器件的功能决定）<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190823.png" alt="IIC接线"></li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C总线有4种操作模式</p>
+<ul>
+<li>主发送模式</li>
+<li>主接受模式</li>
+<li>从发送模式</li>
+<li>从接受模式</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C的启动信号</p>
+<ul>
+<li>当I<sup>2</sup>C接口处于从模式时，想要数据传输，必须检测SDA线上的启动信号，启动信号由主器件产生</li>
+<li>在SCL信号为高时，SDA产生一个由高变低的电平变化，即产生一个启动信号</li>
+<li>当I<sup>2</sup>C总线上产生了启动信号后，那么这条总线就被发出启动信号的主器件占用了，变成“忙”状态</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C的停止信号</p>
+<ul>
+<li>在SCL信号为高时，SDA产生一个由低变高的电平变化，产生停止信号</li>
+<li>停止信号也由主器件产生，作用是停止与某个从器件之间的数据传输</li>
+<li>当I<sup>2</sup>C总线上产生了一个停止信号后，那么在几个时钟周期之后总线就被释放，变成“闲”状态<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190747.png" alt="IIC启动和停止信号"></li>
+</ul>
+</li>
+<li><p>主器件产生一个启动信号后，会立即送出一个从地址，用来通知将与它进行数据通信的从器件</p>
+<ul>
+<li>1个字节的地址包括7位的地址信息和1位的传输方向指示位（R&#x2F;W’）</li>
+<li>如果第7位为“0”，表示主机发送数据（W’），即进行一个写操作</li>
+<li>如果为“1”，表示主机接收数据（R），即进行一个读操作</li>
+</ul>
+</li>
+<li><p>数据传输格式<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190835.png" alt="IIC数据传输格式"></p>
+<ul>
+<li>SDA线上传输的每个字节长度都是8位，每次传输中字节的数量是没有限制的</li>
+<li>在起始条件后面的第一个字节是地址域，之后每个传输的字节后面都有一个应答（ACK）位（即一帧共有9位）</li>
+<li>传输中串行数据的MSB（字节的高位）首先发送</li>
+</ul>
+</li>
+<li><p>应答信号</p>
+<ul>
+<li>为了完成1个字节的传输操作，接收器应该在接收完1个字节之后发送ACK位到发送器，告诉发送器，已经收到了这个字节</li>
+<li>ACK脉冲信号在SCL线上第9个时钟处发出（前面8个时钟完成1个字节的数据传输，SCL上的时钟都是由主器件产生的）</li>
+<li>当发送器要接收ACK脉冲时，应该释放SDA信号线，即将SDA置高</li>
+<li>接受器在接受完前面8位数据后，将SDA拉低</li>
+<li>发送器探测到SDA为低，就认为接收器成果接收了前面的8位数据</li>
+</ul>
+</li>
+<li><p>总线竞争的仲裁</p>
+<ul>
+<li>I<sup>2</sup>C总线上可以挂接有多个器件，有时会发生两个或多个主器件同时向占用总线的情况</li>
+<li>I<sup>2</sup>C总线具有多主控能力，可对发生在SDA线上的总线竞争进行仲裁</li>
+<li>仲裁原则：当多个主器件同时想占用总线时，如果某个主器件发送高电平，而另一个主器件发送低电平，则发送电平与此时SDA总线电平不符的那个器件将自动关闭其输出级</li>
+</ul>
+</li>
+<li><p>总线竞争的仲裁在两个层次上进行的</p>
+<ul>
+<li>首先是地址位的比较，如果主器件寻址同一个从器件，则进入数据位的比较，从而确保了竞争仲裁的可靠性</li>
+<li>由于是利用I<sup>2</sup>C总线上的信息进行仲裁，不会造成信息的丢失</li>
+</ul>
+</li>
+<li><p>I<sup>2</sup>C总线的数据传输过程：</p>
+<ol>
+<li>开始：主设备产生启动信号，表明数据传输开始</li>
+<li>地址：主设备发送地址信息，包含7位的从设备地址和1位的数据方向指示位（读或写位，表示数据流的方向）</li>
+<li>数据：根据指示位，数据在主设备和从设备之间进行传输。数据一般以8位传输，MSB先传；具体能传输多少量的数据并没有限制。接收器产生1位的ACK（应答信号）表明收到了每个字节。传输过程中可以被中止和重新开始</li>
+<li>停止：主设备产生停止信号，结束数据传输</li>
+</ol>
+</li>
+</ul>
+<h1 id="网络接口"><a href="#网络接口" class="headerlink" title="网络接口"></a>网络接口</h1><h2 id="以太网接口基本原理与结构"><a href="#以太网接口基本原理与结构" class="headerlink" title="以太网接口基本原理与结构"></a>以太网接口基本原理与结构</h2><ul>
+<li><p>以太网（Ethernet）是目前应用最广泛的局域网通讯方式，同时也是一种协议</p>
+</li>
+<li><p>以太网协议定义了一系列软件和硬件标准，从而将不同的设备连接在一起</p>
+</li>
+<li><p>嵌入式系统通常使用的以太网协议是IEEE802.3标准，以太网接口电路主要由媒质接入控制MAC控制器和物理层接口（Physical Layer，PHY）两大部分构成</p>
+</li>
+<li><p>在802.3版本的标准中，没有采用直接的二进制编码（即用0V表示“0”，用5V表示“1”），而是采用</p>
+<ul>
+<li>曼彻斯特编码（Manchester Encoding）</li>
+<li>差分曼彻斯特编码（Differential Manchester Encoding）<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190842.png" alt="曼彻斯特编码"></li>
+</ul>
+</li>
+<li><p>曼彻斯特编码的规律：每位中间有一个电平跳变，从高到低的跳变表示“0”，从低到高的跳变表示“1”</p>
+</li>
+<li><p>差分曼彻斯特编码的规律：每位的中间有一个电平跳变，但不用这个跳变来表示数据，而是利用每个码元<strong>开始时</strong>有无跳变来表示“0”或“1”，有跳变表示“0”，无跳变表示“1”（保持性）</p>
+</li>
+<li><p>曼彻斯特编码和差分曼彻斯特编码相比，前者编码简单，后者能提供更好的噪声抑制性能</p>
+</li>
+<li><p>802.3 Mac层的以太网的物理传输帧如表所示</p>
+<table>
+<thead>
+<tr>
+<th>PR</th>
+<th>SD</th>
+<th>DA</th>
+<th>SA</th>
+<th>TYPE</th>
+<th>DATA</th>
+<th>PAD</th>
+<th>FCS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>56位</td>
+<td>8位</td>
+<td>48位</td>
+<td>48位</td>
+<td>16位</td>
+<td>不超过1500字节</td>
+<td>可选</td>
+<td>32位</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>PR：同步位，用于收发双方的时钟同步，同时也指明了传输的速率，是56位的二进制数101010101010…，最后两位是10</p>
+</li>
+<li><p>SD：分隔符，表示下面跟着的是真正的数据而不是同步时钟，为8位的10101011</p>
+</li>
+<li><p>DA：目的地符，以太网的地址为48位二进制地址，表明该帧传输给哪个网卡。如果为FFFFFFFFFFFF，是广播地址。广播地址的数据可以被任何网卡接收到</p>
+</li>
+<li><p>SA：源地址，48位，表明该帧的数据是哪个网卡发的，即发送端的网卡地址，是6个字节</p>
+</li>
+<li><p>TYPE：类型手段，表明该帧的数据是什么类型的数据，不同协议的类型字段不同。如：0800H表示数据为IP包，0806H表示数据为ARP包，814CH是SNMP包，8137H为IPX&#x2F;SPX包</p>
+</li>
+<li><p>DATA：数据段，该段数据不能超过1500B。以太网规定整个传输包的最大长度不能超过1514B（14B为DA，SA，TYPE）</p>
+</li>
+<li><p>PAD：填充位。以太网帧传输的数据包最小不能小于60B（除去DA、SA、TYPE的14B），还必须传输64B的数据，当数据段的数据不足46B时，后面通常是补0（也可以补其他值）</p>
+</li>
+<li><p>FCS：32位数据校验位。32位的CRC校验，该校验由网卡自动计算，自动生成，自动校验，自动在数据段后面填入。不需要软件还礼</p>
+</li>
+<li><p>通常PR、SD、PAD、FCS数据段是网卡（包括物理层和Mac层的处理）自动产生的，剩下的DA、SA、TYPE、DATA4个段的内容由上层软件控制</p>
+</li>
+</ul>
+</li>
+<li><p>以太网数据传输的特点</p>
+<ul>
+<li>所有数据位的传输由低位开始，传输的位流用曼彻斯特编码</li>
+<li>以太网是基于冲突检测的总线复用方法，冲突退避算法是由硬件自动执行</li>
+<li>以太网传输的数据段的长度，DA+SA+TYPE+DATA+PAD最小为60B，最大为1514B</li>
+<li>通常的以太网卡可以接受3种地址的数据：广播地址、多播地址（或者叫组播地址，在嵌入式系统中很少用到）、自己的地址。但有时，用于网络分析和监控，网卡也可以设置为接受任何数据包</li>
+<li>任何两个网卡的物理地址都是不一样的，是世界上唯一的，网卡地址由专门机构分配。不同厂家使用不同地址段，同一厂家的任何两个网卡的地址也是唯一的。根据网卡的地址段（网卡地址的前3个字节）可以知道网卡的生产厂家</li>
+</ul>
+</li>
+<li><p>嵌入式以太网接口实现的方法</p>
+<ul>
+<li><p>嵌入式处理器+网卡芯片</p>
+<ul>
+<li>把以太网芯片连接到嵌入式处理器的总线上</li>
+<li>通用性强，对嵌入式处理器没有特殊要求，不受处理器的限制，但是，嵌入式处理器和网络数据交换通过外部总线（通常是并行总线）交换数据，速度慢，可靠性不高，电路板走线复杂</li>
+<li>目前常见的以太网接口芯片，如CS8900，RTL8019&#x2F;8029&#x2F;8039、DM9008及DWL650无线网卡等</li>
+</ul>
+</li>
+<li><p>带有以太网接口的嵌入式处理器</p>
+<ul>
+<li>带有以太网接口的嵌入式处理器通常是面向网络应用而设计的，要求嵌入式处理器有通用的网络接口（比如：MII接口）</li>
+<li>处理器和网络数据交换通过内部总线，速度快</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>网络编程接口</p>
+<ul>
+<li><p>BSD套接字（BSD Sockets）是使用的最广泛的网络程序编程方法</p>
+<ul>
+<li>主要用于应用程序的编写，用于网络上主机与主机之间的相互通信</li>
+<li>很多操作系统都支持BSD套接字编程。例如，UNIX、Linux、VxWorks、Windows的Winsock基本上是来自BSD Sockets</li>
+</ul>
+</li>
+<li><p>套接字（Sockets）分为Stream Sockets和Data Sockets</p>
+<ul>
+<li>Stream Sockets是可靠性的双向数据传输，对应使用TCP协议传输数据</li>
+<li>Data Sockets是不可靠连接，对应使用UDP协议传输数据<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240911190918.png" alt="网络编程接口"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="CAN总线接口基本原理与结构"><a href="#CAN总线接口基本原理与结构" class="headerlink" title="CAN总线接口基本原理与结构"></a>CAN总线接口基本原理与结构</h2><ul>
+<li><p>Can（Controller Area Network，控制器局域网）是德国Bosch公司与1983年为汽车应用而开发的，它是一种现场总线（FieldBus），能有效支持分布式控制和实时控制的串行通信网络。1993年11月，ISO正式颁布了控制器局域网CAN国际标准（ISO11898）</p>
+</li>
+<li><p>CAN总线是一种多主方式的串行通信总线</p>
+<ul>
+<li>理想的由CAN总线构成的单一网络中，是可以挂接任意多个节点，实际应用中节点数目受网络硬件的电气特性所限制。例如：当使用Philips P82C250作为CAN收发器时，同一网络中允许挂接110个节点。</li>
+<li>CAN总线具有很高的实时性能，已经在汽车工业、航空工业、工业控制、安全防护等领域得到了广泛应用。</li>
+</ul>
+</li>
+<li><p>CAN总线的通信介质可采用双绞线、同轴电缆和光导纤维，最常用的是双绞线</p>
+<ul>
+<li>通信距离与波特率有关，最大通信距离可达10km，最大通信波特率可达1Mbps</li>
+<li>CAN总线仲裁采用11位标识和非破坏性位仲裁总线结构机制，可以确定数据块的优先级，保证在网络节点冲突时最高优先级结点不需要冲突等待</li>
+<li>CAN总线采用了多主竞争式总线结构，具有多主站运行和分散仲裁的串行总线以及广播通信的特点</li>
+<li>CAN总线上任意结点可在任意时刻主动向网络上其他节点发送信息而不分主次，因此可在各节点之间实现自由通信</li>
+</ul>
+</li>
+<li><p>CAN总线信号使用差分电传送</p>
+<ul>
+<li>两条信号线被称为CAN_H和CAN_L，静态时均是2.5V左右，此时状态表示为逻辑1，也可以叫作“隐性”</li>
+<li>采用CAN_H比CAN_L高表示逻辑0，称为“显性”，通常电压值为CAN_H&#x3D;3.5V和CAN_L&#x3D;1.5V</li>
+<li>当“显性”位和“隐性”位同时发送的时候，最后总线数值将为“显性”</li>
+<li>这种特性为CAN总线的仲裁奠定了基础</li>
+</ul>
+</li>
+<li><p>一些面向工业控制的嵌入式处理器集成了一个或者多个CAN总线控制器</p>
+<ul>
+<li>例如：Phillips公司的LPC2194和LPC2294（ARM7TDMI内核）带有4个CAN总线控制器</li>
+<li>CAN总线控制器主要是完成时序逻辑转换等工作，要在电气特性上满足CAN总线标准，还需要一个CAN总线的物理层芯片，用它来实现TTL电平到CAN总线电平特性的转换，即CAN收发器<br> <img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912093355.png" alt="image-20240912093354492"></li>
+</ul>
+</li>
+<li><p>实际上，多数嵌入式处理器都不带CAN总线控制器</p>
+<ul>
+<li>通常的解决方案是在嵌入式处理器的外部总线上扩展CAN总线接口芯片</li>
+<li>例如：Phillips公司的<strong>SJA1000</strong> CAN总线接口芯片，Microchip公司的MCP251x系列（<strong>MCP2510</strong>和MCP2515）CAN总线接口芯片，这两种芯片都支持CAN2.0B标准</li>
+</ul>
+</li>
+<li><p>SJA 1000的总线采用的是地址线和数据线复用的方式，多数嵌入式处理器采用SJA 1000扩展CAN总线较为复杂</p>
+</li>
+<li><p>MCP2510是由Microchip公司产生的CAN协议控制器，完全支持CAN总线V2.0A&#x2F;B技术规范</p>
+<ul>
+<li>0~8字节的有效数据长度，支持远程帧</li>
+<li>最大1Mb&#x2F;s的可编程波特率</li>
+<li>两个支持过滤器（Filter，Mask）的接收缓冲区，三个发送缓冲区</li>
+<li>支持回环（Loop Back）模式，便于测试</li>
+<li>SPI高速串行总线，最大5MHz</li>
+<li>3V到5.5V供电</li>
+</ul>
+</li>
+<li><p>大多数嵌入式处理器都有SPI总线控制器，MCP2510可以3V到5.5V供电，能够直接和3.3V I&#x2F;O口的嵌入式处理器连接，电路原理图如图所示<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912094844.png" alt="image-20240912094843626"></p>
+</li>
+<li><p>MCP2510使用3.3V电压供电，可以直接和三星S3C44B0X处理器通过SPI总线连接。相关的资源如下：<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162932.png" alt="CAN扩展原理图"></p>
+<ul>
+<li>使用一个扩展的I&#x2F;O口（EXIO2）作为片选信号，低电平有效</li>
+<li>用S3C2410A的外部中断6（EXINT6）作为中断管脚，低电平有效</li>
+<li>16MHz晶体作为输入时钟，MCP2510内部有振荡电路，用晶体可以直接起振使用TJA1050作为CAN总线收发器</li>
+</ul>
+</li>
+<li><p>CAN总线收发器TJA1050必须使用5V供电。MCP2510和TJA1050连接的两个信号都是单向的信号。需单向满足I&#x2F;O口的电气特性</p>
+<ul>
+<li>从MCP2510输出的TXCAN信号是否满足TJA1050的输入电平。TJA1050为5V供电时，输入高电平V<sub>ih</sub>的范围是2~5.3V。而3.3V供电的MCP2510输出TXCAN信号高电平V<sub>oh</sub>最小值为2.6V，可以满足要求</li>
+<li>从TJA1050输出的RXD信号是否满足MCP2510的输入电平。3.3V供电的MCP2510输入信号RXCAN高电平范围V<sub>ih</sub>：2~4.3V，无法满足5V逻辑的TJA1050输出电平——电阻分压实现单向电平转换</li>
+</ul>
+</li>
+<li><p>分压电阻值的选择，需要考虑两个问题</p>
+<ul>
+<li>TJA1050输出信号的驱动能力（输出电流&lt;&#x3D;15mA）</li>
+<li>MCP2510的RXCAN管脚的输入阻抗（输入电流&lt;&#x3D;5μA）</li>
+</ul>
+</li>
+</ul>
+<h2 id="无线以太网基本原理与结构"><a href="#无线以太网基本原理与结构" class="headerlink" title="无线以太网基本原理与结构"></a>无线以太网基本原理与结构</h2><ul>
+<li>WLAN（Wireless Local Area Network，无线局域网）是利用无线通信技术在一定的局部范围内建立的，是计算机网络与无线通信技术相结合的产物，以无线多址通道作为传输媒介，提供有线局域网的功能</li>
+<li>传输介质<ul>
+<li>红外线IR</li>
+<li>射频RF波段</li>
+</ul>
+</li>
+<li>WLAN的标准：主要是针对物理层和媒质访问控制层（MAC层）。涉及到所有使用的无线频率范围、控制接口通信协议等技术规范和技术标准<ul>
+<li>802.11原始标准（2Mbps，2.4GHz）办公室、校园局域网</li>
+<li>802.11b物理层补充（11Mbps，2.4GHz）办公室、家庭、宾馆、车站、机场等场合</li>
+<li>802.11a物理层补充（54Mbps，5.2GHz）话音、数据和图像</li>
+<li>802.11g物理层补充（54Mbps，2.4GHz）传输速率和安全性</li>
+<li>802.11h无线覆盖半径的调整（室内和室外信道，5.2GHz）</li>
+</ul>
+</li>
+</ul>
+<h2 id="1394接口基本原理与结构"><a href="#1394接口基本原理与结构" class="headerlink" title="1394接口基本原理与结构"></a>1394接口基本原理与结构</h2><ul>
+<li><p>IEEE 1394是Apple公司率先提出的一种高品质、高传输速率的串行总线技术，1995年被IEEE认定为串行工业总线标准</p>
+<ul>
+<li>1394作为一种标准总线，可以在不同的工业设备之间架起一座沟通的桥梁</li>
+<li>在一条总线上可以接入63个设备</li>
+<li>实时多媒体领域。大容量存储以及打印机、扫描仪上等等</li>
+<li>IEEE1394规范仅支持64位固定解址模式</li>
+</ul>
+</li>
+<li><p>支持多种总线速度，适应不同应用要求</p>
+<ul>
+<li>IEEE 1394a：100Mb&#x2F;s、200Mb&#x2F;s、400Mb&#x2F;s</li>
+<li>IEEE 1394b：800Mb&#x2F;s、1600Mb&#x2F;s、3200Mb&#x2F;s</li>
+</ul>
+</li>
+<li><p>支持热插拔</p>
+<ul>
+<li>设备的资源均由总线控制器自动分配</li>
+<li>总线控制器会自动重新配置好设备</li>
+</ul>
+</li>
+<li><p>接口有两种类型</p>
+<ul>
+<li>6针的六角形接口和4针的小型四角形接口</li>
+<li>6针的六角形接口可向所连接的设备供电，而4针的四角形接口则不能</li>
+</ul>
+</li>
+<li><p>支持同步和异步两种传输方式</p>
+<ul>
+<li>设备可以根据需要动态地选择传输方式，总线自动完成带宽分配</li>
+<li>要求实时传输并对数据的完整性要求不严格的场合，可采用同步传输方式</li>
+<li>对数据完整性要求较高的场合，采用异步传输的方式更好</li>
+</ul>
+</li>
+<li><p>支持点到点通信模式，IEEE 1394是多主总线，每个设备均可以获取总线的控制权，与其他设备进行通信</p>
+</li>
+<li><p>两种传输方式：Backplane模式和Cable模式</p>
+<ul>
+<li>Backplane模式最小的速率也比USB1.1最高速率高，分别为12.5Mbps&#x2F;s、25Mbps&#x2F;s、50Mbps&#x2F;s，可以用于多数的高带宽应用</li>
+<li>Cable模式是速度非常快的模式，分为100Mbps&#x2F;s、200Mbps&#x2F;s和400Mbps&#x2F;s几种，在200Mbps&#x2F;s下可以传输不经压缩的高质量数据电影</li>
+</ul>
+</li>
+<li><p>遵循ANSIIEEE 1212控制及状态寄存器（CSR）标准，定义了64位的地址空间。可寻址1024条总线的63个节点，每个节点可包含256TB的内存空间</p>
+</li>
+<li><p>支持较远距离的传输</p>
+<ul>
+<li>普通线缆：2个设备之间的最大距离可达4.5m（高级线缆可达15m）</li>
+<li>玻璃光缆或5类双绞线：设备间距离可达100m以上</li>
+</ul>
+</li>
+<li><p>支持公平仲裁原则，为每一种传输方式保证足够的传输带宽，支持错误检测和处理</p>
+</li>
+<li><p>六线电缆具有电源线，可传输8~40V的直流电压</p>
+<ul>
+<li>2对双绞线：信号传递</li>
+<li>1对双绞线：供应电源</li>
+</ul>
+</li>
+<li><p>IEEE1394的协议栈由3层组成：物理层、链路层和事物层，另外还有一个管理层<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240912162855.png" alt="1394"></p>
+<ul>
+<li>物理层和链路层由硬件构成，通常集成在同一块芯片上</li>
+<li>事务层主要由软件实现</li>
+</ul>
+</li>
+<li><p>物理层提供IEEE1394的电气和机械接口，功能是重组字节流并将它们发送到目的节点上去</p>
+<ul>
+<li>物理层为链路层提供服务</li>
+<li>解析字节流并发送数据包给链路层</li>
+</ul>
+</li>
+<li><p>链路层提供了给事务层确认的数据服务，包括：寻址、数据组帧和数据校验</p>
+<ul>
+<li>提供直接面向应用的服务</li>
+<li>支持同步和异步传输模式</li>
+<li>链路层的底层提供了仲裁机制</li>
+</ul>
+</li>
+<li><p>事务层为应用提供服务</p>
+<ul>
+<li>只支持异步传输</li>
+<li>定义了3种基于请求响应的服务：read、write、lock</li>
+<li>即是将发送者的数据送往接受者；读即是将有关数据返回到发送者；锁定即是写、读指令功能的组合</li>
+</ul>
+</li>
+<li><p>管理层定义了一个管理节点所使用的所有协议、服务以及进程</p>
+<ul>
+<li>电缆环境下，IEEE 1394定义了2类管理：总线管理（BM）和同步资源管理（IRM）</li>
+<li>总线管理（BM）：总线的电源管理信息、拓扑结构信息、不同节点的速度极限信息，一遍协调不同速度设备之间的通信</li>
+<li>同步资源管理（IRM）：管理同步资源，如：可用频道信息、带宽的分配</li>
+</ul>
+</li>
+</ul>
+<h1 id="总线分类"><a href="#总线分类" class="headerlink" title="总线分类"></a>总线分类</h1><h2 id="内部总线"><a href="#内部总线" class="headerlink" title="内部总线"></a>内部总线</h2><ul>
+<li>说明：内部总线是微机内各外围芯片与处理器之间的总线，用于芯片一级的互连</li>
+<li>常用总线：I<sup>2</sup>总线、SPI总线、SCI总线等</li>
+</ul>
+<h2 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h2><ul>
+<li>说明：系统总线是微机中各插件板与系统板之间的总线，用于插件板一级的互连</li>
+<li>常用总线：ISA总线、EISA总线、VESA总线、PCI总线</li>
+</ul>
+<h2 id="外部总线"><a href="#外部总线" class="headerlink" title="外部总线"></a>外部总线</h2><ul>
+<li>说明：外部总线则是微机和外部设备之间的总线，微机作为一种设备，通过该总线和其他设备进行信息与数据交换，它用于设备一级的互连</li>
+<li>常用总线：RS232、RS485、USB总线、IEEE1394总线等</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/" class="post-title-link" itemprop="url">第十三章 嵌入式输入输出设备</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-09-10 00:00:00 / Modified: 14:09:25" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="GPIO的原理与结构"><a href="#GPIO的原理与结构" class="headerlink" title="GPIO的原理与结构"></a>GPIO的原理与结构</h1><ul>
+<li>GPIO（General Purpose I&#x2F;O，通用输入&#x2F;输出接口）也称为并行I&#x2F;O（parallel I&#x2F;O），是最基本的I&#x2F;O形式<ul>
+<li>有一组输入引脚或输出引脚组成，CPU对它们能够进行存取操作</li>
+<li>有些GPIO引脚能够通过软件编程改变输出&#x2F;输出方向</li>
+</ul>
+</li>
+<li>一个双向GPIO端口（D<sub>0</sub>）的简化功能逻辑图如图所示，图中：<ul>
+<li>PORT：数据寄存器</li>
+<li>DDR（Data Direction Register）：数据方向寄存器<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140433.png" alt="GPIO"></li>
+</ul>
+</li>
+</ul>
+<h1 id="A-D接口基本原理与结构"><a href="#A-D接口基本原理与结构" class="headerlink" title="A&#x2F;D接口基本原理与结构"></a>A&#x2F;D接口基本原理与结构</h1><ul>
+<li>A&#x2F;D转换器是把电模拟量转换为数字量的电路。实现A&#x2F;D转换的方法有很多，常用的方法有：<ul>
+<li>计数法</li>
+<li>双积分法</li>
+<li>逐次逼近法<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140453.png" alt="AD转换"></li>
+</ul>
+</li>
+</ul>
+<h2 id="计数式A-D转换器原理"><a href="#计数式A-D转换器原理" class="headerlink" title="计数式A&#x2F;D转换器原理"></a>计数式A&#x2F;D转换器原理</h2><ul>
+<li>计数式A&#x2F;D转换器电路的主要部件包括：比较器、计数器、D&#x2F;A转换器和标准电压源。转换原理图如下所示：<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140508.png" alt="计数式AD转换原理"></li>
+<li>特点<ul>
+<li>结构简单</li>
+<li>但转换速度较慢</li>
+<li>特别是模拟电压较高时，转换速度更慢</li>
+<li>例如对一个8位A&#x2F;D转换器，若输入模拟量为最大值，计数器要从0开始计数到255，做255次D&#x2F;A转换和电压比较的工作，才能完成转换</li>
+</ul>
+</li>
+</ul>
+<h2 id="双积分A-D转换器原理"><a href="#双积分A-D转换器原理" class="headerlink" title="双积分A&#x2F;D转换器原理"></a>双积分A&#x2F;D转换器原理</h2><ul>
+<li>双积分式A&#x2F;D转换法电路主要部件包括：积分器、比较器、计数器和标准电压源。转换原理图如下所示：</li>
+</ul>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140518.png" alt="双积分AD转换原理"></p>
+<ul>
+<li>工作原理：<ul>
+<li>对输入模拟电压和参考电压进行两次积分，将电压变换成与其成正比的时间间隔</li>
+<li>利用时钟脉冲和计数器测出其时间间隔，完成A&#x2F;D转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140541.png" alt="双积分AD转换积分原理"></li>
+</ul>
+</li>
+<li>双积分式A&#x2F;D转换器的转换过程如下：<ul>
+<li>对输入待测的模拟电压V<sub>i</sub>进行固定时间的积分</li>
+<li>转换至标准电压V<sub>REF</sub>进行固定斜率的反向积分（定值积分），反向积分进行到一定时间，便返回起始值。对标准电压V<sub>REF</sub>进行反向积分的时间T正比于输入模拟电压，输入模拟电压越大，反向积分回到起始值的时间T越长，有V<sub>i</sub>&#x3D;（T2&#x2F;T1）V<sub>REF</sub></li>
+<li>用标准时钟脉冲测定反向积分时间（如计数器），就可以得到对应于输入模拟电压的数字量，实现A&#x2F;D转换</li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>具有很强的抗工频干扰能力</li>
+<li>转换精度高</li>
+<li>但转换速度慢</li>
+<li>通常转换速率小于10Hz，主要用于数字式测试仪表、温度测量等方面</li>
+</ul>
+</li>
+</ul>
+<h2 id="逐次逼近式A-D转换器原理"><a href="#逐次逼近式A-D转换器原理" class="headerlink" title="逐次逼近式A&#x2F;D转换器原理"></a>逐次逼近式A&#x2F;D转换器原理</h2><ul>
+<li>逐次逼近式A&#x2F;D转换法电路主要部件包括：比较器、D&#x2F;A转换器、逐次逼近寄存器和基准电压源</li>
+</ul>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140602.png" alt="逐次逼近式AD转换器"></p>
+<ul>
+<li>工作原理：<ul>
+<li>实质上就是对分搜索法，和天平称重的使用原理一样</li>
+<li>在进行A&#x2F;D转换时，由D&#x2F;A转换器从高位到低位逐位增加转换位数，产生不同的输出电压，把输入电压与输出电压进行比较而实现</li>
+<li>首先使逐次逼近寄存器的最高位为1，这相当于取出基准电压的1&#x2F;2与输入电压比较，如果在输入电压小于1&#x2F;2的基准电压，则最高位置0，反之置1。之后，次高位置1，相当于在1&#x2F;2得到范围中再作对分搜索，以此类推，逐次逼近</li>
+</ul>
+</li>
+<li>特点：<ul>
+<li>转换速度快</li>
+<li>转换精度高</li>
+<li>对N位A&#x2F;D转换只需N个时钟脉冲即可完成</li>
+<li>可用于测量微秒级的过渡过程的变化，是目前应用最普遍的一种A&#x2F;D转换方法</li>
+</ul>
+</li>
+</ul>
+<h1 id="D-A接口基本原理与结构"><a href="#D-A接口基本原理与结构" class="headerlink" title="D&#x2F;A接口基本原理与结构"></a>D&#x2F;A接口基本原理与结构</h1><ul>
+<li>D&#x2F;A转换器是把输入的数字量转换为与输入量成比例的模拟信号的器件，简称为DAC（Digital to Analog Converter）<ul>
+<li>在集成化的D&#x2F;A转换器中，通常采用电阻网络实现将数字量转换为模拟电流</li>
+<li>然后再用运算放大器完成模拟电流到模拟电压的转换<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140700.png" alt="AD转换"></li>
+</ul>
+</li>
+<li>一个4位T型电阻网络DAC如图所示<ul>
+<li>电路由R-2R电阻解码网络、模拟电子开关和求和放大电路构成，因为R和2R组成T型，故称为T型电阻网络DAC<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240910140919.png" alt="屏幕截图 2024-09-10 093116"></li>
+</ul>
+</li>
+</ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
+<li>电压输出型<ul>
+<li>电压输出型D&#x2F;A转换器虽有直接从电阻阵列输出电压的，但一般采用内置输出放大器以低阻抗输出</li>
+<li>直接输出电压的器件仅用于高阻抗负载，由于无输出放大器部分的延迟，故常作为高速D&#x2F;A转换器使用</li>
+</ul>
+</li>
+<li>电流输出型<ul>
+<li>电流输出型D&#x2F;A转换器直接输出电流，但应用中通常外接电流-电压转换电路得到电压输出</li>
+<li>电流-电压可以直接在输出引脚上连接一个负载电阻，实现电流-电压转换</li>
+<li>但多采用的是外接运算放大器的形式</li>
+<li>大部分CMOS D&#x2F;A转换器当输出电压不为零时不能正确动作，所以必须外接运算放大器</li>
+<li>在D&#x2F;A转换器的电流建立时间上加入了外接运算放大器的延迟，D&#x2F;A响应变慢</li>
+<li>运算放大器因输出引脚的内部电容容易起振，有时必须作相位补偿</li>
+</ul>
+</li>
+<li>乘算型：<ul>
+<li>D&#x2F;A转换器中有使用恒定基准电压的，也有在基准电压输入上加交流信号的，后者由于能得到数字输入和基准电压输入相乘的结果而输出，因而称为乘算型D&#x2F;A转换器</li>
+<li>乘算型D&#x2F;A转换器一般不仅可以进行乘法运算，而且可以作为使输入信号数字化衰减的衰减器及对输入信号进行调制的调制器使用</li>
+</ul>
+</li>
+</ul>
+<h2 id="指标"><a href="#指标" class="headerlink" title="指标"></a>指标</h2><ul>
+<li>分辨率（Resolution）：<ul>
+<li>DAC电路所能分辨的最小输出电压与满量程输出电压之比称为DAC的分辨率</li>
+<li>最小输出电压是指输入数字量只有最低有效位为1时的输出电压</li>
+<li>最大输出电压是指输入数字量各位全为1时的输出电压</li>
+<li>DAC的分辨率可用下式表示：<strong>分辨率&#x3D;(1&#x2F;(2<sup>n</sup>-1)) * 量程</strong>，式中，n表示数字量的二进制位数</li>
+</ul>
+</li>
+<li>DAC产生误差的主要原因有：<ul>
+<li>基准电压V<sub>REF</sub>的波动</li>
+<li>运放的零点漂移</li>
+<li>电阻网络中电阻阻值偏差等原因</li>
+</ul>
+</li>
+<li>转换误差<ul>
+<li>转换误差重用满量程FSR（Full Scale Range）的百分数来表示</li>
+<li>例如，一个DAC的线性误差为0.05%，就是说转换误差是满量程输出的万分之五</li>
+<li>有时转换误差用最低有效位LSB（Least Significant Bit）的倍数来表示</li>
+<li>例如，一个DAC的转换误差是LSB&#x2F;2，则表示输出电压的绝对误差是最低有效位（LSB）为1时输出电压的1&#x2F;2</li>
+</ul>
+</li>
+<li>DAC的转换误差主要有<strong>失调误差</strong>和<strong>满值误差</strong></li>
+<li>失调误差<ul>
+<li>输入数字量全为0时，模拟输出值与理论输出值的偏差</li>
+<li>在一定温度下的失调误差可以通过外部电路调整措施进行补偿，也有些DAC芯片本身有调零端进行调零</li>
+<li>对于没有设置调零端的芯片，可以采用外接校正偏置电路加到运放求和端</li>
+</ul>
+</li>
+<li>满值误差<ul>
+<li>又称增益误差，是指输入数字量全为1时，实际输出电压不等于满值的偏差</li>
+<li>调整运放的反馈电阻</li>
+</ul>
+</li>
+<li>DAC的分辨率和转换误差共同决定了DAC的精度<ul>
+<li>要使DAC的精度高，不仅要选择位数高的DAC，还要选用稳定度高的参考电压源V<sub>REF</sub>和低漂移的运算放大器与其配合</li>
+</ul>
+</li>
+<li>建立时间（Setting Time）<ul>
+<li>是描述DAC转换速度快慢的一个重要参数，一般是指输入数字量变化后，输出模拟量稳定到相应数值范围所经历的时间</li>
+<li>DAC中的电阻网络，模拟开关等是非理想器件，各种寄生参数及开关延迟等都会限制转换速度</li>
+<li>一般电流输出D&#x2F;A转换建立时间较短，电压输出D&#x2F;A转换建立时间较长</li>
+<li>实际上建立时间的长短不仅与DAC本身的转换速度有关，还与数字量变化范围有关</li>
+<li>输入数字量从全0变到全1（或者从全1变到全0）时，建立时间最长，称为满量程变化建立时间</li>
+<li>一般产品手册上给出的是满量程变化建立时间</li>
+</ul>
+</li>
+<li>精度（Accuracy）<ul>
+<li>绝对精度：在一个转换器中，对应于一个数字量的实际模拟输入电压和理想的模拟输入电压之差并非是一个常数。把它们之间的差的最大值，定义为“绝对误差”。通常以数字量的最小有效位（LSB）的分数值来表示绝对精度，如±1LSB。绝对误差包括量化精度和其他所有精度</li>
+<li>相对精度：是指整个转换范围内，任一数字量所对应的模拟输入量的实际值与理论值之差，用模拟电压满量程的百分比表示</li>
+<li>例如，满量程为10V，10位A&#x2F;D芯片，若其绝对精度为±1&#x2F;2LSB，则其最小有效位的量化单位为9.77mV，其绝对精度为4.88mV，其相对精度为0.048%</li>
+</ul>
+</li>
+<li>量程<ul>
+<li>量程是指所能转换的模拟输入电压范围，分单极性、双极性两种类型</li>
+<li>例如，单极性的量程为0 ~ +5V，0 ~ +20V；双极性的量程为-5 ~ +5V，-10 ~ +10V</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/08/21/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/08/21/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">第二章 嵌入式系统软件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-08-21 00:00:00 / Modified: 19:43:06" itemprop="dateCreated datePublished" datetime="2024-08-21T00:00:00+08:00">2024-08-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="嵌入式软件基础"><a href="#嵌入式软件基础" class="headerlink" title="嵌入式软件基础"></a>嵌入式软件基础</h1><h2 id="嵌入式软件特点"><a href="#嵌入式软件特点" class="headerlink" title="嵌入式软件特点"></a>嵌入式软件特点</h2><ul>
+<li>规模较小</li>
+<li>开发难度大<ul>
+<li>硬件资源有限</li>
+<li>嵌入式软件一般涉及到底层软件的开发，需要软、硬件基础</li>
+<li>开发环境和运行环境不高</li>
+</ul>
+</li>
+<li>实时性和可靠性要求高</li>
+<li>要求固化存储</li>
+</ul>
+<h2 id="嵌入式软件分类"><a href="#嵌入式软件分类" class="headerlink" title="嵌入式软件分类"></a>嵌入式软件分类</h2><ul>
+<li>系统软件：控制和管理嵌入式系统资源<ul>
+<li>嵌入式操作系统</li>
+<li>驱动程序</li>
+<li>嵌入式中间件（CORBA、Java）等</li>
+</ul>
+</li>
+<li>支撑软件：辅助软件开发的工具软件<ul>
+<li>系统分析设计工具</li>
+<li>仿真开发工具</li>
+<li>交叉开发工具</li>
+<li>测试工具</li>
+<li>配置管理工具</li>
+<li>维护工具等</li>
+</ul>
+</li>
+<li>应用软件：定义嵌入式设备的主要功能和用途，负责与用户进行交互（面向应用领域）<ul>
+<li>手机软件</li>
+<li>路由器软件</li>
+<li>交换机软件</li>
+<li>飞控软件等</li>
+</ul>
+</li>
+</ul>
+<h2 id="嵌入式软件的体系结构"><a href="#嵌入式软件的体系结构" class="headerlink" title="嵌入式软件的体系结构"></a>嵌入式软件的体系结构</h2><h3 id="无操作系统阶段"><a href="#无操作系统阶段" class="headerlink" title="无操作系统阶段"></a>无操作系统阶段</h3><ul>
+<li>硬件配置较低，系统应用主要集中在控制领域</li>
+<li>嵌入式软件的设计是以应用为核心，应用软件直接建立在硬件上</li>
+<li>无操作系统的嵌入式软件的两种实现方式：<ul>
+<li>循环轮转：把系统功能分解为若干个不同的任务，然后把它们包含在一个永不结束的循环语句中。按照顺序逐一执行。执行完一轮循环后，又回到循环体</li>
+<li>前后台系统（在循环轮转的基础上增加了中断处理功能）：<ul>
+<li>前台程序（事件处理级）：中断服务程序，负责处理异步事件</li>
+<li>后台程序（任务级）：一个无限循环，负责资源分配、管理和系统调度</li>
+<li>在系统运行时，后台程序会检查每个任务是否具备运行条件，对实时性要求严格的操作通常由中断完成</li>
+<li>前后台系统认为所有的任务具有相同的优先级，任务的执行是通过先进先出队列排队</li>
+<li>实时性较差</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有操作系统阶段："><a href="#有操作系统阶段：" class="headerlink" title="有操作系统阶段："></a>有操作系统阶段：</h3><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240820201546.png" alt="屏幕截图 2024-08-20 195845"></p>
+<ul>
+<li><p>开发应用程序不再直接面对嵌入式硬件设备，而是在操作系统的基础上编写。优点有：</p>
+<ul>
+<li><p>提高了系统的可靠性</p>
+<ul>
+<li>提高了系统的开发效率，降低了开发成本，缩短了开发周期<ul>
+<li>可以按照软件工程的思想，将程序分解为多个任务模块，每个任务模块的调试、修改几乎不影响其他模块</li>
+<li>商业软件提供了良好的多任务调试环境</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>有利于系统的扩展与移植</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="设备驱动层"><a href="#设备驱动层" class="headerlink" title="设备驱动层"></a>设备驱动层</h2><ul>
+<li><p>也叫板级支持包BSP：包含了嵌入式系统中所有与硬件相关的代码</p>
+<ul>
+<li>大多数的嵌入式硬件设备都需要某种类型软件的初始化和管理</li>
+<li>这部分工作由设备驱动层来完成的，它负责直接与硬件打交道， 对硬件进行管理和控制，为上层软件提供所需的驱动支持，类似PC系统中的BIOS和驱动程序</li>
+</ul>
+</li>
+<li><p>板级支持包BSP（Board Support Package）</p>
+<ul>
+<li>把嵌入式操作系统与具体的硬件平台隔离开来</li>
+<li>即在BSP中，把所有与硬件相关的代码都封装起来，向上提供一个虚拟的硬件平台，操作系统就运行在这个虚拟的硬件平台上</li>
+<li>操作系统使用一组定义好的编程接口来与BSP进行交互，并通过BSP来访问真正的硬件</li>
+</ul>
+</li>
+<li><p>一般BSP主要包括两个方面的内容</p>
+<ul>
+<li>引导加载程序Boot Loader</li>
+<li>设备驱动程序</li>
+</ul>
+</li>
+<li><p>引导加载程序Boot Loader是嵌入式系统加电后运行的第一段软件代码，是在操作系统内核运行之前运行的一段小程序</p>
+<ul>
+<li>通过这段程序，可以初始化硬件设备、建立内存空间的映射图</li>
+<li>将系统的软硬件环境设置到一个合适的状态，为最终调用操作系统内核做准备</li>
+</ul>
+</li>
+<li><p>Boot Loader的实现高度依赖于具体的硬件平台，主要的基本功能如下</p>
+<ul>
+<li>片级初始化</li>
+<li>板级初始化</li>
+<li>加载内核</li>
+</ul>
+</li>
+<li><p>片级初始化</p>
+<ul>
+<li>主要完成微处理器的初始化</li>
+<li>包括设置微处理器的核心寄存器和控制寄存器、微处理器的核心工作模式、局部总线模式等</li>
+<li>把微处理器从上电的默认状态设置成系统要求的工作状态</li>
+<li>纯硬件初始化过程</li>
+</ul>
+</li>
+<li><p>板级初始化</p>
+<ul>
+<li>设置各种硬件寄存器来完成微处理器以外的其他硬件设备的初始化</li>
+<li>设置某些软件的数据结构和参数</li>
+<li>同时有软件和硬件的初始化过程</li>
+</ul>
+</li>
+<li><p>加载内核</p>
+<ul>
+<li>将操作系统和应用程序的映像从Flash存储器复制到系统内存中</li>
+<li>然后跳转到系统内核的第一条指令处继续执行</li>
+</ul>
+</li>
+<li><p>设备驱动程序</p>
+<ul>
+<li>在一个嵌入式系统中，操作系统可能有也可能无，设备驱动是必不可少的</li>
+<li>设备驱动程序，是一组库函数，用来对硬件进行初始化和管理，并向上层软件提供良好的访问接口</li>
+<li>大多数设备驱动程序都具备下面的基本功能：启动、关闭、停用、启用、读操作、写操作</li>
+</ul>
+</li>
+<li><p>设备驱动程序的分层结构：把设备驱动程序中的函数分为硬件接口函数和调用接口函数</p>
+<ul>
+<li>硬件接口：直接操作和控制硬件</li>
+<li>上层接口：为上层软件提供服务和函数接口。不直接和硬件打交道，会调用硬件接口中的函数</li>
+<li>优点：把所有与硬件相关的细节都封装在硬件接口中，在硬件需要升级，需要更新设备驱动程序的时候，只需要改动接口中的函数即可，而上层调用接口中的函数不用做任何修改</li>
+</ul>
+</li>
+<li><p>设备驱动程序的混合结构：</p>
+<ul>
+<li>在设备驱动程序当中，没有明确的层次关系</li>
+<li>上层接口和硬件接口函数混在一起、互相调用</li>
+</ul>
+</li>
+</ul>
+<h2 id="嵌入式中间件"><a href="#嵌入式中间件" class="headerlink" title="嵌入式中间件"></a>嵌入式中间件</h2><ul>
+<li>中间件：在操作系统内核、设备驱动程序和应用软件之外的所有系统软件</li>
+<li>基本思路：把原本属于应用软件层的一些通用的功能模块抽取出来，形成独立的一层软件，从而为运行在它上面的那些应用软件提供一个灵活、安全、移植性好、相互通信、协同工作的平台</li>
+<li>特点：<ul>
+<li>可以有效地实现软件的可重用，降低应用软件的复杂性，提高系统的开发效率，缩短开发周期，节约开发成本和维护费用，保证了系统的高伸缩性、易升级性、稳定性</li>
+<li>但会带来额外的开销</li>
+</ul>
+</li>
+<li>种类：<ul>
+<li>消息中间件</li>
+<li>对象中间件</li>
+<li>远程过程调用</li>
+<li>数据库访问中间件</li>
+<li>安全中间件等</li>
+</ul>
+</li>
+</ul>
+<h2 id="嵌入式软件的运行流程"><a href="#嵌入式软件的运行流程" class="headerlink" title="嵌入式软件的运行流程"></a>嵌入式软件的运行流程</h2><ul>
+<li>主要分为五个阶段<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240821194125.png" alt="屏幕截图 2024-08-21 174628"></li>
+</ul>
+<h1 id="嵌入式操作系统概述"><a href="#嵌入式操作系统概述" class="headerlink" title="嵌入式操作系统概述"></a>嵌入式操作系统概述</h1><ul>
+<li><p>基本概念：嵌入式操作系统（Embedded Operating System，EOS）：工作在嵌入式环境中的操作系统</p>
+</li>
+<li><p>基本功能</p>
+<ul>
+<li>从软件开发的角度，可以把EOS看成是一种扩展机或虚拟机。将底层的硬件细节封装起来，为运行在它上面的软件提供了一个抽象的编程接口，即操作系统对外提供的系统调用函数</li>
+<li>从系统管理的角度，可以把EOS看成是系统资源的管理者，负责管理系统当中的各种软硬件资源</li>
+</ul>
+</li>
+<li><p>特有功能</p>
+<ul>
+<li>非通用型操作系统</li>
+<li>在性能和实时性方面可能有严格的限制</li>
+<li>能源、成本和可靠性通常是影响设计的重要因素</li>
+<li>占用资源少</li>
+<li>可裁剪、可配置</li>
+</ul>
+</li>
+<li><p>不同的嵌入式操作系统，包含的组件各不相同，但所有操作系统都会有一个内核（kernel），<strong>内核</strong>是指操作系统中的一个组件，它包含了<strong>OS</strong>的主要功能，即OS的各种特性及其相互之间的依赖关系</p>
+</li>
+<li><p>OS的主要功能：</p>
+<ul>
+<li>任务管理：对系统中运行的软件进行描述和管理，并完成处理器资源分配和调度</li>
+<li>存储管理：提高内存的利用率，方便用户使用，提供足够的存储空间</li>
+<li>I&#x2F;O设备管理：方便设备的使用，提高CPU和I&#x2F;O设备的利用率</li>
+<li>文件管理：解决文件资源存储、共享、保密和保护等问题</li>
+</ul>
+</li>
+<li><p>不同嵌入式操作系统的内核设计各不相同，不一定包含所有的4个功能模块，取决于系统设计和实际需求</p>
+</li>
+<li><p>嵌入式操作系统的分类</p>
+<ul>
+<li>按系统类型来分<ul>
+<li>商业系统：商业化的嵌入式操作系统<ul>
+<li>功能强大、性能稳定、应用范围相对较广、辅助软件齐全</li>
+<li>价格较贵</li>
+<li>如VxWorks、Windows CE、PalmOS</li>
+</ul>
+</li>
+<li>专用系统：专业厂家为本公司产品特制的嵌入式操作系统</li>
+<li>开源系统：开放源代码的嵌入式操作系统<ul>
+<li>免费、开源、性能优良、资源丰富、技术支持强</li>
+<li>如μC&#x2F;OS、Linux系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>按系统对响应时间的敏感程度来分<ul>
+<li>硬实时系统：系统对响应时间有严格要求，若响应时间不能满足，是绝对不允许的，会引起系统的崩溃或致命的错误</li>
+<li>软实时系统：系统对响应时间有要求，若响应时间不能满足，会带来额外可接受的代价</li>
+<li>非实时系统：响应时间没有严格要求，如分时操作系统，基于公平性原则，各进程分享处理器，获得大致相同的运行时间</li>
+</ul>
+</li>
+<li>按软件体系结构来分<ul>
+<li><strong>单体结构（μC&#x2F;OS）</strong></li>
+<li><strong>分层结构（MS-DOS）</strong></li>
+<li><strong>微内核结构（Vxworks）</strong></li>
+<li>这三类操作系统的差异体现在<ul>
+<li>内核的设计：内核中包含的功能组件</li>
+<li>在系统中集成的其他系统软件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单体结构（monolithic）：是一种常见的组织结构<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240821194218.png" alt="屏幕截图 2024-08-21 190535"><ul>
+<li>中间件和设备驱动程序通常集中在系统内核中</li>
+<li>系统只有一个可执行文件，包含所有功能组件，功能模块可相互调用</li>
+<li>如Linux、Jbed RTOS、μC&#x2F;OS、PDOS</li>
+<li>优点：性能较好、系统各模块间可相互调用、通信开销较小</li>
+<li>缺点：<ul>
+<li>操作系统体积庞大、高度集成、相互关联</li>
+<li>系统裁剪、修改和调试都较困难</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分层结构（layered）：操作系统被划分为若干个层次（0~N），各个层次之间的调用关系是单向的，即某一层次上的代码只能调用比它低层的代码<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240821194226.png" alt="屏幕截图 2024-08-21 190535"><ul>
+<li>只有一个大的可执行文件，包含有设备驱动程序和中间件</li>
+<li>系统的开发和维护较为简单</li>
+<li>要替换系统中的某一层时，不会影响到其他的层次</li>
+<li>但每个层次都要提供一组<strong>API</strong>接口函数，带来额外的开销<ul>
+<li>API（APPlication Programming Interface，应用程序编程接口）：<ul>
+<li>是一些预先定义的函数</li>
+<li>目的是提供应用程序与开发人员基于某软件或硬件的以访问一组例程的能力，而又无需访问源码，或理解内部工作机制的细节</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>微内核结构：也称为客户&#x2F;服务（client&#x2F;server）结构，在内核中，把操作系统的大部分功能都剥离出去，只保留最核心的功能单元（如进程管理、存储管理）。如：OS-9、C Executive、VxWorks和QNX等。<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240821194234.png" alt="屏幕截图 2024-08-21 190840"><ul>
+<li>优点：<ul>
+<li>内核非常小</li>
+<li>易于扩展、调试方便：新的功能组件可以被动态添加</li>
+<li>安全性更高：大部分的系统功能被放置在内核之外</li>
+<li>可移植性</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>通过微内核构造和发送信息、接受应答并解码所花费的时间比进行一次系统调用的时间多</li>
+<li>很大程度取决于微内核的大小和功能</li>
+<li>客户单元和服务器单元的内存地址空间是相互独立，在切换时候，会增加额外开销</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240821194242.png" alt="屏幕截图 2024-08-21 191215"></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1499,1114 +3268,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/06/28/%E6%9C%AD/%E3%80%8A%E7%97%85%E9%9A%99%E9%9A%8F%E7%AC%94%E3%80%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/06/28/%E6%9C%AD/%E3%80%8A%E7%97%85%E9%9A%99%E9%9A%8F%E7%AC%94%E3%80%8B/" class="post-title-link" itemprop="url">《病隙随笔》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-06-28 00:00:00 / Modified: 21:46:52" itemprop="dateCreated datePublished" datetime="2024-06-28T00:00:00+08:00">2024-06-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AD/" itemprop="url" rel="index"><span itemprop="name">札</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>我们太看重了白昼，又太忽视黑夜。生命，至少有一半是在黑夜中呀。</li>
-<li>一棵树上落着一群鸟儿，把树砍了，鸟儿也就没了吗？不，树上的鸟儿没了，但它们在别处。同样，此一肉身，栖居过一些思想、情感和心绪，这肉身火化了，那思想、情感和心绪也就没了吗？不，他们在别处。</li>
-<li>进退维谷之日正可能是别有洞天之时。</li>
-<li>所谓命运，就是说，这一出 “人间戏剧”需要各种各样的角色，你只能是其中之一，不可以随意调换。</li>
-<li>佛法博大精深，但我确实不认为满腹功利是对佛法的尊敬。便去烧香，也不该有那样的要求，不该以为命运欠了你什么。莫非是佛一时疏忽错有安排，倒要你这凡夫俗子去提醒一二？唯当去求一份智慧，以醒贪迷。</li>
-<li>不断的苦难才是不断需要信心的原因。</li>
-<li>科学需要证明，信仰并不需要。</li>
-<li>爱，原就是自卑弃暗投明的时刻。</li>
-<li>皈依并不在一个住所，皈依是在路上。</li>
-<li>彻底的圆满只不过是彻底的无路可走。</li>
-<li>一切尘世之名都可以磨灭，而“我”不死。</li>
-<li>左右苍茫时，总也得有条路走。</li>
-<li>我想，上帝为人性写下的最本质的两条密码是：残疾与爱情。</li>
-<li>而你若永远地走向它，你便随时都在它的光照之中。</li>
-<li>残疾人以及所有的人，固然应该对艰难的生途说“是”，但要对那无言的坚壁说“不”，那无言的坚壁才是人性的残疾。</li>
-<li>如果白昼的语言已经枯朽，就用黑夜的梦语，用诗的性灵。</li>
-<li>放弃自卑，同时放弃怨恨；其实这两点必然是同时放弃的，因为曾经，它们也是一齐出生的。</li>
-<li>那路途中的一切，有些与我擦肩而过从此天各一方，有些便永驻进我的心魂，雕琢我，塑造我，锤炼我，融入我而成为我。</li>
-<li>白昼的清晰是有限的，黑夜却漫长，尤其是那心流所遭遇的黑暗更是辽阔无边。</li>
-<li>生命的意义本不在向外的寻取，而在向内的建立。</li>
-<li>心中对叛徒的看法似乎都在动摇，我慢慢看见，勇猛和可敬之外还有还有着更为复杂的人生处境。</li>
-<li>仇恨的最大弊端是仇恨的蔓延，压迫的最大遗患是压迫的复制。</li>
-<li>而那虚假的信仰一旦揭开，内里仍不过一场权利之争，一切轰轰烈烈立刻没了根基。</li>
-<li>今天，绝对的信仰之光正趋淡薄，日新月异的生活道具正淹没着对生命意义的追求。</li>
-<li>神性不明之时，强人最易篡居神位。</li>
-<li>唯对神性的追问与寻觅，是实际可行的信仰之路。</li>
-<li>接受苦难，从而走向精神的超越。</li>
-<li>生命本无意义，是”我“使生命获得意义。</li>
-<li>当精神联通了那无限之在，追随了那绝对价值，他就会因自身的局限而谦虚，因人性的丑陋而忏悔，视固有的困苦为锤炼，看琳琅的美物为道具，既知不断地超越自身才是目的，又知这样的超越乃是永远的过程。</li>
-<li>不必统一的真实，不如叫作真诚。</li>
-<li>在看似已然明朗的地方，开始文学的迷茫路。</li>
-<li>游戏规则是人订的，但游戏——游戏的欲望、游戏的限制、游戏的种种困阻和种种可能性，都是神定。</li>
-<li>残奥会的圣火不由次神点燃。</li>
-<li>自从我学会了寻找，我就已经找到。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/15/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E5%9B%BE/" class="post-title-link" itemprop="url">第六章 图</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-03-15 00:00:00 / Modified: 18:11:10" itemprop="dateCreated datePublished" datetime="2024-03-15T00:00:00+08:00">2024-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><ul>
-<li><strong>图 G</strong> 由<strong>顶点集 V</strong> 和<strong>边集 E</strong> 组成，记为 G &#x3D; (V, E)，其中 V(G) 表示图 G 中顶点的有限非空集；E(G) 表示图 G 中顶点之间的关系（边）集合。若 V &#x3D; {v<sub>1</sub>, v<sub>2</sub>, …, v<sub>n</sub>}，则用 |V| 表示图 G 中<strong>顶点的个数</strong>，也称<strong>图 G 的阶</strong>，E &#x3D; {(u, v) | u ∈ U, v ∈ V}，用 <strong>|E|</strong> 表示图 G 中<strong>边的条数</strong>。</li>
-<li>线性表可以是空表，树可以是空树，但图不可以是空，即 <strong>V 一定是非空集</strong>。而 <strong>E 可以为空集</strong>。</li>
-<li>若 E 是<strong>无向边</strong>（简称<strong>边</strong>）的有限集合时，则图 G 为<strong>无向图</strong>。边是顶点的无序对，**记为(v, w)或(w, v)<strong>，因为</strong>(v, w) &#x3D; (w, v)**，其中 v、w 是顶点。可以说顶点 w 和顶点 v 互为邻接点。边(v, w)依附于顶点 w 和 v，或者说边(v, w)和顶点 v、w 相关联。</li>
-<li>若 E 是<strong>有向边</strong>（也称<strong>弧</strong>）的有限集合时，则图 G 为<strong>有向图</strong>。弧是顶点的有序对，<strong>记为&lt;v, w&gt;<strong>，其中 v、w 是顶点，v 称为</strong>弧尾</strong>，w 称为<strong>弧头</strong>，&lt;v, w&gt; 称为从顶点 v 到顶点 w 的弧，也称 v 邻接到 w，或 w 邻接自 v。**&lt;v, w&gt; !&#x3D; &lt;w, v&gt;**。</li>
-<li>简单图<ul>
-<li>不存在重复边</li>
-<li>不存在顶点到自身的边</li>
-</ul>
-</li>
-<li>多重图：图 G 中某两个结点之间的边数多于一条，又允许顶点通过同一条边和自己关联，则 G 为多重图。</li>
-<li>对于无向图：<ul>
-<li>顶点 v 的度是指依附于该顶点的边的条数，记为 TD(v)</li>
-<li>在具有 n 个顶点、e 条边的无向图中，$\sum\limits_{i&#x3D;1}^nTD(V_i) &#x3D; 2e$，即无向图的全部顶点的度的和等于边数的2倍。</li>
-</ul>
-</li>
-<li>对于有向图：<ul>
-<li>入度是以顶点 v 为终点的有向边的数目，记为 ID(v)</li>
-<li>出度是以顶点 v 为起点的有向边的数目，记为 OD(v)</li>
-<li>顶点的 v 的度等于其入度和出度之和，即 TD(v) &#x3D; ID(v) + OD(v)</li>
-<li>在具有 n 个顶点、 e 条边的有向图中， $\sum\limits_{i&#x3D;1}^nID(V_i) &#x3D; \sum\limits_{i&#x3D;1}^nOD(V_i) &#x3D; e$</li>
-</ul>
-</li>
-<li><strong>路径</strong>——顶点 v<sub>p</sub> 到顶点 v<sub>p</sub> 之间的一条路径是指顶点序列，V<sub>p</sub>, V<sub>i1</sub>, V<sub>i2</sub>, …, V<sub>q</sub>。</li>
-<li><strong>回路</strong>——第一个顶点和最后一个顶点相同的路径称为回路或环。</li>
-<li><strong>简单路径</strong>——在路径序列中，顶点不重复出现的路径称为简单路径。</li>
-<li><strong>简单回路</strong>——除第一个顶点和最后一个顶点外，其余顶点不重复出现的回路称为简单回路。</li>
-<li><strong>路径长度</strong>——路径上边的数目。</li>
-<li><strong>点到点的距离</strong>——从顶点 u 出发到顶点 v 的<strong>最短路径</strong>若存在，则<strong>此路径的长度称为从 u 到 v 的距离</strong>；若从 u 到 v 根本<strong>不存在路径</strong>，则记<strong>该距离为无穷（∞）</strong>。</li>
-<li><strong>无向图</strong>中，若从顶点 v 到顶点 w 有路径存在，则称 v 和 w 是<strong>连通</strong>的。若图 G 中任意两个顶点都是连通的，则称图 G 为<strong>连通图</strong>，否则称为<strong>非连通图</strong>。<ul>
-<li>对于 n个顶点的<strong>无向图</strong> G，<ul>
-<li>若 G 是<strong>连通图</strong>，则<strong>最少</strong>有 n-1 条边</li>
-<li>若 G 是<strong>非连通图</strong>，则<strong>最多</strong>可能有 $C_{n-1}^2$条边</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>有向图</strong>中，若从顶点 v 到顶点 w 和从顶点 w 到顶点 v之间都有路径，则称这两个顶点是<strong>强连通</strong>的。<ul>
-<li>对于 n 个顶点的有向图 G，若 G 是<strong>强连通图</strong>，则<strong>最少</strong>有 n 条边（形成<strong>回路</strong>）</li>
-</ul>
-</li>
-<li>设有两个图 G &#x3D; (V, E) 和 G’ &#x3D; (V’, E’)，若 V‘ 是 V 的子集，且 E’ 是 E 的子集，则称 G’ 是 G 的<strong>子图</strong>。</li>
-<li>若有满足 V(G’) &#x3D; V(G) 的子图 G’，则称其为 G 的<strong>生成子图</strong>。</li>
-<li><strong>无向图</strong>中的<strong>极大连通子图</strong>（子图必须连通，且包含尽可能多的顶点和边）称为无向图的<strong>连通分量</strong>。</li>
-<li><strong>有向图</strong>中的<strong>极大强连通子图</strong>（子图必须强连通，同时保留尽可能多的边）称为有向图的<strong>强连通分量</strong>。</li>
-<li><strong>连通图</strong>的<strong>生成树</strong>是<strong>包含图中全部顶点的一个极小连通子图</strong>（边尽可能的少，但要保持连通）。若图中顶点树为 n，则它的生成树含有 n-1 条边。对生成树而言，若砍去它的一条边，则会变成非连通图，若加上一条边则会形成一个回路。</li>
-<li>在<strong>非连通图</strong>中，<strong>连通分量的生成树</strong>构成了非连通图的<strong>生成森林</strong>。</li>
-<li><strong>边的权</strong>——在一个图中，每条边都可以标上具有某种含义的数值，该数值称为该边的权值。</li>
-<li><strong>带权图&#x2F;网</strong>——边上带有权值的图称为<strong>带权图</strong>，也称<strong>网</strong>。</li>
-<li><strong>带权路径长度</strong>——当图是带权图时，一条<strong>路径上所有边的权值之和</strong>，称为该路径的带权路径长度。</li>
-<li><strong>无向完全图</strong>——无向图中任意两个顶点之间都存在边。<ul>
-<li>若无向图的顶点数 |V| &#x3D; n，则 |E|∈[0, $C^2_n$] &#x3D; [0, n(n-1)&#x2F;2]</li>
-</ul>
-</li>
-<li><strong>有向完全图</strong>——有向图中任意两个顶点之间都存在方向相反的两条弧。<ul>
-<li>若有向图的顶点数 |V| &#x3D; n，则 |E|∈[0, 2$C^2_n$] &#x3D; [0, n(n-1)]</li>
-</ul>
-</li>
-<li>边数很少的图称为<strong>稀疏图</strong>，反之称为<strong>稠密图</strong>。二者没有绝对的界限，一般来说 |E| &lt; |V|log|V| 时，可以将 G 视为稀疏图。</li>
-<li><strong>树</strong>——<strong>不存在回路</strong>，且<strong>连通</strong>的<strong>无向图</strong><ul>
-<li>n 个顶点的树，必有 n-1 条边</li>
-<li>n 个顶点的图，<strong>若 |E| &gt; n-1，则一定有回路</strong></li>
-</ul>
-</li>
-<li><strong>有向树</strong>——一个顶点的入度为0，其余顶点的入度均为1的<strong>有向图</strong>，称为有向树。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">第五章 树与二叉树</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-03-14 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-14T00:00:00+08:00">2024-03-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-15 18:11:01" itemprop="dateModified" datetime="2024-03-15T18:11:01+08:00">2024-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="树的基本概念"><a href="#树的基本概念" class="headerlink" title="树的基本概念"></a>树的基本概念</h1><h2 id="数的定义和基本术语"><a href="#数的定义和基本术语" class="headerlink" title="数的定义和基本术语"></a>数的定义和基本术语</h2><ul>
-<li>树：从树根生发，逐级分支。</li>
-<li>空树：结点数为0的树。</li>
-<li>非空树的特性：<ul>
-<li>有且仅有一个根结点。</li>
-<li>没有后继的结点称为“叶子结点”（或终端结点）。</li>
-<li>有后继的结点称为“分支结点”（或非终端结点）。</li>
-<li>除了根结点外，任何一个结点都<strong>有且仅有一个</strong>前驱。</li>
-<li>每个结点可以有一个或多个后驱。</li>
-</ul>
-</li>
-<li>树是 n （n &gt;&#x3D; 0）个<strong>结点</strong>的有限集合，n &#x3D; 0 时，称为<strong>空树</strong>，这是一种特殊情况。在任意一颗<strong>非空树</strong>中应满足：<ol>
-<li>有且仅有一个特定的称为<strong>根</strong>的结点。</li>
-<li>当 n &gt; 1 时，其余结点可分为 m (m &gt; 0)个<strong>互不相交的有限集合</strong> T<sub>1</sub>,T<sub>2</sub>,…T<sub>m</sub>，其中每个集合本身又是一颗树，并且称为根结点的<strong>子树</strong>。</li>
-</ol>
-</li>
-<li>树是递归定义的数据结构。</li>
-<li>结点之间的关系描述：<ul>
-<li>祖先结点</li>
-<li>子孙结点</li>
-<li>双亲结点（父结点）</li>
-<li>孩子结点</li>
-<li>兄弟结点</li>
-<li>堂兄弟结点</li>
-<li>两个结点之间的<strong>路径</strong>：只能从上往下</li>
-<li><strong>路径长度</strong>：经过几条边</li>
-</ul>
-</li>
-<li>结点和树的属性描述：<ul>
-<li>结点的层次（深度）——从上往下数</li>
-<li>结点的高度——从下往上数</li>
-<li>树的高度（深度）——总共多少层</li>
-<li><strong>结点的度</strong>——有几个孩子（分支）</li>
-<li><strong>树的度</strong>——各结点的度的最大值</li>
-</ul>
-</li>
-<li>有序树：逻辑上看，树中结点的各子树从左至右是<strong>有次序的</strong>，不能互换。</li>
-<li>有序树：逻辑上看，树中结点的各子树从左至右是<strong>无次序的</strong>，不能互换。</li>
-<li>森林：森林是 m(M &gt;&#x3D; 0)棵互不相交的树的集合。</li>
-</ul>
-<h2 id="树的性质"><a href="#树的性质" class="headerlink" title="树的性质"></a>树的性质</h2><ul>
-<li><p>结点数 &#x3D; 总度数 + 1</p>
-</li>
-<li><p>树的度——各结点度的最大值</p>
-</li>
-<li><p>m叉树——每个结点最多只能有m个孩子的树</p>
-</li>
-<li><table>
-<thead>
-<tr>
-<th>度为 m 的树</th>
-<th>m 叉树</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>任意结点的度 &lt;&#x3D; m（最多 m 个孩子）</td>
-<td>任意结点的度 &lt;&#x3D; m（最多 m 个孩子）</td>
-</tr>
-<tr>
-<td>至少有一个结点度 &#x3D; m（有 m 个孩子）</td>
-<td>允许所有结点的度都 &lt;  m</td>
-</tr>
-<tr>
-<td>一定是非空树，至少有 m + 1 个结点</td>
-<td>可以是空树</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>度为 m 的树第 i 层至多有 m<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</p>
-<ul>
-<li>m 叉树第 i 层至多有m<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</li>
-</ul>
-</li>
-<li><p>高度为 h 的 m 叉树至多有$\frac{m^h-1}{m-1}$（等比求和）</p>
-</li>
-<li><p>高度为 h 的 m 叉树至少有 h 个结点；高度为 h 同时度为 m 的树至少有 h+m-1 个结点。</p>
-</li>
-<li><p>具有 n 个结点的 m 叉树的最小高度为 log<sub>m</sub>(n(m-1)+1)。</p>
-</li>
-</ul>
-<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="二叉树的定义和基本术语"><a href="#二叉树的定义和基本术语" class="headerlink" title="二叉树的定义和基本术语"></a>二叉树的定义和基本术语</h2><ul>
-<li>m 叉树是 n （n &gt;&#x3D; 0）个结点的有限集合：<ul>
-<li>或者为<strong>空二叉树</strong>，即 n &#x3D; 0。</li>
-<li>或者由一个<strong>根结点</strong>和两个互不相交的被称为根的<strong>左子树</strong>和<strong>右子树</strong>组成。左子树和右子树分别是一颗二叉树。</li>
-<li>特点：<ul>
-<li>每个结点至多只有两棵子树</li>
-<li>左右子树不能颠倒（二叉树<strong>是有序树</strong>）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>二叉树是递归定义的数据结构。</li>
-<li>二叉树的五种状态：<ul>
-<li>空二叉树</li>
-<li>只有左子树</li>
-<li>只有右子树</li>
-<li>只有根结点</li>
-<li>左右子树都有</li>
-</ul>
-</li>
-<li>几个特殊的二叉树：<ul>
-<li><strong>满二叉树</strong>。一棵高度为 h，且含有2<sup>h</sup>-1个结点的二叉树。特点：<ul>
-<li>只有最后一层有叶子结点。</li>
-<li>不存在度为1的结点。</li>
-<li>按层序从1开始编号，结点 i 的左孩子为 2i，右孩子为 2i+1；结点 i 的父结点为 i&#x2F;2。</li>
-</ul>
-</li>
-<li><strong>完全二叉树</strong>。当且进当其每个结点都与高度为 h 的满二叉树中编号为 1~n 的结点一一对应时，称为完全二叉树。特点：<ul>
-<li>只有最后两层可能有叶子结点。</li>
-<li>最多只有一个度为1的结点。</li>
-<li>按层序从1开始编号，结点 i 的左孩子为 2i，右孩子为 2i+1；结点 i 的父结点为 i&#x2F;2。</li>
-<li>i &lt;&#x3D; n&#x2F;2 为分支结点，i &gt; n&#x2F;2 为叶子结点。</li>
-<li>如果某结点只有一个孩子，那么一定是左孩子。</li>
-</ul>
-</li>
-<li><strong>二叉排序树</strong>。一棵二叉树或者是空二叉树，或者是具有如下性质的二叉树：<ul>
-<li><strong>左子树</strong>上所有结点的<strong>关键字</strong>均<strong>小于根结点</strong>的关键字。</li>
-<li><strong>右子树</strong>上所有结点的<strong>关键字</strong>均<strong>大于根结点</strong>的关键字。</li>
-<li>左子树和右子树又各是一颗二叉排序树。</li>
-</ul>
-</li>
-<li><strong>平衡二叉树</strong>。树上任一结点的<strong>左子树</strong>和<strong>右子树</strong>的<strong>深度之差不超过1</strong>。<ul>
-<li>平衡二叉树能有更高的搜索效率。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><ul>
-<li>设非空二叉树度为0、1和2的结点个数分别为n<sub>0</sub>、n<sub>1</sub>和n<sub>2</sub>，则 n<sub>0</sub> &#x3D; n<sub>2</sub> + 1（叶子结点比二分支结点多一个）</li>
-<li>二叉树第 i 层至多有 2<sup>i-1</sup>个结点（i &gt;&#x3D; 1）</li>
-<li>高度为 h 的二叉树至多有$2^h-1$（等比求和）</li>
-<li>具有 n 个(n &gt; 0)结点的完全二叉树的高度 h 为 log<sub>2</sub>(n+1) 或 log<sub>2</sub>n + 1</li>
-<li>对于完全二叉树，可以由结点数 n 推出度为0、1和2的结点个数分别为n<sub>0</sub>、n<sub>1</sub>和n<sub>2</sub><ul>
-<li>完全二叉树最多只有一个度为1的结点，即 n<sub>1</sub> &#x3D; 0或1，而n<sub>0</sub> &#x3D; n<sub>2</sub> + 1故n<sub>0 </sub>+ n<sub>2</sub> 一定是奇数<ul>
-<li>若完全二叉树有 2k （偶数）个结点，则必有n<sub>1</sub> &#x3D; 1，n<sub>0</sub> &#x3D; k，n<sub>2</sub> &#x3D; k-1</li>
-<li>若完全二叉树有 2k-1 （奇数）个结点，则必有n<sub>1</sub> &#x3D; 0，n<sub>0</sub> &#x3D; k，n<sub>2</sub> &#x3D; k-1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h2><h3 id="二叉树的顺序存储"><a href="#二叉树的顺序存储" class="headerlink" title="二叉树的顺序存储"></a>二叉树的顺序存储</h3><ul>
-<li><p>顺序存储的实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 100</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    ElemType value;	<span class="comment">//结点中的数据元素</span></span><br><span class="line">    <span class="type">bool</span> isEmpty;	<span class="comment">//结点是否为空</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TreeNode t[MaxSize];</span><br></pre></td></tr></table></figure>
-
-<p>定义一个长度为 MaxSize 的数组 t，按照从上至下、从左至右的顺序依次存储<strong>完全二叉树</strong>中的各个结点。</p>
-</li>
-<li><p>几个重要的基本操作</p>
-<ul>
-<li>i 的左孩子—— 2i</li>
-<li>i 的右孩子—— 2i+1</li>
-<li>i 的父结点—— i&#x2F;2</li>
-<li>i 所在的层次—— log<sub>2</sub>(n+1))或 log<sub>2</sub>n + 1</li>
-</ul>
-</li>
-<li><p>若<strong>完全二叉树</strong>中共有 n 个结点</p>
-<ul>
-<li>判断 i 是否有左孩子——2i &lt;&#x3D; n</li>
-<li>判断 i 是否有右孩子——2i+1 &lt;&#x3D; n</li>
-<li>判断 i 是否是叶子或分支结点——i &gt; n&#x2F;2</li>
-</ul>
-</li>
-<li><p>如果不是<strong>完全二叉树</strong>，依然按层序将各结点顺序存储，则无法从结点编号反映出结点间的逻辑关系。</p>
-</li>
-<li><p>二叉的顺序存储中，一定要把二叉树的结点编号与<strong>完全二叉树</strong>对应起来。</p>
-</li>
-<li><p>最坏情况：高度为 h 且只有 h 个结点的单支树（所有结点只有右孩子），也至少需要 2<sup>h</sup>-1个存储单元。</p>
-</li>
-</ul>
-<h3 id="二叉树的链式存储"><a href="#二叉树的链式存储" class="headerlink" title="二叉树的链式存储"></a>二叉树的链式存储</h3><ul>
-<li><p>链式存储的代码实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span>	<span class="comment">//左、右孩子指针</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure>
-
-<p>n 个结点的二叉链表共有 n+1 个空链域。</p>
-</li>
-<li><p>二叉树的建立</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ElemType</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义一棵空树</span></span><br><span class="line">BiTree root = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入根结点</span></span><br><span class="line">root = (BiTree)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTree));</span><br><span class="line">root-&gt;data = &#123;<span class="number">1</span>&#125;;</span><br><span class="line">root-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入新结点</span></span><br><span class="line">BiTNode * p = (BiTNode *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BiTNode));</span><br><span class="line">p-&gt;data = &#123;<span class="number">2</span>&#125;;</span><br><span class="line">p-&gt;lchild = <span class="literal">NULL</span>;</span><br><span class="line">p-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">root-&gt;lchild = p;	<span class="comment">//作为根结点的左孩子</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>三叉链表——方便找父结点</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span>	<span class="comment">//左、右孩子指针</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">parent</span>;</span>	<span class="comment">//父结点指针</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二叉树的先-中-后序遍历"><a href="#二叉树的先-中-后序遍历" class="headerlink" title="二叉树的先&#x2F;中&#x2F;后序遍历"></a>二叉树的先&#x2F;中&#x2F;后序遍历</h2><ul>
-<li><p>遍历：按照某种次序把所有结点都访问一遍。</p>
-</li>
-<li><p>层次遍历：基于树的层次特性确定的次序规则。</p>
-</li>
-<li><p>先&#x2F;中&#x2F;后序遍历：基于树的递归特性确定的次序规则。</p>
-<ul>
-<li>先序遍历：根左右（NLR）</li>
-<li>中序遍历：左根右（LNR）</li>
-<li>后序遍历：左右根（LRN）</li>
-</ul>
-</li>
-<li><p>二叉树的递归特性：</p>
-<ul>
-<li>要么是个空二叉树。</li>
-<li>要么就是由“根结点+左子树+右子树”组成的二叉树。</li>
-</ul>
-</li>
-<li><p>算术表达式的“分析树”</p>
-<ul>
-<li>先序遍历：根左右 -&gt; 前缀表达式</li>
-<li>中序遍历：左根右 -&gt; 中缀表达式（需要加界限符）</li>
-<li>后序遍历：左右根 -&gt; 后缀表达式</li>
-</ul>
-</li>
-<li><p><strong>先序遍历</strong>的代码实现</p>
-<ol>
-<li>若二叉树为空，则什么都不做</li>
-<li>若二叉树非空：<ol>
-<li>访问根节点</li>
-<li>先序遍历左子树</li>
-<li>先序遍历右子树</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        PreOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>中序遍历</strong>的代码实现</p>
-<ol>
-<li>若二叉树为空，则什么都不做</li>
-<li>若二叉树非空：<ol>
-<li>先序遍历左子树</li>
-<li>访问根节点</li>
-<li>先序遍历右子树</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>后序遍历</strong>的代码实现</p>
-<ol>
-<li>若二叉树为空，则什么都不做</li>
-<li>若二叉树非空：<ol>
-<li>先序遍历左子树</li>
-<li>先序遍历右子树</li>
-<li>访问根节点</li>
-</ol>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PostOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        PostOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PostOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>先序遍历——第一次路过时访问结点</p>
-</li>
-<li><p>中序遍历——第二次路过时访问结点</p>
-</li>
-<li><p>后序遍历——第三次路过时访问结点</p>
-</li>
-<li><p>应用：求树的深度</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">treeDepth</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">int</span> l = treeDepth(T-&gt;lchild);</span><br><span class="line">        <span class="type">int</span> r = treeDepth(T-&gt;rchild);</span><br><span class="line">        <span class="comment">//树的深度 = Max(左子树深度，右子树深度)+1</span></span><br><span class="line">        <span class="keyword">return</span> l &gt; r ? l+<span class="number">1</span> : r+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><ul>
-<li><p>算法思想：</p>
-<ol>
-<li>初始化一个辅助<strong>队列</strong></li>
-<li>根结点入队</li>
-<li>若队列非空，则队头结点出队，访问该结点，并将其左、右孩子插入队尾（如果有的话）</li>
-<li>重复上一步直至队列为空</li>
-</ol>
-</li>
-<li><p>代码实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二叉树的结点（链式存储）</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链式队列结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> &#123;</span></span><br><span class="line">    BiTNode * data;	<span class="comment">//存指针而不是结点</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">LinkNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;LinkNode;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    LinkNode *front, *rear;	<span class="comment">//队头队尾</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//层序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">LevelOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    LinkQueue Q;</span><br><span class="line">    InitQueue(Q);	<span class="comment">//初始化辅助队列</span></span><br><span class="line">    BiTree p;</span><br><span class="line">    EnQueue(Q, T);	<span class="comment">//将根结点入队</span></span><br><span class="line">    <span class="keyword">while</span> (!IsEmpty(Q)) &#123;	<span class="comment">//队列不空则循环</span></span><br><span class="line">        DeQueue(Q, p);	<span class="comment">//队列结点出队</span></span><br><span class="line">        visit(p);	<span class="comment">//访问出队结点</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;lchild != <span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q, p-&gt;lchild);	<span class="comment">//左孩子入队</span></span><br><span class="line">        <span class="keyword">if</span>(p-&gt;rchild != <span class="literal">NULL</span>)</span><br><span class="line">            EnQueue(Q, p-&gt;rchild);	<span class="comment">//右孩子入队</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="由遍历序列构造二叉树"><a href="#由遍历序列构造二叉树" class="headerlink" title="由遍历序列构造二叉树"></a>由遍历序列构造二叉树</h2><ul>
-<li>一个中&#x2F;前&#x2F;后&#x2F;层序遍历序列可能对应<strong>多种</strong>二叉树形态。<strong>中序</strong> + 前&#x2F;后&#x2F;层序遍历可得到唯一二叉树。</li>
-<li>由前序&#x2F;后序&#x2F;层序找到树的根结点，并根据中序序列划分左右子树，再找到左右子树根结点。</li>
-</ul>
-<h2 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h2><ul>
-<li><p>如何找到指定结点 p 在中序遍历序列中的前驱和后继：从根结点出发，重新进行一次中序遍历，指针 q 记录当前访问的结点，指针 pre 记录上一个被访问的结点。</p>
-</li>
-<li><p>当 q &#x3D;&#x3D; p 时，pre 为前驱。</p>
-</li>
-<li><p>当 pre &#x3D;&#x3D; p 时，q 为后继。</p>
-</li>
-<li><p>中序线索二叉树：</p>
-<ul>
-<li>前驱线索：左孩子指针充当</li>
-<li>后继线索：右孩子指针充当</li>
-</ul>
-</li>
-<li><p>线索二叉树的存储结构</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二叉树的结点（链式存储）</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;	</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="二叉树线索化"><a href="#二叉树线索化" class="headerlink" title="二叉树线索化"></a>二叉树线索化</h2><ul>
-<li><p>借用 pre 指针找到中序前驱</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InOrder</span><span class="params">(BiTree T)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InOrder(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InOrder(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问结点 q</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(BiTNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q == p)	<span class="comment">//当前访问结点刚好是结点 p</span></span><br><span class="line">        final = pre;	<span class="comment">//找到 p 的前驱</span></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        pre = q;	<span class="comment">//pre 指向当前访问的结点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//辅助全局变量，用于查找结点 p 的前驱</span></span><br><span class="line">BiTNode * p;	<span class="comment">//p 指向目标结点</span></span><br><span class="line">BiTNode * pre == <span class="literal">NULL</span>;	<span class="comment">//指向当前访问的结点的前驱</span></span><br><span class="line">BiTNode * final == <span class="literal">NULL</span>;	<span class="comment">//用于记录最终结果</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>中序线索化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreateInThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">        InThread(T);	<span class="comment">//中序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//中序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">InThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        InThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        InThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>先序线索化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreatePreThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">       PreThread(T);	<span class="comment">//先序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">        <span class="keyword">if</span> (T-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        	PreThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>后序线索化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局变量 pre，指向当前访问结点的前驱</span></span><br><span class="line">ThreadNode *pre = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序线索化二叉树 T</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">CreatePostThread</span><span class="params">(ThreadTree T)</span> &#123;</span><br><span class="line">    pre = <span class="literal">NULL</span>;	<span class="comment">//pre初始化为NULL</span></span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;	<span class="comment">//非空二叉树才能线索化</span></span><br><span class="line">       PostThread(T);	<span class="comment">//后序线索化二叉树</span></span><br><span class="line">        <span class="keyword">if</span> (pre-&gt;rchild == <span class="literal">NULL</span>)</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;	<span class="comment">//处理遍历的最后一个结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//线索二叉树结点</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ThtreadNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">ThreadNode</span> *<span class="title">lchild</span>, *<span class="title">rchild</span>;</span></span><br><span class="line">    <span class="type">int</span> ltag, rtag;	<span class="comment">//左、右线索标志 tag:1 表示线索  tag:0 表示孩子</span></span><br><span class="line">&#125; TreadNode, *TreadTree;</span><br><span class="line"></span><br><span class="line"><span class="comment">//后序遍历二叉树，一边遍历一边线索化</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreThread</span><span class="params">(ThreadTree T)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (T != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        PreThread(T-&gt;lchild);	<span class="comment">//递归遍历左子树</span></span><br><span class="line">        PreThread(T-&gt;rchild);	<span class="comment">//递归遍历右子树</span></span><br><span class="line">        visit(T);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">visit</span><span class="params">(ThreadNode *q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (q-&gt;lchild == <span class="literal">NULL</span>) &#123;	<span class="comment">//左子树为空，建立前驱线索</span></span><br><span class="line">        q-&gt;lchild = pre;</span><br><span class="line">        q-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>) &#123;</span><br><span class="line">        pre-&gt;rchild = q;	<span class="comment">//建立前驱结点的后继线索</span></span><br><span class="line">        pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    pre = q;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="线索二叉树——找前驱-后继"><a href="#线索二叉树——找前驱-后继" class="headerlink" title="线索二叉树——找前驱&#x2F;后继"></a>线索二叉树——找前驱&#x2F;后继</h2><ul>
-<li><p>在中序线索二叉树中找到指定结点 *p 的中序后继 next</p>
-<ul>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 next &#x3D; p的右子树中最左下结点</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找到以 p 为根的子树中，第一个被中序遍历的结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Firstnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//循环找到最左下结点（不一定是叶结点）</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        p = p-&gt;lchild;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在中序线索二叉树中找到结点 p 的后继结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Nextnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//右子树中最左下结点</span></span><br><span class="line">    <span class="keyword">if</span>  (p-&gt;rtag == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> Firstnode(p-&gt;rchild);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;rchild;	<span class="comment">//rtag == 1直接返回后继线索</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对中序线索二叉树进行中序遍历（利用线索实现的非递归算法）	空间复杂度：O(1)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Inorder</span><span class="params">(ThreadNode *T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = Firstnode(T); p != <span class="literal">NULL</span>; p = Nextnode(p))</span><br><span class="line">        visit(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在中序线索二叉树中找到指定结点 *p 的中序前驱 pre</p>
-<ul>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则 next &#x3D; p的左子树中最右下结点</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//找到以 p 为根的子树中，最后一个被中序遍历的结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Lastnode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//循环找到最右下结点（不一定是叶结点）</span></span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        p = p-&gt;lchild;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在中序线索二叉树中找到结点 p 的前驱结点</span></span><br><span class="line">ThreadNode *<span class="title function_">Prenode</span><span class="params">(ThreadNode *p)</span> &#123;</span><br><span class="line">    <span class="comment">//左子树中最右下结点</span></span><br><span class="line">    <span class="keyword">if</span>  (p-&gt;ltag == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> Firstnode(p-&gt;lchild);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> p-&gt;lchild;	<span class="comment">//rtag == 1直接返回后继线索</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对中序线索二叉树进行逆向中序遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">RevInorder</span><span class="params">(ThreadNode *T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = Lastnode(T); p != <span class="literal">NULL</span>; p = Prenode(p))</span><br><span class="line">        visit(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在先序线索二叉树中找到指定结点 *p 的先序后继 next</p>
-<ul>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 <ul>
-<li>若 p 有左孩子，则先序后继为左孩子</li>
-<li>若 p 没有左孩子，则先序后继为右孩子</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在先序线索二叉树中找到指定结点 *p 的先序前驱 pre</p>
-<ul>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则<ul>
-<li>p 必有左孩子。由于先序遍历中左右子树中的结点只可能是根的后继，不可能是前驱。只能从头开始先序遍历找前驱。</li>
-<li>若改用三叉链表可以找到父节点<ul>
-<li>p 为左孩子，则 p 的父结点即为其前驱</li>
-<li>p 为右孩子，<ul>
-<li>其左兄弟为空，则 p 的父结点即为其前驱</li>
-<li>其左兄弟非空，则 p 的前驱为左兄弟子树中最后一个被先序遍历的结点</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在后序线索二叉树中找到指定结点 *p 的后序前驱 pre</p>
-<ul>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;lchild</li>
-<li>若 p-&gt;ltag &#x3D;&#x3D; 0，则 p 必有左孩子<ul>
-<li>若 p 有右孩子，则后序前驱为右孩子</li>
-<li>若 p 没有右孩子，则后序前驱为左孩子</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在后序线索二叉树中找到指定结点 *p 的先序后继 next</p>
-<ul>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 1，则 next &#x3D; p-&gt;rchild</li>
-<li>若 p-&gt;rtag &#x3D;&#x3D; 0，则 <ul>
-<li>p 必有右孩子。由于先序遍历中左右子树中的结点只可能是根的后继，不可能是前驱。只能从头开始先序遍历找前驱。</li>
-<li>若改用三叉链表可以找到父节点<ul>
-<li>p 为右孩子，则 p 的父结点即为其前驱</li>
-<li>p 为左孩子，<ul>
-<li>其右兄弟为空，则 p 的父结点即为其前驱</li>
-<li>其右兄弟非空，则 p 的前驱为右兄弟子树中第一个被后序遍历的结点</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="树和森林"><a href="#树和森林" class="headerlink" title="树和森林"></a>树和森林</h1><h2 id="树的存储结构"><a href="#树的存储结构" class="headerlink" title="树的存储结构"></a>树的存储结构</h2><ul>
-<li><p>双亲表表示法（顺序存储）</p>
-<ul>
-<li>用数组顺序存储各个结点。每个结点中保存<strong>数据元素、指向双亲结点（父节点）的“指针”</strong>。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_TREE_SIZE 100	<span class="comment">//树中最多结点数</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>	<span class="comment">//树的结点定义</span></span><br><span class="line">    ElemType data;	<span class="comment">//数据元素</span></span><br><span class="line">    <span class="type">int</span> parent;	<span class="comment">//双亲位置域</span></span><br><span class="line">&#125; PTNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>	<span class="comment">//树的类型定义</span></span><br><span class="line">    PTNode nodes[MAX_TREE_SIZE];	<span class="comment">//双亲表示</span></span><br><span class="line">    <span class="type">int</span> n;	<span class="comment">//结点数</span></span><br><span class="line">&#125; PTree;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>优缺点：</p>
-<ul>
-<li><p>优点：找双亲（父结点）方便</p>
-</li>
-<li><p>缺点：找孩子不方便，只能从头到尾遍历整个数组</p>
-</li>
-<li><p>适用于“找父亲“多，”找孩子“少的应用场景。如：并查集</p>
-</li>
-</ul>
-</li>
-<li><p>双亲表示法也可表示<strong>森林</strong>，每棵树的根结点双亲指针 &#x3D; -1。</p>
-</li>
-</ul>
-</li>
-<li><p>孩子表示法（顺序存储 + 链式存储）</p>
-<ul>
-<li>用数组顺序存储各个节点。每个结点中保存<strong>数据元素、孩子链表头指针</strong></li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> child;	<span class="comment">//孩子结点在数组中的位置</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> *<span class="title">next</span>;</span>	<span class="comment">//下一个孩子</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CTNode</span> *<span class="title">firstChild</span>;</span>	<span class="comment">//第一个孩子</span></span><br><span class="line">&#125; CTBox;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    CTBox nodes[MAX_TREE_SIZE];</span><br><span class="line">    <span class="type">int</span> n, r;</span><br><span class="line">&#125; CTree;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>优缺点：<ul>
-<li>优点：找孩子很方便</li>
-<li>缺点：找双亲（父结点）不方便，只能遍历每个链表</li>
-<li>适用于“找父亲“少，”找孩子“多的应用场景。如：服务流程树</li>
-</ul>
-</li>
-<li>用孩子表示法存储<strong>森林</strong>，需要记录多个根的位置。</li>
-</ul>
-</li>
-<li><p>孩子兄弟表示法（链式存储）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span> &#123;</span></span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">CSNode</span> *<span class="title">firstchild</span>, *<span class="title">nextsibling</span>;</span></span><br><span class="line">&#125; CSNode, *CSTree;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>树的孩子兄弟表示法与二叉树类似，采用<strong>二叉链表</strong>实现。每个结点内保存<strong>数据元素</strong>和<strong>两个指针</strong>，但两个指针的含义和二叉树结点不同。</li>
-<li>存储<strong>森林</strong>时，森林中每棵树的根结点视为平级的兄弟关系。</li>
-</ul>
-</li>
-</ul>
-<h2 id="树、森林和二叉树的转化"><a href="#树、森林和二叉树的转化" class="headerlink" title="树、森林和二叉树的转化"></a>树、森林和二叉树的转化</h2><ul>
-<li>树转换为二叉树<ol>
-<li>先在二叉树中，画一个根结点。</li>
-<li>按“树的层序”依次处理每个结点。<ul>
-<li>处理一个结点的方法是：如果当前处理的结点在树中有孩子，就把所有孩子结点用右指针串成一串，并在二叉树中把第一个孩子挂在当前结点的左指针上。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>森林转换为二叉树<ol>
-<li>先把所有树的根结点画出来，在二叉树中用右指针串成一串。</li>
-<li>按“森林的层序”依次处理每个结点。<ul>
-<li>处理一个结点的方法是：如果当前处理的结点在树中有孩子，就把所有孩子结点用右指针串成一串，并在二叉树中把第一个孩子挂在当前结点的左指针上。</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>二叉树转换为树</li>
-</ul>
-<ol>
-<li>先画出树的根结点</li>
-<li>从树的根结点开始，按“树的层序”恢复每个结点的孩子<ul>
-<li>如何恢复一个结点的孩子，在二叉树中，如果当前处理的结点有左孩子，就把左孩子和一整串右指针拆下来，按顺序挂在当前结点的下面。</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>二叉树转换为森林<ol>
-<li>先把二叉树的根结点和一整串右指针拆下来，作为多棵树的根结点</li>
-<li>按“森林的层序”恢复每个结点的孩子<ul>
-<li>如何恢复一个结点的孩子，在二叉树中，如果当前处理的结点有左孩子，就把左孩子和一整串右指针拆下来，按顺序挂在当前结点的下面。</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="树、森林的遍历"><a href="#树、森林的遍历" class="headerlink" title="树、森林的遍历"></a>树、森林的遍历</h2><ul>
-<li><p>树的先根遍历（深度优先遍历）。若树非空，先访问根结点，再依次对每棵子树进行先根遍历。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//树的先根遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PreOrder</span><span class="params">(TreeNode *R)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (R != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        visit(R);	<span class="comment">//访问根结点</span></span><br><span class="line">        <span class="keyword">while</span> (R 还有下一个子树 T)</span><br><span class="line">            Prerder(T);	<span class="comment">//先根遍历下一棵子树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>树的后根遍历（深度优先遍历）。若树非空，先依次对每棵子树进行后根遍历，最后再访问根结点。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//树的后根遍历</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">PostOrder</span><span class="params">(TreeNode *R)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (R != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (R 还有下一个子树 T)</span><br><span class="line">            Prerder(T);	<span class="comment">//后根遍历下一棵子树</span></span><br><span class="line">        visit(R);	<span class="comment">//访问根结点</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>树的后根遍序列与这棵树相应二叉树的中序序列相同。</p>
-</li>
-<li><p>数的层次遍历（用队列实现）（广度优先遍历）</p>
-<ol>
-<li>若树非空，则根结点入队</li>
-<li>若队列非空，队头元素出队并访问，同时该元素的孩子依次入队</li>
-<li>重复上一步直至队空</li>
-</ol>
-</li>
-<li><p>先序遍历森林。</p>
-<ul>
-<li>若森林为非空，则按如下规则进行遍历：<ul>
-<li>访问森林中第一棵树的根结点</li>
-<li>先序遍历第一棵树中根结点的子树森林</li>
-<li>先序遍历除去第一棵树之后剩余的树构成的森林</li>
-</ul>
-</li>
-<li>效果等同于依次对二叉树的先序遍历。</li>
-</ul>
-</li>
-<li><p>中序遍历森林。</p>
-<ul>
-<li>若森林为非空，则按如下规则进行遍历：<ul>
-<li>中序遍历森林中第一棵树的根结点的子树森林</li>
-<li>访问第一棵树的根结点</li>
-<li>中序遍历除去第一棵树之后剩余的树构成的森林</li>
-</ul>
-</li>
-<li>效果等同于依次对各个树进行后根遍历</li>
-<li>转化为二叉树后效果等同于依次对二叉树的中序遍历</li>
-</ul>
-</li>
-</ul>
-<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><ul>
-<li>结点的<strong>权</strong>：有某种现实含义的数值（如：表示结点的重要性等）</li>
-<li><strong>结点的带权路径长度</strong>：从树的根到该结点的路径长度（经过的边数）与该结点上权值的乘积</li>
-<li><strong>树的带权路径长度</strong>：树中所有<strong>叶结点</strong>的带权路径长度之和（WPL，Weighted Path Length）</li>
-<li>在含有 n 个带权叶结点的二叉树中，其中<strong>带权路径长度（WPL）最小的二叉树</strong>称为<strong>哈夫曼树</strong>，也称<strong>最优二叉树</strong>。</li>
-<li>哈夫曼树的构造：给定 n 个权值分别为 w<sub>1</sub>，w<sub>2</sub>，…，w<sub>n</sub> 的结点。<ol>
-<li>将这 n 个结点分别作为 n 棵仅含一个结点的二叉树，构成森林 F。</li>
-<li>构造一个新结点，从 F 中选取两棵根结点权值最小的树作为新结点的左、右子树，并且将新结点的权值置为左、右子树上根结点的权值之和。</li>
-<li>从 F 中删除刚才选出的两棵树，同时将新得到的树加入 F 中。</li>
-<li>重复以上两步，直至 F 中只剩下一棵树为止。</li>
-</ol>
-</li>
-<li>每个初始结点最终都成为叶结点，且权值越小的结点到根结点的路径长度越大。</li>
-<li>哈夫曼树的结点总数为 2n-1。</li>
-<li>哈夫曼树中不存在度为1的结点。</li>
-<li>哈夫曼树并不唯一，但 WPL 必然相同且为最优。</li>
-<li>固定长度编码——每个字符用相等长度的二进制位表示。</li>
-<li>可变长度编码——允许对不同字符用不等长的二进制位表示。</li>
-<li>若没有一个编码是另一个编码的前缀，则称这样的编码为<strong>前缀编码</strong>。非前缀编码有歧义。</li>
-<li>由哈夫曼树得到哈夫曼编码——字符集中的每个字符作为一个叶子结点，每个字符出现的频度作为结点的权值，再构建哈夫曼树。</li>
-</ul>
-<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><ul>
-<li><p>用互不相交的树，表示多个“集合”	</p>
-<ul>
-<li>如何“<strong>查</strong>”到一个元素到底属于哪一个集合——从指定元素出发，找到根结点</li>
-<li>如何把两个集合“<strong>并</strong>”为一个集合——让一棵树成为另一棵树的子树即可</li>
-</ul>
-</li>
-<li><p>“并查集”的存储结构：参考树的双亲表示法</p>
-<ul>
-<li>集合的两个基本操作——“并”和“查”<ul>
-<li>Find——“查”操作：确定一个指定元素所属集合</li>
-<li>Union——“并”操作：将两个不相交的集合合并为一个</li>
-<li>并查集（Disjoint Set）是逻辑结构——集合的一种具体实现，只进行“并”和“查”两种基本操作</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>“并查集”的代码实现——初始化</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE 13</span></span><br><span class="line"><span class="type">int</span> UFSets[SIZE];</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化并查集</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Initial</span><span class="params">(<span class="type">int</span> S[])</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; SIZE; i++)</span><br><span class="line">        S[i] = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>“并查集”的代码实现——并、查</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find “查”操作，找 x 所属集合（返回 x 所属根结点）	最坏时间复杂度：O(n)</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span>(S[x] &gt;= <span class="number">0</span>)	<span class="comment">//循环寻找 x 的根</span></span><br><span class="line">        x = S[x];</span><br><span class="line">    <span class="keyword">return</span> x;	<span class="comment">//根的S[]小于0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Union “并”操作，将两个集合合并为一个	时间复杂度：O(1)</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span> &#123;</span><br><span class="line">    <span class="comment">//要求 Root1 与 Root2 是不同的集合</span></span><br><span class="line">    <span class="keyword">if</span> (Root1 == Root2)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">//将根 Root2 连接到另一根 Root1 下面</span></span><br><span class="line">    S[Root2] = Root1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>优化思路：在每次 Union 操作构建树的时候，尽量不让树长高</p>
-<ul>
-<li>用根结点的绝对值表示树的结点总数（例如 -6 而不是 -1）</li>
-<li>Union 操作，让小树合并到大树</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Union “并”操作，小树合并到大树</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (Root1 == Root2)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (S[Root2] &gt; S[Root1]) &#123;	<span class="comment">//Root2 结点数更少</span></span><br><span class="line">        S[Root1] += S[Root2];	<span class="comment">//累加结点总数</span></span><br><span class="line">        S[Root2] = Root1;	<span class="comment">//小树合并到大树</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        S[Root2] += S[Root1];	<span class="comment">//累加结点总数</span></span><br><span class="line">        S[Root1] = Root2;	<span class="comment">//小树合并到大树</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>该方法构造的树高不超过 log<sub>2</sub>n+1</p>
-</li>
-<li><p>并查集的进一步优化</p>
-<ul>
-<li><p>Find 操作的优化（压缩路径）：先找到根结点，再将查找路径上所有结点都挂到根结点下。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Find “查”操作优化，先找到根结点，再进行“压缩路径”</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span> &#123;</span><br><span class="line">    <span class="type">int</span> root = x;</span><br><span class="line">    <span class="keyword">while</span> (S[root] &gt;= <span class="number">0</span>)</span><br><span class="line">        root = S[root];	<span class="comment">//循环找到根</span></span><br><span class="line">    <span class="keyword">while</span> (x != root) &#123;	<span class="comment">//压缩路径	</span></span><br><span class="line">        <span class="type">int</span> t = S[x];	<span class="comment">//t 指向 x 的父结点下</span></span><br><span class="line">        S[x] = root;	<span class="comment">//x 直接挂到根结点下</span></span><br><span class="line">        x = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;	<span class="comment">//返回根结点编号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>每次 Find 操作，先找根，再“压缩路径”，可使树的高度不超过 O(α(n))。α(n) 是一个增长很缓慢的函数，对于常见的 n 值，通常 α(n) &lt;&#x3D; 4，因此优化后并查集的 Find、Union 操作时间开销都很低。</p>
-</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/03/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E4%B8%B2/" class="post-title-link" itemprop="url">第四章 串</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-03-12 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-12T00:00:00+08:00">2024-03-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-13 11:38:26" itemprop="dateModified" datetime="2024-03-13T11:38:26+08:00">2024-03-13</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="定义和基本操作"><a href="#定义和基本操作" class="headerlink" title="定义和基本操作"></a>定义和基本操作</h1><ul>
-<li><p><strong>串</strong>，即<strong>字符串（String）</strong>是由零个或多个<strong>字符</strong>组成的有限序列。一般记为 S &#x3D; ‘a<sub>1</sub>a<sub>2</sub>……a<sub>n</sub>‘（n &gt;&#x3D; 0)。其中，S 是<strong>串名</strong>，单引号（有的地方用双引号）括起来的字符序列是串的值；a<sub>i</sub>可以是字母、数字或其他字符；串中字符的个数 n 称为<strong>串的长度</strong>。n &#x3D; 0时的串称为<strong>空串</strong>（用∅表示）</p>
-</li>
-<li><p>子串：串中任意个连续的字符组成 的子序列。</p>
-</li>
-<li><p>主串：包含子串的串。</p>
-</li>
-<li><p>字符在主串中的位置：字符在串中的序号。</p>
-</li>
-<li><p>子串在主串中的位置：子串的第一个字符在主串中的位置。</p>
-</li>
-<li><p>空串和空格串：</p>
-<ul>
-<li>M &#x3D; ‘’（空串）</li>
-<li>N &#x3D; ‘   ‘（三个空格符号组成的空格串，每个空格字符占1B）</li>
-</ul>
-</li>
-<li><p>串是一种特殊的线性表，数据元素之间呈线性关系。</p>
-</li>
-<li><p>串的数据对象限定为字符集（如中文字符、英文字符、数字字符和标点符号等）。</p>
-</li>
-<li><p>串的基本操作，如增删改查等<strong>通常以子串为操作对象</strong>。</p>
-</li>
-<li><p>基本操作：</p>
-<ul>
-<li><code>StrAssign(&amp;T, chars)</code>：赋值操作。把串T赋值为 chars。</li>
-<li><code>StrCopy(&amp;T, S)</code>：复制操作。由串 S 复制得到串 T。</li>
-<li><code>StrEmpty(S)</code>：判空操作。若 S 为空串，则返回 TRUE，否则返回 FALSE。</li>
-<li><code>StrLength(S)</code>：求串长。返回串 S 的元素个数。</li>
-<li><code>ClearString(&amp;S)</code>：清空操作。将 S 清为空串。</li>
-<li><code>DestroyString(&amp;S)</code>：销毁串。将串 S 销毁（回收存储空间）。</li>
-<li><code>Concat(&amp;Y, S1, S2)</code>：串联接。用 T 返回由 S1 和 S2联接而成的新串。</li>
-<li><code>SubString(&amp;Sub, S, pos, len)</code>：：求子串。用 sub 返回串 S 的第 pos 个字符起长度为 len 的子串。</li>
-<li><code>Index(S, T)</code>：定位操作。若主串中存在与串 T 值相同的子串，则返回它在主串 S 中第一次出现的位置；否则函数值为0。</li>
-<li><code>StrCompare(S, T)</code>：比较操作。若 S &gt; T，则返回值 &gt; 0；若 S &#x3D; T，则返回值 &#x3D; 0；若 S &lt; T，则返回值 &lt; 0。</li>
-</ul>
-</li>
-<li><p>字符集：</p>
-<ul>
-<li>英文字符——ASCII字符集</li>
-<li>中英文——Unicode字符集</li>
-<li>基于同一个字符集，可以有多种编码方案。</li>
-</ul>
-</li>
-</ul>
-<h1 id="存储结构"><a href="#存储结构" class="headerlink" title="存储结构"></a>存储结构</h1><ul>
-<li><p>顺序存储</p>
-<ul>
-<li><p>静态数组实现（定长顺序存储）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXLEN 255	<span class="comment">//预定义最大串长为255</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[MAXLEN];	<span class="comment">//每个分量存储一个字符</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的实际长度</span></span><br><span class="line">&#125; SString;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态数组实现（堆分配存储）</p>
-<ul>
-<li>用完需要手动 free</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> *ch;	<span class="comment">//按串长分配存储区，ch 指向串的基地址</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的长度</span></span><br><span class="line">&#125; HString;</span><br><span class="line">HString S;</span><br><span class="line">S.ch = (<span class="type">char</span> *)<span class="built_in">malloc</span>(MAXLEN * <span class="keyword">sizeof</span>(<span class="type">char</span>));</span><br><span class="line">S.length = <span class="number">0</span>;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>四种顺序存储方案：</p>
-<ul>
-<li>最后一个位置放 length</li>
-<li>第一个位置放 length</li>
-<li>没有 length，以 ‘\0’ 表示结尾</li>
-<li>ch[0] 废弃不用，最后一个位置放 length</li>
-</ul>
-</li>
-<li><p>串的链式存储</p>
-<ul>
-<li><p>存储密度低：每个字符1B，每个指针4B</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch;	<span class="comment">//每个结点存1个字符</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125; StringNode, * String;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>存储密度提高</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[<span class="number">4</span>];	<span class="comment">//每个结点存多个字符</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">StringNode</span> * <span class="title">next</span>;</span></span><br><span class="line">&#125; StringNode, * String;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p><code>SubString(&amp;Sub, S, pos, len)</code>：：求子串。用 sub 返回串 S 的第 pos 个字符起长度为 len 的子串。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAXLEN 255	<span class="comment">//预定义最大串长为255</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">char</span> ch[MAXLEN];	<span class="comment">//每个分量存储一个字符</span></span><br><span class="line">    <span class="type">int</span> length;	<span class="comment">//串的实际长度</span></span><br><span class="line">&#125; SString;</span><br><span class="line"></span><br><span class="line"><span class="comment">//求子串</span></span><br><span class="line"><span class="type">bool</span> <span class="title function_">SubString</span><span class="params">(SString &amp;sub, SString S, <span class="type">int</span> pos, <span class="type">int</span> len)</span> &#123;</span><br><span class="line">    <span class="comment">//子串范围越界</span></span><br><span class="line">    <span class="keyword">if</span> (pos + len - <span class="number">1</span> &gt; S.length)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = pos; i &lt; pos + len; i++)</span><br><span class="line">        SUb.ch[i - pos + <span class="number">1</span>] = S.ch[i];</span><br><span class="line">    Sub.length = len;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>StrCompare(S, T)</code>：比较操作。若 S &gt; T，则返回值 &gt; 0；若 S &#x3D; T，则返回值 &#x3D; 0；若 S &lt; T，则返回值 &lt; 0。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Strcompare</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= S.length &amp;&amp; i &lt;= T.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (S.ch[i] != T.ch[i])</span><br><span class="line">            <span class="keyword">return</span> S.ch[i] - T.ch[i];</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">//扫描过的所有字符都相同，则长度长的串更大</span></span><br><span class="line">    <span class="keyword">return</span> S.length-T.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>Index(S, T)</code>：定位操作。若主串中存在与串 T 值相同的子串，则返回它在主串 S 中第一次出现的位置；否则函数值为0。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, n = Strlength(S), m = StrLength(T);</span><br><span class="line">    SString sub;	<span class="comment">//用于暂存子串</span></span><br><span class="line">    <span class="keyword">while</span>(i &lt;= n - m + <span class="number">1</span>) &#123;</span><br><span class="line">        SubString(sub, S, i, m);</span><br><span class="line">        <span class="keyword">if</span>(StrCompare(sub, T) != <span class="number">0</span>)</span><br><span class="line">            ++i;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            <span class="keyword">return</span> i;	<span class="comment">//返回子串在主串中的位置</span></span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;	<span class="comment">//S 中不存在与 T 相等的子串</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="朴素模式匹配算法"><a href="#朴素模式匹配算法" class="headerlink" title="朴素模式匹配算法"></a>朴素模式匹配算法</h1><ul>
-<li><p>字符串模式匹配：在主串中找到与模式串相同的子串，并返回其所在位置。</p>
-<ul>
-<li>子串——主串的一部分，一定能找到</li>
-<li>模式串——不一定能在主串中找到</li>
-</ul>
-</li>
-<li><p>朴素模式匹配算法：主串长度为 n，模式串长度为 m。将主串中<strong>所有长度为 m 的子串</strong>依次与模式串对比，直到找到一个完全匹配的子串，或所有子串都不匹配为止。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index</span><span class="params">(SString S, SString T)</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.length &amp;&amp; j &lt;= T.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(S.ch[i] == T.ch[i]) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            i = i - j +<span class="number">2</span>;</span><br><span class="line">            j = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.length)</span><br><span class="line">        <span class="keyword">return</span> i-T.length;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最坏时间复杂度：O(nm)</p>
-</li>
-</ul>
-<h1 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h1><h2 id="KMP算法的实现"><a href="#KMP算法的实现" class="headerlink" title="KMP算法的实现"></a>KMP算法的实现</h2><ul>
-<li><p>朴素模式匹配算法</p>
-<ul>
-<li>一旦发现当前这个子串中某个字符不匹配，就只能转而匹配下一个子串（从头开始）</li>
-<li>不匹配的字符之前，一定是和模式串一致的</li>
-</ul>
-</li>
-<li><p>KMP算法中主串指针不回溯。</p>
-</li>
-<li><p>算法实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">Index_KMP</span><span class="params">(SString S, SString T, <span class="type">int</span> next[])</span> &#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.length &amp;&amp; j &lt;=T.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || S.ch[i] == T.ch[j]) &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;	<span class="comment">//继续比较后继字符</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            j = next[j];	<span class="comment">//模式串向右移动</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.length)</span><br><span class="line">        <span class="keyword">return</span> i - T.length;	<span class="comment">//匹配成功</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>KMP算法，最坏时间复杂度 O(m+n)，其中，求 next 数组时间复杂度 O(m)</p>
-</li>
-</ul>
-<h2 id="求-next-数组"><a href="#求-next-数组" class="headerlink" title="求 next 数组"></a>求 next 数组</h2><ul>
-<li>next 数组的作用：当模式串的第 j 个字符失配时，从模式串的第 next[j] 的继续往后匹配。</li>
-<li>任何模式串都一样，第一个字符不匹配时，只能匹配下一个子串。因此，next[1] 都为0。</li>
-<li>任何模式串都一样，第二个字符不匹配时，只能匹配下一个子串。因此，next[2] 都为1。</li>
-<li>在不匹配的位置前边，划一条分界线。模式串一步一步往右移，直到分界线之前“能对上”，或模式串完全跨过分界线为止。此时 j 指向哪儿，next 数组值就是多少。</li>
-</ul>
-<h2 id="KMP算法的进一步优化"><a href="#KMP算法的进一步优化" class="headerlink" title="KMP算法的进一步优化"></a>KMP算法的进一步优化</h2><ul>
-<li><p>求 nextval 数组</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nextval[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">2</span>; j &lt;= T; j++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (T.ch[next[j]] == T.ch[j])</span><br><span class="line">        nextval[j] = nextval[next[j]];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        nextval[j] = next[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用 nextval 数组代替 next 数组进行计算。</p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

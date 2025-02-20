@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">132</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,388 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/27/LeetCode/Repeated%20Substring%20Pattern/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/27/LeetCode/Repeated%20Substring%20Pattern/" class="post-title-link" itemprop="url">Repeated Substring Pattern</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-27 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-27T00:00:00+08:00">2023-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-25 17:09:07" itemprop="dateModified" datetime="2023-06-25T17:09:07+08:00">2023-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/repeated-substring-pattern/description/">459.Repeated Substring Pattern</a></p>
+<p>Given a string <code>s</code>, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;abab&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: It is the substring &quot;ab&quot; twice.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;aba&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: s = &quot;abcabcabcabc&quot;</span><br><span class="line">Output: true</span><br><span class="line">Explanation: It is the substring &quot;abc&quot; four times or the substring &quot;abcabc&quot; twice.</span><br></pre></td></tr></table></figure>
+
+<p>枚举法：</p>
+<p>时间复杂度：O(n^2)</p>
+<p>空间复杂度：O(1)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">repeatedSubstringPattern</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i * <span class="number">2</span> &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="type">bool</span> match = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; n; ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s[j] != s[j - i]) &#123;</span><br><span class="line">                        match = <span class="literal">false</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (match) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>字符串匹配：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">repeatedSubstringPattern</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (s + s).<span class="built_in">find</span>(s, <span class="number">1</span>) != s.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/repeated-substring-pattern/solutions/386481/zhong-fu-de-zi-zi-fu-chuan-by-leetcode-solution/">KMP算法：</a></p>
+<p>时间复杂度：O(n)</p>
+<p>空间复杂度：O(n)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">kmp</span><span class="params">(<span class="type">const</span> string&amp; query, <span class="type">const</span> string&amp; pattern)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = query.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> m = pattern.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">fail</span><span class="params">(m, <span class="number">-1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; m; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> j = fail[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span> (j != <span class="number">-1</span> &amp;&amp; pattern[j + <span class="number">1</span>] != pattern[i]) &#123;</span><br><span class="line">                j = fail[j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pattern[j + <span class="number">1</span>] == pattern[i]) &#123;</span><br><span class="line">                fail[i] = j + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> match = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">while</span> (match != <span class="number">-1</span> &amp;&amp; pattern[match + <span class="number">1</span>] != query[i]) &#123;</span><br><span class="line">                match = fail[match];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pattern[match + <span class="number">1</span>] == query[i]) &#123;</span><br><span class="line">                ++match;</span><br><span class="line">                <span class="keyword">if</span> (match == m - <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">repeatedSubstringPattern</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">kmp</span>(s + s, s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>优化：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">kmp</span><span class="params">(<span class="type">const</span> string&amp; pattern)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = pattern.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">fail</span><span class="params">(n, <span class="number">-1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> j = fail[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">while</span> (j != <span class="number">-1</span> &amp;&amp; pattern[j + <span class="number">1</span>] != pattern[i]) &#123;</span><br><span class="line">                j = fail[j];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (pattern[j + <span class="number">1</span>] == pattern[i]) &#123;</span><br><span class="line">                fail[i] = j + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> fail[n - <span class="number">1</span>] != <span class="number">-1</span> &amp;&amp; n % (n - fail[n - <span class="number">1</span>] - <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">repeatedSubstringPattern</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">kmp</span>(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/26/%E6%82%9F/5KM%E5%93%B2%E5%AD%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/26/%E6%82%9F/5KM%E5%93%B2%E5%AD%A6/" class="post-title-link" itemprop="url">5KM哲学</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-26 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-26T00:00:00+08:00">2023-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-19 15:48:32" itemprop="dateModified" datetime="2023-06-19T15:48:32+08:00">2023-06-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%82%9F/" itemprop="url" rel="index"><span itemprop="name">悟</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>当我跑5km时，前1km是毫无压力的，因为刚刚开始跑，感觉不到累。<br>最后500米也是可以肆无忌惮地冲刺的，因为我知道跑完这500米完就可以休息了，不用担心接着跑会坚持不下来。<br>而中间的3.5km是十分枯燥的，总是在思考还有多久能休息，再跑心脏会不会承担不了等等问题。可能会感觉到喘不过来气，可能会想要放弃，可能会感觉看不见终点在哪里。</p>
+<p>人生也是如此，绝大多数光景我们都在这3.5km中活着，眼前只有一个不太真实可触的目标，身体十分疲惫，心理也承担着巨大的压力。感觉一直在做事情，却难以接近那个遥不可及又充满神秘的未来。</p>
+<p>困难的地方在于我们只能也必须跑下去，幸运的地方在于我们还可以跑下去，并且有人到达过终点。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/26/%E6%82%9F/%E5%A5%BD%E4%BA%BA%E4%B8%8E%E5%9D%8F%E4%BA%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/26/%E6%82%9F/%E5%A5%BD%E4%BA%BA%E4%B8%8E%E5%9D%8F%E4%BA%BA/" class="post-title-link" itemprop="url">好人与坏人</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-26 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-26T00:00:00+08:00">2023-03-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-19 15:52:26" itemprop="dateModified" datetime="2023-06-19T15:52:26+08:00">2023-06-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%82%9F/" itemprop="url" rel="index"><span itemprop="name">悟</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>在这个世界上没有绝对的好人，也没有绝对的坏人。<br>在一个长的时间限度内，你好事比坏事做的多就是好人，坏事做得比好事多也就成了坏人。<br>所以不必自困于过去的遗憾，做到今天的自己问心无愧就好。<br>但行好事耳。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/23/LeetCode/Assign%20Cookies/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/23/LeetCode/Assign%20Cookies/" class="post-title-link" itemprop="url">Assign Cookies</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-03-23 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-23T00:00:00+08:00">2023-03-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-25 16:25:55" itemprop="dateModified" datetime="2023-06-25T16:25:55+08:00">2023-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/assign-cookies/">455.Assign Cookies</a></p>
+<p>Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.</p>
+<p>Each child <code>i</code> has a greed factor <code>g[i]</code>, which is the minimum size of a cookie that the child will be content with; and each cookie <code>j</code> has a size <code>s[j]</code>. If <code>s[j] &gt;= g[i]</code>, we can assign the cookie <code>j</code> to the child <code>i</code>, and the child <code>i</code> will be content. Your goal is to maximize the number of your content children and output the maximum number.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: g = [1,2,3], s = [1,1]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. </span><br><span class="line">And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.</span><br><span class="line">You need to output 1.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: g = [1,2], s = [1,2,3]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. </span><br><span class="line">You have 3 cookies and their sizes are big enough to gratify all of the children, </span><br><span class="line">You need to output 2.</span><br></pre></td></tr></table></figure>
+
+<p>排序法：</p>
+<p>时间复杂度：O(nlogn+mlogm)<br>空间复杂度：O(logn+logm)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findContentChildren</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; g, vector&lt;<span class="type">int</span>&gt;&amp; s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">sort</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">sort</span>(g.<span class="built_in">begin</span>(), g.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = s.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            <span class="type">int</span> j = g.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s[i] &gt;= g[j]) &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                    g[j] = INT_MAX;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">findContentChildren</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; g, vector&lt;<span class="type">int</span>&gt;&amp; s)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(g.<span class="built_in">begin</span>(), g.<span class="built_in">end</span>());</span><br><span class="line">        <span class="built_in">sort</span>(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> m = g.<span class="built_in">size</span>(), n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; m &amp;&amp; j &lt; n; i++, j++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (j &lt; n &amp;&amp; g[i] &gt; s[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; n) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -607,474 +989,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Linux常用命令总结</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-18 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-18T00:00:00+08:00">2023-03-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-12-09 10:28:26" itemprop="dateModified" datetime="2024-12-09T10:28:26+08:00">2024-12-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="文件和目录命令"><a href="#文件和目录命令" class="headerlink" title="文件和目录命令"></a>文件和目录命令</h1><ul>
-<li><p>ls</p>
-<ul>
-<li><p><code>-a</code>显示指定目录下所有子目录和文件，包括隐藏文件</p>
-</li>
-<li><p><code>-l</code>纵向显示文件列表和详细信息</p>
-</li>
-<li><p><code>-h</code>以KB显示文件大小</p>
-</li>
-<li><p>通配符的使用</p>
-<ul>
-<li><blockquote>
-<p><code>*</code>表示任意个数字符</p>
-<p><code>？</code>表示任意一个字符</p>
-<p><code>[]</code>表示可以匹配字符组中的任意一个</p>
-<p><code>[abc]</code>匹配a，b，c中任意一个</p>
-<p><code>[a-f]</code>匹配a到f范围中任意一个字符</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>cd </p>
-<ul>
-<li><code>cd</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd ～</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd . </code>保持当前目录不变</li>
-<li><code>cd ..</code> 切换到上级目录</li>
-<li><code>cd -</code> 可以在最近两次工作目录之间来回切换</li>
-<li>绝对路径：在输入路径时最前面不是&#x2F;或～，表示相对当前目录所在的目录位置</li>
-<li>相对路径：在输入路径时，最前面是&#x2F;或者～，表示从根目录&#x2F;家目录开始的具体位置</li>
-</ul>
-</li>
-<li><p>touch</p>
-<ul>
-<li>文件不存在，创建文件</li>
-<li>文件存在，修改末次修改时间</li>
-</ul>
-</li>
-<li><p>mkdir</p>
-<ul>
-<li>创建目录，同一个目录下目录和文件都不能同名</li>
-<li><code>-p</code>创建多级目录</li>
-</ul>
-</li>
-<li><p>rm</p>
-<ul>
-<li>删除后无法恢复</li>
-<li><code>-f</code>强制删除，忽略不存在的文件</li>
-<li><code>-r</code>递归删除目录下内容，删除文件夹时使用</li>
-</ul>
-</li>
-<li><p>tree</p>
-<ul>
-<li>以树状图列出文件目录结构</li>
-<li><code>-d</code>只显示目录</li>
-</ul>
-</li>
-</ul>
-<h1 id="拷贝和移动命令"><a href="#拷贝和移动命令" class="headerlink" title="拷贝和移动命令"></a>拷贝和移动命令</h1><ul>
-<li><p>cp</p>
-<ul>
-<li><code>cp 源文件 目标文件</code>复制文件或目录到另一个文件或目录中</li>
-<li><code>-i</code>覆盖文件前提示</li>
-<li><code>-r</code>若给出源文件是目录文件，则cp将递归复制该目录下所有子目录和文件，目标文件必须为一个目录名</li>
-</ul>
-</li>
-<li><p>mv</p>
-<ul>
-<li>mv 源文件 目标文件：移动或重命名文件或目录</li>
-<li><code>-i</code>覆盖前提示</li>
-</ul>
-</li>
-</ul>
-<h1 id="文件内容命令"><a href="#文件内容命令" class="headerlink" title="文件内容命令"></a>文件内容命令</h1><ul>
-<li><p>cat</p>
-<ul>
-<li>显示文件全部内容</li>
-<li><code>-b</code>为文件标行号</li>
-<li><code>-n</code>为所有行标行号（包括空行）</li>
-</ul>
-</li>
-<li><p>more</p>
-<ul>
-<li>分屏显示文件</li>
-<li><code>Space</code>显示下一页</li>
-<li><code>Enter</code>一次滚动一行</li>
-<li><code>b</code>回滚一屏</li>
-<li><code>f</code>前滚一屏</li>
-<li><code>q</code>退出</li>
-</ul>
-</li>
-<li><p>grep</p>
-<ul>
-<li>文本搜索工具</li>
-<li><code>-n</code>显示匹配行及行号</li>
-<li><code>-v</code>显示不含不包含目标文本的行</li>
-<li><code>-i</code>忽略大小写</li>
-<li><code>^a</code>行首，搜索以a开始的行</li>
-<li><code>ke$</code>行尾，搜索以ke为结尾的行</li>
-</ul>
-</li>
-<li><p>echo</p>
-<ul>
-<li>显示参数指定的文字</li>
-<li><code>&gt;</code>表示输出，会覆盖文件原有内容</li>
-<li><code>&gt;&gt;</code>表示输入，会将内容追加到已有文件的</li>
-</ul>
-</li>
-<li><p>管道<code>|</code></p>
-<ul>
-<li>将一个命令的输出通过管道作为另一个命令的输入</li>
-<li>more</li>
-<li>grep</li>
-</ul>
-</li>
-</ul>
-<h1 id="远程操作命令"><a href="#远程操作命令" class="headerlink" title="远程操作命令"></a>远程操作命令</h1><ul>
-<li><p>shutdown</p>
-<ul>
-<li><code>shutdown</code> 选项 时间</li>
-<li><code>-r</code>重新启动</li>
-<li><code>-c</code>取消关机计划</li>
-</ul>
-</li>
-<li><p>ifconfig</p>
-<ul>
-<li>查看配置网卡设置信息</li>
-<li><code>127.0.0.1</code>本地回环地址</li>
-</ul>
-</li>
-<li><p>ping</p>
-<ul>
-<li>检测计算机到计算机网络连接是否正常，数值越大，速度越慢</li>
-</ul>
-</li>
-<li><p>scp</p>
-<ul>
-<li>远程拷贝命令</li>
-<li><code>scp -P port  filename user@remote:Desktop/filename</code><ul>
-<li>复制当前目录下文件到远程文件夹</li>
-</ul>
-</li>
-<li><code>scp -P port  user@remote:Desktop/filename filename</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-<li>WIN scp command<ul>
-<li><code>scp -rp .\Desktop\Notes logo@192.168.142.128:Desktop/</code></li>
-<li>复制当前目录下文件夹到远程目录</li>
-<li><code>scp -p logo@192.168.142.128:Desktop/linuxNotes/Command.md C:\Users\admin\Desktop</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>-r</code>复制文件夹</li>
-</ul>
-</li>
-<li><p>ssh</p>
-<ul>
-<li><p><code>ssh -p 22 user@remote</code></p>
-</li>
-<li><p><code>ssh-keygen</code>生成ssh钥匙</p>
-</li>
-<li><p><code>ssh-copy-id -p port user@remote</code>让远程服务器记住公匙</p>
-</li>
-<li><p>添加别名：在<code>~/.ssh/config</code>中追加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host logo_ubuntu</span><br><span class="line">	Hostname 172.***.***.***</span><br><span class="line">	User logo</span><br><span class="line">	Port 22</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h1 id="用户权限命令"><a href="#用户权限命令" class="headerlink" title="用户权限命令"></a>用户权限命令</h1><ul>
-<li><p>ls -l 拓展</p>
-<ul>
-<li><blockquote>
-<p>r 可读 4</p>
-<p>w 可写 2</p>
-<p>x 可执行 1</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>第一列（一个字符）：是否是文件夹标记</p>
-<p>第二列（三个字符）：文件拥有者权限</p>
-<p>第三列（三个字符）：组权限</p>
-<p>第四列（三个字符）：其他用户权限</p>
-<p>第五列（数字）：硬连接数</p>
-<ul>
-<li>硬连接数：有多少种方式可以访问当前目录&#x2F;文件</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>chmod</p>
-<ul>
-<li>修改用户&#x2F;组对文件&#x2F;目录权限</li>
-<li><code>chmod +/- rwx 文件|目录名</code><ul>
-<li>执行文件：<code>./文件名</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>sudo</p>
-<ul>
-<li>以其他身份来执行命令，预设的身份为root</li>
-</ul>
-</li>
-</ul>
-<h1 id="组管理命令"><a href="#组管理命令" class="headerlink" title="组管理命令"></a>组管理命令</h1><ul>
-<li>创建组&#x2F;删除组都需要<code>sudo</code></li>
-<li><code>groupadd 组名</code>添加组</li>
-<li><code>groupdel 组名</code>删除组</li>
-<li><code>cat/etc/group</code>确认组信息</li>
-<li>组信息保存在<code>/etc/group</code>文件中</li>
-<li><code>/etc</code>目录是专门用来保存系统配置信息的目录</li>
-<li><code>chgrp -R 组名 文件/目录名</code>递归修改文件&#x2F;目录的所属组</li>
-</ul>
-<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><ul>
-<li><p><code>useradd -m -g 组</code>添加新用户</p>
-<ul>
-<li>-m 自动建立用户家目录</li>
-<li>-g 指定用户所在的组，否则会建立一个和用户同名的组</li>
-</ul>
-</li>
-<li><p><code>passwd 用户名</code>设置用户密码</p>
-</li>
-<li><p><code>userdel -r 用户名</code>删除信息</p>
-<ul>
-<li>-r 删除用户家目录</li>
-</ul>
-</li>
-<li><p><code>cat /etc/passwd | grep 用户名</code>确认用户信息，新建用户后，用户信息会保存在&#x2F;etc&#x2F;passwd中</p>
-</li>
-<li><p><code>id 用户名</code>查看用户UID（用户标识）和GID（组标识）信息</p>
-</li>
-<li><p><code>who</code>查看当前所有登陆的用户列表</p>
-</li>
-<li><p><code>whoami</code>查看当前登陆用户的账户名</p>
-</li>
-<li><p>passwd文件：<code>/etc/passwd</code>文件保存的是用户的信息，由6个分号组成的7个信息</p>
-<ul>
-<li><blockquote>
-<p>用户名</p>
-<p>密码（x，表示加密的密码）</p>
-<p>UID</p>
-<p>GID</p>
-<p>用户全名或本地账号</p>
-<p>家目录</p>
-<p>登陆使用的Shell，就是登陆之后使用的终端命令，ubuntu默认的是dash</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>usermod -g 组 用户名</code>修改用户主组</p>
-</li>
-<li><p><code>usermod -G 组 用户名</code>修改用户附加组</p>
-<ul>
-<li><code>usermod -G sudo 用户名</code>给用户添加sudo权限</li>
-</ul>
-</li>
-<li><p><code>usermod -s /bin/bash</code>修改用户登陆Shell为bash，XShell下dash存在缺陷</p>
-</li>
-<li><p>which</p>
-<ul>
-<li><code>which 命令</code>查看执行命令所在位置<ul>
-<li><blockquote>
-<p><code>/user/passwd</code>用于保存用户信息的文件</p>
-<p><code>/user/bin/passwd</code>用于修改用户密码的程序</p>
-<p><code>/bin</code>二进制执行文件目录，主要用于具体应用</p>
-<p><code>/sbin</code>系统管理员专用的二进制代码存放目录，主要用于系统管理</p>
-<p><code>/usr/bin</code>后期安装的一些软件</p>
-<p><code>/usr/sbin</code>超级用户的一些管理程序</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>su</p>
-<ul>
-<li><code>su - 用户名</code>切换用户和目录</li>
-<li><code>exit</code>退出当前登陆目录</li>
-<li><code>su</code>切换到root，但不安全</li>
-</ul>
-</li>
-<li><p>修改文件权限</p>
-<ul>
-<li><code>chown 用户名 文件名|目录名</code>修改文件的拥有者</li>
-<li><code>chgrp -R 组名 文件名|目录名</code>递归修改文件的组</li>
-<li><code>chmod -R 755</code>递归修改文件权限，三个数字分别代表拥有者&#x2F;组&#x2F;其他用户的权限</li>
-<li>r -&gt; 4  w -&gt; 2  x -&gt; 1,例如755-&gt;rwx r-x r-x</li>
-</ul>
-</li>
-</ul>
-<h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><ul>
-<li><p><code>date</code>查看当前系统时间</p>
-</li>
-<li><p><code>cal </code>查看日历</p>
-<ul>
-<li><code>-y</code>查看一年的日历</li>
-</ul>
-</li>
-<li><p><code>df -h</code>显示磁盘剩余空间</p>
-</li>
-<li><p><code>du -h[目录名]</code>显示目录下文件大小</p>
-</li>
-<li><p><code>ps aux</code>查看进程的详细状况</p>
-<ul>
-<li><p><code>ps</code>默认只会显示当前用户通过终端启动的应用程序</p>
-</li>
-<li><blockquote>
-<p>a 显示终端上的所有进程，包括其他用户的进程</p>
-<p>u 显示进程的详细状态</p>
-<p>x 显示没有控制终端的进程</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>top</code>动态显示运行中的进程并排序</p>
-</li>
-<li><p><code>kill [-9] 进程代号</code>终止指定代号的进程，-9表示强行终止</p>
-<ul>
-<li>使用<code>kill</code>时不要终止root身份开启的进程</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><ul>
-<li><p>find</p>
-<ul>
-<li><code>find[路径] -name &quot;*.py&quot;</code>查找文件</li>
-</ul>
-</li>
-<li><p>ln</p>
-<ul>
-<li><code>ln -s 被链接的源文件 链接文件</code>建立文件的软链接</li>
-<li>无<code>-s</code>建立的是硬链接文件（两个文件占用相同大小的硬盘空间）</li>
-<li>源文件要使用绝对路经，方便移动链接文件后仍能正常使用</li>
-<li>在Linux中文件名和文件数据是分开存储的</li>
-</ul>
-</li>
-</ul>
-<h1 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h1><ul>
-<li><p><code>tar -cvf 打包文件.tar</code>打包文件</p>
-</li>
-<li><p><code>tar -xvf 打包文件.tar</code>解包文件</p>
-</li>
-<li><blockquote>
-<p>c 生成档案文件，创建打包文件</p>
-<p>x 解开档案文件</p>
-<p>v 列出归档解档的详细过程，显示进度</p>
-<p>f 指定档案文件名称，f后面一定是.tar文件，所以必须放选项最后</p>
-</blockquote>
-</li>
-<li><p>gzip</p>
-<ul>
-<li><p>tar只负责打包文件，但不压缩</p>
-</li>
-<li><p>用gzip压缩打包后文件扩展名为<code>filename.tar.gz</code></p>
-</li>
-<li><p><code>tar -zcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz </code>解压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz -C 目标路径</code>解压缩文件到指定路径（指定路径必须存在）</p>
-</li>
-</ul>
-</li>
-<li><p>bzip2</p>
-<ul>
-<li><code>tar -jcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</li>
-<li><code>tar -jxvf 打包文件.tar.gz </code>解压缩文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><ul>
-<li><p><code>sudo apt install 软件包</code></p>
-</li>
-<li><p><code>sudo apt remove 软件包</code></p>
-</li>
-<li><p><code>sudo apt upgrade</code></p>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/18/LeetCode/Fizz%20Buzz/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1270,328 +1184,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/16/LeetCode/Convert%20a%20Number%20to%20Hexadecimal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/16/LeetCode/Convert%20a%20Number%20to%20Hexadecimal/" class="post-title-link" itemprop="url">Convert a Number to Hexadecimal</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-16 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-16T00:00:00+08:00">2023-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-25 16:56:21" itemprop="dateModified" datetime="2023-06-25T16:56:21+08:00">2023-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-a-number-to-hexadecimal/">405.Convert a Number to Hexadecimal</a></p>
-<p>Given an integer <code>num</code>, return <em>a string representing its hexadecimal representation</em>. For negative integers, <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A1%A5%E7%A0%81/6854613?fr=aladdin">two’s complement</a> method is used.</p>
-<p>All the letters in the answer string should be lowercase characters, and there should not be any leading zeros in the answer except for the zero itself.</p>
-<p><strong>Note:</strong> You are not allowed to use any built-in library method to directly solve this problem.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num = 26</span><br><span class="line">Output: &quot;1a&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num = -1</span><br><span class="line">Output: &quot;ffffffff&quot;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度：O(n)</p>
-<p>空间复杂度：O(1)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">toHex</span><span class="params">(<span class="type">int</span> num )</span> </span>&#123;</span><br><span class="line">        string pos = <span class="string">&quot;0123456789abcdef&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        string ans;</span><br><span class="line"></span><br><span class="line">        <span class="type">unsigned</span> _num = num;</span><br><span class="line">        <span class="keyword">while</span> (_num)</span><br><span class="line">        &#123;</span><br><span class="line">            ans += pos[_num % <span class="number">16</span>];</span><br><span class="line">            _num = _num / <span class="number">16</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">reverse</span>(ans.<span class="built_in">begin</span>(), ans.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>位运算：</p>
-<p>时间复杂度：O(k)，k是整数的十六进制数的位数</p>
-<p>空间复杂度：O(k)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">toHex</span><span class="params">(<span class="type">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        string sb;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">7</span>; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">            <span class="type">int</span> val = (num &gt;&gt; (<span class="number">4</span> * i)) &amp; <span class="number">0xf</span>;</span><br><span class="line">            <span class="keyword">if</span> (sb.<span class="built_in">length</span>() &gt; <span class="number">0</span> || val &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="type">char</span> digit = val &lt; <span class="number">10</span> ? (<span class="type">char</span>) (<span class="string">&#x27;0&#x27;</span> + val) : (<span class="type">char</span>) (<span class="string">&#x27;a&#x27;</span> + val - <span class="number">10</span>);</span><br><span class="line">                sb.<span class="built_in">push_back</span>(digit);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/15/LeetCode/Sum%20of%20Left%20Leaves/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/15/LeetCode/Sum%20of%20Left%20Leaves/" class="post-title-link" itemprop="url">Sum of Left Leaves</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-15 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-15T00:00:00+08:00">2023-03-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-25 17:11:20" itemprop="dateModified" datetime="2023-06-25T17:11:20+08:00">2023-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-left-leaves/description/">404.Sum of Left Leaves</a></p>
-<p>Given the <code>root</code> of a binary tree, return <em>the sum of all left leaves.</em></p>
-<p>A <strong>leaf</strong> is a node with no children. A <strong>left leaf</strong> is a leaf that is the left child of another node.</p>
-<p><strong>Example 1:</strong></p>
-<p><img src="https://assets.leetcode.com/uploads/2021/04/08/leftsum-tree.jpg" alt="img"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [3,9,20,null,null,15,7]</span><br><span class="line">Output: 24</span><br><span class="line">Explanation: There are two left leaves in the binary tree, with values 9 and 15 respectively.</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: root = [1]</span><br><span class="line">Output: 0</span><br></pre></td></tr></table></figure>
-
-<p>深度优先遍历：</p>
-<p>时间复杂度：O(n)</p>
-<p>空间复杂度：O(n)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isLeafNode</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !node-&gt;left &amp;&amp; !node-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;left) &#123;</span><br><span class="line">            ans += <span class="built_in">isLeafNode</span>(node-&gt;left) ? node-&gt;left-&gt;val : <span class="built_in">dfs</span>(node-&gt;left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (node-&gt;right &amp;&amp; !<span class="built_in">isLeafNode</span>(node-&gt;right)) &#123;</span><br><span class="line">            ans += <span class="built_in">dfs</span>(node-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumOfLeftLeaves</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> root ? <span class="built_in">dfs</span>(root) : <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>广度优先遍历：</p>
-<p>时间复杂度：O(n)</p>
-<p>空间复杂度：O(n)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isLeafNode</span><span class="params">(TreeNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !node-&gt;left &amp;&amp; !node-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumOfLeftLeaves</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        queue&lt;TreeNode*&gt; q;</span><br><span class="line">        q.<span class="built_in">push</span>(root);</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (!q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">            TreeNode* node = q.<span class="built_in">front</span>();</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            <span class="keyword">if</span> (node-&gt;left) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">isLeafNode</span>(node-&gt;left)) &#123;</span><br><span class="line">                    ans += node-&gt;left-&gt;val;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(node-&gt;left);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node-&gt;right) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!<span class="built_in">isLeafNode</span>(node-&gt;right)) &#123;</span><br><span class="line">                    q.<span class="built_in">push</span>(node-&gt;right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2023/03/14/LeetCode/Binary%20Watch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/14/LeetCode/Binary%20Watch/" class="post-title-link" itemprop="url">Binary Watch</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-14 00:00:00" itemprop="dateCreated datePublished" datetime="2023-03-14T00:00:00+08:00">2023-03-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-25 16:55:05" itemprop="dateModified" datetime="2023-06-25T16:55:05+08:00">2023-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-watch/">401.Binary Watch</a></p>
-<p>A binary watch has 4 LEDs on the top to represent the hours (0-11), and 6 LEDs on the bottom to represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on the right.</p>
-<ul>
-<li>For example, the below binary watch reads <code>&quot;4:51&quot;</code>.</li>
-</ul>
-<p><img src="https://assets.leetcode.com/uploads/2021/04/08/binarywatch.jpg" alt="img"></p>
-<p>Given an integer <code>turnedOn</code> which represents the number of LEDs that are currently on (ignoring the PM), return <em>all possible times the watch could represent</em>. You may return the answer in <strong>any order</strong>.</p>
-<p>The hour must not contain a leading zero.</p>
-<ul>
-<li>For example, <code>&quot;01:00&quot;</code> is not valid. It should be <code>&quot;1:00&quot;</code>.</li>
-</ul>
-<p>The minute must be consist of two digits and may contain a leading zero.</p>
-<ul>
-<li>For example, <code>&quot;10:2&quot;</code> is not valid. It should be <code>&quot;10:02&quot;</code>.</li>
-</ul>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: turnedOn = 1</span><br><span class="line">Output: [&quot;0:01&quot;,&quot;0:02&quot;,&quot;0:04&quot;,&quot;0:08&quot;,&quot;0:16&quot;,&quot;0:32&quot;,&quot;1:00&quot;,&quot;2:00&quot;,&quot;4:00&quot;,&quot;8:00&quot;]</span><br></pre></td></tr></table></figure>
-
-<p><strong>Example 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: turnedOn = 9</span><br><span class="line">Output: []</span><br></pre></td></tr></table></figure>
-
-<p>枚举法：</p>
-<p>时间复杂度：O(1)</p>
-<p>空间复杂度：O(1)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">readBinaryWatch</span><span class="params">(<span class="type">int</span> turnedOn)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> h = <span class="number">0</span>; h &lt; <span class="number">12</span>; ++h) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> m = <span class="number">0</span>; m &lt; <span class="number">60</span>; ++m) &#123;</span><br><span class="line">                <span class="keyword">if</span> (__builtin_popcount(h) + __builtin_popcount(m) == turnedOn) &#123;</span><br><span class="line">                    ans.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(h) + <span class="string">&quot;:&quot;</span> + (m &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> : <span class="string">&quot;&quot;</span>) + <span class="built_in">to_string</span>(m));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>二进制枚举：</p>
-<p>时间复杂度：O(1)</p>
-<p>空间复杂度：O(1)</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">readBinaryWatch</span><span class="params">(<span class="type">int</span> turnedOn)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1024</span>; ++i) &#123;</span><br><span class="line">            <span class="type">int</span> h = i &gt;&gt; <span class="number">6</span>, m = i &amp; <span class="number">63</span>; <span class="comment">// 用位运算取出高 4 位和低 6 位</span></span><br><span class="line">            <span class="keyword">if</span> (h &lt; <span class="number">12</span> &amp;&amp; m &lt; <span class="number">60</span> &amp;&amp; __builtin_popcount(i) == turnedOn) &#123;</span><br><span class="line">                ans.<span class="built_in">push_back</span>(<span class="built_in">to_string</span>(h) + <span class="string">&quot;:&quot;</span> + (m &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> : <span class="string">&quot;&quot;</span>) + <span class="built_in">to_string</span>(m));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
