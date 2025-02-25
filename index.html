@@ -223,7 +223,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-02-25 00:00:00 / Modified: 14:30:04" itemprop="dateCreated datePublished" datetime="2025-02-25T00:00:00+08:00">2025-02-25</time>
+      <time title="Created: 2025-02-25 00:00:00 / Modified: 15:34:12" itemprop="dateCreated datePublished" datetime="2025-02-25T00:00:00+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,44 +247,34 @@
     <div class="post-body" itemprop="articleBody">
           <ol>
 <li><p>创建Dockerfile文件</p>
-<figure class="highlight bash"></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> gitlab-docker &amp;&amp; <span class="built_in">cd</span> gitlab-docker</span><br><span class="line"><span class="built_in">touch</span> Dockerfile</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>编写Dockerfile内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用GitLab官方镜像作为基础</span></span><br><span class="line">FROM gitlab/gitlab-ce:16.10.2-ce.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置时区（可选）</span></span><br><span class="line">ENV TZ=Asia/Shanghai</span><br><span class="line">RUN <span class="built_in">ln</span> -snf /usr/share/zoneinfo/<span class="variable">$TZ</span> /etc/localtime &amp;&amp; <span class="built_in">echo</span> <span class="variable">$TZ</span> &gt; /etc/timezone</span><br><span class="line"></span><br><span class="line"><span class="comment"># 持久化数据目录声明（推荐在运行时挂载）</span></span><br><span class="line">VOLUME [<span class="string">&quot;/etc/gitlab&quot;</span>, <span class="string">&quot;/var/log/gitlab&quot;</span>, <span class="string">&quot;/var/opt/gitlab&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暴露常用端口</span></span><br><span class="line">EXPOSE 80 443 22</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<figure class="highlight bash"></figure>
-
-<ol start="3">
 <li><p>构建Docker镜像</p>
-<figure class="highlight bash"></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t my-gitlab:16.10.2 .</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>运行Gitlab容器</p>
-<figure class="highlight bash"></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 8080:80 \</span><br><span class="line">  --publish 8443:443 \</span><br><span class="line">  --publish 2222:22 \</span><br><span class="line">  --volume <span class="variable">$PWD</span>/gitlab/config:/etc/gitlab \</span><br><span class="line">  --volume <span class="variable">$PWD</span>/gitlab/logs:/var/log/gitlab \</span><br><span class="line">  --volume <span class="variable">$PWD</span>/gitlab/data:/var/opt/gitlab \</span><br><span class="line">  --shm-size 256m \</span><br><span class="line">  --restart always \</span><br><span class="line">  my-gitlab:16.10.2</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>修改为接口IP</li>
-<li>端口映射：将容器端口  映射到主机的 </li>
+<li><code>gitlab.example.com</code>修改为接口IP</li>
+<li>端口映射：将容器端口 <code>80/443/22</code> 映射到主机的 <code>8080/8443/2222</code></li>
 <li>数据卷挂载：将 <strong>宿主机的数据卷：容器数据卷</strong> 进行挂载<ul>
-<li>: GitLab 配置文件</li>
-<li>: 日志文件</li>
-<li>: 应用数据（仓库、数据库等）</li>
+<li><code>config</code>: GitLab 配置文件</li>
+<li><code>logs</code>: 日志文件</li>
+<li><code>data</code>: 应用数据（仓库、数据库等）</li>
 </ul>
 </li>
-<li>: 解决Sidekiq内存不足问题</li>
-<li>: 设置GitLab实例的访问域名</li>
+<li><code>--shm-size</code>: 解决Sidekiq内存不足问题</li>
+<li><code>--hostname</code>: 设置GitLab实例的访问域名</li>
 </ul>
 </li>
 <li><p>首次访问设置（设置root用户密码）</p>
-<figure class="highlight bash"></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab /bin/bash</span><br><span class="line">gitlab-rails console</span><br><span class="line">irb(main):001:0&gt; u=User.<span class="built_in">where</span>(<span class="built_in">id</span>:1).first</span><br><span class="line">=&gt; <span class="comment">#&lt;User id:1 @root&gt;</span></span><br><span class="line">irb(main):002:0&gt; u.password=<span class="string">&#x27;xxxxx&#x27;</span></span><br><span class="line">=&gt; <span class="string">&quot;xxxxx&quot;</span></span><br><span class="line">irb(main):003:0&gt; u.save!</span><br><span class="line">=&gt; <span class="literal">true</span></span><br><span class="line">irb(main):004:0&gt; <span class="built_in">exit</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/02/25/Linux%E5%AD%A6%E4%B9%A0/%E5%88%B6%E4%BD%9Cdocker%20gitlab%E5%AE%B9%E5%99%A8%E6%AD%A5%E9%AA%A4/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+
       
     </div>
 
