@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">132</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -193,7 +193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/25/Linux%E5%AD%A6%E4%B9%A0/%E5%88%B6%E4%BD%9Cdocker%20gitlab%E5%AE%B9%E5%99%A8%E6%AD%A5%E9%AA%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/header.JPG">
@@ -211,7 +211,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">Docker学习笔记</a>
+          <a href="/2025/02/25/Linux%E5%AD%A6%E4%B9%A0/%E5%88%B6%E4%BD%9Cdocker%20gitlab%E5%AE%B9%E5%99%A8%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">制作docker gitlab容器步骤</a>
         </h2>
 
         <div class="post-meta-container">
@@ -223,7 +223,234 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2025-02-20 00:00:00 / Modified: 14:51:22" itemprop="dateCreated datePublished" datetime="2025-02-20T00:00:00+08:00">2025-02-20</time>
+      <time title="Created: 2025-02-25 00:00:00 / Modified: 14:30:04" itemprop="dateCreated datePublished" datetime="2025-02-25T00:00:00+08:00">2025-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li><p>创建Dockerfile文件</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>编写Dockerfile内容</p>
+</li>
+</ol>
+<figure class="highlight bash"></figure>
+
+<ol start="3">
+<li><p>构建Docker镜像</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>运行Gitlab容器</p>
+<figure class="highlight bash"></figure>
+
+<ul>
+<li>修改为接口IP</li>
+<li>端口映射：将容器端口  映射到主机的 </li>
+<li>数据卷挂载：将 <strong>宿主机的数据卷：容器数据卷</strong> 进行挂载<ul>
+<li>: GitLab 配置文件</li>
+<li>: 日志文件</li>
+<li>: 应用数据（仓库、数据库等）</li>
+</ul>
+</li>
+<li>: 解决Sidekiq内存不足问题</li>
+<li>: 设置GitLab实例的访问域名</li>
+</ul>
+</li>
+<li><p>首次访问设置（设置root用户密码）</p>
+<figure class="highlight bash"></figure></li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/25/Linux%E5%AD%A6%E4%B9%A0/%E5%88%B6%E4%BD%9Cdocker%20gitlab%E5%AE%B9%E5%99%A8%E6%AD%A5%E9%AA%A4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/24/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%AD%A5%E9%AA%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/24/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">docker gitlab容器数据迁移步骤</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-02-24 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-24T00:00:00+08:00">2025-02-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-25 09:26:19" itemprop="dateModified" datetime="2025-02-25T09:26:19+08:00">2025-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ol>
+<li><p>确定旧容器的数据存储位置（找到以下目录的宿主机挂载目录）</p>
+<ul>
+<li><strong>配置</strong>：<code>/etc/gitlab</code></li>
+<li><strong>日志</strong>：<code>/var/log/gitlab</code></li>
+<li><strong>应用数据</strong>：<code>/var/opt/gitlab</code></li>
+</ul>
+</li>
+<li><p>停止旧容器（保证迁移时数据是最新的）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;旧容器名称或ID&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备份数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/config /备份路径/config</span><br><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/logs /备份路径/logs</span><br><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/data /备份路径/data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动新的容器（这里需要确保新容器使用镜像版本和原容器一致，否则可能存在不兼容问题）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name gitlab-new \</span><br><span class="line">  -p 8080:80 -p 8443:443 \</span><br><span class="line">  -v /备份路径/config:/etc/gitlab \</span><br><span class="line">  -v /备份路径/logs:/var/log/gitlab \</span><br><span class="line">  -v /备份路径/data:/var/opt/gitlab \</span><br><span class="line">  my-gitlab:16.10.2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修复文件权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab-new update-permissions</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Docker基本使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-02-20 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-20T00:00:00+08:00">2025-02-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-25 09:24:30" itemprop="dateModified" datetime="2025-02-25T09:24:30+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,112 +476,15 @@
 <li>安装VMware（这里遇到一个问题：win11与VMware15.5似乎并不兼容吗，百度win11不支持VMware16以下版本）</li>
 <li>安装ubuntu（这里ubuntu的版本需要符合docker的要求）</li>
 </ol>
-<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><ol>
-<li><p>卸载旧版本的docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装docker依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ca-certificates curl gnupg lsb-release</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加Docker官方GPG密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加Docker软件源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository <span class="string">&quot;deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu <span class="subst">$(lsb_release -cs)</span> stable&quot;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置用户组（可选）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装工具</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get -y install apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启docker</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置加速地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;https://do.nark.eu.org&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://dc.j8.work&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.m.daocloud.io&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://dockerproxy.com&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,</span><br><span class="line">        <span class="string">&quot;https://docker.nju.edu.cn&quot;</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证配置是否成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>验证docker安装是否成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看镜像</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="Docker核心概念"><a href="#Docker核心概念" class="headerlink" title="Docker核心概念"></a>Docker核心概念</h1><ul>
-<li>image：镜像。Docker镜像是一个轻量级、可执行的独立软件包，它包含了运行某个软件所需要的所有内容，包括代码、运行时、库、环境变量、配置文件等。Docker利用这些镜像来创建容器，每个容器都可以从镜像中运行实例，并且这些容器之间互相隔离，互不干扰。</li>
-<li>Container：容器。基于镜像创建的运行实例。容器可以被创建、启动、停止、删除、暂停等。</li>
-<li>Dockerfile：一个文本格式的配置文件，用于定义Docker镜像的内容和构建步骤。它包含一系列指令，每个指令代表一个构建步骤，从基础镜像开始，逐步构建出最终的镜像。</li>
-</ul>
-<h1 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h1><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>docker pull</code></td>
-<td>从容器镜像库拉取镜像</td>
-</tr>
-<tr>
-<td><code>docker push</code></td>
-<td>推送镜像到容器镜像库</td>
-</tr>
-<tr>
-<td><code>docker save</code></td>
-<td>将指定镜像保存为tar文件</td>
-</tr>
-<tr>
-<td><code>docker load</code></td>
-<td>从tar文件中加载镜像</td>
-</tr>
-<tr>
-<td><code>docker images</code></td>
-<td>列出本地所有镜像</td>
-</tr>
-<tr>
-<td><code>docker run</code></td>
-<td>创建一个新的容器并运行一个命令</td>
-</tr>
-<tr>
-<td><code>docker ps</code></td>
-<td>列出当前正在运行的容器</td>
-</tr>
-<tr>
-<td><code>docker logs</code></td>
-<td>获取容器日志输出</td>
-</tr>
-<tr>
-<td><code>docker exec</code></td>
-<td>在运行的容器内执行命令</td>
-</tr>
-<tr>
-<td><code>docker stop</code></td>
-<td>停止一个或多个运行中的容器</td>
-</tr>
-<tr>
-<td><code>docker start</code></td>
-<td>启动一个或多个运行中的容器</td>
-</tr>
-<tr>
-<td><code>docker rm</code></td>
-<td>删除一个或多个容器</td>
-</tr>
-<tr>
-<td><code>docker rmi</code></td>
-<td>删除一个或多个镜像</td>
-</tr>
-</tbody></table>
-
+<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -416,7 +546,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-20 14:40:27" itemprop="dateModified" datetime="2025-02-20T14:40:27+08:00">2025-02-20</time>
+      <time title="Modified: 2025-02-25 09:23:51" itemprop="dateModified" datetime="2025-02-25T09:23:51+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -438,59 +568,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="OSI-RM"><a href="#OSI-RM" class="headerlink" title="OSI&#x2F;RM"></a>OSI&#x2F;RM</h1><h2 id="OSI七层模式"><a href="#OSI七层模式" class="headerlink" title="OSI七层模式"></a>OSI七层模式</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193951.png" alt="七层模型"></p>
-<h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP&#x2F;IP"></a>TCP&#x2F;IP</h1><ul>
-<li>协议族<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193935.png" alt="协议族"><ul>
-<li>与网页访问相关：HTTP、HTTPS</li>
-<li>与电子邮件相关：SMTP、POP3、IMAP4、MIME、PGP</li>
-<li>远程访问&#x2F;管理：TELNET、RAS</li>
-<li>域名、IP地址解析相关：DNS</li>
-<li>FTP访问：FTP</li>
-<li>轻量目录访问协议：LDAP</li>
-</ul>
-</li>
-<li>电子邮件协议<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193926.png" alt="电子邮件协议"></li>
-<li>WWW协议<ul>
-<li>URL          协议：&#x2F;&#x2F;主机地址[:80]&#x2F;路径&#x2F;文件名</li>
-<li>浏览器      IE     Netscape    Firefox</li>
-<li>协议          http 80   https 443（是以安全为目标的HTTP通道，简单讲是HTTP的安全版）</li>
-<li>http 404  链接指向的网页不存在，即原始网页的URL失效</li>
-</ul>
-</li>
-<li>FTP协议<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219194024.png" alt="FTP协议"><ul>
-<li>20端口：TCP 数据连接</li>
-<li>21端口：用于与客户机建立命令链路</li>
-</ul>
-</li>
-<li>其他协议：<ul>
-<li>ARP 地址解析协议</li>
-<li>ICMP 网络控制报文协议</li>
-<li>IP 国际协议</li>
-<li>TCP 传输控制协议</li>
-<li>UDP 用户数据包协议</li>
-</ul>
-</li>
-<li>协议端口<ul>
-<li>POP3：110端口，邮件收取</li>
-<li>SMTP：25端口，邮件发送</li>
-<li>FTP：20数据端口&#x2F;21控制端口，文件传输协议</li>
-<li>HTTP：80端口，超文本传输协议，网页传输，HTTPS：443端口</li>
-<li>DHCP：67端口，IP地址自动分配</li>
-<li>SNMP：161端口，简单网络管理协议</li>
-<li>DNS：53端口，域名解析协议，记录域名与IP的映射关系</li>
-<li>TCP：可靠的传输层协议</li>
-<li>UDP：不可靠的传输层协议</li>
-<li>ICMP：因特网差错控制协议，PING命令来自该协议</li>
-<li>IGMP：网际组管理协议</li>
-<li>ARP：地址解析协议，IP地址转换为MAC地址</li>
-<li>RARP：反向地址解析协议，MAC地址转IP地址（淘汰）</li>
-</ul>
-</li>
-<li>防火墙：防火墙一般放在安全边界区</li>
-<li>路由器（可分割广播域）：用于网络互联：可作为互联网接入、不同网段间互联</li>
-<li>交换机（可分割冲突域）、集线器（不可分隔广播域和冲突域）：用于连接节点</li>
-</ul>
-<h1 id="IP地址域网络划分"><a href="#IP地址域网络划分" class="headerlink" title="IP地址域网络划分"></a>IP地址域网络划分</h1><h1 id="DNS与DHCP"><a href="#DNS与DHCP" class="headerlink" title="DNS与DHCP"></a>DNS与DHCP</h1><h1 id="网络规划与设计"><a href="#网络规划与设计" class="headerlink" title="网络规划与设计"></a>网络规划与设计</h1><h1 id="网络故障诊断"><a href="#网络故障诊断" class="headerlink" title="网络故障诊断"></a>网络故障诊断</h1>
+          <h1 id="OSI-RM"><a href="#OSI-RM" class="headerlink" title="OSI&#x2F;RM"></a>OSI&#x2F;RM</h1><h2 id="OSI七层模式"><a href="#OSI七层模式" class="headerlink" title="OSI七层模式"></a>OSI七层模式</h2><p></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/19/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -544,9 +630,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-02-18 00:00:00 / Modified: 16:52:03" itemprop="dateCreated datePublished" datetime="2025-02-18T00:00:00+08:00">2025-02-18</time>
+      <time title="Created: 2025-02-18 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-18T00:00:00+08:00">2025-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-25 10:09:29" itemprop="dateModified" datetime="2025-02-25T10:09:29+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -571,20 +663,20 @@
           <h1 id="文件和目录命令"><a href="#文件和目录命令" class="headerlink" title="文件和目录命令"></a>文件和目录命令</h1><ul>
 <li><p>ls</p>
 <ul>
-<li><p><code>-a</code>显示指定目录下所有子目录和文件，包括隐藏文件</p>
+<li><p>显示指定目录下所有子目录和文件，包括隐藏文件</p>
 </li>
-<li><p><code>-l</code>纵向显示文件列表和详细信息</p>
+<li><p>纵向显示文件列表和详细信息</p>
 </li>
-<li><p><code>-h</code>以KB显示文件大小</p>
+<li><p>以KB显示文件大小</p>
 </li>
 <li><p>通配符的使用</p>
 <ul>
 <li><blockquote>
-<p><code>*</code>表示任意个数字符</p>
-<p><code>？</code>表示任意一个字符</p>
-<p><code>[]</code>表示可以匹配字符组中的任意一个</p>
-<p><code>[abc]</code>匹配a，b，c中任意一个</p>
-<p><code>[a-f]</code>匹配a到f范围中任意一个字符</p>
+<p>表示任意个数字符</p>
+<p>表示任意一个字符</p>
+<p>表示可以匹配字符组中的任意一个</p>
+<p>匹配a，b，c中任意一个</p>
+<p>匹配a到f范围中任意一个字符</p>
 </blockquote>
 </li>
 </ul>
@@ -593,11 +685,11 @@
 </li>
 <li><p>cd </p>
 <ul>
-<li><code>cd</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd ～</code> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
-<li><code>cd . </code>保持当前目录不变</li>
-<li><code>cd ..</code> 切换到上级目录</li>
-<li><code>cd -</code> 可以在最近两次工作目录之间来回切换</li>
+<li> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
+<li> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
+<li>保持当前目录不变</li>
+<li> 切换到上级目录</li>
+<li> 可以在最近两次工作目录之间来回切换</li>
 <li>绝对路径：在输入路径时最前面不是&#x2F;或～，表示相对当前目录所在的目录位置</li>
 <li>相对路径：在输入路径时，最前面是&#x2F;或者～，表示从根目录&#x2F;家目录开始的具体位置</li>
 </ul>
@@ -611,349 +703,32 @@
 <li><p>mkdir</p>
 <ul>
 <li>创建目录，同一个目录下目录和文件都不能同名</li>
-<li><code>-p</code>创建多级目录</li>
+<li>创建多级目录</li>
 </ul>
 </li>
 <li><p>rm</p>
 <ul>
 <li>删除后无法恢复</li>
-<li><code>-f</code>强制删除，忽略不存在的文件</li>
-<li><code>-r</code>递归删除目录下内容，删除文件夹时使用</li>
+<li>强制删除，忽略不存在的文件</li>
+<li>递归删除目录下内容，删除文件夹时使用</li>
 </ul>
 </li>
 <li><p>tree</p>
 <ul>
 <li>以树状图列出文件目录结构</li>
-<li><code>-d</code>只显示目录</li>
+<li>只显示目录</li>
 </ul>
 </li>
 </ul>
-<h1 id="拷贝和移动命令"><a href="#拷贝和移动命令" class="headerlink" title="拷贝和移动命令"></a>拷贝和移动命令</h1><ul>
-<li><p>cp</p>
-<ul>
-<li><code>cp 源文件 目标文件</code>复制文件或目录到另一个文件或目录中</li>
-<li><code>-i</code>覆盖文件前提示</li>
-<li><code>-r</code>若给出源文件是目录文件，则cp将递归复制该目录下所有子目录和文件，目标文件必须为一个目录名</li>
-</ul>
-</li>
-<li><p>mv</p>
-<ul>
-<li>mv 源文件 目标文件：移动或重命名文件或目录</li>
-<li><code>-i</code>覆盖前提示</li>
-</ul>
-</li>
-</ul>
-<h1 id="文件内容命令"><a href="#文件内容命令" class="headerlink" title="文件内容命令"></a>文件内容命令</h1><ul>
-<li><p>cat</p>
-<ul>
-<li>显示文件全部内容</li>
-<li><code>-b</code>为文件标行号</li>
-<li><code>-n</code>为所有行标行号（包括空行）</li>
-</ul>
-</li>
-<li><p>more</p>
-<ul>
-<li>分屏显示文件</li>
-<li><code>Space</code>显示下一页</li>
-<li><code>Enter</code>一次滚动一行</li>
-<li><code>b</code>回滚一屏</li>
-<li><code>f</code>前滚一屏</li>
-<li><code>q</code>退出</li>
-</ul>
-</li>
-<li><p>grep</p>
-<ul>
-<li>文本搜索工具</li>
-<li><code>-n</code>显示匹配行及行号</li>
-<li><code>-v</code>显示不含不包含目标文本的行</li>
-<li><code>-i</code>忽略大小写</li>
-<li><code>^a</code>行首，搜索以a开始的行</li>
-<li><code>ke$</code>行尾，搜索以ke为结尾的行</li>
-</ul>
-</li>
-<li><p>echo</p>
-<ul>
-<li>显示参数指定的文字</li>
-<li><code>&gt;</code>表示输出，会覆盖文件原有内容</li>
-<li><code>&gt;&gt;</code>表示输入，会将内容追加到已有文件的</li>
-</ul>
-</li>
-<li><p>管道<code>|</code></p>
-<ul>
-<li>将一个命令的输出通过管道作为另一个命令的输入</li>
-<li>more</li>
-<li>grep</li>
-</ul>
-</li>
-</ul>
-<h1 id="远程操作命令"><a href="#远程操作命令" class="headerlink" title="远程操作命令"></a>远程操作命令</h1><ul>
-<li><p>shutdown</p>
-<ul>
-<li><code>shutdown</code> 选项 时间</li>
-<li><code>-r</code>重新启动</li>
-<li><code>-c</code>取消关机计划</li>
-</ul>
-</li>
-<li><p>ifconfig</p>
-<ul>
-<li>查看配置网卡设置信息</li>
-<li><code>127.0.0.1</code>本地回环地址</li>
-</ul>
-</li>
-<li><p>ping</p>
-<ul>
-<li>检测计算机到计算机网络连接是否正常，数值越大，速度越慢</li>
-</ul>
-</li>
-<li><p>scp</p>
-<ul>
-<li>远程拷贝命令</li>
-<li><code>scp -P port  filename user@remote:Desktop/filename</code><ul>
-<li>复制当前目录下文件到远程文件夹</li>
-</ul>
-</li>
-<li><code>scp -P port  user@remote:Desktop/filename filename</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-<li>WIN scp command<ul>
-<li><code>scp -rp .\Desktop\Notes logo@192.168.142.128:Desktop/</code></li>
-<li>复制当前目录下文件夹到远程目录</li>
-<li><code>scp -p logo@192.168.142.128:Desktop/linuxNotes/Command.md C:\Users\admin\Desktop</code><ul>
-<li>从远程文件夹复制文件到当前目录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>-r</code>复制文件夹</li>
-</ul>
-</li>
-<li><p>ssh</p>
-<ul>
-<li><p><code>ssh -p 22 user@remote</code></p>
-</li>
-<li><p><code>ssh-keygen</code>生成ssh钥匙</p>
-</li>
-<li><p><code>ssh-copy-id -p port user@remote</code>让远程服务器记住公匙</p>
-</li>
-<li><p>添加别名：在<code>~/.ssh/config</code>中追加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host logo_ubuntu</span><br><span class="line">	Hostname 172.***.***.***</span><br><span class="line">	User logo</span><br><span class="line">	Port 22</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-<h1 id="用户权限命令"><a href="#用户权限命令" class="headerlink" title="用户权限命令"></a>用户权限命令</h1><ul>
-<li><p>ls -l 拓展</p>
-<ul>
-<li><blockquote>
-<p>r 可读 4</p>
-<p>w 可写 2</p>
-<p>x 可执行 1</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>第一列（一个字符）：是否是文件夹标记</p>
-<p>第二列（三个字符）：文件拥有者权限</p>
-<p>第三列（三个字符）：组权限</p>
-<p>第四列（三个字符）：其他用户权限</p>
-<p>第五列（数字）：硬连接数</p>
-<ul>
-<li>硬连接数：有多少种方式可以访问当前目录&#x2F;文件</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>chmod</p>
-<ul>
-<li>修改用户&#x2F;组对文件&#x2F;目录权限</li>
-<li><code>chmod +/- rwx 文件|目录名</code><ul>
-<li>执行文件：<code>./文件名</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>sudo</p>
-<ul>
-<li>以其他身份来执行命令，预设的身份为root</li>
-</ul>
-</li>
-</ul>
-<h1 id="组管理命令"><a href="#组管理命令" class="headerlink" title="组管理命令"></a>组管理命令</h1><ul>
-<li>创建组&#x2F;删除组都需要<code>sudo</code></li>
-<li><code>groupadd 组名</code>添加组</li>
-<li><code>groupdel 组名</code>删除组</li>
-<li><code>cat/etc/group</code>确认组信息</li>
-<li>组信息保存在<code>/etc/group</code>文件中</li>
-<li><code>/etc</code>目录是专门用来保存系统配置信息的目录</li>
-<li><code>chgrp -R 组名 文件/目录名</code>递归修改文件&#x2F;目录的所属组</li>
-</ul>
-<h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><ul>
-<li><p><code>useradd -m -g 组</code>添加新用户</p>
-<ul>
-<li>-m 自动建立用户家目录</li>
-<li>-g 指定用户所在的组，否则会建立一个和用户同名的组</li>
-</ul>
-</li>
-<li><p><code>passwd 用户名</code>设置用户密码</p>
-</li>
-<li><p><code>userdel -r 用户名</code>删除信息</p>
-<ul>
-<li>-r 删除用户家目录</li>
-</ul>
-</li>
-<li><p><code>cat /etc/passwd | grep 用户名</code>确认用户信息，新建用户后，用户信息会保存在&#x2F;etc&#x2F;passwd中</p>
-</li>
-<li><p><code>id 用户名</code>查看用户UID（用户标识）和GID（组标识）信息</p>
-</li>
-<li><p><code>who</code>查看当前所有登陆的用户列表</p>
-</li>
-<li><p><code>whoami</code>查看当前登陆用户的账户名</p>
-</li>
-<li><p>passwd文件：<code>/etc/passwd</code>文件保存的是用户的信息，由6个分号组成的7个信息</p>
-<ul>
-<li><blockquote>
-<p>用户名</p>
-<p>密码（x，表示加密的密码）</p>
-<p>UID</p>
-<p>GID</p>
-<p>用户全名或本地账号</p>
-<p>家目录</p>
-<p>登陆使用的Shell，就是登陆之后使用的终端命令，ubuntu默认的是dash</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>usermod -g 组 用户名</code>修改用户主组</p>
-</li>
-<li><p><code>usermod -G 组 用户名</code>修改用户附加组</p>
-<ul>
-<li><code>usermod -G sudo 用户名</code>给用户添加sudo权限</li>
-</ul>
-</li>
-<li><p><code>usermod -s /bin/bash</code>修改用户登陆Shell为bash，XShell下dash存在缺陷</p>
-</li>
-<li><p>which</p>
-<ul>
-<li><code>which 命令</code>查看执行命令所在位置<ul>
-<li><blockquote>
-<p><code>/user/passwd</code>用于保存用户信息的文件</p>
-<p><code>/user/bin/passwd</code>用于修改用户密码的程序</p>
-<p><code>/bin</code>二进制执行文件目录，主要用于具体应用</p>
-<p><code>/sbin</code>系统管理员专用的二进制代码存放目录，主要用于系统管理</p>
-<p><code>/usr/bin</code>后期安装的一些软件</p>
-<p><code>/usr/sbin</code>超级用户的一些管理程序</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>su</p>
-<ul>
-<li><code>su - 用户名</code>切换用户和目录</li>
-<li><code>exit</code>退出当前登陆目录</li>
-<li><code>su</code>切换到root，但不安全</li>
-</ul>
-</li>
-<li><p>修改文件权限</p>
-<ul>
-<li><code>chown 用户名 文件名|目录名</code>修改文件的拥有者</li>
-<li><code>chgrp -R 组名 文件名|目录名</code>递归修改文件的组</li>
-<li><code>chmod -R 755</code>递归修改文件权限，三个数字分别代表拥有者&#x2F;组&#x2F;其他用户的权限</li>
-<li>r -&gt; 4  w -&gt; 2  x -&gt; 1,例如755-&gt;rwx r-x r-x</li>
-</ul>
-</li>
-</ul>
-<h1 id="系统信息相关命令"><a href="#系统信息相关命令" class="headerlink" title="系统信息相关命令"></a>系统信息相关命令</h1><ul>
-<li><p><code>date</code>查看当前系统时间</p>
-</li>
-<li><p><code>cal </code>查看日历</p>
-<ul>
-<li><code>-y</code>查看一年的日历</li>
-</ul>
-</li>
-<li><p><code>df -h</code>显示磁盘剩余空间</p>
-</li>
-<li><p><code>du -h[目录名]</code>显示目录下文件大小</p>
-</li>
-<li><p><code>ps aux</code>查看进程的详细状况</p>
-<ul>
-<li><p><code>ps</code>默认只会显示当前用户通过终端启动的应用程序</p>
-</li>
-<li><blockquote>
-<p>a 显示终端上的所有进程，包括其他用户的进程</p>
-<p>u 显示进程的详细状态</p>
-<p>x 显示没有控制终端的进程</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p><code>top</code>动态显示运行中的进程并排序</p>
-</li>
-<li><p><code>kill [-9] 进程代号</code>终止指定代号的进程，-9表示强行终止</p>
-<ul>
-<li>使用<code>kill</code>时不要终止root身份开启的进程</li>
-</ul>
-</li>
-</ul>
-<h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1><ul>
-<li><p>find</p>
-<ul>
-<li><code>find[路径] -name &quot;*.py&quot;</code>查找文件</li>
-</ul>
-</li>
-<li><p>ln</p>
-<ul>
-<li><code>ln -s 被链接的源文件 链接文件</code>建立文件的软链接</li>
-<li>无<code>-s</code>建立的是硬链接文件（两个文件占用相同大小的硬盘空间）</li>
-<li>源文件要使用绝对路经，方便移动链接文件后仍能正常使用</li>
-<li>在Linux中文件名和文件数据是分开存储的</li>
-</ul>
-</li>
-</ul>
-<h1 id="打包压缩"><a href="#打包压缩" class="headerlink" title="打包压缩"></a>打包压缩</h1><ul>
-<li><p><code>tar -cvf 打包文件.tar</code>打包文件</p>
-</li>
-<li><p><code>tar -xvf 打包文件.tar</code>解包文件</p>
-</li>
-<li><blockquote>
-<p>c 生成档案文件，创建打包文件</p>
-<p>x 解开档案文件</p>
-<p>v 列出归档解档的详细过程，显示进度</p>
-<p>f 指定档案文件名称，f后面一定是.tar文件，所以必须放选项最后</p>
-</blockquote>
-</li>
-<li><p>gzip</p>
-<ul>
-<li><p>tar只负责打包文件，但不压缩</p>
-</li>
-<li><p>用gzip压缩打包后文件扩展名为<code>filename.tar.gz</code></p>
-</li>
-<li><p><code>tar -zcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz </code>解压缩文件</p>
-</li>
-<li><p><code>tar -zxvf 打包文件.tar.gz -C 目标路径</code>解压缩文件到指定路径（指定路径必须存在）</p>
-</li>
-</ul>
-</li>
-<li><p>bzip2</p>
-<ul>
-<li><code>tar -jcvf 打包文件.tar.gz 被压缩的文件/路径...</code>压缩文件</li>
-<li><code>tar -jxvf 打包文件.tar.gz </code>解压缩文件</li>
-</ul>
-</li>
-</ul>
-<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><ul>
-<li><code>sudo apt install 软件包</code></li>
-<li><code>sudo apt remove 软件包</code></li>
-<li><code>sudo apt upgrade</code></li>
-</ul>
-<h1 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h1><ol>
-<li>修改&#x2F;root&#x2F;.bashrc文件<code>vi /root/.bashrc</code></li>
-<li>执行命令使别名生效<code>source /root/.bashrc</code></li>
-</ol>
-
+<h1 id="拷贝和移动命令"><a href="#拷贝和移动命令" class="headerlink" title="拷贝和移动命令"></a>拷贝和移动命令</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1037,10 +812,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h1><p>验证Git安装<code>git --version</code></p>
-<h1 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git clone http://......</span><br><span class="line">cd &lt;repository&gt;</span><br><span class="line">git config --global user.name &quot;Your Name&quot;（可选）</span><br><span class="line">git config --global user.email &quot;your.email@example.com&quot;（可选）</span><br><span class="line">git remote add &lt;remote&gt; http://.....</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;information&quot;</span><br><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-
+          <h1 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h1><p>验证Git安装</p>
+<h1 id="初始化本地仓库"><a href="#初始化本地仓库" class="headerlink" title="初始化本地仓库"></a>初始化本地仓库</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/08/Linux%E5%AD%A6%E4%B9%A0/Git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1453,1392 +1234,15 @@
 </li>
 <li>随机存取存储器是一种在机器运行期间可读、可写的存储器，又称读写存储器</li>
 </ul>
-<h2 id="存储器的组织和结构"><a href="#存储器的组织和结构" class="headerlink" title="存储器的组织和结构"></a>存储器的组织和结构</h2><ul>
-<li>存储器的参数：容量、数据宽度</li>
-<li>存储器的容量是描述存储器的最基本参数，如4MB。存储器的表示不唯一，不同表示方法有不同的数据宽度</li>
-<li>在存储器内部，数据是存放在二维阵列存储单元中<ul>
-<li>阵列以二维的形式存储，给出的n位地址被分成行地址和列地址（n&#x3D;r+c）。r是行地址数，c是列地址数</li>
-<li>行列选定一个特定存储单元</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241025090721.png" alt="存储器的组织和结构"></p>
-<h1 id="常见的嵌入式系统存储设备"><a href="#常见的嵌入式系统存储设备" class="headerlink" title="常见的嵌入式系统存储设备"></a>常见的嵌入式系统存储设备</h1><h2 id="RAM（随机存储器）"><a href="#RAM（随机存储器）" class="headerlink" title="RAM（随机存储器）"></a>RAM（随机存储器）</h2><ul>
-<li><p>RAM可以被读和写，地址可以以任意次序被读</p>
-</li>
-<li><p>常见RAM的种类有</p>
-<ul>
-<li>SRAM（Static RAM，静态随机存储器）</li>
-<li>DRAM（Dynamic RAM，动态随机存储器）</li>
-<li>DDRAM（Double Data Rate SDRAM，双倍速率随机存储器）</li>
-</ul>
-</li>
-<li><p>SRAM比DRAM运行速度快，SRAM比DRAM耗电多，DRAM需要周期性刷新</p>
-</li>
-<li><p>DDRAM是SDRAM的下一代产品，与SDRAM本质相同</p>
-<ul>
-<li>SDRAM：Synchronous Dynamic Random Access Memory，同步动态随机存储器</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241025091109.png" alt="随机存储器"></p>
-<h3 id="SRAM"><a href="#SRAM" class="headerlink" title="SRAM"></a>SRAM</h3><ul>
-<li>SRAM表示静态随机存取存储器</li>
-<li>只要供电它就会保持一个值，<strong>没有刷新周期</strong></li>
-<li>由触发器构成基本单元，集成度低</li>
-<li>每个SRAM存储单元由6个晶体管组成，成本较高</li>
-<li>速率较高，常用于高速缓冲存储器</li>
-<li>通常SRAM有4种引脚<ul>
-<li>CE：片选信号，低电平有效</li>
-<li>R&#x2F;W’：读写控制信号</li>
-<li>ADDRESS：一组地址线</li>
-<li>DATA：用于数据传输的一组双向信号线</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241025090659.png" alt="SRAM"></p>
-<h3 id="DRAM"><a href="#DRAM" class="headerlink" title="DRAM"></a>DRAM</h3><ul>
-<li>DRAM表示动态随机存取存储器</li>
-<li>是一种以电荷形式进行存储的半导体存储器</li>
-<li>存储单元由1个晶体管和1个电容器组成，数据存储在电容器中</li>
-<li><strong>必须定时刷新</strong>，因此DRAM在使用时必须配合DRAM控制器</li>
-<li>为了提高系统的数据吞吐能力，可以采用多种技术提高DRAM系统的性能，包括：页模式、ECO、同步DRAM</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241025090628.png" alt="DRAM"></p>
-<ul>
-<li>DRAM的接口比较复杂，通常有以下引脚<ul>
-<li>CE：片选信号，低电平有效</li>
-<li>R&#x2F;W’：读写控制信号</li>
-<li>RAS’：行地址选通信号，通常接地址的高位部分</li>
-<li>CAS’：列地址选通信号，通常接地址的低位部分</li>
-<li>ADDRESS：一组地址线</li>
-<li>DATA：用于数据传输的一组双向信号线</li>
-</ul>
-</li>
-</ul>
-<h3 id="SDRAM"><a href="#SDRAM" class="headerlink" title="SDRAM"></a>SDRAM</h3><ul>
-<li>SDRAM表示同步动态随机存取存储器</li>
-<li>同步是指内存工作需要同步时钟，内部的命令发送和数据的传输都以它为基准</li>
-<li>动态是指存储器阵列<strong>需要不断地刷新</strong>来保证数据不丢失</li>
-<li>通常只能工作在133MHz的主频</li>
-<li>SDRAM可读&#x2F;可写，不具有掉电保持数据的特性，但其存取速度大大高于Flash存储器</li>
-</ul>
-<h3 id="DDRAM"><a href="#DDRAM" class="headerlink" title="DDRAM"></a>DDRAM</h3><ul>
-<li>DDRAM表示双倍率同步动态随机存取存储器，也称为DDR</li>
-<li>基于SDRAM技术</li>
-<li>双倍预取技术，即在内存芯片内部的数据宽度是外部接口数据宽度的2倍，使峰值的读写速度达到输入时钟速率的2倍</li>
-<li>允许在时钟脉冲的上升沿和下降沿均传输数据</li>
-<li>在133MHz的主频下，DDR内存带宽可以达到133x64b&#x2F;8x2&#x3D;2.1GB&#x2F;s</li>
-<li>差分输入方式</li>
-</ul>
-<h2 id="ROM（只读存储器）"><a href="#ROM（只读存储器）" class="headerlink" title="ROM（只读存储器）"></a>ROM（只读存储器）</h2><ul>
-<li>ROM在烧入数据后，无需外加电源来保存数据，断电后数据不丢失，但速度较慢，适合存储需长期保留的不变数据</li>
-<li>在嵌入式洗系统中，ROM用于固定数据和程序</li>
-<li>常见ROM有<ul>
-<li>Mask ROM（掩膜ROM）<ul>
-<li>一次性由厂家写入数据的ROM，用户无法修改</li>
-</ul>
-</li>
-<li>PROM（Programmable ROM，可编写ROM）<ul>
-<li>出厂时厂家没有写入数据，保留里面的内容为全0和全1，由<strong>用户来编程一次性写入数据</strong></li>
-</ul>
-</li>
-<li>EPROM（Erasable Programmable ROM，可擦写ROM）<ul>
-<li>可以通过紫外线光的照射，擦掉原先的程序，芯片可重复擦除和写入。<strong>写入时间较长</strong></li>
-</ul>
-</li>
-<li>EEPROM（电可擦除可编程ROM，也可表示为E2PROM）<ul>
-<li>通过加电擦除原编程数据，通过高压脉冲可以写入数据</li>
-</ul>
-</li>
-<li>Flash ROM<ul>
-<li>断电不会丢失数据，<strong>快速读取</strong>，电可擦写可编程</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>PROM、EPROM、EEPROM的共同之处<ul>
-<li>可编程的只读存储器</li>
-<li>属于非易失性元件</li>
-<li>芯片为有限次写入</li>
-</ul>
-</li>
-<li>PROM、EPROM、EEPROM的不同之处<ul>
-<li>PROM为一次编程器件；EPROM为电编程、紫外线擦除器件、EEPROM电编程、电擦写</li>
-<li>PROM编程元件：熔丝型开关或者非熔丝型开关（PLICE：多晶硅）</li>
-<li>EPROM编程元件：叠栅型（SIMOS）浮栅</li>
-<li>EEPROM编程元件：隧道型（FLOTOX）浮栅</li>
-</ul>
-</li>
-</ul>
-<h3 id="FLASH"><a href="#FLASH" class="headerlink" title="FLASH"></a>FLASH</h3><ul>
-<li>Flash memory（闪速存储器）是嵌入式系统中重要的组成部分，用来存储程序和数据，掉电后数据不会丢失</li>
-<li>但在使用Flash Memory时，必须根据其自身特性，对存储系统进行特殊设计，以保证系统的性能达到最优</li>
-<li>Flash Memory是一种非易失性存储器NVM（Non-Volatile Memory），根据结构的不同可以分为：NOR Flash、NAND Flash</li>
-</ul>
-<h3 id="NOR-Flash和NAND-Flash相同特点"><a href="#NOR-Flash和NAND-Flash相同特点" class="headerlink" title="NOR Flash和NAND Flash相同特点"></a>NOR Flash和NAND Flash相同特点</h3><ul>
-<li>区块结构：Flash Memory在物理结构上分成若干个区块，区块之间相互独立<ul>
-<li>NOR Flash把整个存储区分成若干个<strong>扇区</strong>（Sector）</li>
-<li>NAND Flash把整个存储区分为若干个<strong>块</strong>（Block）</li>
-<li>可以对<strong>以块或扇区为单位</strong>的内存单元进行先擦写和再编程</li>
-</ul>
-</li>
-<li>先擦后写：由于Flash Memory的写操作只能将数据位从1写成0，而不能从0写成1，所以在对存储器进行写入之前必须先执行擦除操作，将预写入的数据位初始化为1<ul>
-<li>擦操作的最小单位是一个区块，而不是单个字节</li>
-</ul>
-</li>
-<li>操作指令：除了NOR Flash的读，Flash Memory的其他操作不能像RAM那样，直接对目标地址进行总线操作<ul>
-<li>例如执行一次写操作，它必须输出一串特殊的指令（NOR Flash），或者完成一段时序（NAND Flash）才能将数据写入到Flash Memory中</li>
-</ul>
-</li>
-<li>位反转：<ul>
-<li>所有的Flash Memory器件存在<strong>位交换现象</strong></li>
-<li>Flash Memory在读写数据时，偶然会产生一位或几位数据错误，即位反转</li>
-<li>位反转无法避免，只能通过其他手段对产生的结果进行事后处理</li>
-<li>位反转的问题多见于NAND Flash。供货商建议使用NAND Flash的时候，同时使用EDC&#x2F;ECC（错误探测&#x2F;错误纠正）算法，以确保可靠性</li>
-</ul>
-</li>
-<li>坏块<ul>
-<li>Flash Memory在使用过程中，可能导致某些区块的损坏</li>
-<li>区块一旦损坏，将无法进行修复</li>
-<li>NAND Flash中的坏块是随机分布的，尤其是NAND Flash在出厂时就可能存在这样的坏块（已经被标识出）</li>
-<li>NAND Flash需要对介质进行初始化扫描以发现坏块，并将坏块标记为不可用</li>
-<li>如果对已损坏的区块进行操作，可能会带来不可预测的错误</li>
-</ul>
-</li>
-</ul>
-<h3 id="NOR-Flash和NAND-Flash不同特点"><a href="#NOR-Flash和NAND-Flash不同特点" class="headerlink" title="NOR Flash和NAND Flash不同特点"></a>NOR Flash和NAND Flash不同特点</h3><ul>
-<li>应用程序可以直接在<strong>NOR Flash内运行</strong>，不需要再把代码读到系统RAM中运行</li>
-<li>NOR Flash的传输速率很高，在1~4MB的小容量时具有很高的成本效益，但是很低的写入和擦除速度大大影响了它的性能</li>
-<li>NAND Flash结构可以达到高存储器密度，写入和擦除的速度很快，应用NAND Flash的困难在于<strong>需要特殊的系统接口</strong></li>
-<li>性能比较<ul>
-<li>NAND Flash执行擦除操作是十分简单的</li>
-<li>NOR型内存则要求在进行擦除前先要将目标内所有的位都写为0</li>
-<li>由于擦除NOR Flash时是以64~128KB为单位的块进行的，执行一个写入&#x2F;擦除操作的时间为5s</li>
-<li>擦除NAND Flash是以8~32KB的块进行的，执行相同的操作最多只需要4ms</li>
-<li>NOR Flash的读速度比NAND Flash稍快一些</li>
-<li>NAND Flash的写入速度比NOR FLash块很多</li>
-<li>NAND Flash的随机读取能力差，适合大量数据的<strong>连续读取</strong></li>
-<li>NAND Flash的4ms擦除速度远比NOR Flash的5s快</li>
-</ul>
-</li>
-<li>接口差别<ul>
-<li>NOR Flash带有SRAM接口，有足够的地址引脚来寻址，可以很容易地存取其内部的每一个字节</li>
-<li>NAND Flash地址、数据和命令共用8位&#x2F;16位总线，每次读写都要使用复杂的I&#x2F;O接口串行地存取数据，8位总线&#x2F;16位总线用来传送控制、地址和资料信息</li>
-<li>NAND Flash读和写操作采用512B的块，类似硬盘管理操作<ul>
-<li>因此，基于NAND的闪存可以取代硬盘或其他块设备</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>容量和成本<ul>
-<li>NOR Flash容量通常在1MB~8MB之间，主要应用在代码存储介质中</li>
-<li>NAND Flash用在8MB以上的产品当中。使用与资料存储</li>
-</ul>
-</li>
-<li>寿命<ul>
-<li>在NAND Flash中每个块的最大擦写次数时一百万次</li>
-<li>NOR Flash的擦写次数是十万次</li>
-<li>NAND Flash除了具有10:1的块擦除周期优势，典型的NAND Flash块尺寸要比NOR型闪存小8倍，每个NAND Flash的内存块在给定的时间内删除次数要少一些</li>
-</ul>
-</li>
-<li>软件支持<ul>
-<li>在NOR Flash上运行代码不需要任何的软件支持</li>
-<li>在NAND Flash上进行同样操作时，通常需要驱动程序，也就是内存技术驱动程序（MTD）</li>
-<li>NAND Flash和NOR Flash在进行写入和擦除操作时都需要MTD</li>
-</ul>
-</li>
-<li>市场定位<ul>
-<li>NOR Flash：对数据可靠性要求较高的代码存储、通信产品、网络处理等领域，也被称为<strong>代码闪存</strong>（Code Flash）</li>
-<li>NAND Flash：对存储容量要求较高的MP3、存储卡、U盘等领域，也被<strong>称为数据闪存</strong>（Data Flash）</li>
-</ul>
-</li>
-</ul>
-<h2 id="常见外存的种类"><a href="#常见外存的种类" class="headerlink" title="常见外存的种类"></a>常见外存的种类</h2><ul>
-<li>外部存储器：也称为辅助存储器，简称外存或辅存<ul>
-<li>容量比主存大、读取速度较慢</li>
-<li>通常用来存放需要永久保存的或相对来说暂时不用的程序和数据<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241025110923.png" alt="常见外存的种类"></li>
-</ul>
-</li>
-</ul>
-<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><ul>
-<li>硬盘存储器具有存储容量大，使用寿命长，存取速度较快的特点，也是在嵌入式系统中常用的外存</li>
-<li>硬盘存储器的硬件包括<ul>
-<li>硬盘控制器（适配器）</li>
-<li>硬盘驱动器</li>
-<li>连接电缆</li>
-</ul>
-</li>
-<li>硬盘控制器（Hard Disk Controller，简称HDC）对硬盘进行管理，并在主机和硬盘之间传送数据。硬盘控制器以适配卡的形式插在主板上或直接集成在主板上，然后通过电缆与硬盘驱动器相连</li>
-<li>硬盘驱动器（Hard Disk Drive，简称HDD）中有盘片、磁头、主轴电机（盘片旋转驱动机构）、磁头定位机构、读&#x2F;写电路和控制逻辑等</li>
-<li>硬盘存储器可分为：温彻斯特盘和非温彻斯特盘两类<ul>
-<li>温彻斯特盘是根据温彻斯特技术设计制造的，它的磁头、盘片、磁头定位机构、主轴、甚至连读&#x2F;写驱动电路等都被密封在一个盘盒内，构成一个头-盘组合体</li>
-<li>温彻斯特盘的防尘性能好，可靠性高，对使用环境要求不高</li>
-<li>非温彻斯特盘磁盘的磁头和盘片等不是密封的，通常只能用于中型、大型计算机机房中</li>
-</ul>
-</li>
-<li>最常见的硬盘接口是IDE（ATA）和SCSI两种，一些移动硬盘采用PCMCIA或USB接口</li>
-<li>SCSI（Small Computer System Interface，小型计算机系统接口）不是专为硬盘设计的，是一种总线型接口<ul>
-<li>SCSI独立于系统总线工作，其系统占用率极低，但其价格昂贵</li>
-<li>具有这种接口的硬盘大多用于服务器等高端应用场合</li>
-</ul>
-</li>
-</ul>
-<h3 id="光盘"><a href="#光盘" class="headerlink" title="光盘"></a>光盘</h3><ul>
-<li>光盘：用光学方式读&#x2F;写信息的圆盘</li>
-<li>光盘存储器：以光盘为存储介质的存储器</li>
-<li>光盘的类型<ul>
-<li>CD-RAM：Compact Disc Read Only Memory</li>
-<li>CD-R：采用WORM（Write One Read Many）标准</li>
-<li>CD-RW：可重复读&#x2F;写</li>
-<li>DVD-ROM：通用数字化多功能光盘，简称高容量CD</li>
-</ul>
-</li>
-</ul>
-<h3 id="标准存储卡（CF卡）"><a href="#标准存储卡（CF卡）" class="headerlink" title="标准存储卡（CF卡）"></a>标准存储卡（CF卡）</h3><ul>
-<li>CF存储卡是由美国SanDisk公司于1994年研制成功的</li>
-<li>CF卡的大小为43mm x 36mm x 3.3mm，CF卡同时支持3.3伏和5伏的电压，可以在这两种电压下工作</li>
-<li>CF卡（Compact Flash）接口具有PCMCIA-ATA功能，可以工作在IDE接口模式，也可以工作在PC Card模式</li>
-<li>CF卡主要在PDA、笔记本电脑、数码相机和包括台式机在内的各种设备</li>
-</ul>
-<h3 id="安全数据卡（SD卡）"><a href="#安全数据卡（SD卡）" class="headerlink" title="安全数据卡（SD卡）"></a>安全数据卡（SD卡）</h3><ul>
-<li>SD卡是由日本松下公司、东芝公司和美国SanDisk公司于1999年8月共同研制开发而成的</li>
-<li>SD卡是根据MMC卡开发的，但是基本上两者还是不同的产品，只是在设计时考虑到兼容问题，所以在大多数情况下这两种产品能够互换，它比MMC卡多了一个进行数据著作权保护功能</li>
-<li>多用于MP3、数码相机、电子图书、微型电脑和AV器材等。尺寸大小比MMC卡略厚一些，为32mm x 24mm x 2.1mm</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%89%E7%AB%A0%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">第三章 操作系统知识</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2024-10-24 00:00:00" itemprop="dateCreated datePublished" datetime="2024-10-24T00:00:00+08:00">2024-10-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-11 20:12:07" itemprop="dateModified" datetime="2025-02-11T20:12:07+08:00">2025-02-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="操作系统的作用"><a href="#操作系统的作用" class="headerlink" title="操作系统的作用"></a>操作系统的作用</h1><ul>
-<li>通过资源管理（软硬件资源管理），提高计算机系统的效率改善人机界面，向用户提供友好的工作环境。</li>
-</ul>
-<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h2 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h2><ul>
-<li>进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位。它由程序块、进程控制块（PCB）和数据块三部分组成。</li>
-<li>进程与程序的区别<ul>
-<li>进程是程序的一次执行过程，没有程序就没有进程</li>
-<li>程序是完成某个特定功能的一系列程序语句的集合，只要不被破坏，它就永远存在</li>
-<li>程序是一个静态的概念，而进程是一个动态的概念，它由创建而产生，完成任务后因撤销而消亡；进程是系统进行资源分配和调度的独立单位，而程序不是</li>
-</ul>
-</li>
-</ul>
-<h2 id="进程状态：三态模型"><a href="#进程状态：三态模型" class="headerlink" title="进程状态：三态模型"></a>进程状态：三态模型</h2><ul>
-<li>运行态：占有处理器正在运行</li>
-<li>就绪态：指具备运行条件，等待系统分配处理器以便运行</li>
-<li>等待态：又称为阻塞态或睡眠态，指不具备运行条件，正在等待某个事件的完成<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902090949.png" alt="三态模型"></li>
-<li>运行态–等待态：等待使用资源，如等待外设传输，等待人工干预</li>
-<li>等待态–就绪态：资源得到满足，如外设传输结束，人工干预完成</li>
-<li>运行态–就绪态：运行时间片到，出现有更高优先权进程</li>
-<li>就绪态–运行态：CPU空闲时选择一个就绪进程</li>
-</ul>
-<h2 id="进程状态：五态模型"><a href="#进程状态：五态模型" class="headerlink" title="进程状态：五态模型"></a>进程状态：五态模型</h2><ul>
-<li>挂起：将进程调出内存，保存到外存队列中，并释放资源</li>
-<li>激活：恢复挂起进程，重新调入内存<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902091000.png" alt="五态模型"></li>
-<li>目的：释放进程占用的资源以缓解资源不足</li>
-<li>原因：终端用户的请求，父进程的请求、OS的需要（如负荷调节、对换等）</li>
-</ul>
-<h2 id="前驱图"><a href="#前驱图" class="headerlink" title="前驱图"></a>前驱图</h2><ul>
-<li>出度：多少箭头出</li>
-<li>入度：多少箭头入</li>
-</ul>
-<h2 id="进程的同步和互斥"><a href="#进程的同步和互斥" class="headerlink" title="进程的同步和互斥"></a>进程的同步和互斥</h2><ul>
-<li>互斥：间接制约</li>
-<li>同步：直接制约</li>
-</ul>
-<h2 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h2><ul>
-<li>临界资源：诸进程间需要互斥方式对其进行共享的资源，如打印机、磁带机等</li>
-<li>临界区：每个进程中访问临界资源的那段代码称为临界区</li>
-<li>信号量：是一种特殊的变量</li>
-<li>P操作：申请资源，阻塞进程</li>
-<li>V操作：释放资源，唤醒进程<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20240902091015.png" alt="PV操作"></li>
-</ul>
-<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><ul>
-<li>进程管理是操作系统的核心，但如果设计不当，就会出现死锁的问题。如果一个进程在等待一个不可能发生的事，则进程就死锁了。而如果一个或多个进程产生死锁，就会造成系统死锁。</li>
-<li>死锁的预防：打破四大条件<ul>
-<li>互斥</li>
-<li>保持和等待</li>
-<li>不剥夺</li>
-<li>环路等待</li>
-</ul>
-</li>
-<li>死锁的避免<ul>
-<li>有序资源分配法</li>
-<li><strong>银行家算法</strong></li>
-</ul>
-</li>
-<li>银行家算法：分配资源的原则<ul>
-<li>当一个进程对资源的最大需求量不超过系统中的资源数时可以接纳该进程</li>
-<li>进程可以分期请求资源，但请求的总数不能超过最大需求量</li>
-<li>当系统现有的资源不能满足进程尚需资源数时，对进程的请求可以推迟分配，但总能使进程在有限的时间里得到资源</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务的调度的概述"><a href="#任务的调度的概述" class="headerlink" title="任务的调度的概述"></a>任务的调度的概述</h2><ul>
-<li>任务的调度要解决的问题：<ul>
-<li>WHEN：何时分配CPU<ul>
-<li>任务调度的时机，5种情形</li>
-</ul>
-</li>
-<li>HOW：如何分配CPU<ul>
-<li>任务调度方式，不可抢占，可抢占</li>
-</ul>
-</li>
-<li>WHAT：按什么原则分配CPU<ul>
-<li>任务调度算法，先来先服务、短作业优先、时间片轮转调度、优先级算法</li>
-<li>调度算法的性能指标</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h2><ul>
-<li>定义：调度用来确定多任务环境下任务执行的顺序和在获得CPU资源后能够执行的时间长度。</li>
-<li>操作系统通过一个<strong>调度程序</strong>来实现调度功能<ul>
-<li>调度程序以函数的形式存在，用来实现操作系统的调度算法</li>
-<li>调度程序本身并不是一个任务，是一个函数调用，可在内核的各个部分进行调用</li>
-</ul>
-</li>
-<li>调度程序：可以看作CPU的资源管理者<ul>
-<li>从就绪队列中选择一个任务去执行</li>
-<li>调度算法：调度程序在决策过程中所采用的算法，是在一个特定时刻用来确定将要运行的任务的一组规则</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务调度的时机"><a href="#任务调度的时机" class="headerlink" title="任务调度的时机"></a>任务调度的时机</h2><ul>
-<li>一般来说有5种情形可能会发生任务的调度。<ul>
-<li>当一个新的任务被创建时，需要做出一个调度决策，是立即执行这个新任务还是继续执行父任务</li>
-<li>当一个任务运行结束时，它不再占用CPU，这时调度器必须做出一个决策，从就绪队列中选择某个任务去运行</li>
-<li>当一个任务由于I&#x2F;O操作、信号量或其他原因被阻塞时，也必须另选一个任务运行</li>
-<li>当一个I&#x2F;O操作已经完成，而等待该I&#x2F;O操作的任务将从阻塞状态变为就绪状态</li>
-<li>当一个时钟中断发生时，会唤醒一些延时任务或者可能会发现当前任务的时间片已用完，从而把它变为就绪状态</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务调度的方式"><a href="#任务调度的方式" class="headerlink" title="任务调度的方式"></a>任务调度的方式</h2><ul>
-<li>不可抢占调度方式（Non-Preemptive）：<ul>
-<li>如果一个任务被调度程序选中，就会一直运行下去</li>
-<li>直到它因为某种原因（如I&#x2F;O操作或任务间的同步）被阻塞了，或者它主动地交出了CPU的使用权。</li>
-<li>调度时机中的前3种情况（任务创建、任务运行结束、任务被阻塞），都可能会发生调度。第4、5种情况（即发生中断），不会发生调度</li>
-</ul>
-</li>
-<li>可抢占调度方式（Preemptive）：<ul>
-<li>当一个任务正在运行的时候，调度程序可以去打断它，并安排其他的任务去运行</li>
-<li>调度时机中所有的5种情况，都可能会发生调度</li>
-</ul>
-</li>
-<li>实时操作系统大都采用可抢占调度方式<ul>
-<li>使关键任务能够打断非关键任务的执行，确保关键任务的截止时间能够得到满足</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务调度算法的性能指标"><a href="#任务调度算法的性能指标" class="headerlink" title="任务调度算法的性能指标"></a>任务调度算法的性能指标</h2><ul>
-<li>CPU的使用率（CPU utilization）</li>
-<li>响应时间（responsive time）：调度器为一个就绪任务进行上下文切换时所需的时间，以及任务在就绪队列中的等待时间</li>
-<li>周转时间：一个任务从提交到完成所经历的时间</li>
-<li>调度开销：调度器在做出调度决策时所需要的时间和空间开销</li>
-<li>公平性：大致相当的两个任务所得到的CPU时间应该大致相同。要防止饥饿，即一个任务始终得不到处理器去运行</li>
-<li>均衡性：尽可能使整个系统的各个部分（CPU、I&#x2F;O）都忙起来，提高系统资源的使用效率</li>
-<li>吞吐量：单位时间内完成的任务数量</li>
-<li><strong>这些性能指标之间具有一定的冲突性</strong><ul>
-<li>比如可通过让更多的任务处于就绪状态来提高CPU的使用率，但这显然会降低系统的响应时间</li>
-<li>调度程序的设计需要优先考虑最重要的需求，然后在各种因素之间进行折中处理</li>
-</ul>
-</li>
-</ul>
-<h2 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h2><ul>
-<li>先来先服务算法（First Come First Served，FCFS）：也叫先进先出算法（First In First Out，FIFO）按照任务到达的先后次序进行调度，是不可抢占的调度方式<ul>
-<li>若当前任务占用CPU在运行，一直等到它执行完或被阻塞，才释放CPU</li>
-<li>被阻塞的任务，唤醒后，放在就绪队列的末尾，重新开始排队</li>
-</ul>
-</li>
-<li>先来先服务算法特点：<ul>
-<li>简单，易于理解，易于实现</li>
-<li>一批任务的平均周转时间取决于各个任务到达的顺序，如果短任务位于长任务之后，将增大平均周转时间</li>
-</ul>
-</li>
-</ul>
-<h2 id="SJF"><a href="#SJF" class="headerlink" title="SJF"></a>SJF</h2><ul>
-<li>短作业优先算法（Shortest Job First，SJF）：各个任务开始执行之前，事先预计好它的执行时间，从中选择用时较短的任务优先执行</li>
-<li>短作业优先算法有2种实现方案：<ul>
-<li>不可抢占方式：任务正在运行时，即使来了一个更短的任务，也不会被打断，只有当它运行完毕或被阻塞时，才会让出CPU，进行新的调度</li>
-<li>可抢占方式：如果一个新的短任务到了，且它的运行时间要小于当前正在运行的任务的剩余时间，则新任务会抢占CPU去运行。也称为最短剩余时间优先算法（Shortest Remaining Time First，SRTF）</li>
-</ul>
-</li>
-</ul>
-<h2 id="RR"><a href="#RR" class="headerlink" title="RR"></a>RR</h2><ul>
-<li><p>时间片轮转调度（round-robin scheduing RR）算法：</p>
-<ul>
-<li>所有的就绪任务按照先来先服务的原则排成一个队列</li>
-<li>在每次调度的时候，把处理器分派给队列当中的第一个任务，让它去执行一小段时间（时间片）。在这个时间段里任务被阻塞或结束，或者任务的时间片用完了，它会被送到就绪队列的末尾，然后调度器再执行当前队列的第一个任务</li>
-</ul>
-</li>
-<li><p>特点：</p>
-<ul>
-<li>时间片轮转调度（round-robin scheduing RR）算法的优点：<ul>
-<li>公平性：每个就绪任务平均地分配使用CPU的时间</li>
-<li>活动性：每个就绪任务都能一直保持着活动性</li>
-</ul>
-</li>
-<li>采用时间片轮转调度算法，任务的时间片大小要适当选择</li>
-<li>时间片大小的选择会影响系统的性能和效率<ul>
-<li>时间片太大，时间片轮转调度就没有意义</li>
-<li>时间片太小，任务切换过于频繁，处理器开销大，真正用于运行应用程序的时间会减小</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>时间片轮转法有一个默认前提，即位于就绪队列中的各个任务时同等重要的</p>
-<ul>
-<li>任务按照先来后到的顺序排成一个队列</li>
-<li>大家轮流执行相同长度的时间片</li>
-</ul>
-</li>
-</ul>
-<h2 id="优先级算法："><a href="#优先级算法：" class="headerlink" title="优先级算法："></a>优先级算法：</h2><ul>
-<li><p>给每个任务都设置一个优先级</p>
-</li>
-<li><p>在任务调度的时候，让所有处于就绪状态的任务中选择优先级最高的那个任务去运行</p>
-</li>
-<li><p>优先级算法分为：可抢占式和不可抢占式</p>
-<ul>
-<li>可抢占式：当一个任务正在运行，一个优先级更高的新任务进入就绪状态，会立即抢占CPU运行新任务</li>
-<li>不可抢占式：当一个任务正在运行，一个优先级更高的新任务进入就绪状态，等当前任务执行完再决定</li>
-</ul>
-</li>
-<li><p>优先级算法确定方式：</p>
-<ul>
-<li>静态方式<ul>
-<li>在创建任务的时候就确定任务的优先级，且一直保持不变直到任务结束</li>
-<li>缺点：高优先级的任务会一直占用着CPU运行，低优先级的任务可能会长时间地得不到CPU，一直处于“饥饿”状态</li>
-</ul>
-</li>
-<li>动态方式<ul>
-<li>在创建任务的时候确定任务的优先级，但该优先级可以在任务的运行过程中动态改变，以获得更好的调度性能</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>在优先级算法中，把任务按照不同的优先级进行分组，不同组的任务之间使用优先级算法，同一组的各任务之间使用时间片轮转法</p>
-</li>
-<li><p>采用优先级调度算法还有一个问题是可能会发生<strong>优先级反转</strong>（priority inversion），出现任务“饥饿”现象</p>
-</li>
-<li><p>理想情况下，高优先级任务就绪后，能够立即抢占低优先级任务而得到执行</p>
-</li>
-<li><p>实际系统中，但在有多个任务需要使用共享资源的情况下，可能会出现高优先级任务被低优先级任务阻塞，并等待低优先级任务执行的现象</p>
-</li>
-<li><p>优先级反转（priority inversion）</p>
-<ul>
-<li>高优先级任务需要等待低优先级任务释放资源，而低优先级任务又正在等待中等优先级任务的现象</li>
-</ul>
-</li>
-</ul>
-<h2 id="任务间通信"><a href="#任务间通信" class="headerlink" title="任务间通信"></a>任务间通信</h2><ul>
-<li><p>任务间通信（intertask communication）：任务之间为了协调工作，需要相互交换数据和控制信息</p>
-</li>
-<li><p>任务之间的通信可以分为两种类型：</p>
-<ul>
-<li>低级通信：只能传递状态和整数值等控制信息，例如信号量机制、异步信号机制</li>
-<li>高级通信：能够传输任意数量的数据，主要有三类：<strong>共享内存</strong>、<strong>消息传递</strong>和<strong>管道</strong></li>
-</ul>
-</li>
-<li><p>共享内存（shared memory）：各个任务共享其地址空间中的某些部分，在此区域，可以任意读写和使用任意的数据结构，把它看成一个通用的缓冲区</p>
-<ul>
-<li>使用共享内存来传递数据时，通常需和任务间的互斥机制结合起来，以免产生竞争条件，确保数据顺利传送</li>
-</ul>
-</li>
-<li><p>消息：内存空间中一段长度可变的缓冲区，其长度和内容均可以由用户定义，其内容可以是实际的数据、数据块的指针或空</p>
-</li>
-<li><p>对消息内容的解释由应用完成</p>
-<ul>
-<li>从操作系统观点看，消息没有定义的格式，所有的消息都是字节流，没有特定的含义</li>
-<li>从应用观点看，根据应用定义的消息格式，消息被解释成特定的含义</li>
-<li>应用可以只把消息当成一个标志，这时消息机制用于实现同步</li>
-</ul>
-</li>
-<li><p>消息传递：任务与任务之间通过发送和接受消息来交换信息</p>
-</li>
-<li><p>消息机制由操作系统来维护，包括定义寻址方式、认证协议、消息的数量等，一般提供两个基本操作</p>
-<ul>
-<li>send操作：发送一条消息</li>
-<li>receive操作：接受一条消息</li>
-</ul>
-</li>
-<li><p>任务间的通信方式：</p>
-<ul>
-<li>直接通信。在通信过程中双方必须明确地知道（命名）彼此：<ul>
-<li>Send（p，message）发送一个消息到任务p</li>
-<li>Receive（Q，message）从任务Q接受一个消息</li>
-</ul>
-</li>
-<li>间接通信。通信双方不需要指出消息的来源或去向，而通过中间机制来通信。如：<ul>
-<li>snend（A，message）发送一个消息给邮箱A</li>
-<li>receive（A，message）从邮箱A接受一个消息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>一些操作系统内核把消息进一步分为：邮箱和消息队列</p>
-<ul>
-<li>邮箱仅能存放单条消息，它提供了一种低开销的机制来传递信息。每个邮箱可以保存一条大小为若干个字节的消息</li>
-<li>消息队列可存放若干消息，提供了一种任务间缓冲通信的方法，间接通信方式</li>
-</ul>
-</li>
-<li><p>管道（pipe）是提供非结构化数据交换和实现任务间同步的内核对象。在传统的实现中，管道是单向数据交换设施</p>
-<ul>
-<li>数据在管道中像一个非结构字节流，按FIFO的次序从管道中读出</li>
-<li>当管道空时，阻塞读者，当管道满时，阻塞写者</li>
-</ul>
-</li>
-<li><p>管道和消息队列的区别</p>
-<ul>
-<li>管道不存储多个消息，它存储的数据是非结构化的字节流</li>
-<li>管道中的数据严格地遵循先进先出的顺序</li>
-<li>管道支持选择（select）操作，而消息队列不支持</li>
-</ul>
-</li>
-</ul>
-<h1 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h1><h2 id="分区存储"><a href="#分区存储" class="headerlink" title="分区存储"></a>分区存储</h2><ul>
-<li><table>
-<thead>
-<tr>
-<th>分区方法</th>
-<th>分区类型</th>
-<th>特点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单一连续分配</td>
-<td>静态分配法</td>
-<td>不分区，所有用户空间给某个进程或作业</td>
-</tr>
-<tr>
-<td>固定分区分配</td>
-<td>静态分配法</td>
-<td>分成大小不等的区域，区域分完后固定不变</td>
-</tr>
-<tr>
-<td>可变分区分配</td>
-<td>动态分配法</td>
-<td>分成大小不等的区域，根据用户要求动态分配</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>可变分区分配算法</p>
-<ul>
-<li>最先匹配法</li>
-<li>下次匹配法</li>
-<li>最佳匹配法</li>
-<li>最坏匹配法</li>
-</ul>
-</li>
-</ul>
-<h2 id="页式存储"><a href="#页式存储" class="headerlink" title="页式存储"></a>页式存储</h2><ul>
-<li>页式存储系统的逻辑地址是由页号和页内地址两部分组成的<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250211190817.png" alt="页式存储"></li>
-<li>优点：利用率高，碎片小，分配及管理简单</li>
-<li>缺点：增加了系统开销；可能产生抖动现象</li>
-</ul>
-<h2 id="段式存储"><a href="#段式存储" class="headerlink" title="段式存储"></a>段式存储</h2><ul>
-<li>优点：多道程序共享内存，各段程序修改互不影响</li>
-<li>缺点：内存利用率低，内存碎片浪费大<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250211193443.png" alt="段式存储"></li>
-</ul>
-<h2 id="段页式存储"><a href="#段页式存储" class="headerlink" title="段页式存储"></a>段页式存储</h2><ul>
-<li>优点：空间浪费小、存储共享容易、存储保护容易、能动态连接</li>
-<li>缺点：由于管理软件的增加，复杂性和开销也随之增加，需要的硬件以及占用的内容也有所增加，使得执行速度大大下降<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250211193450.png" alt="段页式存储"></li>
-</ul>
-<h2 id="虚拟存储"><a href="#虚拟存储" class="headerlink" title="虚拟存储"></a>虚拟存储</h2><ul>
-<li>虚拟存储器<ul>
-<li>具有部分装入和部分对换功能，能从逻辑上对内容容量进行大幅度扩充，使用方便的一种存储器系统</li>
-<li>实际上是为扩大主存而采用的一种设计技巧</li>
-<li>虚拟存储器的容量和主存大小无关</li>
-<li>虚拟存储器的实现对用户来说是透明的</li>
-</ul>
-</li>
-<li>页面置换算法<ul>
-<li>最佳置换算法</li>
-<li>先进先出置换算法</li>
-<li>最近最少未使用置换算法</li>
-<li>最近未用置换算法</li>
-</ul>
-</li>
-</ul>
-<h2 id="磁盘结构及调度算法"><a href="#磁盘结构及调度算法" class="headerlink" title="磁盘结构及调度算法"></a>磁盘结构及调度算法</h2><ul>
-<li>磁盘结构<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250211200916.png" alt="磁盘结构" style="zoom:150%;" /></li>
-<li>调度算法<ul>
-<li>先来先服务（FCFS）</li>
-<li>最短寻道时间优先（SSTF）</li>
-<li>扫描算法（SCAN）</li>
-<li>循环扫描（CSCAN）算法</li>
-</ul>
-</li>
-<li>非格式化容量 &#x3D; 面数 x （磁道数&#x2F;面） x 内圆周长 x 最大位密度</li>
-<li>格式化容量 &#x3D; 面数 x （磁道数&#x2F;面） x （扇区数&#x2F;道） x （字节数&#x2F;扇区）</li>
-<li>读取磁盘数据的时间应包括以下三个部分<ul>
-<li>找磁道的时间</li>
-<li>找块（扇区）的时间，即旋转延迟时间</li>
-<li>传输时间</li>
-</ul>
-</li>
-</ul>
-<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><h2 id="文件组织结构"><a href="#文件组织结构" class="headerlink" title="文件组织结构"></a>文件组织结构</h2><ul>
-<li>逻辑结构<ul>
-<li>流式文件</li>
-<li>记录式文件</li>
-</ul>
-</li>
-<li>物理结构<ul>
-<li>顺序结构</li>
-<li>链接结构</li>
-<li>索引结构</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241024101241.png" alt="微信图片_20241024101151"></p>
-<h2 id="树形目录结构"><a href="#树形目录结构" class="headerlink" title="树形目录结构"></a>树形目录结构</h2><ul>
-<li>绝对路径</li>
-<li>相对路径</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241024101305.png" alt="微信图片_20241024101129"></p>
-<h2 id="空闲存储空间的管理"><a href="#空闲存储空间的管理" class="headerlink" title="空闲存储空间的管理"></a>空闲存储空间的管理</h2><ul>
-<li>位示图法</li>
-</ul>
-<p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241024101328.png" alt="微信图片_20241024101207"></p>
-<h1 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h1><h2 id="虚设备与SPOOLING技术"><a href="#虚设备与SPOOLING技术" class="headerlink" title="虚设备与SPOOLING技术"></a>虚设备与SPOOLING技术</h2><p><img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20241024101339.png" alt="微信图片_20241024101201"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/18/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/09/18/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/%E7%94%B5%E5%8A%9B%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A%E7%A7%AF%E7%B4%AF/" class="post-title-link" itemprop="url">电力相关名词解释积累</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-09-18 00:00:00 / Modified: 10:52:41" itemprop="dateCreated datePublished" datetime="2024-09-18T00:00:00+08:00">2024-09-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%B5%E5%8A%9B%E7%94%B5%E5%AD%90/" itemprop="url" rel="index"><span itemprop="name">电力电子</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="台区"><a href="#台区" class="headerlink" title="台区"></a>台区</h1><ul>
-<li><strong>定义</strong>：台区是指（一台）变压器的供电范围或区域，是电力经济运行管理的名词。</li>
-<li><strong>类型</strong>：按照负荷类型不同，台区可分为城市居民台区、商业台区、工业台区和农业台区四类。</li>
-<li><strong>功能</strong>：电能运输与分配、电能质量检测、能源管理</li>
-</ul>
-<h1 id="功率因数"><a href="#功率因数" class="headerlink" title="功率因数"></a>功率因数</h1><ul>
-<li><strong>定义</strong>：又称功率系数，是交流电路中有功功率（P）与视在功率（S）的比值，常用符号cosΦ表示，其中Φ为电压与电流之间的相位差。</li>
-<li>视在频率是指电路的总功率，包括了有功功率和无功功率两个部分。</li>
-<li>功率因数的大小反映了电路中有功功率在总功率中所占的比例。功率因数越高，说明电路中有功功率的比例越大，电能的利用效率也就越高。反之，功率因数低则表明电路中无功功率的比例较大，电能的利用效率低。</li>
-</ul>
-<h1 id="射频电磁场"><a href="#射频电磁场" class="headerlink" title="射频电磁场"></a>射频电磁场</h1><ul>
-<li><strong>定义</strong>：射频电磁场（Radiofrequency Electromagnetic Fields，简称RF）是高频交流变化电磁波的简称。当交流电的频率达到10^5 Hz（即100 kHz）以上时，其周围就形成了高频率的电场和磁场，即射频电磁场。射频电磁场在多个领域有着广泛的应用和重要作用。</li>
-</ul>
-<h1 id="差模电流"><a href="#差模电流" class="headerlink" title="差模电流"></a>差模电流</h1><ul>
-<li><strong>定义</strong>：差模电流是指在电源线与电源回线之间（或在信号线与信号回线之间）流动的、大小相同但方向相反的电流。这种电流通常是由电路中的工作信号或信号源产生的。差模电流是平衡电流的一种形式，其特点是电流在传输线中以相反的方向流动，从而减少了电磁辐射和对外界设备的干扰。</li>
-<li><strong>应用与影响</strong>：在信号传输中，使用差模信号可以降低共模电流的影响，提高信号的传输质量。差模电流主要通过平衡传输线进行传输，这种传输方式通过将正负极性的信号分别传输以减少信号的失真和噪声。此外，在电磁兼容性（EMC）设计中，差模电流和共模电流是需要关注的重要参数。通过合理设计滤波电路和选择合适的滤波器，可以抑制和衰减传导干扰（包括差模干扰和共模干扰），确保电子设备的正常工作和性能稳定。</li>
-</ul>
-<h1 id="直流电压纹波"><a href="#直流电压纹波" class="headerlink" title="直流电压纹波"></a>直流电压纹波</h1><ul>
-<li><strong>定义</strong>：直流电压纹波是由于直流稳定电源的电压波动而造成的一种现象。直流电源一般是由交流电源经整流稳压等环节而形成的，这就不可避免地在直流稳定量中带有一些交流成分，这种叠加在直流稳定量上的交流分量就被称为纹波。</li>
-</ul>
-<h1 id="潜动"><a href="#潜动" class="headerlink" title="潜动"></a>潜动</h1><ul>
-<li><strong>定义</strong>：是指电能表在运行或校验时，只加电压而负载电流为零时，表盘仍然连续旋转的现象。简单来说，就是当电能表没有实际负载电流而通过电压时，其转盘会不正常地转动。</li>
-<li><strong>电能表产生潜动的原因</strong>：<ul>
-<li>有轻微负荷，如配电盘上的指示灯、带灯开关、线路负荷定量器、电压互感器、变压器、电焊机空载运行和功率因数过低等。</li>
-<li>潜动试验不合格。一般电能表轻载正、负误差偏大。</li>
-<li>没按正相序电源进行电能表接线。</li>
-<li>三相电压严重不平衡。</li>
-<li>电流互感器匝间短路或存在漏电，电路绝缘破损及电能表电流线圈烧毁等。</li>
-</ul>
-</li>
-</ul>
-<h1 id="浪涌试验"><a href="#浪涌试验" class="headerlink" title="浪涌试验"></a>浪涌试验</h1><ul>
-<li><strong>定义</strong>：浪涌试验是指在电子设备中注入控制的电压和电流瞬态，模拟实际使用条件下可能发生的过电压和过电流，以评估设备的耐受能力。这些瞬态电压和电流可能由外部因素引起，如雷击、电源开关操作或其他用户的操作。</li>
-</ul>
-<h1 id="相位角"><a href="#相位角" class="headerlink" title="相位角"></a>相位角</h1><ul>
-<li><strong>定义</strong>：某一物理量随时间（或空间位置）作正弦或余弦变化时，决定该量在任一时刻（或位置）状态的一个数值。</li>
-</ul>
-<h1 id="八种输入输出模式"><a href="#八种输入输出模式" class="headerlink" title="八种输入输出模式"></a>八种输入输出模式</h1><ul>
-<li><strong>推挽输出</strong>(Push-Pull Output)：推挽输出模式是最常见的GPIO输出模式。在该模式下，引脚可以输出高电平或低电平，同时具有一定的驱动能力。引脚在输出低电平时形成低阻抗，输出高电平时形成高阻抗，可以驱动外部电路。</li>
-<li><strong>开漏输出</strong>(Open-Drain Output)：开漏输出模式是一种能够输出低电平和高阻抗的GPIO模式。在该模式下，引脚只能输出低电平，要输出高电平需要通过外部上拉电阻或其他方式。通常用于与外部器件连接，例如与开漏输出的I2C总线器件进行通信。</li>
-<li><strong>复用推挽输出</strong>(AF Push-Pull Output)：复用推挽输出模式允许将GPIO引脚用作特定外设功能。在该模式下，引脚可以输出高电平或低电平，并具有一定的驱动能力。</li>
-<li><strong>复用开漏输出</strong>(AF Open-Drain Output)：复用开漏输出模式允许将GPIO引脚用作特定外设功能。在该模式下，引脚只能输出低电平，要输出高电平需要通过外部上拉电阻或其他方式。</li>
-<li><strong>浮空输入</strong>(Floating Input)：浮空输入模式是一种高阻抗输入模式。在该模式下，引脚不连接到外部电路，处于高阻抗状态。可以通过读取引脚电平来检测外部信号。</li>
-<li><strong>上拉输入</strong>(Pull-up Input)：上拉输入模式是一种具有内部上拉电阻的GPIO输入模式。在该模式下，引脚连接到外部电路，通过内部上拉电阻来维持默认电平为高电平。</li>
-<li><strong>下拉输入</strong>(Pull-down Input)：下拉输入模式是一种具有内部下拉电阻的GPIO输入模式。在该模式下，引脚连接到外部电路，通过内部下拉电阻来维持默认电平为低电平。</li>
-<li><strong>模拟输入</strong>(Analog Input)：模拟输入模式是一种用于ADC（模数转换器）输入的特殊模式。在该模式下，引脚可以接收连续变化的模拟信号。</li>
-</ul>
-<h1 id="VCC、VSS和VDD"><a href="#VCC、VSS和VDD" class="headerlink" title="VCC、VSS和VDD"></a>VCC、VSS和VDD</h1><ul>
-<li>VCC：供电端电压</li>
-<li>VSS：接地端电压（常作为接地点）</li>
-<li>VDD：芯片内部工作电压</li>
-</ul>
-<h1 id="起动电流"><a href="#起动电流" class="headerlink" title="起动电流"></a>起动电流</h1><ul>
-<li><strong>定义</strong>：在功率因数为1时，规定的电能表应起动并连续记录电能的最小电流值，多相电能表应带平衡负载。</li>
-<li>功率因数为1是指有功功率等于视在功率。</li>
-</ul>
-<h1 id="最小电流"><a href="#最小电流" class="headerlink" title="最小电流"></a>最小电流</h1><ul>
-<li><strong>定义</strong>：复合电能表准确度要求的电流最小值。</li>
-<li><strong>代号</strong>：I<sub>min</sub></li>
-</ul>
-<h1 id="转折电流"><a href="#转折电流" class="headerlink" title="转折电流"></a>转折电流</h1><ul>
-<li><strong>定义</strong>：规定的电流值，在大于等于该值时，与电能表准确度等级对应的最大允许误差在最小极限内。</li>
-<li><strong>代号</strong>：I<sub>tr</sub></li>
-</ul>
-<h1 id="最大电流"><a href="#最大电流" class="headerlink" title="最大电流"></a>最大电流</h1><ul>
-<li><strong>定义</strong>：规定的电能表持续承载并保持安全且满足准确度要求的电流的最大值。</li>
-<li><strong>代号</strong>：I<sub>max</sub></li>
-</ul>
-<h1 id="标称电压"><a href="#标称电压" class="headerlink" title="标称电压"></a>标称电压</h1><ul>
-<li><strong>定义</strong>：确定电能表相关性能所依据的电压值。</li>
-<li><strong>代号</strong>：U<sub>nom</sub></li>
-</ul>
-<h1 id="标称频率"><a href="#标称频率" class="headerlink" title="标称频率"></a>标称频率</h1><ul>
-<li><strong>定义</strong>：确定电能表相关性能所依据的频率值。</li>
-</ul>
-<h1 id="初始固有误差"><a href="#初始固有误差" class="headerlink" title="初始固有误差"></a>初始固有误差</h1><ul>
-<li><strong>定义</strong>：在性能试验和耐久性试验之前，在参比条件下测定的电能表误差。</li>
-</ul>
-<h1 id="基本最大允许误差"><a href="#基本最大允许误差" class="headerlink" title="基本最大允许误差"></a>基本最大允许误差</h1><ul>
-<li><strong>定义</strong>：除电流和功率因数在额定工作条件给出的范围内变化外，且电能表工作在参比条件下时，所允许的测量电能表指示的误差的极限值。</li>
-</ul>
-<h1 id="间谐波"><a href="#间谐波" class="headerlink" title="间谐波"></a>间谐波</h1><ul>
-<li><p><strong>定义</strong>：其频率为信号基波频率非整数的信号部分。</p>
-</li>
-<li><p>由谐波次数扩展，间谐波次数是间谐波频率域基波频率的比值。该比值为非整数。</p>
-<ul>
-<li><strong>”非整数”的原因</strong>：<ul>
-<li><strong>定义</strong>：间谐波（Interharmonics）定义为频率与基波频率的比值为非整数的频率分量。这是间谐波的基本定义，直接说明了其频率与基波频率之间不存在整数倍的关系。</li>
-<li><strong>物理特性</strong>：间谐波与基波频率不存在同步关系，其频率分布可能是位于两个谐波频率之间的离散频率分量，也可能是连续频谱。这种非同步和非整数倍的关系使得间谐波具有独特的物理特性。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>间谐波的产生原因</strong>：</p>
-<ul>
-<li>非线性设备：随着电力电子元件等非线性设备在电力系统中的广泛应用，这些设备在工作过程中会产生非基波频率整数倍的谐波，即间谐波。这些谐波对电网的污染日益严重，是间谐波产生的主要原因之一。</li>
-<li>波动负载：许多负载（不论是线性的还是非线性的）是波动的，这导致对于工频的“周期性”前提已不存在。因此，用傅立叶理论分析的结果可能不完全符合实际，从而产生了非整数倍基波频率的间谐波。</li>
-<li>主动调制与控制：除了工频电力系统遭遇“外来”客观扰动外，主动调制（包括调幅、调频、调相）和主动控制（如电力电子变流器）也会产生间谐波。这些谐波是基波能量和外加能量综合作用的结果，其频率与基波频率之间不存在固定的整数倍关系。</li>
-</ul>
-</li>
-</ul>
-<h1 id="影响量"><a href="#影响量" class="headerlink" title="影响量"></a>影响量</h1><ul>
-<li><strong>定义</strong>：电能表外部的、可能影响电能表的功能或计量性能的任一长时间的量。</li>
-</ul>
-<h1 id="干扰"><a href="#干扰" class="headerlink" title="干扰"></a>干扰</h1><ul>
-<li><strong>定义</strong>：电能表外部的、可能影响电能表的功能或计量性能的任一短时间（瞬时）的量。</li>
-</ul>
-<h1 id="热稳定"><a href="#热稳定" class="headerlink" title="热稳定"></a>热稳定</h1><ul>
-<li><strong>定义</strong>：当由热效应引起的误差偏移在20min内按认可的方法所测得的值（根据不同试验所确定的计量值）小于基本最大允许误差的0.1倍时，则可认为仪表达到热稳定。</li>
-</ul>
-<h1 id="电能表电压工作范围中“扩展的工作范围”"><a href="#电能表电压工作范围中“扩展的工作范围”" class="headerlink" title="电能表电压工作范围中“扩展的工作范围”"></a>电能表电压工作范围中“扩展的工作范围”</h1><ul>
-<li><strong>定义</strong>：设备或系统能够正常工作的电压范围，这个范围超出了其标准或规定的工作电压范围，但仍在设备或系统能够安全、稳定运行的极限之内。这种扩展的工作范围设计通常是为了提高设备或系统的灵活性和适应性，以应对不同的工作条件和需求。</li>
-</ul>
-<h1 id="脉冲常数"><a href="#脉冲常数" class="headerlink" title="脉冲常数"></a>脉冲常数</h1><ul>
-<li><p><strong>定义</strong>：，脉冲常数通常用来表征每度电（kWh）所对应的脉冲个数。单位通常为imp&#x2F;kWh（脉冲数&#x2F;千瓦时）或p&#x2F;kWh等。这种表示方式使得电能表能够通过计数脉冲个数来准确计量电能的消耗。</p>
-</li>
-<li><p><strong>为什么能用脉冲数计算电能消耗</strong>：电能的计量通常是通过记录脉冲信号来完成的。在电能表内部，有电流互感器、电压互感器和A&#x2F;D变换器等模块，这些模块将电能转化为数字信号，并输出脉冲信号给计量器。</p>
-</li>
-</ul>
-<h1 id="传导干扰"><a href="#传导干扰" class="headerlink" title="传导干扰"></a>传导干扰</h1><ul>
-<li><strong>定义</strong>：传导干扰是指通过导电介质把一个电网络上的信号耦合到另一个电网络的行为现象。</li>
-<li><strong>分类</strong>：传导干扰可以分为共模传导干扰和差模传导干扰两种。共模传导干扰是指信号或干扰源以相同的方式影响多个电路，如共享电源线上的噪声干扰；差模传导干扰则是指信号或干扰源的差异在电路间引起的干扰，如差分信号传输中的干扰。</li>
-<li><strong>产生原因</strong>：传导干扰的产生主要源于电子系统中不同电路之间的相互作用。它可以来自其他电子设备、电源线的噪声、开关电路、发射机和无线电频率干扰等。当这些干扰源通过电源线、信号线等物理连接传播到其他电路时，就会产生传导干扰。</li>
-</ul>
-<h1 id="准确度等级"><a href="#准确度等级" class="headerlink" title="准确度等级"></a>准确度等级</h1><ul>
-<li>根据国际标准GB&#x2F;T 17215.321的规定<ul>
-<li>A级代表2级</li>
-<li>B级代表1级</li>
-<li>C级代表0.5级</li>
-<li>D级代表0.2级</li>
-<li>E级代表0.1级</li>
-</ul>
-</li>
-</ul>
-<h1 id="功率因数0-5L和功率因数0-8C"><a href="#功率因数0-5L和功率因数0-8C" class="headerlink" title="功率因数0.5L和功率因数0.8C"></a>功率因数0.5L和功率因数0.8C</h1><ul>
-<li><strong>功率因数0.5L</strong><ul>
-<li><strong>含义</strong>：功率因数0.5L表示在交流电路中，电流与电压之间的相位差使得它们的余弦值为0.5，并且这个相位差是由于电感（L）引起的。具体来说，0.5表示电流滞后电压60°，即电压与电流的夹角为60度（cos60°&#x3D;0.5），这通常出现在感性电路中，即电压超前于电流60度。</li>
-<li><strong>特性</strong>：感性电路的特点是电流滞后于电压，这种相位差导致电流的一部分并不用于产生有功功率（即驱动负载的实际功率），而是产生了无功功率，增加了电网中的能量损耗和负荷。</li>
-</ul>
-</li>
-<li><strong>功率因数0.8C</strong><ul>
-<li><strong>含义</strong>：功率因数0.8C表示在交流电路中，电流与电压之间的相位差使得它们的余弦值为0.8，但这个相位差是由于电容（C）引起的。具体来说，这里的“C”并不是直接表示功率因数的值，而是表示电容元件的电容，与“L”表示电感元件的电感相对应。然而，在实际应用中，当我们看到“0.8C”这样的表示时，更可能是指功率因数为0.8且电路呈现出容性特性（即电流超前电压）。但严格来说，“0.8C”并不是标准的功率因数表示方法，更常见的表示方式是直接写为cosφ&#x3D;0.8（容性）。</li>
-<li><strong>特性</strong>：容性电路的特点是电流超前于电压，这种相位差同样导致一部分电流不用于产生有功功率，而是产生了无功功率。但与感性电路不同的是，容性电路在某些情况下可以通过与感性电路并联来相互补偿无功功率，从而提高整个电网的功率因数。</li>
-</ul>
-</li>
-</ul>
-<h1 id="电压线路和电流线路"><a href="#电压线路和电流线路" class="headerlink" title="电压线路和电流线路"></a>电压线路和电流线路</h1><ul>
-<li><strong>电压线路</strong>：<ul>
-<li><strong>主要作用</strong>：电压线路是电能表上用于测量电压的部分，也被称为V线。它主要用来测量电路中的电压，确认供电方的用电情况。</li>
-<li><strong>实现方式</strong>：电压线路通常通过电压互感器或类似元件将高电压安全地转换为低电压进行测量，以保护测量设备和人员的安全。</li>
-</ul>
-</li>
-<li><strong>电流线路</strong>：<ul>
-<li><strong>主要作用</strong>：电流线路是电能表上用于测量电流的部分，也被称为A线。它主要用来测量电路中的电流，判断电路中电器设备的用电情况。</li>
-<li><strong>实现方式</strong>：电流线路通常通过电流互感器将大电流转换为小电流进行测量，这种转换不仅降低了测量难度，还提高了测量精度和安全性。</li>
-</ul>
-</li>
-<li><strong>接口位置</strong>：在电表上，电压线路的接口通常是高电压端，而电流线路的接口通常是低电压端。这是因为电流线路需要拥有低内阻，才能测量出准确的电流值；而电压线路则需要阻抗高一些才能将测得的值正常传输至电表中。</li>
-<li><strong>测量原理</strong>：电压线路通过测量电压差来测量电路中的电压；而电流线路则通过测量电路中的电流大小来进行测量。</li>
-</ul>
-<h1 id="继电器"><a href="#继电器" class="headerlink" title="继电器"></a>继电器</h1><ul>
-<li><strong>定义</strong>：一种电控制器件，是当输入量（激励量）的变化达到规定要求时，在电气输出电路中使被控量发生预定的阶跃变化的一种电器。它具有控制系统（又称输入回路）和被控制系统（又称输出回路）之间的互动关系。通常应用于自动化的控制电路中，它实际上是用小电流去控制大电流运作的一种“自动开关”。故在电路中起着自动调节、安全保护、转换电路等作用。</li>
-<li><strong>工作原理</strong>：当输入量（如电压、电流、温度等）达到规定值时，继电器通过电磁效应、机械传动或声、光、热元件等使输出回路发生阶跃变化（通或断），从而控制或保护被控对象。</li>
-<li><strong>分类</strong>：<ul>
-<li>根据输入信号的性质可以分为电压继电器、电流继电器、时间继电器、温度继电器、速度继电器、压力继电器等；</li>
-<li>根据工作原理可以分为电磁继电器、固体继电器、温度继电器、舌簧继电器、时间继电器、高频继电器等；</li>
-<li>根据触点形式可以分为动合型（H型）、动断型（D型）、转换型（Z型）。</li>
-</ul>
-</li>
-<li><strong>主要作用</strong>：<ul>
-<li><strong>扩大控制范围</strong>：例如，多触点继电器控制信号达到某一定值时，可以按触点组的不同形式，同时换接、开断、接通多路电路。</li>
-<li><strong>放大</strong>：例如，灵敏型继电器、中间继电器等，用一个很微小的控制量，可以控制很大功率的电路。</li>
-<li><strong>综合信号</strong>：例如，当多个控制信号按规定的形式输入多绕组继电器时，经过比较综合，达到预定的控制效果。</li>
-<li><strong>自动、遥控、监测</strong>：例如，自动装置上的继电器与其他电器一起，可以组成程序控制线路，从而实现自动化运行。</li>
-</ul>
-</li>
-</ul>
-<h1 id="电能潮流"><a href="#电能潮流" class="headerlink" title="电能潮流"></a>电能潮流</h1><ul>
-<li><strong>定义</strong>：通常称为电力潮流（Power Flow），是电力系统在运行时，电流或功率从电源通过系统各元件流入负荷，分布于电力网各处的现象。</li>
-<li><strong>计算</strong>：从电的产生到被负荷消耗，流过哪一路输配电线，各节点电压是多少，这种计算称为电力潮流计算或简称潮流计算。</li>
-</ul>
-<h1 id="智能电能表"><a href="#智能电能表" class="headerlink" title="智能电能表"></a>智能电能表</h1><ul>
-<li><strong>定义</strong>：由测量单元、数据处理单元、通信单元等组成，具有电能量计量、信息存储及处理、实时监测、自动控制和信息交互等功能的电能表。</li>
-</ul>
-<h1 id="基本电流"><a href="#基本电流" class="headerlink" title="基本电流"></a>基本电流</h1><ul>
-<li><strong>定义</strong>：确定直接接入电能表有关特性的电流值，I<sub>b</sub>&#x3D;10I<sub>tr</sub>。</li>
-</ul>
-<h1 id="额定电流"><a href="#额定电流" class="headerlink" title="额定电流"></a>额定电流</h1><ul>
-<li><strong>定义</strong>：确定经互感器接入电能表有关特性的电流值，I<sub>n</sub>&#x3D;20I<sub>tr</sub>。额定电流和基本电流之间并不是2倍关系，二者是相对于<strong>不同电能表</strong>而言的表述，二者转折电流不同，而额定电流是等于基本电流的。这里的额定电流指的是电能表外部有<strong>互感器</strong>的情况。</li>
-</ul>
-<h1 id="需量"><a href="#需量" class="headerlink" title="需量"></a>需量</h1><ul>
-<li><strong>定义</strong>：规定时间内的平均功率。</li>
-</ul>
-<h1 id="需量周期"><a href="#需量周期" class="headerlink" title="需量周期"></a>需量周期</h1><ul>
-<li><strong>定义</strong>：测量平均功率的连续相等的时间间隔。</li>
-</ul>
-<h1 id="最大需量"><a href="#最大需量" class="headerlink" title="最大需量"></a>最大需量</h1><ul>
-<li><strong>定义</strong>：在规定时间段内记录的需量的最大值。</li>
-</ul>
-<h1 id="滑差时间"><a href="#滑差时间" class="headerlink" title="滑差时间"></a>滑差时间</h1><ul>
-<li><strong>定义</strong>：依次递推用来测量最大需量的小于需量周期的时间间隔。</li>
-</ul>
-<h1 id="冻结"><a href="#冻结" class="headerlink" title="冻结"></a>冻结</h1><ul>
-<li><strong>定义</strong>：存储特定时刻重要数据的操作。</li>
-</ul>
-<h1 id="时段"><a href="#时段" class="headerlink" title="时段"></a>时段</h1><ul>
-<li><strong>定义</strong>：将一天中的24小时划分成若干时间区段。</li>
-</ul>
-<h1 id="费率"><a href="#费率" class="headerlink" title="费率"></a>费率</h1><ul>
-<li><strong>定义</strong>：与电能消耗时段相对应的计算电费的价格体系。</li>
-</ul>
-<h1 id="介质"><a href="#介质" class="headerlink" title="介质"></a>介质</h1><ul>
-<li><strong>定义</strong>：售电系统和电能表之间以某种方法传递信息的媒体。</li>
-<li><strong>分类</strong>：<ul>
-<li><strong>固态介质</strong>：具备合理的电气接口，具有特定的封装形式的介质，如接触式IC卡等。</li>
-<li><strong>虚拟介质</strong>：采用非固态介质传输信息的介质，可以为电力线载波、无线电、电话或线缆等。</li>
-</ul>
-</li>
-</ul>
-<h1 id="CPU卡"><a href="#CPU卡" class="headerlink" title="CPU卡"></a>CPU卡</h1><ul>
-<li><strong>定义</strong>：配置有存储器和逻辑控制电路及微处理（MCU）电路，能多次重复使用的接触式IC卡。</li>
-</ul>
-<h1 id="ESAM"><a href="#ESAM" class="headerlink" title="ESAM"></a>ESAM</h1><ul>
-<li><strong>定义</strong>：嵌入在设备内，实现安全存储、数据加&#x2F;解密，双向身份认证、存取权限控制、线路加密传输等安全控制功能的模块。</li>
-</ul>
-<h1 id="剩余金额"><a href="#剩余金额" class="headerlink" title="剩余金额"></a>剩余金额</h1><ul>
-<li><strong>定义</strong>：在电能表中记录的可供用户使用的电费金额，该金额应大于等于零。</li>
-</ul>
-<h1 id="透支金额"><a href="#透支金额" class="headerlink" title="透支金额"></a>透支金额</h1><ul>
-<li><strong>定义</strong>：用户已使用但未缴纳电费的金额值，该值小于零。</li>
-</ul>
-<h1 id="透支门限金额"><a href="#透支门限金额" class="headerlink" title="透支门限金额"></a>透支门限金额</h1><ul>
-<li><strong>定义</strong>：允许用户合法使用的最大透支金额。</li>
-</ul>
-<h1 id="报警金额"><a href="#报警金额" class="headerlink" title="报警金额"></a>报警金额</h1><ul>
-<li><strong>定义</strong>：剩余金额的报警限值，当剩余金额小于等于报警限值时，电能表给出或其他方式报警。</li>
-</ul>
-<h1 id="负荷开关"><a href="#负荷开关" class="headerlink" title="负荷开关"></a>负荷开关</h1><ul>
-<li><strong>定义</strong>：负荷开关是一种用于控制电路中负载（如电气设备、灯具、电动机等）通断的电气开关装置。它通过手动或自动操作实现对电路的控制，具有可靠性高、操作简便、安全可靠等特点，广泛应用于电力系统、工业自动化控制、交通信号控制以及建筑智能化等领域。</li>
-<li><strong>分类</strong>：可采用内置和外置方式。</li>
-<li><strong>作用</strong>：控制用户用电。</li>
-<li>表内的跳闸控制开关宜采用电磁继电器。</li>
-</ul>
-<h1 id="低压电力线载波"><a href="#低压电力线载波" class="headerlink" title="低压电力线载波"></a>低压电力线载波</h1><ul>
-<li><strong>定义</strong>：将低压电力线作为数据&#x2F;信息传输载体的一种通信方式，简称“载波”。</li>
-</ul>
-<h1 id="公网通信"><a href="#公网通信" class="headerlink" title="公网通信"></a>公网通信</h1><ul>
-<li><strong>定义</strong>：采用公网通信信道实现数据传输的通信。</li>
-</ul>
-<h1 id="阶梯电价"><a href="#阶梯电价" class="headerlink" title="阶梯电价"></a>阶梯电价</h1><ul>
-<li><strong>定义</strong>：在一个约定的用电结算周期内，把用电量分为两段或多段，每一分段对应一个单位电价，单位电价在分段内保持不变，但是可随分段不同而变化，针对上述电量制定的单位电价。</li>
-</ul>
-<h1 id="临界电压"><a href="#临界电压" class="headerlink" title="临界电压"></a>临界电压</h1><ul>
-<li><p><strong>定义</strong>：电能表能够启动工作的最低电压。</p>
-</li>
-<li><p>这里的<strong>启动工作</strong>表示电能表能够正常的计量、显示、记录事件，不强制要求响应背光点亮、通信、跳合闸、报警输出等。</p>
-</li>
-<li><p>对于<strong>三相电能表</strong>，当<strong>各相电压</strong>均达到标称电压的<strong>60％</strong>时或<strong>单相电压</strong>达到标称电压的<strong>85％</strong>单独工作时，电能表能够启动工作；对于<strong>单相电能表</strong>，当电压达到标称电压的<strong>60％</strong>时，电能表能够启动工作。</p>
-</li>
-</ul>
-<h1 id="电压（电流）不平衡率"><a href="#电压（电流）不平衡率" class="headerlink" title="电压（电流）不平衡率"></a>电压（电流）不平衡率</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，电压（电流）不平衡率为最大相电压（电流）和最小相电压（电流）之差占最大相电压（电流）的百分比。</li>
-<li>对于<strong>电压不平衡率</strong>，<strong>三相三线</strong>情况下，用 <strong>U<sub>ab</sub></strong> 和 <strong>U<sub>cb</sub></strong> 参与运算。</li>
-<li>对于<strong>电流不平衡率</strong>，<strong>三相三线</strong>情况下，<strong>B相电流</strong>不参与运算。</li>
-</ul>
-<h1 id="欠压"><a href="#欠压" class="headerlink" title="欠压"></a>欠压</h1><ul>
-<li><strong>定义</strong>：在三相（或单相）供电系统中，某相电压大于设定的过压事件电压触发下限，且持续时间大于设定的欠压事件判定延时时间的工况。</li>
-<li>当“<strong>过压时间电压触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>过压事件</strong>”不启用。</li>
-</ul>
-<h1 id="过流"><a href="#过流" class="headerlink" title="过流"></a>过流</h1><ul>
-<li><p><strong>定义</strong>：在三相（或单相）供电系统中，某相负荷电流大于设定的过流事件电流触发下限，且持续时间大于设定的过流事件判定延时时间的工况。</p>
-</li>
-<li><p>当“<strong>过流事件触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>过流事件</strong>”不启用。</p>
-</li>
-</ul>
-<h1 id="断流"><a href="#断流" class="headerlink" title="断流"></a>断流</h1><ul>
-<li><strong>定义</strong>：在三相（或单相）供电系统中，某相电压大于断流事件电压的触发下限，同时该相电流小于设定的断流事件电流触发上限，且持续时间大于设定的断流事件判定延时时间的工况。</li>
-<li><strong>三相三线</strong>情况下，电压用 <strong>U<sub>ab</sub></strong> 和 <strong>U<sub>cb</sub></strong> 参与运算，<strong>B相电流</strong>不参与运算。</li>
-<li>当“<strong>断流事件电流触发上限</strong>“设定为”<strong>0</strong>“时，表示”<strong>断流事件</strong>“不启用。</li>
-</ul>
-<h1 id="电压不平衡"><a href="#电压不平衡" class="headerlink" title="电压不平衡"></a>电压不平衡</h1><ul>
-<li><strong>定义</strong>：当三相电压中任一相大于电能表的临界电压，电压不平衡率大于设定的电压不平衡率限值，且持续时间大于设定的电压不平衡率判定延时时间的工况。</li>
-<li>当“<strong>电压不平衡率限值</strong>”设定为“<strong>0</strong>”时，表示“<strong>电压不平衡事件</strong>”不启用。</li>
-</ul>
-<h1 id="电流不平衡"><a href="#电流不平衡" class="headerlink" title="电流不平衡"></a>电流不平衡</h1><ul>
-<li><strong>定义</strong>：当三相电流中的任一相电流大于5%额定（基本）电流，电流不平衡率大于设定的电流不平衡率限值，且持续时间大于设定的电流不平衡判定延时时间的工况。</li>
-<li>当“<strong>电流不平衡率限值</strong>”设定为“<strong>0</strong>”时，表示“<strong>电流不平衡事件</strong>”不启用。</li>
-</ul>
-<h1 id="电流严重不平衡"><a href="#电流严重不平衡" class="headerlink" title="电流严重不平衡"></a>电流严重不平衡</h1><ul>
-<li><strong>定义</strong>：当三相电流中的任一相电流大于5%额定（基本）电流，电流不平衡率大于设定的电流<strong>严重</strong>不平衡率限值，且持续时间大于设定的电流<strong>严重</strong>不平衡判定延时时间的工况。</li>
-<li>当“<strong>电流严重不平衡率限值</strong>”设定为“<strong>0</strong>”时，表示“<strong>电流严重不平衡事件</strong>”不启用。</li>
-</ul>
-<h1 id="功率因数超下限"><a href="#功率因数超下限" class="headerlink" title="功率因数超下限"></a>功率因数超下限</h1><ul>
-<li><strong>定义</strong>：在三相（或单相）供电系统中，当总功率因数小于设定的功率因数超下限阈值，同时任意一相电流大于5%额定（基本）电流，或者当某相功率小于设定的功率因数超下限阈值，同时该相电流大于5%额定（基本）电流，且持续时间大于设定的功率因数超下限判定延时时间的工况。</li>
-<li><strong>三相三线</strong>情况下，<strong>不判断</strong>分相功率因数超下限。</li>
-<li>当“<strong>功率因数超下限阈值</strong>”设定为“<strong>0</strong>”时，表示“<strong>功率因数超下限事件</strong>”不启用。</li>
-</ul>
-<h1 id="有功功率反向"><a href="#有功功率反向" class="headerlink" title="有功功率反向"></a>有功功率反向</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，当总或任一相有功功率方向为反向，同时该总或任一相有功功率大于设定的有功功率反向事件有功功率触发下限，且持续时间大于设定的有功功率反向事件判定延时时间的工况。</li>
-<li>当“<strong>有功功率反向事件有功功率触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>有功功率反向事件</strong>”不启用。</li>
-<li>三相三电供电系统不要求分相功率反向。</li>
-</ul>
-<h1 id="过载"><a href="#过载" class="headerlink" title="过载"></a>过载</h1><ul>
-<li><strong>定义</strong>：在三相（或单相）供电系统中，某相功率大于设定的过载事件有功功率触发下限，且持续时间大于设定的过载事件判定延时时间的工况。</li>
-<li>当“<strong>过载事件有功功率触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>过载事件</strong>”不启用。</li>
-</ul>
-<h1 id="断相"><a href="#断相" class="headerlink" title="断相"></a>断相</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，当某相电压低于设定的断相事件电压触发上限，同时该相电流小于设定的断相事件电流触发上限，且持续时间大于设定的断相事件判定延时时间的工况。</li>
-<li><strong>三相三线</strong>情况下，电压用 <strong>U<sub>ab</sub></strong> 和 <strong>U<sub>cb</sub></strong> 参与运算，不判断<strong>B相</strong>断相。</li>
-<li>当“<strong>断相事件电压触发上限</strong>”设定为“<strong>0</strong>”时，表示“<strong>断相事件</strong>”不启用。</li>
-</ul>
-<h1 id="失流"><a href="#失流" class="headerlink" title="失流"></a>失流</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，三相中至少有一相负荷电流大于失流事件电流触发下限，某相电压大于设定的失流事件电压触发下限，同时该相电流小于设定的失流事件电流触发上限值时，且持续时间大于设定的失流事件判定延时时间的工况。</li>
-<li><strong>三相三线</strong>情况下，电压用 <strong>U<sub>ab</sub></strong> 和 <strong>U<sub>cb</sub></strong> 参与运算，<strong>B相电流</strong>不参与运算。</li>
-<li>当“<strong>失流事件电流触发上限</strong>”设定为“<strong>0</strong>”时，表示“<strong>失流事件</strong>”不启用。</li>
-</ul>
-<h1 id="失压"><a href="#失压" class="headerlink" title="失压"></a>失压</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，某相电流大于设定的失压事件电流触发下限，同时该相电压低于设定的失压事件电压触发上限，且持续时间大于设定的失压事件判定延时时间的工况。</li>
-<li><strong>三相三线</strong>情况下，电压用 <strong>U<sub>ab</sub></strong> 和 <strong>U<sub>cb</sub></strong> 参与运算，不判断<strong>B相</strong>失压。</li>
-<li>当“<strong>失压事件电流触发上限</strong>”设定为“<strong>0</strong>”时，表示“<strong>失压事件</strong>”不启用。</li>
-</ul>
-<h1 id="全失压"><a href="#全失压" class="headerlink" title="全失压"></a>全失压</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，若三相电压均低于电能表的临界电压，且有任一相或多相负荷电流大于 5%额定（基本）电流，且持续时间大于 60s 的工况。</li>
-<li>全失压时，不管电能表能否工作，都记录全失压；如果这时电能表还能工作，电压继续降低直到电能表不能工作时，不记录全失压结束，直到电压恢复至电能表启动工作时，再进行全失压事件的判断。</li>
-<li>电能表停止工作后，在停止<strong>工作 60s 时</strong>检测且仅<strong>检测电流一次</strong>，进行全失压事件记录的判断，此后不再检测电流。</li>
-<li>全失压发生时，分相失压事件记录结束。</li>
-</ul>
-<h1 id="掉电"><a href="#掉电" class="headerlink" title="掉电"></a>掉电</h1><ul>
-<li><strong>定义</strong>：电能表供电电压低于电能表临界电压的工况。</li>
-<li>电能表符合掉电工况时，不管电能表能否工作，都记录掉电；如果这时电能表还能工作，电压继续降低直到电能表不能工作时，则不记录掉电结束，等到电压恢复至电能表启动工作时，再进行记掉电事件的判断。</li>
-<li>对于三相电能表，掉电工况为三相供电电压均低于电能表临界电压。</li>
-<li>当电能表供电电源符合掉电的条件，即使电能表有辅助电源供电，也必须记录掉电状况。</li>
-</ul>
-<h1 id="电压逆相序事件"><a href="#电压逆相序事件" class="headerlink" title="电压逆相序事件"></a>电压逆相序事件</h1><ul>
-<li><strong>定义</strong>：</li>
-<li>在三相供电系统中，三相电压均大于电能表的临界电压，三相电压逆相序，且持续时间大于 60s 时记录的事件。</li>
-</ul>
-<h1 id="电流逆相序事件"><a href="#电流逆相序事件" class="headerlink" title="电流逆相序事件"></a>电流逆相序事件</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，三相电压均大于电能表的临界电压，三相电流均大于 5%额定（基本）电流，三相电流逆相序，且持续时间大于 60s 时记录的事件。</li>
-</ul>
-<h1 id="有功需量超限"><a href="#有功需量超限" class="headerlink" title="有功需量超限"></a>有功需量超限</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，总有功需量大于设定的有功需量超限事件的需量触发下限，且持续时间大于设定的需量超限事件判定延时时间的工况。</li>
-<li>当“<strong>有功需量超限事件需量触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>有功需量超限事件</strong>”不启用。</li>
-</ul>
-<h1 id="无功需量超限"><a href="#无功需量超限" class="headerlink" title="无功需量超限"></a>无功需量超限</h1><ul>
-<li><strong>定义</strong>：在三相供电系统中，总无功需量大于设定的无功需量超限事件需量触发下限，且持续时间大于设定的需量超限事件判定延时时间的工况。</li>
-<li>当“<strong>无功需量超限事件需量触发下限</strong>”设定为“<strong>0</strong>”时，表示“<strong>无功需量超限事件</strong>”不启用。</li>
-</ul>
-<h1 id="恒定磁场干扰事件"><a href="#恒定磁场干扰事件" class="headerlink" title="恒定磁场干扰事件"></a>恒定磁场干扰事件</h1><ul>
-<li><strong>定义</strong>：三相电能表检测到外部有 100mT 以上强度的恒定磁场，且持续时间大于 5s 时记录的事件。</li>
-</ul>
-<h1 id="电源异常事件"><a href="#电源异常事件" class="headerlink" title="电源异常事件"></a>电源异常事件</h1><ul>
-<li><strong>定义</strong>：电能表的外部供电为电能表正常工作电压范围（0.8U<sub>nom</sub>～1.15U<sub>nom</sub>）时，但电能表内部处理器工作电压异常导致处理器进入到低功耗状态，且持续时间大于 1s 时记录的事件。</li>
-<li>内置负荷开关拉闸情况下不要求做此事件记录。</li>
-<li>电能表在进入低功耗后记录且仅记录一次电源异常事件。</li>
-</ul>
-<h1 id="负荷开关误动作事件"><a href="#负荷开关误动作事件" class="headerlink" title="负荷开关误动作事件"></a>负荷开关误动作事件</h1><ul>
-<li><strong>定义</strong>：电能表负荷开关实际状态与电能表发给负荷开关的命令状态不一致，且持续 5s 以上时记录的事件。</li>
-</ul>
-<h1 id="零线电流异常事件"><a href="#零线电流异常事件" class="headerlink" title="零线电流异常事件"></a>零线电流异常事件</h1><ul>
-<li><strong>定义</strong>：在三相（或单相）供电系统中，零线电流和火线电流（三相电能表的火线电流为三相电流矢量和）中任一电流大于电流触发下限，零线电流、火线电流的不平衡率大于不平衡率限值，且持续时间大于设定的判定延时时间时记录的事件。</li>
-<li>当“<strong>零线电流不平衡限制</strong>”设定为“<strong>0</strong>”时，表示“<strong>零线电流异常事件</strong>”不启用。</li>
-<li>直接接入式电能表应采用抗直流采样元件实现零线电流测量及监测，经互感器接入式电能表不要求零线电流测量功能。</li>
-<li>零线电流、火线电流的不平衡率为零线电流、火线电流的差值绝对值与零线电流、火线电流中最大值的比例。</li>
-</ul>
-<h1 id="计量芯片故障事件"><a href="#计量芯片故障事件" class="headerlink" title="计量芯片故障事件"></a>计量芯片故障事件</h1><ul>
-<li><strong>定义</strong>：电能表微处理器与电能表的计量芯片通信失败，且持续时间大于设定的判定延时时间时记录的事件。</li>
-</ul>
-<h1 id="时钟故障事件"><a href="#时钟故障事件" class="headerlink" title="时钟故障事件"></a>时钟故障事件</h1><ul>
-<li><strong>定义</strong>：当电能表时钟在运行过程或停上电过程中发生倒退、格式错乱、上电时刻时间小于掉电时间或大于掉电时间1000天等情况时记录的事件。</li>
-<li>当电能表收到明文方式广播校时指令时，如果广播校时的校时范围大于最大校时偏差（默认5分钟），电能表不接受校时，同时记录时钟故障事件；每个自然日因为该原因最多只生成一条时钟故障事件记录。</li>
-</ul>
-<h1 id="“缺省”通信"><a href="#“缺省”通信" class="headerlink" title="“缺省”通信"></a>“缺省”通信</h1><ul>
-<li><strong>定义</strong>：在电能表调制型红外接口的缺省通信中，“<strong>缺省</strong>”一词的含义是指系统或设备在出厂时预设的、未经用户修改的<strong>默认</strong>通信参数或设置。这些缺省参数和设置是制造商根据通用标准、设备性能以及用户常见需求而设定的，以确保设备在初次使用时能够正常工作，并与其他兼容设备或系统顺畅通信。</li>
-</ul>
-<h1 id="调制型红外接口"><a href="#调制型红外接口" class="headerlink" title="调制型红外接口"></a>调制型红外接口</h1><ul>
-<li><strong>调制技术</strong>：调制技术是将数据信号（基带信号）与载波信号（高频信号）混合，以产生适合传输的信号的过程。在调制型红外接口中，数据信号被调制到红外光载波上，形成红外光脉冲信号进行传输。</li>
-<li><strong>接口特点</strong>：<ul>
-<li><strong>通信速率</strong>：调制型红外接口的通信速率通常较高，可以满足多种数据传输需求。具体速率取决于调制技术和接口设计，但一般高于无调制的红外接口。</li>
-<li><strong>抗干扰能力强</strong>：由于采用了调制技术，红外光信号在传输过程中能够更好地抵抗环境干扰，如光线、电磁干扰等。</li>
-<li><strong>传输距离远</strong>：调制型红外接口通常具有较远的传输距离，适用于需要远距离数据传输的场合。</li>
-<li><strong>安全性高</strong>：红外光信号传输具有方向性，且难以穿透障碍物，因此具有较高的安全性。</li>
-</ul>
-</li>
-<li><strong>作用</strong>：这种调制方式可以提高数据传输的抗干扰能力和传输距离。</li>
-</ul>
-<h1 id="有功总电量、有功尖电量、有功峰电量、有功平电量和有功谷电量"><a href="#有功总电量、有功尖电量、有功峰电量、有功平电量和有功谷电量" class="headerlink" title="有功总电量、有功尖电量、有功峰电量、有功平电量和有功谷电量"></a>有功总电量、有功尖电量、有功峰电量、有功平电量和有功谷电量</h1><ul>
-<li>在电力系统中，为了更合理地分配电力资源、制定电价以及进行电力需求管理，通常会根据用电负荷的不同时间段来划分电量，这就是所谓的分时电量。具体来说，有功总电量是指一段时间内（如一个月）用户消耗的总电量，而不区分时间段。而有功尖电量、有功峰电量、有功平电量和有功谷电量则是根据用电负荷的高低来划分的。</li>
-<li><strong>有功尖电量</strong>：这通常指的是在一天中用电负荷最高的时段（即尖峰时段）内消耗的电量。尖峰时段一般出现在白天的工作高峰，此时电力需求最大，电网负荷最重。尖峰电量的价格通常也是最高的，以鼓励用户在非高峰时段用电。</li>
-<li><strong>有功峰电量</strong>：峰电量是指在一天中用电负荷相对较高的时段（即峰时段）内消耗的电量。峰时段虽然不如尖峰时段负荷高，但仍然属于用电高峰，因此峰电量的价格也会相应较高。</li>
-<li><strong>有功平电量</strong>：平电量则是指在一天中用电负荷相对平稳的时段（即平时段）内消耗的电量。这个时段的电力需求较为稳定，电价也相对较低。</li>
-<li><strong>有功谷电量</strong>：谷电量是指在一天中用电负荷最低的时段（即谷时段）内消耗的电量。谷时段一般出现在深夜至清晨，此时电力需求最低，电网负荷最轻。为了鼓励用户在谷时段用电，谷电量的价格通常是最低的。</li>
-</ul>
-<h1 id="数字地和模拟地"><a href="#数字地和模拟地" class="headerlink" title="数字地和模拟地"></a>数字地和模拟地</h1><ul>
-<li><strong>数字地</strong>：数字地是数字信号的对地，主要是指TTL或CMOS芯片、I&#x2F;O接口芯片、CPU芯片等数字逻辑电路的地端，以及A&#x2F;D、D&#x2F;A转换器的数字地。它也可以理解为各种开关量信号的零电位，是数字电压信号的基准端。数字地也被称为逻辑地，在一个完整的微机控制系统中，通常存在多种类型的地，如低电平电路地线、强电设备的地、机壳或控制柜的外壳地等。</li>
-<li><strong>模拟地</strong>：模拟地是模拟信号的对地，主要指放大器、采样-保持器和A&#x2F;D、D&#x2F;A中模拟信号的接地端。在微型机控制系统中，数字地和模拟地必须分别接地，即使一个芯片上同时包含数字和模拟两种地（如A&#x2F;D、D&#x2F;A或S&#x2F;H），也需要分别接地，并在一点处将两者连接起来。</li>
-</ul>
-<h1 id="接口带载能力"><a href="#接口带载能力" class="headerlink" title="接口带载能力"></a>接口带载能力</h1><ul>
-<li><strong>定义</strong>：接口带载能力是指接口在外接负载后，其输出电压或电流的大小能否保持稳定，且不受外接负载变化影响的能力。简单来说，就是接口能否有效地驱动和支撑外部负载工作。</li>
-</ul>
-<h1 id="非激励态输出电压和激励态输出电压"><a href="#非激励态输出电压和激励态输出电压" class="headerlink" title="非激励态输出电压和激励态输出电压"></a>非激励态输出电压和激励态输出电压</h1><ul>
-<li><strong>非激励态输出电压</strong>：非激励态输出电压是指当控制信号处于非激励（或称非激活、非工作）状态时，电路系统输出的电压值。</li>
-<li><strong>激励态输出电压</strong>：激励态输出电压是指当控制信号处于激励（或称激活、工作）状态时，电路系统输出的电压值。</li>
-</ul>
-<h1 id="II类绝缘防护"><a href="#II类绝缘防护" class="headerlink" title="II类绝缘防护"></a>II类绝缘防护</h1><ul>
-<li><strong>定义</strong>：电能表采用双重绝缘或加强绝缘作为主要的防电击措施。这种防护方式不依赖设备的外壳接地或安装条件，而是通过增加绝缘层的数量和厚度来提高电气安全性。</li>
-<li><strong>实现方式</strong>：<ul>
-<li><strong>双重绝缘</strong>：<ul>
-<li>电能表的内部电路与外部可触及部分之间设置两层绝缘层。</li>
-<li>这两层绝缘层各自独立，即使一层绝缘失效，另一层绝缘仍然能够提供保护。</li>
-</ul>
-</li>
-<li><strong>加强绝缘</strong>：<ul>
-<li>在某些情况下，可能采用单一但更厚的绝缘层，即加强绝缘。</li>
-<li>这种绝缘层具有更高的电气强度和耐电压能力，以确保在异常情况下也不会发生电击危险。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="带热拔插操作"><a href="#带热拔插操作" class="headerlink" title="带热拔插操作"></a>带热拔插操作</h1><ul>
-<li><strong>定义</strong>：热插拔操作通常指的是在设备带电的情况下进行插拔操作。</li>
-</ul>
-<h1 id="驻留时间"><a href="#驻留时间" class="headerlink" title="驻留时间"></a>驻留时间</h1><ul>
-<li><strong>定义</strong>：规定频率下影响量施加的持续时间。</li>
-</ul>
-<h1 id="步进频率"><a href="#步进频率" class="headerlink" title="步进频率"></a>步进频率</h1><ul>
-<li><strong>定义</strong>：试验中以固定的步长在一定范围不断变化的频率。</li>
-</ul>
-<h1 id="扫频测试"><a href="#扫频测试" class="headerlink" title="扫频测试"></a>扫频测试</h1><ul>
-<li><strong>定义</strong>：扫频测试是一种通过改变测试信号的频率，观察被测设备在不同频率下的响应特性的测试方法。</li>
-</ul>
-<h1 id="电能寄存器"><a href="#电能寄存器" class="headerlink" title="电能寄存器"></a>电能寄存器</h1><ul>
-<li><strong>定义</strong>：电能寄存器是电能计量中不可或缺的重要组件，它通过记录电能数据为电费计算、电力负荷分析、电力供需平衡等方面提供重要依据。</li>
-<li><strong>分类</strong>：<ul>
-<li><strong>正向有功电能寄存器</strong>：用于记录用户从电网中获取的电能，即用户用电的总电能值。</li>
-<li><strong>反向有功电能寄存器</strong>：用于记录用户向电网输出的电能值，这在一些特殊情况下（如分布式发电系统）会发生。</li>
-<li><strong>正向无功电能寄存器</strong>：用于记录用户从电网中获取的无功电能。无功电能是电网中用于建立和维护电磁场的能量，虽然不直接转化为有用功，但对电网的稳定运行至关重要。</li>
-<li><strong>反向无功电能寄存器</strong>：记录用户向电网输出的无功电能。</li>
-</ul>
-</li>
-</ul>
-<h1 id="共模与差模"><a href="#共模与差模" class="headerlink" title="共模与差模"></a>共模与差模</h1><ul>
-<li><strong>共模</strong>：<ul>
-<li>也称对地噪声，是指信号线与参考点（通常为大地或机架）之间的电压差。</li>
-<li>在电路中，共模信号表现为两个信号端点（或导线）对同一参考点（如地）有相同的电位变化或噪声。</li>
-<li>例如，当平衡线对中引入到两个平衡端的噪声电压，或者由于信号源与接收器之间的地电位差而产生的直流电平，都属于共模信号。</li>
-</ul>
-</li>
-<li><strong>差模</strong>：<ul>
-<li>也称串模，是指两个信号线之间的电压差。</li>
-<li>在电路中，差模信号表现为两个信号端点（或导线）之间的电位差，这种电位差是信号本身所携带的，用于传输有效信息。</li>
-<li>差模信号由一个正向信号和一个反向信号组成，它们在导线上以相等但相反的幅度传输。</li>
-</ul>
-</li>
-<li><strong>共模信号</strong>：<ul>
-<li>两个信号的幅度相等、相位相同。</li>
-<li>共模噪声对信号的传输具有干扰作用，容易导致信号失真和传输质量下降。</li>
-<li>衡量共模抑制能力的参数称为共模抑制比（CMRR），它反映了差分放大器对共模信号的抑制能力。</li>
-</ul>
-</li>
-<li><strong>差模信号</strong>：<ul>
-<li>两个信号的幅度相等、相位相反。</li>
-<li>差模信号的特点是其幅度大于单个信号的幅度，并且可以有效抵消外部干扰。</li>
-<li>差模传输主要用于提高信号质量和增强信号传输能力。</li>
-</ul>
-</li>
-</ul>
-<h1 id="四象限"><a href="#四象限" class="headerlink" title="四象限"></a>四象限</h1><ul>
-<li><strong>定义</strong>：电能表计量中的四象限是将一个平面坐标系的横轴定义为无功功率（Q），纵轴定义为有功功率（P），通过这两个轴将平面划分为四个区域，即四个象限。这四个象限按顺时针方向依次为Ⅰ象限、Ⅱ象限、Ⅲ象限和Ⅳ象限。</li>
-<li><strong>Ⅰ象限</strong>：<ul>
-<li><strong>定义</strong>：输入有功功率和输入无功功率（即P&gt;0，Q&gt;0）。</li>
-<li><strong>特点</strong>：通常发生在用户设备为感性负载（如电动机）的情况下，电流滞后于电压。电网需要向用户设备提供有功功率和无功功率，以维持设备的正常运行。</li>
-<li><strong>应用场景</strong>：大多数用户的正常用电状态都属于Ⅰ象限。</li>
-</ul>
-</li>
-<li><strong>Ⅱ象限</strong>：<ul>
-<li><strong>定义</strong>：输出有功功率和输入无功功率（即P&lt;0，Q&gt;0）。</li>
-<li><strong>特点</strong>：通常发生在用户设备相当于一台欠励磁发电机的情况下。用户设备向电网输出有功功率，但同时还需要从电网中吸收无功功率，以维持设备的稳定运行。</li>
-<li><strong>应用场景</strong>：某些具有自发电能力的用户（如小型水电站、风力发电站等）在发电不足或负荷过大时，可能会处于Ⅱ象限状态。</li>
-</ul>
-</li>
-<li><strong>Ⅲ象限</strong>：<ul>
-<li><strong>定义</strong>：输出有功功率和输出无功功率（即P&lt;0，Q&lt;0）。</li>
-<li><strong>特点</strong>：通常发生在用户设备相当于一台过励磁发电机的情况下。用户设备不仅向电网输出有功功率，还向电网输出无功功率，这有助于改善电网的功率因数，提高电网的效率。</li>
-<li><strong>应用场景</strong>：某些具有强大自发电能力的用户（如大型水电站、核电站等）在发电过剩或负荷较小时，可能会处于Ⅲ象限状态。</li>
-</ul>
-</li>
-<li><strong>Ⅳ象限</strong>：<ul>
-<li><strong>定义</strong>：输入有功功率和输出无功功率（即P&gt;0，Q&lt;0）。</li>
-<li><strong>特点</strong>：通常发生在用户设备为容性负载（如电容器组）的情况下，电流超前于电压。电网需要向用户设备提供有功功率，但用户设备会向电网输出无功功率，这有助于减少电网中的无功功率流动，提高电网的稳定性。</li>
-<li><strong>应用场景</strong>：电力系统中的无功补偿装置（如并联电容器组）在投入运行时，可能会使系统处于Ⅳ象限状态。</li>
-</ul>
-</li>
-</ul>
-<h1 id="电磁兼容、电磁干扰和电磁抗扰度"><a href="#电磁兼容、电磁干扰和电磁抗扰度" class="headerlink" title="电磁兼容、电磁干扰和电磁抗扰度"></a>电磁兼容、电磁干扰和电磁抗扰度</h1><ul>
-<li><strong>电磁兼容（EMC）</strong>：电子、电气设备或系统在电子、电气设备或系统在预期的电磁环境中，按设计要求正常工作的能力。它是电子、电气设备或系统的一种重要的技术性能。<ul>
-<li><strong>电磁干扰（EMI）</strong>：在一定环境中设备或系统在正常工作时，不应产生超过相应标准所要求的电磁能量，相对应的测试项目根据产品类型及标准不同而不同。</li>
-<li><strong>电磁抗扰度（EMS）</strong>：在一定环境中设备或系统，在正常运行时，设备或系统能承受相应标准规定范围内的电磁能量干扰，相对应的测试项目也根据产品类型及标准不同而不同。</li>
-<li><strong>电磁环境</strong>：系统或设备的工作环境。</li>
-</ul>
-</li>
-</ul>
-<h1 id="开漏输出"><a href="#开漏输出" class="headerlink" title="开漏输出"></a>开漏输出</h1><ul>
-<li><p><strong>定义</strong>：开漏输出引脚是由单个晶体管（通常是N沟道MOSFET或NPN三极管）驱动的，它将引脚拉到只有一个电压（通常是地）。当输出设备关闭时，引脚被悬空（开放或高阻）。</p>
-</li>
-<li><p><strong>原理</strong>：以N沟道MOSFET为例，当MOSFET打开时，将信号拉到地（低电平）；当MOSFET关闭时，引脚则保持开放状态，此时引脚的电平状态由外部电路决定，通常需要一个上拉电阻将引脚拉至高电平。</p>
-</li>
-<li><p><strong>应用场景</strong></p>
-<ul>
-<li><p><strong>总线通信</strong>：如I2C、SMBus等总线标准采用开漏输出方式，以支持多设备共享总线和实现电平匹配。</p>
-</li>
-<li><p><strong>电平转换</strong>：在需要实现不同电平之间转换的场合，开漏输出可以通过外接不同电压的上拉电阻来实现。</p>
-</li>
-<li><p><strong>驱动LED</strong>：虽然开漏输出通常需要外接上拉电阻才能输出高电平，但在驱动LED等简单负载时仍然有其应用空间。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><ul>
-<li><strong>定义</strong>：数据链路层定义了在单个链路上如何传输数据，这些协议与被讨论的各种介质（如ATM、FDDI等）有关。数据链路层通过物理线路（物理链路）加上实现通信协议的硬件和软件，构成逻辑上的数据链路。</li>
-<li><strong>功能</strong>：<ul>
-<li>封装成帧</li>
-<li>差错控制</li>
-<li>流量控制</li>
-<li>链路管理</li>
-<li>MAC寻址</li>
-<li>区别数据和控制信息</li>
-<li>透明传输</li>
-</ul>
-</li>
-</ul>
-<h1 id="面向对象的用电信息数据交换协议"><a href="#面向对象的用电信息数据交换协议" class="headerlink" title="面向对象的用电信息数据交换协议"></a>面向对象的用电信息数据交换协议</h1><ul>
-<li><strong>定义</strong>：基于面向对象的建模方法建立的一套使用于用电采集系统的互操作性数据交换通信协议。面对对象建模以接口类实现继承关系，以对象来封装数据及操作，以对象为互操作的基本要素。</li>
-</ul>
-<h1 id="对象标识"><a href="#对象标识" class="headerlink" title="对象标识"></a>对象标识</h1><ul>
-<li><strong>定义</strong>：标识终端中对象唯一名称的编码。</li>
-</ul>
-<h1 id="逻辑名"><a href="#逻辑名" class="headerlink" title="逻辑名"></a>逻辑名</h1><ul>
-<li><strong>定义</strong>：用于标识接口类的实例，它是接口类的第一个属性，它的值与对象标识一致。</li>
-</ul>
-<h1 id="类标识码"><a href="#类标识码" class="headerlink" title="类标识码"></a>类标识码</h1><ul>
-<li><strong>定义</strong>：用于区别对象接口类的标识码，即接口类的名称。</li>
-</ul>
-<h1 id="服务器地址"><a href="#服务器地址" class="headerlink" title="服务器地址"></a>服务器地址</h1><ul>
-<li><strong>定义</strong>：客户机&#x2F;服务器访问模型中的服务器的通信地址。</li>
-</ul>
-<h1 id="逻辑地址"><a href="#逻辑地址" class="headerlink" title="逻辑地址"></a>逻辑地址</h1><ul>
-<li><strong>定义</strong>：服务器模型中逻辑设备的地址。</li>
-</ul>
-<h1 id="客户机地址"><a href="#客户机地址" class="headerlink" title="客户机地址"></a>客户机地址</h1><ul>
-<li><strong>定义</strong>：客户机&#x2F;服务器访问模型中的客户机的通信地址。</li>
-</ul>
-<h1 id="采集启动时标"><a href="#采集启动时标" class="headerlink" title="采集启动时标"></a>采集启动时标</h1><ul>
-<li><strong>定义</strong>：启动采集任务时的设备时钟当前值，其值只与启动时刻有关，与执行时间的长短无关。</li>
-</ul>
-<h1 id="采集成功时标"><a href="#采集成功时标" class="headerlink" title="采集成功时标"></a>采集成功时标</h1><ul>
-<li><strong>定义</strong>：客户机成功接收到服务器响应时的设备时钟的当前值。</li>
-</ul>
-<h1 id="采集存储时标"><a href="#采集存储时标" class="headerlink" title="采集存储时标"></a>采集存储时标</h1><ul>
-<li><strong>定义</strong>：采集到的数据进行存储的时间。</li>
-</ul>
-<h1 id="组地址"><a href="#组地址" class="headerlink" title="组地址"></a>组地址</h1><ul>
-<li><strong>定义</strong>：具有某一相同属性的设备群组编码，如属于同一行业，同一变电站，同一线路，可以响应同一个命令。</li>
-</ul>
-<h1 id="通配地址"><a href="#通配地址" class="headerlink" title="通配地址"></a>通配地址</h1><ul>
-<li><strong>定义</strong>：在十进制编码表示的地址码中出现了一位或多位采用了通配符的地址码。</li>
-</ul>
-<h1 id="消息鉴别码"><a href="#消息鉴别码" class="headerlink" title="消息鉴别码"></a>消息鉴别码</h1><ul>
-<li><strong>定义</strong>：用于鉴别消息完整性的固定长度的认证标识。</li>
-</ul>
-<h1 id="透传"><a href="#透传" class="headerlink" title="透传"></a>透传</h1><ul>
-<li><strong>定义</strong>：改变信号传递的形式而不改变信号传递的内容。</li>
-</ul>
-<h1 id="光伏越限"><a href="#光伏越限" class="headerlink" title="光伏越限"></a>光伏越限</h1><ul>
-<li><strong>定义</strong>：主要是指光伏电站或分布式光伏发电系统在运行过程中，其电压、功率因数等参数超出了规定的范围或限制。</li>
-</ul>
-
+<h2 id="存储器的组织和结构"><a href="#存储器的组织和结构" class="headerlink" title="存储器的组织和结构"></a>存储器的组织和结构</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/10/25/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%93%E7%B3%BB/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

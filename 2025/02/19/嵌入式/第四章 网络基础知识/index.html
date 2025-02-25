@@ -21,19 +21,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ascendlogo.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":"ture","style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="OSI&#x2F;RMOSI七层模式 TCP&#x2F;IP 协议族 与网页访问相关：HTTP、HTTPS 与电子邮件相关：SMTP、POP3、IMAP4、MIME、PGP 远程访问&#x2F;管理：TELNET、RAS 域名、IP地址解析相关：DNS FTP访问：FTP 轻量目录访问协议：LDAP   电子邮件协议 WWW协议 URL          协议：&#x2F;&#x2F;主机地址[:">
+    <meta name="description" content="OSI&#x2F;RMOSI七层模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第四章 网络基础知识">
 <meta property="og:url" content="http://ascendlogo.github.io/2025/02/19/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Ascendlogo">
-<meta property="og:description" content="OSI&#x2F;RMOSI七层模式 TCP&#x2F;IP 协议族 与网页访问相关：HTTP、HTTPS 与电子邮件相关：SMTP、POP3、IMAP4、MIME、PGP 远程访问&#x2F;管理：TELNET、RAS 域名、IP地址解析相关：DNS FTP访问：FTP 轻量目录访问协议：LDAP   电子邮件协议 WWW协议 URL          协议：&#x2F;&#x2F;主机地址[:">
+<meta property="og:description" content="OSI&#x2F;RMOSI七层模式">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193951.png">
 <meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193935.png">
 <meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193926.png">
 <meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219194024.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220183404.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220185500.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220193023.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220195057.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224194540.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224195530.png">
+<meta property="og:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224200537.png">
 <meta property="article:published_time" content="2025-02-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2025-02-20T06:40:27.234Z">
+<meta property="article:modified_time" content="2025-02-25T01:23:51.530Z">
 <meta property="article:author" content="Ascendlogo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250219193951.png">
@@ -147,7 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI-RM"><span class="nav-number">1.</span> <span class="nav-text">OSI&#x2F;RM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">OSI七层模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80%E5%9F%9F%E7%BD%91%E7%BB%9C%E5%88%92%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">IP地址域网络划分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS%E4%B8%8EDHCP"><span class="nav-number">4.</span> <span class="nav-text">DNS与DHCP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">网络规划与设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD"><span class="nav-number">6.</span> <span class="nav-text">网络故障诊断</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI-RM"><span class="nav-number">1.</span> <span class="nav-text">OSI&#x2F;RM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">OSI七层模式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP"><span class="nav-number">2.</span> <span class="nav-text">TCP&#x2F;IP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IP%E5%9C%B0%E5%9D%80%E5%9F%9F%E7%BD%91%E7%BB%9C%E5%88%92%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">IP地址域网络划分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPV4"><span class="nav-number">3.1.</span> <span class="nav-text">IPV4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%95%BF%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="nav-number">3.2.</span> <span class="nav-text">变长子网掩码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPV6"><span class="nav-number">3.3.</span> <span class="nav-text">IPV6</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS%E4%B8%8EDHCP"><span class="nav-number">4.</span> <span class="nav-text">DNS与DHCP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E8%A7%84%E5%88%92%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="nav-number">5.</span> <span class="nav-text">网络规划与设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%95%85%E9%9A%9C%E8%AF%8A%E6%96%AD"><span class="nav-number">6.</span> <span class="nav-text">网络故障诊断</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -162,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">132</span>
+          <span class="site-state-item-count">134</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -240,7 +247,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-20 14:40:27" itemprop="dateModified" datetime="2025-02-20T14:40:27+08:00">2025-02-20</time>
+      <time title="Modified: 2025-02-25 09:23:51" itemprop="dateModified" datetime="2025-02-25T09:23:51+08:00">2025-02-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -320,7 +327,197 @@
 <li>路由器（可分割广播域）：用于网络互联：可作为互联网接入、不同网段间互联</li>
 <li>交换机（可分割冲突域）、集线器（不可分隔广播域和冲突域）：用于连接节点</li>
 </ul>
-<h1 id="IP地址域网络划分"><a href="#IP地址域网络划分" class="headerlink" title="IP地址域网络划分"></a>IP地址域网络划分</h1><h1 id="DNS与DHCP"><a href="#DNS与DHCP" class="headerlink" title="DNS与DHCP"></a>DNS与DHCP</h1><h1 id="网络规划与设计"><a href="#网络规划与设计" class="headerlink" title="网络规划与设计"></a>网络规划与设计</h1><h1 id="网络故障诊断"><a href="#网络故障诊断" class="headerlink" title="网络故障诊断"></a>网络故障诊断</h1>
+<h1 id="IP地址域网络划分"><a href="#IP地址域网络划分" class="headerlink" title="IP地址域网络划分"></a>IP地址域网络划分</h1><h2 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h2><ul>
+<li>ip地址组成<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220183404.png" alt="image-20250220183402807"></li>
+<li>首个8位字节规则<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220185500.png" alt="image-20250220185458907"></li>
+<li>IP地址掩码<ul>
+<li>标准地址掩码<ul>
+<li>A类：255.0.0.0</li>
+<li>B类：255.255.0.0</li>
+<li>C类：255.255.255.0</li>
+</ul>
+</li>
+<li>地址掩码表示方法<ul>
+<li>点分十进制：255.255.255.0</li>
+<li>位计数：172.21.0.0&#x2F;24</li>
+</ul>
+</li>
+<li>网络号：由网络部分+全零的主机位来表示</li>
+</ul>
+</li>
+<li>如何计算IP所属网段：地址掩码和IP地址进行AND运算来确定</li>
+</ul>
+<h2 id="变长子网掩码"><a href="#变长子网掩码" class="headerlink" title="变长子网掩码"></a>变长子网掩码</h2><ul>
+<li><p>IPV4地址包括3个部分：网络部分、子网部分和主机部分<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220193023.png" alt="image-20250220193021998"></p>
+</li>
+<li><p>子网是主网的一个子集</p>
+</li>
+<li><p>只要符合网络位+主机位&#x3D;32即可</p>
+</li>
+<li><p>IPV4地址的网络号，由分配的子网掩码来决定</p>
+</li>
+<li><p>子网个数：2<sup>2</sup>（其中n表示子网地址空间位数）</p>
+</li>
+<li><p>子网中可用IP地址计算：2<sup>2</sup>-2（n表示主机空间，-2 表示减去全0和全1两个不可用的地址）</p>
+</li>
+<li><p>特殊含义的IP地址</p>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>127网段</td>
+<td>回播地址</td>
+</tr>
+<tr>
+<td>全0地址</td>
+<td>为获取IP地址时，使用的地址（用于源地址）</td>
+</tr>
+<tr>
+<td>全1地址</td>
+<td>本地子网的广播（用于目标地址）</td>
+</tr>
+<tr>
+<td>主机号全1地址</td>
+<td>特定子网的广播（用于目标地址）</td>
+</tr>
+<tr>
+<td>10.0.0.0&#x2F;8</td>
+<td>10.0.0.1至10.255.255.254</td>
+</tr>
+<tr>
+<td>172.16.0.0&#x2F;12</td>
+<td>172.16.0.1至172.31.255.254</td>
+</tr>
+<tr>
+<td>192.168.0.0&#x2F;16</td>
+<td>192.168.0.1至192.168.255.254</td>
+</tr>
+<tr>
+<td>169.254.0.0</td>
+<td>保留地址，用于DHCP失效（Win）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h2><ul>
+<li>IPV6 128位 用16进制表示  12AB::CD30:0:0:0:0&#x2F;60（“::”  ： 压缩“0”，只能压缩一次）<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250220195057.png" alt="image-20250220195056066"></li>
+<li>IPV4与IPV6网络通信时相关技术<ul>
+<li>双协议栈</li>
+<li>隧道技术</li>
+<li>翻译技术</li>
+</ul>
+</li>
+</ul>
+<h1 id="DNS与DHCP"><a href="#DNS与DHCP" class="headerlink" title="DNS与DHCP"></a>DNS与DHCP</h1><ul>
+<li><p>域名空间结构<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224194540.png" alt="image-20250224194538620" style="zoom:200%;" /></p>
+</li>
+<li><p>常见域名</p>
+<table>
+<thead>
+<tr>
+<th>域名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>com</td>
+<td>表示商业机构</td>
+</tr>
+<tr>
+<td>net</td>
+<td>表示网络服务机构</td>
+</tr>
+<tr>
+<td>org</td>
+<td>表示非盈利性组织</td>
+</tr>
+<tr>
+<td>gov</td>
+<td>表示政府机构</td>
+</tr>
+<tr>
+<td>edu</td>
+<td>表示教育机构</td>
+</tr>
+<tr>
+<td>mil</td>
+<td>表示军事机构</td>
+</tr>
+<tr>
+<td>au</td>
+<td>澳大利亚</td>
+</tr>
+<tr>
+<td>cn</td>
+<td>中国</td>
+</tr>
+<tr>
+<td>tw</td>
+<td>台湾地区</td>
+</tr>
+<tr>
+<td>hk</td>
+<td>香港地区</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>DHCP协议</p>
+<ul>
+<li>客户机&#x2F;服务器模型</li>
+<li>租约默认为8天</li>
+<li>当租约过半时，客户机需要向DHCP服务器申请续租</li>
+<li>当租约超过87.5%时，如果仍然没有和当初提供IP的DHCP服务器联系上，则开始联系其他的DHCP服务器</li>
+<li>固定分配、动态分配和自动分配</li>
+<li>169.254.x.x和0.0.0.0</li>
+</ul>
+</li>
+<li><p>DNS协议<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224195530.png" alt="image-20250224195529020"></p>
+<ul>
+<li>主机向本地域名服务器的查询采用<strong>递归查询</strong></li>
+<li>本地域名服务器向根域名服务器的查询通常采用<strong>迭代查询</strong></li>
+<li>递归查询：服务器必须回答目标IP与域名的映射关系</li>
+<li>迭代查询：服务器收到一次迭代查询回复一次结果，这个结果不一定是目标IP与域名的映射关系，也可以是其他DNS服务器的地址</li>
+<li>递归查询根域名服务器负担重，效率低，故较少采用。</li>
+</ul>
+</li>
+</ul>
+<h1 id="网络规划与设计"><a href="#网络规划与设计" class="headerlink" title="网络规划与设计"></a>网络规划与设计</h1><ul>
+<li>网络分层设计<img src="https://gitee.com/Ascendlogo/note-pic/raw/master/img/20250224200537.png" alt="image-20250224200535923"></li>
+<li>接入层：用户接入、计费管理、MAC地址认证、收集用户信息</li>
+<li>汇聚层：网络访问策略控制、数据包处理、过滤、寻址。需要更高的性能，更少的接口和更高的交换速率。（可以省略）</li>
+<li>核心层：高速数据交换，常用冗余机制。使用双层（树）结构。</li>
+</ul>
+<h1 id="网络故障诊断"><a href="#网络故障诊断" class="headerlink" title="网络故障诊断"></a>网络故障诊断</h1><ul>
+<li>ipconfig命令<ul>
+<li><code>Ipconfig /all</code></li>
+<li><code>Ipconfig /release</code></li>
+<li><code>Ipconfig /renew</code></li>
+<li><code>Ipconfig /flushdns</code></li>
+</ul>
+</li>
+<li>tracert命令</li>
+<li>ping命令<ul>
+<li><code>Ping -t 目标ip/域名</code></li>
+<li><code>Ping -l 目标ip/域名</code></li>
+<li><code>Ping -a 目标ip/域名</code></li>
+<li><code>Ping -n 目标ip/域名</code></li>
+<li><code>Ping 127.0.0.1</code>：用于检查TCP&#x2F;IP协议栈</li>
+</ul>
+</li>
+<li>route print命令</li>
+<li>netstat命令<ul>
+<li><code>netstat /a</code>：显示所有连接和侦听端口</li>
+<li><code>netstat /e</code>：显示以太网统计</li>
+<li><code>netstat /a</code>：显示路由表</li>
+<li><code>netstat /a</code>：以数字形式显示地址和端口号</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
@@ -338,8 +535,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="Docker学习笔记">
-                  Docker学习笔记 <i class="fa fa-chevron-right"></i>
+                <a href="/2025/02/20/Linux%E5%AD%A6%E4%B9%A0/Docker%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="next" title="Docker基本使用">
+                  Docker基本使用 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
