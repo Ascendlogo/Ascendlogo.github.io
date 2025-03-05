@@ -193,6 +193,112 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">docker gitlab容器数据备份步骤</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-03-04 00:00:00 / Modified: 18:28:18" itemprop="dateCreated datePublished" datetime="2025-03-04T00:00:00+08:00">2025-03-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h1><ol>
+<li><p>创建下命名为的脚本</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>自动运行脚本</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>为脚本添加sudo免密码权限</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>手动触发脚本执行测试</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p><strong>说明</strong></p>
+<ul>
+<li>备份产生的目录结构为gitlab &#x2F;（config + logs + data），其中logs是一个空文件夹，此举只是为了方便生成新容器时方便挂载，data包含一个gitlab内置备份功能生成的一个tar文件，config则是从源容器完全移植过来的。</li>
+<li>backup下会自动生成一个log.txt文件记录备份结果日志。</li>
+</ul>
+</li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/26/Linux%E5%AD%A6%E4%B9%A0/Gitlab%E9%85%8D%E7%BD%AESSH/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -221,9 +327,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2025-02-26 00:00:00 / Modified: 13:34:34" itemprop="dateCreated datePublished" datetime="2025-02-26T00:00:00+08:00">2025-02-26</time>
+      <time title="Created: 2025-02-26 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-26T00:00:00+08:00">2025-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-03-03 14:02:23" itemprop="dateModified" datetime="2025-03-03T14:02:23+08:00">2025-03-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,7 +375,7 @@
 <li>填写标题（可选，如 “My Laptop”），点击 <strong>Add key</strong></li>
 </ol>
 </li>
-<li><p>测试SSh连接</p>
+<li><p>测试SSH连接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gitlab.com应该修改为目标服务器IP</span></span><br><span class="line">ssh -T git@gitlab.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意：以上命令默认端口号为22，若需要指定端口号，则使用(以2222为例)</span></span><br><span class="line">ssh -T -p 2222 git@gitlab.com</span><br></pre></td></tr></table></figure>
 
 <p>若看到 <code>Welcome to GitLab, @username!</code> 表示成功</p>
@@ -477,110 +589,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/24/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%AD%A5%E9%AA%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/02/24/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">docker gitlab容器数据迁移步骤</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-02-24 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-24T00:00:00+08:00">2025-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-02-25 09:26:19" itemprop="dateModified" datetime="2025-02-25T09:26:19+08:00">2025-02-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><p>确定旧容器的数据存储位置（找到以下目录的宿主机挂载目录）</p>
-<ul>
-<li><strong>配置</strong>：<code>/etc/gitlab</code></li>
-<li><strong>日志</strong>：<code>/var/log/gitlab</code></li>
-<li><strong>应用数据</strong>：<code>/var/opt/gitlab</code></li>
-</ul>
-</li>
-<li><p>停止旧容器（保证迁移时数据是最新的）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;旧容器名称或ID&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>备份数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/config /备份路径/config</span><br><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/logs /备份路径/logs</span><br><span class="line"><span class="built_in">cp</span> -r /宿主机/原有/gitlab/data /备份路径/data</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动新的容器（这里需要确保新容器使用镜像版本和原容器一致，否则可能存在不兼容问题）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name gitlab-new \</span><br><span class="line">  -p 8080:80 -p 8443:443 \</span><br><span class="line">  -v /备份路径/config:/etc/gitlab \</span><br><span class="line">  -v /备份路径/logs:/var/log/gitlab \</span><br><span class="line">  -v /备份路径/data:/var/opt/gitlab \</span><br><span class="line">  my-gitlab:16.10.2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修复文件权限</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab-new update-permissions</span><br></pre></td></tr></table></figure></li>
-</ol>
-
       
     </div>
 
