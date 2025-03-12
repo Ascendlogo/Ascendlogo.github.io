@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">136</span>
+          <span class="site-state-item-count">137</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,363 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/03/12/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/12/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">docker gitlab容器数据备份步骤</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-03-12 00:00:00 / Modified: 14:54:27" itemprop="dateCreated datePublished" datetime="2025-03-12T00:00:00+08:00">2025-03-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h1><ol>
+<li><p>创建下命名为的脚本</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>配置邮件服务（将备份结果以网易邮件形式通知到管理员）</p>
+<ol>
+<li><p>安装postfix</p>
+<figure class="highlight bash"></figure>
+
+<p>安装过程中选择 <strong>Internet Site</strong></p>
+</li>
+<li><p>编辑配置文件</p>
+<figure class="highlight bash"></figure>
+
+<p>修改&#x2F;添加以下内容</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>配置SMTP认证信息</p>
+<figure class="highlight bash"></figure>
+
+<p>写入以下内容</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>生成数据库文件并设置权限：</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>设置发件人域名</p>
+<figure class="highlight bash"></figure>
+
+<p>写入以下内容</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>重启Postfix</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>测试发送邮件</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p><strong>可能存在的问题</strong></p>
+<ul>
+<li><p>MAIL FROM配置不正确，需要强制修改</p>
+<ol>
+<li><p>修改postfix配置文件</p>
+<figure class="highlight bash"></figure>
+
+<p>添加以下内容</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>创建地址映射文件</p>
+<figure class="highlight bash"></figure>
+
+<p>写入以下内容</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>生成映射数据库</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>重启Postfix</p>
+<figure class="highlight bash"></figure></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>自动运行脚本</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>为脚本添加sudo免密码权限</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p>手动触发脚本执行测试</p>
+<figure class="highlight bash"></figure>
+</li>
+<li><p><strong>说明</strong></p>
+<ul>
+<li>备份产生的目录结构为gitlab &#x2F;（config + logs + data），其中logs是一个空文件夹，此举只是为了方便生成新容器时方便挂载，data包含一个gitlab内置备份功能生成的一个tar文件，config则是从源容器完全移植过来的。</li>
+<li>backup下会自动生成一个log.txt文件记录备份结果日志。</li>
+</ul>
+</li>
+</ol>
+<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/12/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/03/11/%E6%82%9F/%E5%BF%A7%E6%80%9D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/11/%E6%82%9F/%E5%BF%A7%E6%80%9D/" class="post-title-link" itemprop="url">忧思</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-03-11 00:00:00 / Modified: 11:16:47" itemprop="dateCreated datePublished" datetime="2025-03-11T00:00:00+08:00">2025-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%82%9F/" itemprop="url" rel="index"><span itemprop="name">悟</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>睿智，得乎静；刚勇，显与动。是故大丈夫处世，必忧思以深远，行决以神速，孤心磨砺以求成也。</li>
+<li>万事万物各行其道我又何必庸人自扰。</li>
+<li>去寻找全局最优解，而不是局部最优解。</li>
+<li>伟人之所以伟大，只是因为我们跪在地上，站起来吧！</li>
+<li>先不不喜欢的事情做好才能去做喜欢的事。</li>
+<li>故天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为，所以动心忍性，曾益其所不能。</li>
+<li>熬过每一个今天，成功自然会来。</li>
+<li>我们能够掌控的是能力，我们无法掌控的是机遇。没有机遇你展现不了能力，没有能力你抓不住机遇。我们能做的只有提升能力，抓住机遇。</li>
+<li>成功或失败是上天决定的，前进或停下是我决定的。命定但不注定。</li>
+<li>从无所不能，到无所能，到有所能。循此苦旅，以达天际。</li>
+<li>人们总会高估一个技术的短期价值，而又低估它的长期价值。所以不要妄想人工智能会即刻改变世界，而又不要忽略我们的世界正被人工智能一点一点改变。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/03/07/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/03/07/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">第七章 嵌入式系统开发与维护知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-03-07 00:00:00" itemprop="dateCreated datePublished" datetime="2025-03-07T00:00:00+08:00">2025-03-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-03-11 19:47:17" itemprop="dateModified" datetime="2025-03-11T19:47:17+08:00">2025-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="系统开发过程及项目管理"><a href="#系统开发过程及项目管理" class="headerlink" title="系统开发过程及项目管理"></a>系统开发过程及项目管理</h1><h2 id="开发模型"><a href="#开发模型" class="headerlink" title="开发模型"></a>开发模型</h2><ul>
+<li><p>瀑布模型（SDLC）</p>
+</li>
+<li><p>演化模型</p>
+</li>
+<li><p>增量模型</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/07/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%BC%80%E5%8F%91%E4%B8%8E%E7%BB%B4%E6%8A%A4%E7%9F%A5%E8%AF%86/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -261,112 +618,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2025/03/06/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E5%AE%89%E5%85%A8%E6%80%A7%E5%9F%BA%E7%A1%80/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">docker gitlab容器数据备份步骤</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-03-04 00:00:00 / Modified: 18:28:18" itemprop="dateCreated datePublished" datetime="2025-03-04T00:00:00+08:00">2025-03-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h1><ol>
-<li><p>创建下命名为的脚本</p>
-<figure class="highlight bash"></figure>
-</li>
-<li><p>自动运行脚本</p>
-<figure class="highlight bash"></figure>
-</li>
-<li><p>为脚本添加sudo免密码权限</p>
-<figure class="highlight bash"></figure>
-</li>
-<li><p>手动触发脚本执行测试</p>
-<figure class="highlight bash"></figure>
-</li>
-<li><p><strong>说明</strong></p>
-<ul>
-<li>备份产生的目录结构为gitlab &#x2F;（config + logs + data），其中logs是一个空文件夹，此举只是为了方便生成新容器时方便挂载，data包含一个gitlab内置备份功能生成的一个tar文件，config则是从源容器完全移植过来的。</li>
-<li>backup下会自动生成一个log.txt文件记录备份结果日志。</li>
-</ul>
-</li>
-</ol>
-<h1 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2025/03/04/Linux%E5%AD%A6%E4%B9%A0/docker%20gitlab%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%A4%87%E4%BB%BD%E6%AD%A5%E9%AA%A4/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1022,174 +1273,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/01/06/%E6%9C%AD/%E3%80%8A%E6%88%91%E4%B8%8E%E5%9C%B0%E5%9D%9B%E3%80%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/01/06/%E6%9C%AD/%E3%80%8A%E6%88%91%E4%B8%8E%E5%9C%B0%E5%9D%9B%E3%80%8B/" class="post-title-link" itemprop="url">《我与地坛》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2025-01-06 00:00:00 / Modified: 16:05:49" itemprop="dateCreated datePublished" datetime="2025-01-06T00:00:00+08:00">2025-01-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AD/" itemprop="url" rel="index"><span itemprop="name">札</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>但是太阳，它每时每刻都是夕阳也都是旭日。当它熄灭着走下山去收尽苍凉残照之际，正是它在另一面燃烧着爬上山巅布散烈烈朝晖之时。那一天，我也将沉静着走下山去，扶着我的拐杖。有一天，在某一处山洼里，势必会跑上来一个欢蹦的孩子，抱着他的玩具。当然，那不是我。但是，那不是我吗？</li>
-<li>迄今人类最美好的向往也都没有实际的验证，但那向往并不因此消灭。</li>
-<li>童话的缺憾不在于它太美，而在于它必要走进一个更为纷繁而且严酷的世界，那时只怕它太娇嫩。</li>
-<li>命运中有一种错误是只能犯一次的，并且没有改正的机会，命运中有一种并非是错误的错误，但它却是不被原谅的。</li>
-<li>机会不在外面在心里。</li>
-<li>在科学的迷茫之处，在命运的混沌之点，人唯有乞灵于自己的精神。不管我们信仰什么，都是我们自己的精神的描述和引导。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/11/05/%E6%9C%AD/%E3%80%8A%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E3%80%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/11/05/%E6%9C%AD/%E3%80%8A%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E3%80%8B/" class="post-title-link" itemprop="url">《明朝那些事》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-11-05 00:00:00 / Modified: 08:40:16" itemprop="dateCreated datePublished" datetime="2024-11-05T00:00:00+08:00">2024-11-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%9C%AD/" itemprop="url" rel="index"><span itemprop="name">札</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>知道可能面对的困难和痛苦，在死亡的恐惧中不断挣扎，却仍然能战胜自己，选择这条道路，才是真正的勇气。</li>
-<li>一个人要显示自己的力量，从来不是靠暴力，挑战这一准则的人必然会被历史从强者的行列中淘汰，历来如此。</li>
-</ul>
-
       
     </div>
 
