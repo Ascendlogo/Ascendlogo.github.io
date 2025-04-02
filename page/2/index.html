@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">138</span>
+          <span class="site-state-item-count">139</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -184,6 +184,158 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2025/02/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.JPG">
+      <meta itemprop="name" content="Ascendlogo">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ascendlogo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/02/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">Linux常用命令总结</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-02-18 00:00:00" itemprop="dateCreated datePublished" datetime="2025-02-18T00:00:00+08:00">2025-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-02-25 10:09:29" itemprop="dateModified" datetime="2025-02-25T10:09:29+08:00">2025-02-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="文件和目录命令"><a href="#文件和目录命令" class="headerlink" title="文件和目录命令"></a>文件和目录命令</h1><ul>
+<li><p>ls</p>
+<ul>
+<li><p>显示指定目录下所有子目录和文件，包括隐藏文件</p>
+</li>
+<li><p>纵向显示文件列表和详细信息</p>
+</li>
+<li><p>以KB显示文件大小</p>
+</li>
+<li><p>通配符的使用</p>
+<ul>
+<li><blockquote>
+<p>表示任意个数字符</p>
+<p>表示任意一个字符</p>
+<p>表示可以匹配字符组中的任意一个</p>
+<p>匹配a，b，c中任意一个</p>
+<p>匹配a到f范围中任意一个字符</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>cd </p>
+<ul>
+<li> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
+<li> 切换到当前用户主目录&#x2F;home&#x2F;用户目录</li>
+<li>保持当前目录不变</li>
+<li> 切换到上级目录</li>
+<li> 可以在最近两次工作目录之间来回切换</li>
+<li>绝对路径：在输入路径时最前面不是&#x2F;或～，表示相对当前目录所在的目录位置</li>
+<li>相对路径：在输入路径时，最前面是&#x2F;或者～，表示从根目录&#x2F;家目录开始的具体位置</li>
+</ul>
+</li>
+<li><p>touch</p>
+<ul>
+<li>文件不存在，创建文件</li>
+<li>文件存在，修改末次修改时间</li>
+</ul>
+</li>
+<li><p>mkdir</p>
+<ul>
+<li>创建目录，同一个目录下目录和文件都不能同名</li>
+<li>创建多级目录</li>
+</ul>
+</li>
+<li><p>rm</p>
+<ul>
+<li>删除后无法恢复</li>
+<li>强制删除，忽略不存在的文件</li>
+<li>递归删除目录下内容，删除文件夹时使用</li>
+</ul>
+</li>
+<li><p>tree</p>
+<ul>
+<li>以树状图列出文件目录结构</li>
+<li>只显示目录</li>
+</ul>
+</li>
+</ul>
+<h1 id="拷贝和移动命令"><a href="#拷贝和移动命令" class="headerlink" title="拷贝和移动命令"></a>拷贝和移动命令</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/18/Linux%E5%AD%A6%E4%B9%A0/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1106,104 +1258,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/09/11/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E5%92%8C%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ascendlogo.github.io/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.JPG">
-      <meta itemprop="name" content="Ascendlogo">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ascendlogo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/" class="post-title-link" itemprop="url">第十三章 嵌入式输入输出设备</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2024-09-10 00:00:00 / Modified: 14:09:25" itemprop="dateCreated datePublished" datetime="2024-09-10T00:00:00+08:00">2024-09-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">嵌入式</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="GPIO的原理与结构"><a href="#GPIO的原理与结构" class="headerlink" title="GPIO的原理与结构"></a>GPIO的原理与结构</h1><ul>
-<li>GPIO（General Purpose I&#x2F;O，通用输入&#x2F;输出接口）也称为并行I&#x2F;O（parallel I&#x2F;O），是最基本的I&#x2F;O形式<ul>
-<li>有一组输入引脚或输出引脚组成，CPU对它们能够进行存取操作</li>
-<li>有些GPIO引脚能够通过软件编程改变输出&#x2F;输出方向</li>
-</ul>
-</li>
-<li>一个双向GPIO端口（D<sub>0</sub>）的简化功能逻辑图如图所示，图中：<ul>
-<li>PORT：数据寄存器</li>
-<li>DDR（Data Direction Register）：数据方向寄存器</li>
-</ul>
-</li>
-</ul>
-<h1 id="A-D接口基本原理与结构"><a href="#A-D接口基本原理与结构" class="headerlink" title="A&#x2F;D接口基本原理与结构"></a>A&#x2F;D接口基本原理与结构</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/09/10/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%20%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
